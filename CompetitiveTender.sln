@@ -11,6 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Summer.CompetitiveTender.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Summer.CompetitiveTender.Login", "Summer.CompetitiveTender.Login\Summer.CompetitiveTender.Login.csproj", "{9602C4BB-DF53-467B-AC25-80551F418C34}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{52D350F0-0747-44F9-A8CE-4BAA4B0E03A0}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\Administrator\Desktop\login.PNG = C:\Users\Administrator\Desktop\login.PNG
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -48,7 +48,7 @@
     <Content Include="logo\logo_48.ico" />
     <Content Include="logo\logo_64.ico" />
     <Content Include="logo\logo_72.ico" />
-    <Content Include="simple\logon.PNG" />
+    <Content Include="simple\login.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

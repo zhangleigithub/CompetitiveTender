@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Summer.CompetitiveTender.Login
 {
-    public partial class Login : Form
+    public partial class Login : MetroForm
     {
         public UserType UserType
         {

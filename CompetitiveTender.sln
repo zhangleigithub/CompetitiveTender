@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Summer.CompetitiveTender.Lo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Summer.Common.Images", "Summer.Common.Images\Summer.Common.Images.csproj", "{E2501D1D-1A1F-470E-82F2-1E8B209F667F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Summer.Common.Controls", "Summer.Common.Control\Summer.Common.Controls.csproj", "{67CA7EE9-500C-481C-85CE-CF558B1A8596}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{E2501D1D-1A1F-470E-82F2-1E8B209F667F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2501D1D-1A1F-470E-82F2-1E8B209F667F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2501D1D-1A1F-470E-82F2-1E8B209F667F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67CA7EE9-500C-481C-85CE-CF558B1A8596}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67CA7EE9-500C-481C-85CE-CF558B1A8596}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67CA7EE9-500C-481C-85CE-CF558B1A8596}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67CA7EE9-500C-481C-85CE-CF558B1A8596}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

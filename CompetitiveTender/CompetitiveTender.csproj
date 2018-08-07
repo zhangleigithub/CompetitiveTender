@@ -89,15 +89,19 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Summer.CompetitiveTender.InviteTender\Summer.CompetitiveTender.View.csproj">
+    <ProjectReference Include="..\Summer.Common.Utility\Summer.Common.Utility.csproj">
+      <Project>{1d5298aa-4201-45e0-9a77-65d185a7de99}</Project>
+      <Name>Summer.Common.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Summer.CompetitiveTender.View\Summer.CompetitiveTender.View.csproj">
       <Project>{203e132c-c728-4812-bc5d-e42ce2d60e39}</Project>
       <Name>Summer.CompetitiveTender.View</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Summer.CompetitiveTender.Login\Summer.CompetitiveTender.Model.csproj">
+    <ProjectReference Include="..\Summer.CompetitiveTender.Model\Summer.CompetitiveTender.Model.csproj">
       <Project>{9602c4bb-df53-467b-ac25-80551f418c34}</Project>
       <Name>Summer.CompetitiveTender.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Summer.CompetitiveTender.Tender\Summer.CompetitiveTender.Service.csproj">
+    <ProjectReference Include="..\Summer.CompetitiveTender.Service\Summer.CompetitiveTender.Service.csproj">
       <Project>{9164404e-5db4-4e4a-816f-a216fe8013e2}</Project>
       <Name>Summer.CompetitiveTender.Service</Name>
     </ProjectReference>

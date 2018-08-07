@@ -101,6 +101,18 @@
       <Project>{67ca7ee9-500c-481c-85ce-cf558b1a8596}</Project>
       <Name>Summer.Common.Controls</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Summer.Common.Utility\Summer.Common.Utility.csproj">
+      <Project>{1d5298aa-4201-45e0-9a77-65d185a7de99}</Project>
+      <Name>Summer.Common.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Summer.CompetitiveTender.Model\Summer.CompetitiveTender.Model.csproj">
+      <Project>{9602c4bb-df53-467b-ac25-80551f418c34}</Project>
+      <Name>Summer.CompetitiveTender.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Summer.CompetitiveTender.Service\Summer.CompetitiveTender.Service.csproj">
+      <Project>{9164404e-5db4-4e4a-816f-a216fe8013e2}</Project>
+      <Name>Summer.CompetitiveTender.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

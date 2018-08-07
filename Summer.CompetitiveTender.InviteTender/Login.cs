@@ -1,4 +1,5 @@
-﻿using MetroFramework.Forms;
+﻿using log4net;
+using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,10 +9,15 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Summer.CompetitiveTender.Login
+namespace Summer.CompetitiveTender.View
 {
     public partial class Login : MetroForm
     {
+        /// <summary>
+        /// log
+        /// </summary>
+        private static ILog log = LogManager.GetLogger(typeof(Login));
+
         public UserType UserType
         {
             get
@@ -42,6 +48,7 @@ namespace Summer.CompetitiveTender.Login
 
         private void btnOk_Click(object sender, EventArgs e)
         {
+            log.Debug("login");
             this.DialogResult = DialogResult.OK;
         }
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Summer.CompetitiveTender.Login
+namespace Summer.CompetitiveTender.View
 {
     /// <summary>
     /// 用户类型

@@ -1,5 +1,6 @@
-﻿using Summer.CompetitiveTender.InviteTender;
-using Summer.CompetitiveTender.Login;
+﻿using Summer.CompetitiveTender.View.InviteTender;
+using Summer.CompetitiveTender.View.Bid;
+using Summer.CompetitiveTender.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,17 +19,19 @@ namespace CompetitiveTender
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            log4net.Config.XmlConfigurator.ConfigureAndWatch(new System.IO.FileInfo("log4net.config"));
+
             Login login = new Login();
 
             if (login.ShowDialog() == DialogResult.OK)
             {
                 if (login.UserType == UserType.InviteTender)
                 {
-                    Application.Run(new Summer.CompetitiveTender.InviteTender.MainForm());
+                    Application.Run(new InviteTenderManageForm());
                 }
                 else if (login.UserType == UserType.Tender)
                 {
-                    Application.Run(new Summer.CompetitiveTender.Tender.MainForm());
+                    Application.Run(new BidManageForm());
                 }
                 else if (login.UserType == UserType.Expert)
                 {

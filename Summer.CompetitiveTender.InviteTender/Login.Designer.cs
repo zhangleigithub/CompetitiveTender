@@ -1,6 +1,6 @@
 ﻿using MetroFramework.Controls;
 
-namespace Summer.CompetitiveTender.Login
+namespace Summer.CompetitiveTender.View
 {
     partial class Login
     {

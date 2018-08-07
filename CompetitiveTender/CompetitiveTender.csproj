@@ -35,6 +35,10 @@
     <ApplicationIcon>logo_24.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net40-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
       <Private>True</Private>
@@ -70,6 +74,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Content Include="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -82,17 +89,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Summer.CompetitiveTender.InviteTender\Summer.CompetitiveTender.InviteTender.csproj">
+    <ProjectReference Include="..\Summer.CompetitiveTender.InviteTender\Summer.CompetitiveTender.View.csproj">
       <Project>{203e132c-c728-4812-bc5d-e42ce2d60e39}</Project>
-      <Name>Summer.CompetitiveTender.InviteTender</Name>
+      <Name>Summer.CompetitiveTender.View</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Summer.CompetitiveTender.Login\Summer.CompetitiveTender.Login.csproj">
+    <ProjectReference Include="..\Summer.CompetitiveTender.Login\Summer.CompetitiveTender.Model.csproj">
       <Project>{9602c4bb-df53-467b-ac25-80551f418c34}</Project>
-      <Name>Summer.CompetitiveTender.Login</Name>
+      <Name>Summer.CompetitiveTender.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Summer.CompetitiveTender.Tender\Summer.CompetitiveTender.Tender.csproj">
+    <ProjectReference Include="..\Summer.CompetitiveTender.Tender\Summer.CompetitiveTender.Service.csproj">
       <Project>{9164404e-5db4-4e4a-816f-a216fe8013e2}</Project>
-      <Name>Summer.CompetitiveTender.Tender</Name>
+      <Name>Summer.CompetitiveTender.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

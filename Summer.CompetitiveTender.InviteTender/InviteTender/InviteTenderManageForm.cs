@@ -8,11 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Summer.CompetitiveTender.InviteTender
+namespace Summer.CompetitiveTender.View.InviteTender
 {
-    public partial class MainForm : MetroForm
+    public partial class InviteTenderManageForm : MetroForm
     {
-        public MainForm()
+        public InviteTenderManageForm()
         {
             InitializeComponent();
 

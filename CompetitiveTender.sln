@@ -5,11 +5,11 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompetitiveTender", "CompetitiveTender\CompetitiveTender.csproj", "{9D2C4CFD-C71D-45E9-8030-8AE6AEFA930C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Summer.CompetitiveTender.View", "Summer.CompetitiveTender.InviteTender\Summer.CompetitiveTender.View.csproj", "{203E132C-C728-4812-BC5D-E42CE2D60E39}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Summer.CompetitiveTender.View", "Summer.CompetitiveTender.View\Summer.CompetitiveTender.View.csproj", "{203E132C-C728-4812-BC5D-E42CE2D60E39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Summer.CompetitiveTender.Service", "Summer.CompetitiveTender.Tender\Summer.CompetitiveTender.Service.csproj", "{9164404E-5DB4-4E4A-816F-A216FE8013E2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Summer.CompetitiveTender.Service", "Summer.CompetitiveTender.Service\Summer.CompetitiveTender.Service.csproj", "{9164404E-5DB4-4E4A-816F-A216FE8013E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Summer.CompetitiveTender.Model", "Summer.CompetitiveTender.Login\Summer.CompetitiveTender.Model.csproj", "{9602C4BB-DF53-467B-AC25-80551F418C34}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Summer.CompetitiveTender.Model", "Summer.CompetitiveTender.Model\Summer.CompetitiveTender.Model.csproj", "{9602C4BB-DF53-467B-AC25-80551F418C34}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Summer.Common.Images", "Summer.Common.Images\Summer.Common.Images.csproj", "{E2501D1D-1A1F-470E-82F2-1E8B209F667F}"
 EndProject

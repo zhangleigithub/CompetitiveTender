@@ -47,7 +47,7 @@ namespace Summer.Common.Utility.WebApi
                 else
                 {
                     //其余参数放在URL后面,POST提交方式的不在这里处理
-                    if (api.Mode == RequestModeEnum.GET.ToString())
+                    if (api.Mode == RequestMethod.GET.ToString())
                     {
                         if (api.Url.Contains("?"))
                         {

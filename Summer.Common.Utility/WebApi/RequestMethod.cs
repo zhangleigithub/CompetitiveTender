@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Summer.Common.Utility.WebApi
 {
-    public enum RequestModeEnum
+    public enum RequestMethod
     {
         /// <summary>
         /// Put请求 1

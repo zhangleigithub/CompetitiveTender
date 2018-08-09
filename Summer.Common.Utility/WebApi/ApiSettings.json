@@ -1,0 +1,10 @@
+{
+  "ApiMappers": {
+    "api1": {
+      "Resource": "session",
+      "Method": 1,
+      "Desc": "描述"
+    }
+  },
+  "BaseUrl": "http://127.0.0.1:9999/"
+}

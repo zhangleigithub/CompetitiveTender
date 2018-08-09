@@ -20,7 +20,7 @@ namespace CompetitiveTender
             Application.SetCompatibleTextRenderingDefault(false);
 
             log4net.Config.XmlConfigurator.ConfigureAndWatch(new System.IO.FileInfo("log4net.config"));
-
+            
             Login login = new Login();
 
             if (login.ShowDialog() == DialogResult.OK)

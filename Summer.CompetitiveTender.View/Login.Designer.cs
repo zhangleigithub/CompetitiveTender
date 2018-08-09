@@ -32,9 +32,9 @@ namespace Summer.CompetitiveTender.View
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.label1 = new MetroFramework.Controls.MetroLabel();
-            this.textBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.txtUserName = new MetroFramework.Controls.MetroTextBox();
             this.label2 = new MetroFramework.Controls.MetroLabel();
-            this.textBox2 = new MetroFramework.Controls.MetroTextBox();
+            this.txtPassword = new MetroFramework.Controls.MetroTextBox();
             this.btnOk = new MetroFramework.Controls.MetroButton();
             this.rbInviteTender = new MetroFramework.Controls.MetroRadioButton();
             this.rbTender = new MetroFramework.Controls.MetroRadioButton();
@@ -55,32 +55,32 @@ namespace Summer.CompetitiveTender.View
             // 
             // 
             // 
-            this.textBox1.CustomButton.Image = null;
-            this.textBox1.CustomButton.Location = new System.Drawing.Point(171, 1);
-            this.textBox1.CustomButton.Name = "";
-            this.textBox1.CustomButton.Size = new System.Drawing.Size(19, 19);
-            this.textBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.textBox1.CustomButton.TabIndex = 1;
-            this.textBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.textBox1.CustomButton.UseSelectable = true;
-            this.textBox1.CustomButton.Visible = false;
-            this.textBox1.Lines = new string[0];
-            this.textBox1.Location = new System.Drawing.Point(159, 87);
-            this.textBox1.MaxLength = 32767;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '\0';
-            this.textBox1.PromptText = "账号";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textBox1.SelectedText = "";
-            this.textBox1.SelectionLength = 0;
-            this.textBox1.SelectionStart = 0;
-            this.textBox1.ShortcutsEnabled = true;
-            this.textBox1.Size = new System.Drawing.Size(191, 21);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.UseSelectable = true;
-            this.textBox1.WaterMark = "账号";
-            this.textBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.textBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtUserName.CustomButton.Image = null;
+            this.txtUserName.CustomButton.Location = new System.Drawing.Point(171, 1);
+            this.txtUserName.CustomButton.Name = "";
+            this.txtUserName.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.txtUserName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtUserName.CustomButton.TabIndex = 1;
+            this.txtUserName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtUserName.CustomButton.UseSelectable = true;
+            this.txtUserName.CustomButton.Visible = false;
+            this.txtUserName.Lines = new string[0];
+            this.txtUserName.Location = new System.Drawing.Point(159, 87);
+            this.txtUserName.MaxLength = 32767;
+            this.txtUserName.Name = "textBox1";
+            this.txtUserName.PasswordChar = '\0';
+            this.txtUserName.PromptText = "账号";
+            this.txtUserName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtUserName.SelectedText = "";
+            this.txtUserName.SelectionLength = 0;
+            this.txtUserName.SelectionStart = 0;
+            this.txtUserName.ShortcutsEnabled = true;
+            this.txtUserName.Size = new System.Drawing.Size(191, 21);
+            this.txtUserName.TabIndex = 1;
+            this.txtUserName.UseSelectable = true;
+            this.txtUserName.WaterMark = "账号";
+            this.txtUserName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtUserName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // label2
             // 
@@ -96,32 +96,32 @@ namespace Summer.CompetitiveTender.View
             // 
             // 
             // 
-            this.textBox2.CustomButton.Image = null;
-            this.textBox2.CustomButton.Location = new System.Drawing.Point(171, 1);
-            this.textBox2.CustomButton.Name = "";
-            this.textBox2.CustomButton.Size = new System.Drawing.Size(19, 19);
-            this.textBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.textBox2.CustomButton.TabIndex = 1;
-            this.textBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.textBox2.CustomButton.UseSelectable = true;
-            this.textBox2.CustomButton.Visible = false;
-            this.textBox2.Lines = new string[0];
-            this.textBox2.Location = new System.Drawing.Point(159, 124);
-            this.textBox2.MaxLength = 32767;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.PromptText = "密码";
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textBox2.SelectedText = "";
-            this.textBox2.SelectionLength = 0;
-            this.textBox2.SelectionStart = 0;
-            this.textBox2.ShortcutsEnabled = true;
-            this.textBox2.Size = new System.Drawing.Size(191, 21);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.UseSelectable = true;
-            this.textBox2.WaterMark = "密码";
-            this.textBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.textBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPassword.CustomButton.Image = null;
+            this.txtPassword.CustomButton.Location = new System.Drawing.Point(171, 1);
+            this.txtPassword.CustomButton.Name = "";
+            this.txtPassword.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.txtPassword.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPassword.CustomButton.TabIndex = 1;
+            this.txtPassword.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPassword.CustomButton.UseSelectable = true;
+            this.txtPassword.CustomButton.Visible = false;
+            this.txtPassword.Lines = new string[0];
+            this.txtPassword.Location = new System.Drawing.Point(159, 124);
+            this.txtPassword.MaxLength = 32767;
+            this.txtPassword.Name = "textBox2";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.PromptText = "密码";
+            this.txtPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPassword.SelectedText = "";
+            this.txtPassword.SelectionLength = 0;
+            this.txtPassword.SelectionStart = 0;
+            this.txtPassword.ShortcutsEnabled = true;
+            this.txtPassword.Size = new System.Drawing.Size(191, 21);
+            this.txtPassword.TabIndex = 3;
+            this.txtPassword.UseSelectable = true;
+            this.txtPassword.WaterMark = "密码";
+            this.txtPassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // btnOk
             // 
@@ -175,9 +175,9 @@ namespace Summer.CompetitiveTender.View
             this.Controls.Add(this.rbTender);
             this.Controls.Add(this.rbInviteTender);
             this.Controls.Add(this.btnOk);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -194,9 +194,9 @@ namespace Summer.CompetitiveTender.View
         #endregion
 
         private MetroLabel label1;
-        private MetroTextBox textBox1;
+        private MetroTextBox txtUserName;
         private MetroLabel label2;
-        private MetroTextBox textBox2;
+        private MetroTextBox txtPassword;
         private MetroButton btnOk;
         private MetroRadioButton rbInviteTender;
         private MetroRadioButton rbTender;

@@ -2,41 +2,48 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Summer.Common.Utility.WebApi
 {
+    /// <summary>
+    /// ApiMapper
+    /// </summary>
     public class ApiMapper
     {
-        public ApiMapper()
+        #region 属性
+
+        /// <summary>
+        /// resource
+        /// </summary>
+        public string Resource { get; private set; }
+
+        /// <summary>
+        /// Method
+        /// </summary>
+        public HttpMethod Method { get; private set; }
+
+        /// <summary>
+        /// Desc
+        /// </summary>
+        public string Desc { get; private set; }
+
+        #endregion
+
+        #region 方法
+
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="resource">resource</param>
+        /// <param name="method">method</param>
+        /// <param name="desc">desc</param>
+        public ApiMapper(string resource, HttpMethod method, string desc)
         {
-            //默认为json方式
-            ContentType = "application/json";
+            this.Resource = resource;
+            this.Method = method;
+            this.Desc = desc;
         }
 
-        /// <summary>
-        /// 唯一key值
-        /// </summary>
-        public string Key { get; set; }
-
-        /// <summary>
-        /// 访问路径
-        /// </summary>
-        public string Url { get; set; }
-
-        /// <summary>
-        /// 请求方式
-        /// </summary>
-        public string Mode { get; set; }
-
-        /// <summary>
-        /// 地址说明
-        /// </summary>
-        public string Description { get; set; }
-
-        /// <summary>
-        /// 响应内容类型(默认为Json)
-        /// </summary>
-        public string ContentType { get; set; }
+        #endregion
     }
 }

@@ -23,6 +23,7 @@ namespace Summer.Common.Utility.WebApi
 
     /// <summary>
     /// HttpMethodEx
+    /// 测试
     /// </summary>
     public static class HttpMethodEx
     {

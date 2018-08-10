@@ -3,7 +3,7 @@
     "login": {
       "Resource": "session",
       "Method": 1,
-      "Desc": "描述"
+      "Desc": "描述1"
     }
   },
   "BaseUrl": "http://127.0.0.1:9999/"

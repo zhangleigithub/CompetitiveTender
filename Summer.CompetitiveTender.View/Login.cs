@@ -39,6 +39,10 @@ namespace Summer.CompetitiveTender.View
                 {
                     return UserType.InviteTender;
                 }
+                else if (rbAgency.Checked)
+                {
+                    return UserType.Agency;
+                }
                 else if (rbTender.Checked)
                 {
                     return UserType.Tender;

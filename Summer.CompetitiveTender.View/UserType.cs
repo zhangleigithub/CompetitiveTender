@@ -21,6 +21,11 @@ namespace Summer.CompetitiveTender.View
         InviteTender,
 
         /// <summary>
+        /// 代理机构
+        /// </summary>
+        Agency,
+
+        /// <summary>
         /// 投标
         /// </summary>
         Tender,

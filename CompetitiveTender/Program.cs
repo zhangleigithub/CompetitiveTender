@@ -29,6 +29,10 @@ namespace CompetitiveTender
                 {
                     Application.Run(new InviteTenderManageForm());
                 }
+                else if (login.UserType == UserType.Agency)
+                {
+                    MessageBox.Show("疯狂开发中...");
+                }
                 else if (login.UserType == UserType.Tender)
                 {
                     Application.Run(new BidManageForm());

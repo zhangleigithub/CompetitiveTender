@@ -39,6 +39,7 @@ namespace Summer.CompetitiveTender.View
             this.rbInviteTender = new MetroFramework.Controls.MetroRadioButton();
             this.rbTender = new MetroFramework.Controls.MetroRadioButton();
             this.rbExpert = new MetroFramework.Controls.MetroRadioButton();
+            this.rbAgency = new MetroFramework.Controls.MetroRadioButton();
             this.SuspendLayout();
             // 
             // label1
@@ -50,13 +51,13 @@ namespace Summer.CompetitiveTender.View
             this.label1.TabIndex = 0;
             this.label1.Text = "账号：";
             // 
-            // textBox1
+            // txtUserName
             // 
             // 
             // 
             // 
             this.txtUserName.CustomButton.Image = null;
-            this.txtUserName.CustomButton.Location = new System.Drawing.Point(171, 1);
+            this.txtUserName.CustomButton.Location = new System.Drawing.Point(278, 1);
             this.txtUserName.CustomButton.Name = "";
             this.txtUserName.CustomButton.Size = new System.Drawing.Size(19, 19);
             this.txtUserName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -67,7 +68,7 @@ namespace Summer.CompetitiveTender.View
             this.txtUserName.Lines = new string[0];
             this.txtUserName.Location = new System.Drawing.Point(159, 87);
             this.txtUserName.MaxLength = 32767;
-            this.txtUserName.Name = "textBox1";
+            this.txtUserName.Name = "txtUserName";
             this.txtUserName.PasswordChar = '\0';
             this.txtUserName.PromptText = "账号";
             this.txtUserName.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -75,7 +76,7 @@ namespace Summer.CompetitiveTender.View
             this.txtUserName.SelectionLength = 0;
             this.txtUserName.SelectionStart = 0;
             this.txtUserName.ShortcutsEnabled = true;
-            this.txtUserName.Size = new System.Drawing.Size(191, 21);
+            this.txtUserName.Size = new System.Drawing.Size(298, 21);
             this.txtUserName.TabIndex = 1;
             this.txtUserName.UseSelectable = true;
             this.txtUserName.WaterMark = "账号";
@@ -91,13 +92,13 @@ namespace Summer.CompetitiveTender.View
             this.label2.TabIndex = 2;
             this.label2.Text = "密码：";
             // 
-            // textBox2
+            // txtPassword
             // 
             // 
             // 
             // 
             this.txtPassword.CustomButton.Image = null;
-            this.txtPassword.CustomButton.Location = new System.Drawing.Point(171, 1);
+            this.txtPassword.CustomButton.Location = new System.Drawing.Point(278, 1);
             this.txtPassword.CustomButton.Name = "";
             this.txtPassword.CustomButton.Size = new System.Drawing.Size(19, 19);
             this.txtPassword.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -108,7 +109,7 @@ namespace Summer.CompetitiveTender.View
             this.txtPassword.Lines = new string[0];
             this.txtPassword.Location = new System.Drawing.Point(159, 124);
             this.txtPassword.MaxLength = 32767;
-            this.txtPassword.Name = "textBox2";
+            this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.PromptText = "密码";
             this.txtPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -116,7 +117,7 @@ namespace Summer.CompetitiveTender.View
             this.txtPassword.SelectionLength = 0;
             this.txtPassword.SelectionStart = 0;
             this.txtPassword.ShortcutsEnabled = true;
-            this.txtPassword.Size = new System.Drawing.Size(191, 21);
+            this.txtPassword.Size = new System.Drawing.Size(298, 21);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.UseSelectable = true;
             this.txtPassword.WaterMark = "密码";
@@ -127,7 +128,7 @@ namespace Summer.CompetitiveTender.View
             // 
             this.btnOk.Location = new System.Drawing.Point(114, 204);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(236, 33);
+            this.btnOk.Size = new System.Drawing.Size(343, 33);
             this.btnOk.TabIndex = 4;
             this.btnOk.Text = "登  录";
             this.btnOk.UseSelectable = true;
@@ -148,7 +149,7 @@ namespace Summer.CompetitiveTender.View
             // rbTender
             // 
             this.rbTender.AutoSize = true;
-            this.rbTender.Location = new System.Drawing.Point(231, 170);
+            this.rbTender.Location = new System.Drawing.Point(312, 170);
             this.rbTender.Name = "rbTender";
             this.rbTender.Size = new System.Drawing.Size(62, 15);
             this.rbTender.TabIndex = 6;
@@ -158,19 +159,30 @@ namespace Summer.CompetitiveTender.View
             // rbExpert
             // 
             this.rbExpert.AutoSize = true;
-            this.rbExpert.Location = new System.Drawing.Point(303, 170);
+            this.rbExpert.Location = new System.Drawing.Point(382, 170);
             this.rbExpert.Name = "rbExpert";
-            this.rbExpert.Size = new System.Drawing.Size(49, 15);
+            this.rbExpert.Size = new System.Drawing.Size(75, 15);
             this.rbExpert.TabIndex = 7;
-            this.rbExpert.Text = "专家";
+            this.rbExpert.Text = "评标专家";
             this.rbExpert.UseSelectable = true;
+            // 
+            // rbAgency
+            // 
+            this.rbAgency.AutoSize = true;
+            this.rbAgency.Location = new System.Drawing.Point(229, 170);
+            this.rbAgency.Name = "rbAgency";
+            this.rbAgency.Size = new System.Drawing.Size(75, 15);
+            this.rbAgency.TabIndex = 7;
+            this.rbAgency.Text = "代理机构";
+            this.rbAgency.UseSelectable = true;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(464, 281);
+            this.ClientSize = new System.Drawing.Size(560, 281);
+            this.Controls.Add(this.rbAgency);
             this.Controls.Add(this.rbExpert);
             this.Controls.Add(this.rbTender);
             this.Controls.Add(this.rbInviteTender);
@@ -201,5 +213,6 @@ namespace Summer.CompetitiveTender.View
         private MetroRadioButton rbInviteTender;
         private MetroRadioButton rbTender;
         private MetroRadioButton rbExpert;
+        private MetroRadioButton rbAgency;
     }
 }

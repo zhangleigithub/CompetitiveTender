@@ -52,12 +52,12 @@
             this.colTemplateProjectType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTemplateNode = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colTemplateDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCreateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEdit = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.colDelete = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.colPreview = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.colPrint = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.colDownload = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.colTemplateCreateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTemplateEdit = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.colTemplateDelete = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.colTemplatePreview = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.colTemplatePrint = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.colTemplateDownload = new System.Windows.Forms.DataGridViewLinkColumn();
             this.btnCreateTemplate = new MetroFramework.Controls.MetroButton();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.btnQuery = new MetroFramework.Controls.MetroButton();
@@ -97,7 +97,7 @@
             this.metroTabControl1.Location = new System.Drawing.Point(20, 60);
             this.metroTabControl1.Multiline = true;
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(867, 351);
             this.metroTabControl1.TabIndex = 0;
             this.metroTabControl1.UseSelectable = true;
@@ -145,12 +145,12 @@
             this.colTemplateProjectType,
             this.colTemplateNode,
             this.colTemplateDescription,
-            this.colCreateDate,
-            this.colEdit,
-            this.colDelete,
-            this.colPreview,
-            this.colPrint,
-            this.colDownload});
+            this.colTemplateCreateDate,
+            this.colTemplateEdit,
+            this.colTemplateDelete,
+            this.colTemplatePreview,
+            this.colTemplatePrint,
+            this.colTemplateDownload});
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -208,49 +208,49 @@
             // 
             // colCreateDate
             // 
-            this.colCreateDate.HeaderText = "创建时间";
-            this.colCreateDate.Name = "colCreateDate";
-            this.colCreateDate.Width = 120;
+            this.colTemplateCreateDate.HeaderText = "创建时间";
+            this.colTemplateCreateDate.Name = "colCreateDate";
+            this.colTemplateCreateDate.Width = 120;
             // 
             // colEdit
             // 
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colEdit.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colEdit.HeaderText = "编辑";
-            this.colEdit.Name = "colEdit";
-            this.colEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colTemplateEdit.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colTemplateEdit.HeaderText = "编辑";
+            this.colTemplateEdit.Name = "colEdit";
+            this.colTemplateEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // colDelete
             // 
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colDelete.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colDelete.HeaderText = "删除";
-            this.colDelete.Name = "colDelete";
-            this.colDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colTemplateDelete.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colTemplateDelete.HeaderText = "删除";
+            this.colTemplateDelete.Name = "colDelete";
+            this.colTemplateDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // colPreview
             // 
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colPreview.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colPreview.HeaderText = "预览";
-            this.colPreview.Name = "colPreview";
-            this.colPreview.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colTemplatePreview.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colTemplatePreview.HeaderText = "预览";
+            this.colTemplatePreview.Name = "colPreview";
+            this.colTemplatePreview.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // colPrint
             // 
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colPrint.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colPrint.HeaderText = "打印";
-            this.colPrint.Name = "colPrint";
-            this.colPrint.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colTemplatePrint.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colTemplatePrint.HeaderText = "打印";
+            this.colTemplatePrint.Name = "colPrint";
+            this.colTemplatePrint.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // colDownload
             // 
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colDownload.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colDownload.HeaderText = "下载";
-            this.colDownload.Name = "colDownload";
-            this.colDownload.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colTemplateDownload.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colTemplateDownload.HeaderText = "下载";
+            this.colTemplateDownload.Name = "colDownload";
+            this.colTemplateDownload.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // btnCreateTemplate
             // 
@@ -577,12 +577,6 @@
         private System.Windows.Forms.DataGridViewLinkColumn colTemplatePreview;
         private System.Windows.Forms.DataGridViewLinkColumn colTemplatePrint;
         private System.Windows.Forms.DataGridViewLinkColumn colTemplateDownload;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCreateDate;
-        private System.Windows.Forms.DataGridViewLinkColumn colEdit;
-        private System.Windows.Forms.DataGridViewLinkColumn colDelete;
-        private System.Windows.Forms.DataGridViewLinkColumn colPreview;
-        private System.Windows.Forms.DataGridViewLinkColumn colPrint;
-        private System.Windows.Forms.DataGridViewLinkColumn colDownload;
         private MetroFramework.Controls.MetroButton btnQuery;
         private MetroFramework.Controls.MetroTextBox txtProjectId;
         private MetroFramework.Controls.MetroGrid grdITender;

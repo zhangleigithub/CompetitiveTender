@@ -61,6 +61,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BidEvaluaMethod\AddBidEvalMethod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BidEvaluaMethod\AddBidEvalMethod.Designer.cs">
+      <DependentUpon>AddBidEvalMethod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BidEvaluaMethod\AddScoringFactor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BidEvaluaMethod\AddScoringFactor.Designer.cs">
+      <DependentUpon>AddScoringFactor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BidEvaluaMethod\AddScoringPoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BidEvaluaMethod\AddScoringPoint.Designer.cs">
+      <DependentUpon>AddScoringPoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BidEvaluaMethod\BidEvalClauseInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BidEvaluaMethod\BidEvalClauseInfo.Designer.cs">
+      <DependentUpon>BidEvalClauseInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BidEvaluaMethod\BidEvalMethodManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BidEvaluaMethod\BidEvalMethodManage.Designer.cs">
+      <DependentUpon>BidEvalMethodManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BidEvaluaMethod\ScoringFactorInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BidEvaluaMethod\ScoringFactorInfo.Designer.cs">
+      <DependentUpon>ScoringFactorInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BidEvaluaMethod\ScoringPointInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BidEvaluaMethod\ScoringPointInfo.Designer.cs">
+      <DependentUpon>ScoringPointInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bid\BidManageForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,9 +128,35 @@
       <DependentUpon>InviteTenderManageForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="UserType.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BidEvaluaMethod\AddBidEvalMethod.resx">
+      <DependentUpon>AddBidEvalMethod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BidEvaluaMethod\AddScoringFactor.resx">
+      <DependentUpon>AddScoringFactor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BidEvaluaMethod\AddScoringPoint.resx">
+      <DependentUpon>AddScoringPoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BidEvaluaMethod\BidEvalClauseInfo.resx">
+      <DependentUpon>BidEvalClauseInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BidEvaluaMethod\BidEvalMethodManage.resx">
+      <DependentUpon>BidEvalMethodManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BidEvaluaMethod\ScoringFactorInfo.resx">
+      <DependentUpon>ScoringFactorInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BidEvaluaMethod\ScoringPointInfo.resx">
+      <DependentUpon>ScoringPointInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bid\BidManageForm.resx">
       <DependentUpon>BidManageForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,6 +168,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InviteTender\InviteTenderManageForm.resx">
       <DependentUpon>InviteTenderManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

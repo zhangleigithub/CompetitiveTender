@@ -53,6 +53,8 @@ namespace Summer.CompetitiveTender.View
             // 
             // txtUserName
             // 
+            this.txtUserName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
@@ -70,6 +72,7 @@ namespace Summer.CompetitiveTender.View
             this.txtUserName.MaxLength = 32767;
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.PasswordChar = '\0';
+            this.txtUserName.PromptText = "账号";
             this.txtUserName.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtUserName.SelectedText = "";
             this.txtUserName.SelectionLength = 0;
@@ -93,6 +96,8 @@ namespace Summer.CompetitiveTender.View
             // 
             // txtPassword
             // 
+            this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
@@ -110,6 +115,7 @@ namespace Summer.CompetitiveTender.View
             this.txtPassword.MaxLength = 32767;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
+            this.txtPassword.PromptText = "密码";
             this.txtPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtPassword.SelectedText = "";
             this.txtPassword.SelectionLength = 0;
@@ -124,7 +130,9 @@ namespace Summer.CompetitiveTender.View
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(114, 204);
+            this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOk.Location = new System.Drawing.Point(114, 214);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(343, 33);
             this.btnOk.TabIndex = 4;
@@ -179,7 +187,7 @@ namespace Summer.CompetitiveTender.View
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(560, 281);
+            this.ClientSize = new System.Drawing.Size(560, 270);
             this.Controls.Add(this.rbAgency);
             this.Controls.Add(this.rbExpert);
             this.Controls.Add(this.rbTender);

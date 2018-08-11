@@ -576,7 +576,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(883, 566);
             this.Controls.Add(this.metroTabControl1);
-            this.Name = "BidEvalMethodManage";
+            //this.Name = "BidEvalMethodManage";
             this.Text = "评标办法";
             this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.Black;

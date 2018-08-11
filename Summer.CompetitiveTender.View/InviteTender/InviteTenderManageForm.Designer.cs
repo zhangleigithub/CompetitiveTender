@@ -43,16 +43,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InviteTenderManageForm));
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.metroGrid1 = new Summer.Common.Controls.MultiHeaderDataGridView();
+            this.grdTemplate = new Summer.Common.Controls.MultiHeaderDataGridView();
             this.colTempleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVersion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCreateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEdit = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.colDelete = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.colPreview = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.colPrint = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.colDownload = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.colTemplateType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTemplateProjectType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTemplateNode = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.colTemplateDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTemplateCreateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTemplateEdit = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.colTemplateDelete = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.colTemplatePreview = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.colTemplatePrint = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.colTemplateDownload = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.btnCreateTemplate = new MetroFramework.Controls.MetroButton();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabControl2 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
@@ -68,7 +71,7 @@
             this.colDetail = new System.Windows.Forms.DataGridViewLinkColumn();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdTemplate)).BeginInit();
             this.metroTabPage2.SuspendLayout();
             this.metroTabControl2.SuspendLayout();
             this.metroTabPage9.SuspendLayout();
@@ -91,8 +94,8 @@
             // 
             // metroTabPage1
             // 
-            this.metroTabPage1.Controls.Add(this.metroGrid1);
-            this.metroTabPage1.Controls.Add(this.metroButton1);
+            this.metroTabPage1.Controls.Add(this.grdTemplate);
+            this.metroTabPage1.Controls.Add(this.btnCreateTemplate);
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.HorizontalScrollbarSize = 10;
@@ -105,18 +108,18 @@
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.VerticalScrollbarSize = 10;
             // 
-            // metroGrid1
+            // grdTemplate
             // 
-            this.metroGrid1.AllowUserToAddRows = false;
-            this.metroGrid1.AllowUserToDeleteRows = false;
-            this.metroGrid1.AllowUserToResizeRows = false;
-            this.metroGrid1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.grdTemplate.AllowUserToAddRows = false;
+            this.grdTemplate.AllowUserToDeleteRows = false;
+            this.grdTemplate.AllowUserToResizeRows = false;
+            this.grdTemplate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.grdTemplate.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.grdTemplate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.grdTemplate.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.grdTemplate.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -124,17 +127,20 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.metroGrid1.ColumnHeadersHeight = 45;
-            this.metroGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grdTemplate.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.grdTemplate.ColumnHeadersHeight = 45;
+            this.grdTemplate.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colTempleName,
-            this.colVersion,
-            this.colCreateDate,
-            this.colEdit,
-            this.colDelete,
-            this.colPreview,
-            this.colPrint,
-            this.colDownload});
+            this.colTemplateType,
+            this.colTemplateProjectType,
+            this.colTemplateNode,
+            this.colTemplateDescription,
+            this.colTemplateCreateDate,
+            this.colTemplateEdit,
+            this.colTemplateDelete,
+            this.colTemplatePreview,
+            this.colTemplatePrint,
+            this.colTemplateDownload});
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -142,13 +148,13 @@
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle7;
-            this.metroGrid1.EnableHeadersVisualStyles = false;
-            this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.Location = new System.Drawing.Point(3, 41);
-            this.metroGrid1.Name = "metroGrid1";
-            this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.grdTemplate.DefaultCellStyle = dataGridViewCellStyle7;
+            this.grdTemplate.EnableHeadersVisualStyles = false;
+            this.grdTemplate.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.grdTemplate.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.grdTemplate.Location = new System.Drawing.Point(3, 41);
+            this.grdTemplate.Name = "grdTemplate";
+            this.grdTemplate.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -156,78 +162,95 @@
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.metroGrid1.RowTemplate.Height = 23;
-            this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(853, 265);
-            this.metroGrid1.TabIndex = 3;
-            this.metroGrid1.TopRow = null;
+            this.grdTemplate.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.grdTemplate.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.grdTemplate.RowTemplate.Height = 23;
+            this.grdTemplate.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grdTemplate.Size = new System.Drawing.Size(853, 265);
+            this.grdTemplate.TabIndex = 3;
+            this.grdTemplate.TopRow = null;
+            this.grdTemplate.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdTemplate_CellContentClick);
             // 
             // colTempleName
             // 
-            this.colTempleName.HeaderText = "模板名称";
+            this.colTempleName.HeaderText = "名称";
             this.colTempleName.Name = "colTempleName";
             // 
-            // colVersion
+            // colTemplateType
             // 
-            this.colVersion.HeaderText = "版本号";
-            this.colVersion.Name = "colVersion";
+            this.colTemplateType.HeaderText = "类型";
+            this.colTemplateType.Name = "colTemplateType";
+            // 
+            // colTemplateProjectType
+            // 
+            this.colTemplateProjectType.HeaderText = "项目分类";
+            this.colTemplateProjectType.Name = "colTemplateProjectType";
+            // 
+            // colTemplateNode
+            // 
+            this.colTemplateNode.HeaderText = "节点信息";
+            this.colTemplateNode.Name = "colTemplateNode";
+            // 
+            // colTemplateDescription
+            // 
+            this.colTemplateDescription.HeaderText = "说明";
+            this.colTemplateDescription.Name = "colTemplateDescription";
             // 
             // colCreateDate
             // 
-            this.colCreateDate.HeaderText = "创建时间";
-            this.colCreateDate.Name = "colCreateDate";
-            this.colCreateDate.Width = 120;
+            this.colTemplateCreateDate.HeaderText = "创建时间";
+            this.colTemplateCreateDate.Name = "colCreateDate";
+            this.colTemplateCreateDate.Width = 120;
             // 
             // colEdit
             // 
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colEdit.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colEdit.HeaderText = "编辑";
-            this.colEdit.Name = "colEdit";
-            this.colEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colTemplateEdit.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colTemplateEdit.HeaderText = "编辑";
+            this.colTemplateEdit.Name = "colEdit";
+            this.colTemplateEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // colDelete
             // 
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colDelete.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colDelete.HeaderText = "删除";
-            this.colDelete.Name = "colDelete";
-            this.colDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colTemplateDelete.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colTemplateDelete.HeaderText = "删除";
+            this.colTemplateDelete.Name = "colDelete";
+            this.colTemplateDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // colPreview
             // 
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colPreview.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colPreview.HeaderText = "预览";
-            this.colPreview.Name = "colPreview";
-            this.colPreview.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colTemplatePreview.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colTemplatePreview.HeaderText = "预览";
+            this.colTemplatePreview.Name = "colPreview";
+            this.colTemplatePreview.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // colPrint
             // 
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colPrint.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colPrint.HeaderText = "打印";
-            this.colPrint.Name = "colPrint";
-            this.colPrint.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colTemplatePrint.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colTemplatePrint.HeaderText = "打印";
+            this.colTemplatePrint.Name = "colPrint";
+            this.colTemplatePrint.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // colDownload
             // 
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colDownload.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colDownload.HeaderText = "下载";
-            this.colDownload.Name = "colDownload";
-            this.colDownload.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colTemplateDownload.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colTemplateDownload.HeaderText = "下载";
+            this.colTemplateDownload.Name = "colDownload";
+            this.colTemplateDownload.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // metroButton1
+            // btnCreateTemplate
             // 
-            this.metroButton1.Location = new System.Drawing.Point(3, 12);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(90, 23);
-            this.metroButton1.TabIndex = 2;
-            this.metroButton1.Text = "新增模板";
-            this.metroButton1.UseSelectable = true;
+            this.btnCreateTemplate.Location = new System.Drawing.Point(3, 12);
+            this.btnCreateTemplate.Name = "btnCreateTemplate";
+            this.btnCreateTemplate.Size = new System.Drawing.Size(90, 23);
+            this.btnCreateTemplate.TabIndex = 2;
+            this.btnCreateTemplate.Text = "新增模板";
+            this.btnCreateTemplate.UseSelectable = true;
+            this.btnCreateTemplate.Click += new System.EventHandler(this.btnCreateTemplate_Click);
             // 
             // metroTabPage2
             // 
@@ -449,7 +472,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdTemplate)).EndInit();
             this.metroTabPage2.ResumeLayout(false);
             this.metroTabControl2.ResumeLayout(false);
             this.metroTabPage9.ResumeLayout(false);
@@ -463,8 +486,8 @@
         private MetroFramework.Controls.MetroTabControl metroTabControl1;
         private MetroFramework.Controls.MetroTabPage metroTabPage1;
         private MetroFramework.Controls.MetroTabPage metroTabPage2;
-        private Summer.Common.Controls.MultiHeaderDataGridView metroGrid1;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private Summer.Common.Controls.MultiHeaderDataGridView grdTemplate;
+        private MetroFramework.Controls.MetroButton btnCreateTemplate;
         private MetroFramework.Controls.MetroTabControl metroTabControl2;
         private MetroFramework.Controls.MetroTabPage metroTabPage3;
         private MetroFramework.Controls.MetroTabPage metroTabPage4;
@@ -474,16 +497,19 @@
         private MetroFramework.Controls.MetroTabPage metroTabPage8;
         private MetroFramework.Controls.MetroTabPage metroTabPage9;
         private MetroFramework.Controls.MetroGrid metroGrid2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTempleName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colVersion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCreateDate;
-        private System.Windows.Forms.DataGridViewLinkColumn colEdit;
-        private System.Windows.Forms.DataGridViewLinkColumn colDelete;
-        private System.Windows.Forms.DataGridViewLinkColumn colPreview;
-        private System.Windows.Forms.DataGridViewLinkColumn colPrint;
-        private System.Windows.Forms.DataGridViewLinkColumn colDownload;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInviteTenderName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInviteTenderCreateDate;
         private System.Windows.Forms.DataGridViewLinkColumn colDetail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTempleName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTemplateType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTemplateProjectType;
+        private System.Windows.Forms.DataGridViewLinkColumn colTemplateNode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTemplateDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTemplateCreateDate;
+        private System.Windows.Forms.DataGridViewLinkColumn colTemplateEdit;
+        private System.Windows.Forms.DataGridViewLinkColumn colTemplateDelete;
+        private System.Windows.Forms.DataGridViewLinkColumn colTemplatePreview;
+        private System.Windows.Forms.DataGridViewLinkColumn colTemplatePrint;
+        private System.Windows.Forms.DataGridViewLinkColumn colTemplateDownload;
     }
 }

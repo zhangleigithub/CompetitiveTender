@@ -67,11 +67,17 @@
     <Compile Include="Bid\BidManageForm.designer.cs">
       <DependentUpon>BidManageForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="InviteTender\CareteITenderTemplateForm.cs">
+    <Compile Include="InviteTender\CreateITenderTemplateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InviteTender\CareteITenderTemplateForm.Designer.cs">
-      <DependentUpon>CareteITenderTemplateForm.cs</DependentUpon>
+    <Compile Include="InviteTender\CreateITenderTemplateForm.Designer.cs">
+      <DependentUpon>CreateITenderTemplateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InviteTender\ITenderTemplateNodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InviteTender\ITenderTemplateNodeForm.Designer.cs">
+      <DependentUpon>ITenderTemplateNodeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -92,8 +98,11 @@
     <EmbeddedResource Include="Bid\BidManageForm.resx">
       <DependentUpon>BidManageForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InviteTender\CareteITenderTemplateForm.resx">
-      <DependentUpon>CareteITenderTemplateForm.cs</DependentUpon>
+    <EmbeddedResource Include="InviteTender\CreateITenderTemplateForm.resx">
+      <DependentUpon>CreateITenderTemplateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InviteTender\ITenderTemplateNodeForm.resx">
+      <DependentUpon>ITenderTemplateNodeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

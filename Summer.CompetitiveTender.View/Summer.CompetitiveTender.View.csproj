@@ -73,6 +73,18 @@
     <Compile Include="InviteTender\CreateITenderTemplateForm.Designer.cs">
       <DependentUpon>CreateITenderTemplateForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="InviteTender\ITenderDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InviteTender\ITenderDetailForm.Designer.cs">
+      <DependentUpon>ITenderDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InviteTender\ITenderEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InviteTender\ITenderEditForm.Designer.cs">
+      <DependentUpon>ITenderEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="InviteTender\ITenderTemplateNodeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +112,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InviteTender\CreateITenderTemplateForm.resx">
       <DependentUpon>CreateITenderTemplateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InviteTender\ITenderDetailForm.resx">
+      <DependentUpon>ITenderDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InviteTender\ITenderEditForm.resx">
+      <DependentUpon>ITenderEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InviteTender\ITenderTemplateNodeForm.resx">
       <DependentUpon>ITenderTemplateNodeForm.cs</DependentUpon>

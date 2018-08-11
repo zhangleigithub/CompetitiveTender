@@ -41,6 +41,11 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
             for (int i = 0; i < 30; i++)
             {
+                this.grdITender.Rows.Add("测试" + i, "测试", "测试", "测试", "测试", "测试", "测试", "测试", "项目详情", "编辑招标文件", "删除招标文件");
+            }
+
+            for (int i = 0; i < 30; i++)
+            {
                 this.metroGrid2.Rows.Add("测试" + i, DateTime.Now.ToLocalTime(), "详情");
             }
         }
@@ -69,6 +74,27 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 if (MetroMessageBox.Show(this, "确定要删除吗？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     this.grdTemplate.Rows.RemoveAt(e.RowIndex);
+                }
+            }
+        }
+
+        private void grdITender_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == this.colITenderDetail.Index)
+            {
+                ITenderDetailForm iTenderDetailForm = new ITenderDetailForm();
+                iTenderDetailForm.ShowDialog();
+            }
+            else if (e.ColumnIndex == this.colEditITenderFile.Index)
+            {
+                ITenderEditForm iTenderEditForm = new ITenderEditForm();
+                iTenderEditForm.ShowDialog();
+            }
+            else if (e.ColumnIndex == this.colDeleteITenderFile.Index)
+            {
+                if (MetroMessageBox.Show(this, "确定要删除吗？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    this.grdITender.Rows.RemoveAt(e.RowIndex);
                 }
             }
         }

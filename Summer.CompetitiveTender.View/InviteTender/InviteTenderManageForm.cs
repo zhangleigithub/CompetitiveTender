@@ -46,7 +46,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
             for (int i = 0; i < 30; i++)
             {
-                this.metroGrid2.Rows.Add("测试" + i, DateTime.Now.ToLocalTime(), "详情");
+                this.grdITQuest.Rows.Add("测试" + i, "测试", "测试", "测试", "测试", "测试", "测试", DateTime.Now.ToLocalTime(),"澄清", "详情");
             }
         }
 
@@ -96,6 +96,15 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 {
                     this.grdITender.Rows.RemoveAt(e.RowIndex);
                 }
+            }
+        }
+
+        private void grdITQuest_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == this.colItQuestDetail.Index)
+            {
+                ITenderDetailForm iTenderDetailForm = new ITenderDetailForm();
+                iTenderDetailForm.ShowDialog();
             }
         }
     }

@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Agency\AgencyManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agency\AgencyManageForm.Designer.cs">
+      <DependentUpon>AgencyManageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BidEvaluaMethod\AddBidEvalMethod.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,12 @@
     <Compile Include="Bid\BidManageForm.designer.cs">
       <DependentUpon>BidManageForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Expert\ExpertManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expert\ExpertManageForm.Designer.cs">
+      <DependentUpon>ExpertManageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="InviteTender\CreateITenderTemplateForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +166,9 @@
     <Compile Include="UserType.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Agency\AgencyManageForm.resx">
+      <DependentUpon>AgencyManageForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BidEvaluaMethod\AddBidEvalMethod.resx">
       <DependentUpon>AddBidEvalMethod.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Bid\BidManageForm.resx">
       <DependentUpon>BidManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Expert\ExpertManageForm.resx">
+      <DependentUpon>ExpertManageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InviteTender\CreateITenderTemplateForm.resx">
       <DependentUpon>CreateITenderTemplateForm.cs</DependentUpon>

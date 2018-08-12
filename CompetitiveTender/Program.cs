@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using Summer.CompetitiveTender.View.Agency;
+using Summer.CompetitiveTender.View.Expert;
 
 namespace CompetitiveTender
 {
@@ -31,7 +33,7 @@ namespace CompetitiveTender
                 }
                 else if (login.UserType == UserType.Agency)
                 {
-                    MessageBox.Show("疯狂开发中...");
+                    Application.Run(new AgencyManageForm());
                 }
                 else if (login.UserType == UserType.Tender)
                 {
@@ -39,7 +41,7 @@ namespace CompetitiveTender
                 }
                 else if (login.UserType == UserType.Expert)
                 {
-                    MessageBox.Show("疯狂开发中...");
+                    Application.Run(new ExpertManageForm());
                 }
                 else
                 {

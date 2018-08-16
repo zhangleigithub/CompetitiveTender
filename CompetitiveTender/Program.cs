@@ -29,7 +29,7 @@ namespace CompetitiveTender
             {
                 if (login.UserType == UserType.InviteTender)
                 {
-                    Application.Run(new InviteTenderManageForm());
+                    Application.Run(new MainForm());
                 }
                 else if (login.UserType == UserType.Agency)
                 {

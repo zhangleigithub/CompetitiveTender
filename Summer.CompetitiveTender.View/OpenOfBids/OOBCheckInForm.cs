@@ -8,11 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Summer.CompetitiveTender.View.Agency
+namespace Summer.CompetitiveTender.View.OpenOfBids
 {
-    public partial class AgencyManageForm : MetroForm
+    public partial class OOBCheckInForm : MetroForm
     {
-        public AgencyManageForm()
+        public OOBCheckInForm()
         {
             InitializeComponent();
         }

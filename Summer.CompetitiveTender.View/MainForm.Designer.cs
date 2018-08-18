@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.tsmiFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,13 +42,14 @@
             this.tsmiQuery = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiQueryITenderTemplate = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiQueryITenderFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiQueryITenderFileQuestion = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiQueryBidTemplate = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiQueryBidFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiQueryOpenOfBidsTemplate = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiQueryEvaluationOfBidsTemplate = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiOpenOfBids = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiCheckIn = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiDecryptBidFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiOOBCheckIn = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiOOBDecryptBidFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEvaluationOfBids = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEOBPrepare = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEOBClean = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,7 +75,7 @@
             this.tsmiHelp});
             this.menuStrip.Location = new System.Drawing.Point(20, 60);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(592, 25);
+            this.menuStrip.Size = new System.Drawing.Size(718, 25);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -97,7 +97,6 @@
             // 
             // tsmiNewITenderTemplate
             // 
-            this.tsmiNewITenderTemplate.Image = ((System.Drawing.Image)(resources.GetObject("tsmiNewITenderTemplate.Image")));
             this.tsmiNewITenderTemplate.ImageTransparentColor = System.Drawing.Color.Black;
             this.tsmiNewITenderTemplate.Name = "tsmiNewITenderTemplate";
             this.tsmiNewITenderTemplate.Size = new System.Drawing.Size(148, 22);
@@ -111,11 +110,12 @@
             this.tsmiNewITenderFile.Text = "新建招标文件";
             this.tsmiNewITenderFile.Click += new System.EventHandler(this.OnNewITenderFileToolStripMenuItemClick);
             // 
-            // tsmiBidTemplate
+            // tsmiNewBidTemplate
             // 
             this.tsmiNewBidTemplate.Name = "tsmiNewBidTemplate";
             this.tsmiNewBidTemplate.Size = new System.Drawing.Size(148, 22);
             this.tsmiNewBidTemplate.Text = "新建投标模板";
+            this.tsmiNewBidTemplate.Click += new System.EventHandler(this.OnNewBidTemplateToolStripMenuItemClick);
             // 
             // tsmiNewBidFile
             // 
@@ -129,12 +129,14 @@
             this.tsmiNewOpenOfBidsTemplate.Name = "tsmiNewOpenOfBidsTemplate";
             this.tsmiNewOpenOfBidsTemplate.Size = new System.Drawing.Size(148, 22);
             this.tsmiNewOpenOfBidsTemplate.Text = "新建开标模板";
+            this.tsmiNewOpenOfBidsTemplate.Click += new System.EventHandler(this.OnNewOpenOfBidsTemplateToolStripMenuItemClick);
             // 
             // tsmiNewEvaluationOfBidsTemplate
             // 
             this.tsmiNewEvaluationOfBidsTemplate.Name = "tsmiNewEvaluationOfBidsTemplate";
             this.tsmiNewEvaluationOfBidsTemplate.Size = new System.Drawing.Size(148, 22);
             this.tsmiNewEvaluationOfBidsTemplate.Text = "新建评标模板";
+            this.tsmiNewEvaluationOfBidsTemplate.Click += new System.EventHandler(this.OnNewEvaluationOfBidsTemplateToolStripMenuItemClick);
             // 
             // toolStripSeparator5
             // 
@@ -153,6 +155,7 @@
             this.tsmiQuery.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiQueryITenderTemplate,
             this.tsmiQueryITenderFile,
+            this.tsmiQueryITenderFileQuestion,
             this.tsmiQueryBidTemplate,
             this.tsmiQueryBidFile,
             this.tsmiQueryOpenOfBidsTemplate,
@@ -173,51 +176,65 @@
             this.tsmiQueryITenderFile.Name = "tsmiQueryITenderFile";
             this.tsmiQueryITenderFile.Size = new System.Drawing.Size(148, 22);
             this.tsmiQueryITenderFile.Text = "浏览招标文件";
+            this.tsmiQueryITenderFile.Click += new System.EventHandler(this.OnQueryITenderFileToolStripMenuItemClick);
+            // 
+            // tsmiQueryITenderFileQuestion
+            // 
+            this.tsmiQueryITenderFileQuestion.Name = "tsmiQueryITenderFileQuestion";
+            this.tsmiQueryITenderFileQuestion.Size = new System.Drawing.Size(148, 22);
+            this.tsmiQueryITenderFileQuestion.Text = "投标文件澄清";
+            this.tsmiQueryITenderFileQuestion.Click += new System.EventHandler(this.OnQueryITenderFileQuestionToolStripMenuItemClick);
             // 
             // tsmiQueryBidTemplate
             // 
             this.tsmiQueryBidTemplate.Name = "tsmiQueryBidTemplate";
             this.tsmiQueryBidTemplate.Size = new System.Drawing.Size(148, 22);
             this.tsmiQueryBidTemplate.Text = "浏览投标模板";
+            this.tsmiQueryBidTemplate.Click += new System.EventHandler(this.OnQueryBidTemplateToolStripMenuItemClick);
             // 
             // tsmiQueryBidFile
             // 
             this.tsmiQueryBidFile.Name = "tsmiQueryBidFile";
             this.tsmiQueryBidFile.Size = new System.Drawing.Size(148, 22);
             this.tsmiQueryBidFile.Text = "浏览投标文件";
+            this.tsmiQueryBidFile.Click += new System.EventHandler(this.OnQueryBidFileToolStripMenuItemClick);
             // 
             // tsmiQueryOpenOfBidsTemplate
             // 
             this.tsmiQueryOpenOfBidsTemplate.Name = "tsmiQueryOpenOfBidsTemplate";
             this.tsmiQueryOpenOfBidsTemplate.Size = new System.Drawing.Size(148, 22);
             this.tsmiQueryOpenOfBidsTemplate.Text = "浏览开标模板";
+            this.tsmiQueryOpenOfBidsTemplate.Click += new System.EventHandler(this.OnQueryOpenOfBidsTemplateToolStripMenuItemClick);
             // 
             // tsmiQueryEvaluationOfBidsTemplate
             // 
             this.tsmiQueryEvaluationOfBidsTemplate.Name = "tsmiQueryEvaluationOfBidsTemplate";
             this.tsmiQueryEvaluationOfBidsTemplate.Size = new System.Drawing.Size(148, 22);
             this.tsmiQueryEvaluationOfBidsTemplate.Text = "浏览评标模板";
+            this.tsmiQueryEvaluationOfBidsTemplate.Click += new System.EventHandler(this.OnQueryEvaluationOfBidsTemplateToolStripMenuItemClick);
             // 
             // tsmiOpenOfBids
             // 
             this.tsmiOpenOfBids.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiCheckIn,
-            this.tsmiDecryptBidFile});
+            this.tsmiOOBCheckIn,
+            this.tsmiOOBDecryptBidFile});
             this.tsmiOpenOfBids.Name = "tsmiOpenOfBids";
             this.tsmiOpenOfBids.Size = new System.Drawing.Size(62, 21);
             this.tsmiOpenOfBids.Text = "开标(&O)";
             // 
-            // tsmiCheckIn
+            // tsmiOOBCheckIn
             // 
-            this.tsmiCheckIn.Name = "tsmiCheckIn";
-            this.tsmiCheckIn.Size = new System.Drawing.Size(148, 22);
-            this.tsmiCheckIn.Text = "在线签到";
+            this.tsmiOOBCheckIn.Name = "tsmiOOBCheckIn";
+            this.tsmiOOBCheckIn.Size = new System.Drawing.Size(152, 22);
+            this.tsmiOOBCheckIn.Text = "在线签到";
+            this.tsmiOOBCheckIn.Click += new System.EventHandler(this.OnOOBCheckInToolStripMenuItemClick);
             // 
-            // tsmiDecryptBidFile
+            // tsmiOOBDecryptBidFile
             // 
-            this.tsmiDecryptBidFile.Name = "tsmiDecryptBidFile";
-            this.tsmiDecryptBidFile.Size = new System.Drawing.Size(148, 22);
-            this.tsmiDecryptBidFile.Text = "解密投标文件";
+            this.tsmiOOBDecryptBidFile.Name = "tsmiOOBDecryptBidFile";
+            this.tsmiOOBDecryptBidFile.Size = new System.Drawing.Size(152, 22);
+            this.tsmiOOBDecryptBidFile.Text = "解密投标文件";
+            this.tsmiOOBDecryptBidFile.Click += new System.EventHandler(this.OnOOBDecryptBidFileToolStripMenuItemClick);
             // 
             // tsmiEvaluationOfBids
             // 
@@ -235,38 +252,44 @@
             // tsmiEOBPrepare
             // 
             this.tsmiEOBPrepare.Name = "tsmiEOBPrepare";
-            this.tsmiEOBPrepare.Size = new System.Drawing.Size(136, 22);
+            this.tsmiEOBPrepare.Size = new System.Drawing.Size(152, 22);
             this.tsmiEOBPrepare.Text = "评标准备";
+            this.tsmiEOBPrepare.Click += new System.EventHandler(this.OnEOBPrepareToolStripMenuItemClick);
             // 
             // tsmiEOBClean
             // 
             this.tsmiEOBClean.Name = "tsmiEOBClean";
-            this.tsmiEOBClean.Size = new System.Drawing.Size(136, 22);
+            this.tsmiEOBClean.Size = new System.Drawing.Size(152, 22);
             this.tsmiEOBClean.Text = "清标";
+            this.tsmiEOBClean.Click += new System.EventHandler(this.OnEOBCleanToolStripMenuItemClick);
             // 
             // tsmiEOBQualificationReview
             // 
             this.tsmiEOBQualificationReview.Name = "tsmiEOBQualificationReview";
-            this.tsmiEOBQualificationReview.Size = new System.Drawing.Size(136, 22);
+            this.tsmiEOBQualificationReview.Size = new System.Drawing.Size(152, 22);
             this.tsmiEOBQualificationReview.Text = "资格评审";
+            this.tsmiEOBQualificationReview.Click += new System.EventHandler(this.OnEOBQualificationReviewToolStripMenuItemClick);
             // 
             // tsmiEOBTechnologyReview
             // 
             this.tsmiEOBTechnologyReview.Name = "tsmiEOBTechnologyReview";
-            this.tsmiEOBTechnologyReview.Size = new System.Drawing.Size(136, 22);
+            this.tsmiEOBTechnologyReview.Size = new System.Drawing.Size(152, 22);
             this.tsmiEOBTechnologyReview.Text = "技术标评审";
+            this.tsmiEOBTechnologyReview.Click += new System.EventHandler(this.OnEOBTechnologyReviewToolStripMenuItemClick);
             // 
             // tsmiEOBCommerceReview
             // 
             this.tsmiEOBCommerceReview.Name = "tsmiEOBCommerceReview";
-            this.tsmiEOBCommerceReview.Size = new System.Drawing.Size(136, 22);
+            this.tsmiEOBCommerceReview.Size = new System.Drawing.Size(152, 22);
             this.tsmiEOBCommerceReview.Text = "商务标评审";
+            this.tsmiEOBCommerceReview.Click += new System.EventHandler(this.OnEOBCommerceReviewToolStripMenuItemClick);
             // 
             // tsmiReviewResult
             // 
             this.tsmiReviewResult.Name = "tsmiReviewResult";
-            this.tsmiReviewResult.Size = new System.Drawing.Size(136, 22);
+            this.tsmiReviewResult.Size = new System.Drawing.Size(152, 22);
             this.tsmiReviewResult.Text = "评审结果";
+            this.tsmiReviewResult.Click += new System.EventHandler(this.OnReviewResultToolStripMenuItemClick);
             // 
             // tsmiHelp
             // 
@@ -303,7 +326,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 418);
+            this.ClientSize = new System.Drawing.Size(758, 439);
             this.Controls.Add(this.menuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
@@ -343,8 +366,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiQueryEvaluationOfBidsTemplate;
 
         private System.Windows.Forms.ToolStripMenuItem tsmiOpenOfBids;
-        private System.Windows.Forms.ToolStripMenuItem tsmiCheckIn;
-        private System.Windows.Forms.ToolStripMenuItem tsmiDecryptBidFile;
+        private System.Windows.Forms.ToolStripMenuItem tsmiOOBCheckIn;
+        private System.Windows.Forms.ToolStripMenuItem tsmiOOBDecryptBidFile;
 
         private System.Windows.Forms.ToolStripMenuItem tsmiEvaluationOfBids;
         private System.Windows.Forms.ToolStripMenuItem tsmiEOBPrepare;
@@ -358,6 +381,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiIndex;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripMenuItem tsmiAbout;
+        private System.Windows.Forms.ToolStripMenuItem tsmiQueryITenderFileQuestion;
     }
 }
 

@@ -75,12 +75,6 @@
     <Compile Include="AboutBoxForm.Designer.cs">
       <DependentUpon>AboutBoxForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Agency\AgencyManageForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Agency\AgencyManageForm.Designer.cs">
-      <DependentUpon>AgencyManageForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="BidEvaluaMethod\AddBidEvalMethod.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,11 +123,71 @@
     <Compile Include="Bid\BidManageForm.designer.cs">
       <DependentUpon>BidManageForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Expert\ExpertManageForm.cs">
+    <Compile Include="Bid\CreateBidForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Expert\ExpertManageForm.Designer.cs">
-      <DependentUpon>ExpertManageForm.cs</DependentUpon>
+    <Compile Include="Bid\CreateBidForm.Designer.cs">
+      <DependentUpon>CreateBidForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bid\CreateBidTemplateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bid\CreateBidTemplateForm.Designer.cs">
+      <DependentUpon>CreateBidTemplateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bid\QueryBidForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bid\QueryBidForm.Designer.cs">
+      <DependentUpon>QueryBidForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bid\QueryBidTemplateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bid\QueryBidTemplateForm.Designer.cs">
+      <DependentUpon>QueryBidTemplateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluationOfBids\EOBCleanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EvaluationOfBids\EOBCleanForm.Designer.cs">
+      <DependentUpon>EOBCleanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluationOfBids\EOBCommerceReviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EvaluationOfBids\EOBCommerceReviewForm.Designer.cs">
+      <DependentUpon>EOBCommerceReviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluationOfBids\EOBPrepareForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EvaluationOfBids\EOBPrepareForm.Designer.cs">
+      <DependentUpon>EOBPrepareForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluationOfBids\EOBQualificationReviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EvaluationOfBids\EOBQualificationReviewForm.Designer.cs">
+      <DependentUpon>EOBQualificationReviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluationOfBids\EOBTechnologyReviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EvaluationOfBids\EOBTechnologyReviewForm.Designer.cs">
+      <DependentUpon>EOBTechnologyReviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluationOfBids\ReviewResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EvaluationOfBids\ReviewResultForm.Designer.cs">
+      <DependentUpon>ReviewResultForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InviteTender\CreateITenderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InviteTender\CreateITenderForm.Designer.cs">
+      <DependentUpon>CreateITenderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="InviteTender\CreateITenderTemplateForm.cs">
       <SubType>Form</SubType>
@@ -159,6 +213,24 @@
     <Compile Include="InviteTender\ITenderTemplateNodeForm.Designer.cs">
       <DependentUpon>ITenderTemplateNodeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="InviteTender\QueryITenderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InviteTender\QueryITenderForm.Designer.cs">
+      <DependentUpon>QueryITenderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InviteTender\QueryITenderQuestionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InviteTender\QueryITenderQuestionForm.Designer.cs">
+      <DependentUpon>QueryITenderQuestionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InviteTender\QueryITenderTemplateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InviteTender\QueryITenderTemplateForm.Designer.cs">
+      <DependentUpon>QueryITenderTemplateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +249,18 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OpenOfBids\OOBCheckInForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenOfBids\OOBCheckInForm.Designer.cs">
+      <DependentUpon>OOBCheckInForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpenOfBids\OOBDecryptBidFileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenOfBids\OOBDecryptBidFileForm.Designer.cs">
+      <DependentUpon>OOBDecryptBidFileForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -188,9 +272,6 @@
   <ItemGroup>
     <EmbeddedResource Include="AboutBoxForm.resx">
       <DependentUpon>AboutBoxForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Agency\AgencyManageForm.resx">
-      <DependentUpon>AgencyManageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BidEvaluaMethod\AddBidEvalMethod.resx">
       <DependentUpon>AddBidEvalMethod.cs</DependentUpon>
@@ -216,8 +297,8 @@
     <EmbeddedResource Include="Bid\BidManageForm.resx">
       <DependentUpon>BidManageForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Expert\ExpertManageForm.resx">
-      <DependentUpon>ExpertManageForm.cs</DependentUpon>
+    <EmbeddedResource Include="InviteTender\CreateITenderForm.resx">
+      <DependentUpon>CreateITenderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InviteTender\CreateITenderTemplateForm.resx">
       <DependentUpon>CreateITenderTemplateForm.cs</DependentUpon>
@@ -230,6 +311,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InviteTender\ITenderTemplateNodeForm.resx">
       <DependentUpon>ITenderTemplateNodeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InviteTender\QueryITenderForm.resx">
+      <DependentUpon>QueryITenderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InviteTender\QueryITenderQuestionForm.resx">
+      <DependentUpon>QueryITenderQuestionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InviteTender\QueryITenderTemplateForm.resx">
+      <DependentUpon>QueryITenderTemplateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -294,6 +384,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

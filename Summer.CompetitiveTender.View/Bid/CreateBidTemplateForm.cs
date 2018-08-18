@@ -8,11 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Summer.CompetitiveTender.View.Expert
+namespace Summer.CompetitiveTender.View.Bid
 {
-    public partial class ExpertManageForm : MetroForm
+    public partial class CreateBidTemplateForm : MetroForm
     {
-        public ExpertManageForm()
+        public CreateBidTemplateForm()
         {
             InitializeComponent();
         }

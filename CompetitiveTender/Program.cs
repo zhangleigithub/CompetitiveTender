@@ -27,26 +27,7 @@ namespace CompetitiveTender
 
             if (login.ShowDialog() == DialogResult.OK)
             {
-                if (login.UserType == UserType.InviteTender)
-                {
-                    Application.Run(new MainForm());
-                }
-                else if (login.UserType == UserType.Agency)
-                {
-                    Application.Run(new AgencyManageForm());
-                }
-                else if (login.UserType == UserType.Tender)
-                {
-                    Application.Run(new BidManageForm());
-                }
-                else if (login.UserType == UserType.Expert)
-                {
-                    Application.Run(new ExpertManageForm());
-                }
-                else
-                {
-                    MessageBox.Show("用户类型未知！");
-                }
+                Application.Run(new MainForm(login.UserType));
             }
         }
     }

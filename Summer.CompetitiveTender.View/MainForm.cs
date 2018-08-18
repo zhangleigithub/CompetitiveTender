@@ -20,6 +20,141 @@ namespace Summer.CompetitiveTender.View
             InitializeComponent();
         }
 
+        public MainForm(UserType userType) : this()
+        {
+            switch (userType)
+            {
+                case UserType.Unkown:
+                    break;
+                case UserType.InviteTender:
+                    this.tsmiFile.Visible = true;
+                    this.tsmiNewITenderTemplate.Visible = true;
+                    this.tsmiNewITenderFile.Visible = true;
+                    this.tsmiNewBidTemplate.Visible = false;
+                    this.tsmiNewBidFile.Visible = false;
+                    this.tsmiNewOpenOfBidsTemplate.Visible = true;
+                    this.tsmiNewEvaluationOfBidsTemplate.Visible = true;
+                    this.toolStripSeparator5.Visible = true;
+                    this.tsmiExit.Visible = true;
+
+                    this.tsmiQuery.Visible = true;
+                    this.tsmiQueryITenderTemplate.Visible = true;
+                    this.tsmiQueryITenderFile.Visible = true;
+                    this.tsmiQueryBidTemplate.Visible = false;
+                    this.tsmiQueryBidFile.Visible = false;
+                    this.tsmiQueryOpenOfBidsTemplate.Visible = true;
+                    this.tsmiQueryEvaluationOfBidsTemplate.Visible = true;
+
+                    this.tsmiOpenOfBids.Visible = true;
+                    this.tsmiCheckIn.Visible = true;
+                    this.tsmiDecryptBidFile.Visible = true;
+
+                    this.tsmiEvaluationOfBids.Visible = true;
+                    this.tsmiEOBPrepare.Visible = true;
+                    this.tsmiEOBClean.Visible = true;
+                    this.tsmiEOBQualificationReview.Visible = true;
+                    this.tsmiEOBTechnologyReview.Visible = true;
+                    this.tsmiEOBCommerceReview.Visible = true;
+                    this.tsmiReviewResult.Visible = true;
+                    break;
+                case UserType.Agency:
+                    this.tsmiFile.Visible = true;
+                    this.tsmiNewITenderTemplate.Visible = true;
+                    this.tsmiNewITenderFile.Visible = true;
+                    this.tsmiNewBidTemplate.Visible = true;
+                    this.tsmiNewBidFile.Visible = true;
+                    this.tsmiNewOpenOfBidsTemplate.Visible = true;
+                    this.tsmiNewEvaluationOfBidsTemplate.Visible = false;
+                    this.toolStripSeparator5.Visible = true;
+                    this.tsmiExit.Visible = true;
+
+                    this.tsmiQuery.Visible = true;
+                    this.tsmiQueryITenderTemplate.Visible = true;
+                    this.tsmiQueryITenderFile.Visible = true;
+                    this.tsmiQueryBidTemplate.Visible = true;
+                    this.tsmiQueryBidFile.Visible = true;
+                    this.tsmiQueryOpenOfBidsTemplate.Visible = true;
+                    this.tsmiQueryEvaluationOfBidsTemplate.Visible = false;
+
+                    this.tsmiOpenOfBids.Visible = true;
+                    this.tsmiCheckIn.Visible = true;
+                    this.tsmiDecryptBidFile.Visible = true;
+
+                    this.tsmiEvaluationOfBids.Visible = false;
+                    this.tsmiEOBPrepare.Visible = false;
+                    this.tsmiEOBClean.Visible = false;
+                    this.tsmiEOBQualificationReview.Visible = false;
+                    this.tsmiEOBTechnologyReview.Visible = false;
+                    this.tsmiEOBCommerceReview.Visible = false;
+                    this.tsmiReviewResult.Visible = false;
+                    break;
+                case UserType.Tender:
+                    this.tsmiFile.Visible = true;
+                    this.tsmiNewITenderTemplate.Visible = false;
+                    this.tsmiNewITenderFile.Visible = false;
+                    this.tsmiNewBidTemplate.Visible = true;
+                    this.tsmiNewBidFile.Visible = true;
+                    this.tsmiNewOpenOfBidsTemplate.Visible = false;
+                    this.tsmiNewEvaluationOfBidsTemplate.Visible = false;
+                    this.toolStripSeparator5.Visible = true;
+                    this.tsmiExit.Visible = true;
+
+                    this.tsmiQuery.Visible = true;
+                    this.tsmiQueryITenderTemplate.Visible = false;
+                    this.tsmiQueryITenderFile.Visible = true;
+                    this.tsmiQueryBidTemplate.Visible = true;
+                    this.tsmiQueryBidFile.Visible = true;
+                    this.tsmiQueryOpenOfBidsTemplate.Visible = false;
+                    this.tsmiQueryEvaluationOfBidsTemplate.Visible = false;
+
+                    this.tsmiOpenOfBids.Visible = true;
+                    this.tsmiCheckIn.Visible = true;
+                    this.tsmiDecryptBidFile.Visible = true;
+
+                    this.tsmiEvaluationOfBids.Visible = false;
+                    this.tsmiEOBPrepare.Visible = false;
+                    this.tsmiEOBClean.Visible = false;
+                    this.tsmiEOBQualificationReview.Visible = false;
+                    this.tsmiEOBTechnologyReview.Visible = false;
+                    this.tsmiEOBCommerceReview.Visible = false;
+                    this.tsmiReviewResult.Visible = false;
+                    break;
+                case UserType.Expert:
+                    this.tsmiFile.Visible = false;
+                    this.tsmiNewITenderTemplate.Visible = false;
+                    this.tsmiNewITenderFile.Visible = false;
+                    this.tsmiNewBidTemplate.Visible = false;
+                    this.tsmiNewBidFile.Visible = false;
+                    this.tsmiNewOpenOfBidsTemplate.Visible = false;
+                    this.tsmiNewEvaluationOfBidsTemplate.Visible = false;
+                    this.toolStripSeparator5.Visible = false;
+                    this.tsmiExit.Visible = false;
+
+                    this.tsmiQuery.Visible = false;
+                    this.tsmiQueryITenderTemplate.Visible = false;
+                    this.tsmiQueryITenderFile.Visible = false;
+                    this.tsmiQueryBidTemplate.Visible = false;
+                    this.tsmiQueryBidFile.Visible = false;
+                    this.tsmiQueryOpenOfBidsTemplate.Visible = false;
+                    this.tsmiQueryEvaluationOfBidsTemplate.Visible = false;
+
+                    this.tsmiOpenOfBids.Visible = false;
+                    this.tsmiCheckIn.Visible = false;
+                    this.tsmiDecryptBidFile.Visible = false;
+
+                    this.tsmiEvaluationOfBids.Visible = true;
+                    this.tsmiEOBPrepare.Visible = true;
+                    this.tsmiEOBClean.Visible = true;
+                    this.tsmiEOBQualificationReview.Visible = true;
+                    this.tsmiEOBTechnologyReview.Visible = true;
+                    this.tsmiEOBCommerceReview.Visible = true;
+                    this.tsmiReviewResult.Visible = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
         #endregion
 
         #region 文件
@@ -64,52 +199,6 @@ namespace Summer.CompetitiveTender.View
         #endregion
 
         #region 评标
-
-        #endregion
-
-        #region 视图
-
-        private void OnToolBarToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
-        }
-
-        private void OnStatusBarToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
-        }
-
-        #endregion
-
-        #region 窗口
-
-        private void OnCascadeToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.Cascade);
-        }
-
-        private void OnTileVerticalToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.TileVertical);
-        }
-
-        private void OnTileHorizontalToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.TileHorizontal);
-        }
-
-        private void OnArrangeIconsToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.ArrangeIcons);
-        }
-
-        private void OnCloseAllToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            foreach (Form childForm in MdiChildren)
-            {
-                childForm.Close();
-            }
-        }
 
         #endregion
 

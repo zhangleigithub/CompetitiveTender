@@ -138,7 +138,7 @@ namespace Summer.CompetitiveTender.View
             this.btnOk.TabIndex = 4;
             this.btnOk.Text = "登  录";
             this.btnOk.UseSelectable = true;
-            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            this.btnOk.Click += new System.EventHandler(this.OnOkClick);
             // 
             // rbInviteTender
             // 

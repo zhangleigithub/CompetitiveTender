@@ -1,10 +1,10 @@
 {
   "ApiMappers": {
     "login": {
-      "Resource": "session",
-      "Method": 1,
+      "Resource": "webservice/loginWebService/login?wsdl",
+      "Method": 0,
       "Desc": "描述1"
     }
   },
-  "BaseUrl": "http://127.0.0.1:9999/"
+  "BaseUrl": "http://121.28.95.246:9090/"
 }

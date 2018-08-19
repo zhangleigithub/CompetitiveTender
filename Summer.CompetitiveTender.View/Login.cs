@@ -75,25 +75,28 @@ namespace Summer.CompetitiveTender.View
         /// </summary>
         /// <param name="sender">发送者</param>
         /// <param name="e">参数</param>
-        private void btnOk_Click(object sender, EventArgs e)
+        private void OnOkClick(object sender, EventArgs e)
         {
             try
             {
-                IDictionary<string, object> param = new Dictionary<string, object>();
-                param.Add("userName", this.txtUserName.Text);
-                param.Add("passwd", this.txtPassword.Text);
+                Service.LoginServiceReference.LoginWebServiceClient client1 = new Service.LoginServiceReference.LoginWebServiceClient();
+                Service.LoginServiceReference.json result = client1.login(this.txtUserName.Text, this.txtPassword.Text, this.UserType.ToLonginString(), string.Empty);
 
-                var result = WebClient.Instance().Request("login", param);
-                log.Debug(result);
+                if (result.success)
+                {
+                    log.Debug(result.obj);
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    log.Error(result.message);
+                    MetroFramework.MetroMessageBox.Show(this, "登录失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {
                 log.Error(ex);
                 MetroFramework.MetroMessageBox.Show(this, "登录失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                this.DialogResult = DialogResult.OK;
             }
         }
 

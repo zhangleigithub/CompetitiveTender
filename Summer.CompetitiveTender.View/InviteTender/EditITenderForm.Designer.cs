@@ -1,6 +1,6 @@
 ﻿namespace Summer.CompetitiveTender.View.InviteTender
 {
-    partial class EditProjectForm
+    partial class EditITenderForm
     {
         /// <summary>
         /// Required designer variable.
@@ -209,7 +209,7 @@
             this.Controls.Add(this.pnelFrame);
             this.Controls.Add(this.pnlMenu);
             this.Name = "EditProjectForm";
-            this.Text = "项目";
+            this.Text = "编辑招标文件";
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenu.PerformLayout();
             this.ResumeLayout(false);

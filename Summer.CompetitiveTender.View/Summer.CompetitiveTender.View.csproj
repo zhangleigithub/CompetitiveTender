@@ -253,11 +253,11 @@
     <Compile Include="InviteTender\ITenderEditForm.Designer.cs">
       <DependentUpon>ITenderEditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="InviteTender\EditProjectForm.cs">
+    <Compile Include="InviteTender\EditITenderForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InviteTender\EditProjectForm.Designer.cs">
-      <DependentUpon>EditProjectForm.cs</DependentUpon>
+    <Compile Include="InviteTender\EditITenderForm.Designer.cs">
+      <DependentUpon>EditITenderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="InviteTender\BidEvalBodyPage.cs">
       <SubType>UserControl</SubType>
@@ -389,8 +389,8 @@
     <EmbeddedResource Include="InviteTender\ITenderEditForm.resx">
       <DependentUpon>ITenderEditForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InviteTender\EditProjectForm.resx">
-      <DependentUpon>EditProjectForm.cs</DependentUpon>
+    <EmbeddedResource Include="InviteTender\EditITenderForm.resx">
+      <DependentUpon>EditITenderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InviteTender\BidEvalBodyPage.resx">
       <DependentUpon>BidEvalBodyPage.cs</DependentUpon>

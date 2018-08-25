@@ -31,12 +31,13 @@ namespace Summer.CompetitiveTender.View.InviteTender
             if (e.ColumnIndex == this.colITenderDetail.Index)
             {
                 ITenderDetailForm iTenderDetailForm = new ITenderDetailForm();
-                iTenderDetailForm.ShowDialog();
+                iTenderDetailForm.ShowDialog(this);
             }
             else if (e.ColumnIndex == this.colEditITenderFile.Index)
             {
-                ITenderEditForm iTenderEditForm = new ITenderEditForm();
-                iTenderEditForm.ShowDialog();
+                EditITenderForm editProjectForm = new EditITenderForm();
+                editProjectForm.ShowDialog(this);
+                editProjectForm.Dispose();
             }
             else if (e.ColumnIndex == this.colDeleteITenderFile.Index)
             {

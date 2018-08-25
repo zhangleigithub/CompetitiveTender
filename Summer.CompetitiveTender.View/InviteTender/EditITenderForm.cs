@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Summer.CompetitiveTender.View.InviteTender
 {
-    public partial class EditProjectForm : MetroForm
+    public partial class EditITenderForm : MetroForm
     {
-        public EditProjectForm()
+        public EditITenderForm()
         {
             InitializeComponent();
         }

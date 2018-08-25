@@ -36,7 +36,7 @@ namespace CompetitiveTender
                         Application.Run(new MainForm(login.UserType));
                         break;
                     case UserType.Tender:
-                        Application.Run(new MainForm(login.UserType));
+                        Application.Run(new BidManageForm());
                         break;
                     case UserType.Expert:
                         Application.Run(new MainForm(login.UserType));

@@ -29,13 +29,16 @@ namespace Summer.CompetitiveTender.View
 
         private void OnNewProjectToolStripMenuItemClick(object sender, EventArgs e)
         {
-            EditProjectForm editProjectForm = new EditProjectForm();
+            EditITenderForm editProjectForm = new EditITenderForm();
             editProjectForm.ShowDialog(this);
             editProjectForm.Dispose();
         }
 
         private void OnOpenProjectToolStripMenuItemClick(object sender, EventArgs e)
         {
+            QueryITenderForm queryITenderForm = new QueryITenderForm();
+            queryITenderForm.ShowDialog(this);
+            queryITenderForm.Dispose();
         }
 
         private void OnTemplateManageToolStripMenuItemClick(object sender, EventArgs e)

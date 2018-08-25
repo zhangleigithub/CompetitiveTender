@@ -18,6 +18,14 @@ namespace Summer.CompetitiveTender.View.InviteTender
             InitializeComponent();
         }
 
+        private void BidEvalFactorPage_Load(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                this.grdEvalFactor.Rows.Add("测试", true, i);
+            }
+        }
+
         private void btnNew_Click(object sender, EventArgs e)
         {
             AddScoringFactor addScoringFactor = new AddScoringFactor();

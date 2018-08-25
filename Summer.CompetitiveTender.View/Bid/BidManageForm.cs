@@ -29,7 +29,12 @@ namespace Summer.CompetitiveTender.View.Bid
                 dgv_tenderFile.Rows[index].Cells[0].Value = "测试" + i.ToString();
                 dgv_tenderFile.Rows[index].Cells[1].Value = "项目" + i.ToString();
                 dgv_tenderFile.Rows[index].Cells[2].Value = DateTime.Now.ToShortDateString();
-                dgv_tenderFile.Rows[index].Cells[3].Value = "下载"; 
+                dgv_tenderFile.Rows[index].Cells[3].Value = "下载";
+                int indexOnHistory = dgv_historyFile.Rows.Add(Row.Clone());
+                dgv_historyFile.Rows[indexOnHistory].Cells[0].Value = "项目" + i.ToString();
+                dgv_historyFile.Rows[indexOnHistory].Cells[1].Value = DateTime.Now.ToShortDateString();
+                dgv_historyFile.Rows[indexOnHistory].Cells[2].Value = "结果" + i.ToString();
+                dgv_historyFile.Rows[indexOnHistory].Cells[3].Value = "下载";
             }
         }
 
@@ -52,7 +57,7 @@ namespace Summer.CompetitiveTender.View.Bid
                 string[] str = new string[] { ".doc", ".pdf" };
                 if (!((IList)str).Contains(extension))
                 {
-                    MessageBox.Show("仅能上传gif,jpge,jpg格式的图片！");
+                    MessageBox.Show("仅能上传doc,pdf格式的图片！");
                 }
                 else
                 {
@@ -64,10 +69,15 @@ namespace Summer.CompetitiveTender.View.Bid
                     }
                     else
                     {
-
+                        txt_path.Text = fileDialog.FileName;
                     }
                 }
             }
+        }
+
+        private void btn_upload_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("上传成功！");
         }
     }
 }

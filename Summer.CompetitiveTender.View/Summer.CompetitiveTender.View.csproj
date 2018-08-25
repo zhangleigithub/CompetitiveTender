@@ -144,6 +144,7 @@
     <Compile Include="Bid\QueryBidTemplateForm.Designer.cs">
       <DependentUpon>QueryBidTemplateForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Common\ComboBoxDataSource.cs" />
     <Compile Include="EvaluationOfBids\EOBCleanForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,11 +187,17 @@
     <Compile Include="InviteTender\CreateITenderForm.Designer.cs">
       <DependentUpon>CreateITenderForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="InviteTender\CreateITenderTemplateForm.cs">
+    <Compile Include="InviteTender\EditTemplateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InviteTender\CreateITenderTemplateForm.Designer.cs">
-      <DependentUpon>CreateITenderTemplateForm.cs</DependentUpon>
+    <Compile Include="InviteTender\EditTemplateForm.Designer.cs">
+      <DependentUpon>EditTemplateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InviteTender\CreateTemplateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InviteTender\CreateTemplateForm.Designer.cs">
+      <DependentUpon>CreateTemplateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="InviteTender\ITenderDetailForm.cs">
       <SubType>Form</SubType>
@@ -204,11 +211,11 @@
     <Compile Include="InviteTender\ITenderEditForm.Designer.cs">
       <DependentUpon>ITenderEditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="InviteTender\ITenderTemplateNodeForm.cs">
+    <Compile Include="InviteTender\TemplateNodeManageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InviteTender\ITenderTemplateNodeForm.Designer.cs">
-      <DependentUpon>ITenderTemplateNodeForm.cs</DependentUpon>
+    <Compile Include="InviteTender\TemplateNodeManageForm.Designer.cs">
+      <DependentUpon>TemplateNodeManageForm.cs</DependentUpon>
     </Compile>
     <Compile Include="InviteTender\QueryITenderForm.cs">
       <SubType>Form</SubType>
@@ -222,11 +229,11 @@
     <Compile Include="InviteTender\QueryITenderQuestionForm.Designer.cs">
       <DependentUpon>QueryITenderQuestionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="InviteTender\QueryITenderTemplateForm.cs">
+    <Compile Include="InviteTender\TemplateManageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InviteTender\QueryITenderTemplateForm.Designer.cs">
-      <DependentUpon>QueryITenderTemplateForm.cs</DependentUpon>
+    <Compile Include="InviteTender\TemplateManageForm.Designer.cs">
+      <DependentUpon>TemplateManageForm.cs</DependentUpon>
     </Compile>
     <Compile Include="JsonParse.cs" />
     <Compile Include="Login.cs">
@@ -240,6 +247,12 @@
     </Compile>
     <Compile Include="InviteTender\InviteTenderManageForm.Designer.cs">
       <DependentUpon>InviteTenderManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InviteTenderMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InviteTenderMainForm.Designer.cs">
+      <DependentUpon>InviteTenderMainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -298,8 +311,11 @@
     <EmbeddedResource Include="InviteTender\CreateITenderForm.resx">
       <DependentUpon>CreateITenderForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InviteTender\CreateITenderTemplateForm.resx">
-      <DependentUpon>CreateITenderTemplateForm.cs</DependentUpon>
+    <EmbeddedResource Include="InviteTender\EditTemplateForm.resx">
+      <DependentUpon>EditTemplateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InviteTender\CreateTemplateForm.resx">
+      <DependentUpon>CreateTemplateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InviteTender\ITenderDetailForm.resx">
       <DependentUpon>ITenderDetailForm.cs</DependentUpon>
@@ -307,8 +323,8 @@
     <EmbeddedResource Include="InviteTender\ITenderEditForm.resx">
       <DependentUpon>ITenderEditForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InviteTender\ITenderTemplateNodeForm.resx">
-      <DependentUpon>ITenderTemplateNodeForm.cs</DependentUpon>
+    <EmbeddedResource Include="InviteTender\TemplateNodeManageForm.resx">
+      <DependentUpon>TemplateNodeManageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InviteTender\QueryITenderForm.resx">
       <DependentUpon>QueryITenderForm.cs</DependentUpon>
@@ -316,14 +332,17 @@
     <EmbeddedResource Include="InviteTender\QueryITenderQuestionForm.resx">
       <DependentUpon>QueryITenderQuestionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InviteTender\QueryITenderTemplateForm.resx">
-      <DependentUpon>QueryITenderTemplateForm.cs</DependentUpon>
+    <EmbeddedResource Include="InviteTender\TemplateManageForm.resx">
+      <DependentUpon>TemplateManageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InviteTender\InviteTenderManageForm.resx">
       <DependentUpon>InviteTenderManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InviteTenderMainForm.resx">
+      <DependentUpon>InviteTenderMainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

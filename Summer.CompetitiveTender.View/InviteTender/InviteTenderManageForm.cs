@@ -17,7 +17,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
         {
             InitializeComponent();
 
-            this.grdTemplate.TopRow = new Common.Controls.MultiHeaderDataGridView.DataGridViewRowTopRow(this.grdTemplate);
+            this.grdTemplate.TopRow = new Summer.Common.Controls.MultiHeaderDataGridView.DataGridViewRowTopRow(this.grdTemplate);
             this.grdTemplate.TopRow.Cells[6].HeaderText = "操作";
             this.grdTemplate.TopRow.Cells[6].ColumnSpan = 5;
             this.grdTemplate.TopRow.Cells[6].ColumnIndex = -1;
@@ -52,7 +52,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
         private void btnCreateTemplate_Click(object sender, EventArgs e)
         {
-            CreateITenderTemplateForm createITenderTemplateForm = new CreateITenderTemplateForm();
+            CreateTemplateForm createITenderTemplateForm = new CreateTemplateForm();
             createITenderTemplateForm.ShowDialog();
         }
 
@@ -60,12 +60,12 @@ namespace Summer.CompetitiveTender.View.InviteTender
         {
             if (e.ColumnIndex == this.colTemplateNode.Index)
             {
-                ITenderTemplateNodeForm iTenderTemplateNodeForm = new ITenderTemplateNodeForm();
+                TemplateNodeManageForm iTenderTemplateNodeForm = new TemplateNodeManageForm();
                 iTenderTemplateNodeForm.ShowDialog();
             }
             else if (e.ColumnIndex == this.colTemplateEdit.Index)
             {
-                CreateITenderTemplateForm createITenderTemplateForm = new CreateITenderTemplateForm();
+                CreateTemplateForm createITenderTemplateForm = new CreateTemplateForm();
                 createITenderTemplateForm.Text = "编辑模板";
                 createITenderTemplateForm.ShowDialog();
             }

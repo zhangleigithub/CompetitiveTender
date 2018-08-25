@@ -1,9 +1,11 @@
 ﻿using MetroFramework.Forms;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,15 +25,48 @@ namespace Summer.CompetitiveTender.View.Bid
             for (int i = 0; i < 30; i++)
             {
                 DataGridViewRow Row = new DataGridViewRow();
-                int index = dgv_BidFileList.Rows.Add(Row);
-                dgv_BidFileList.Rows[index].Cells[0].Value = "测试" + i.ToString();
-                dgv_BidFileList.Rows[index].Cells[1].Value = "项目" + i.ToString();
-                dgv_BidFileList.Rows[index].Cells[2].Value = DateTime.Now.ToShortDateString();
-                dgv_BidFileList.Rows[index].Cells[3].Value = "修改";
-                dgv_BidFileList.Rows[index].Cells[4].Value = "删除";
-                dgv_BidFileList.Rows[index].Cells[5].Value = "预览";
-                dgv_BidFileList.Rows[index].Cells[6].Value = "打印";
-                dgv_BidFileList.Rows[index].Cells[7].Value = "下载"; 
+                int index = dgv_tenderFile.Rows.Add(Row);
+                dgv_tenderFile.Rows[index].Cells[0].Value = "测试" + i.ToString();
+                dgv_tenderFile.Rows[index].Cells[1].Value = "项目" + i.ToString();
+                dgv_tenderFile.Rows[index].Cells[2].Value = DateTime.Now.ToShortDateString();
+                dgv_tenderFile.Rows[index].Cells[3].Value = "下载"; 
+            }
+        }
+
+        /// <summary>
+        /// 上传投标文件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_browse_Click(object sender, EventArgs e)
+        {
+            //初始化一个OpenFileDialog类
+            OpenFileDialog fileDialog = new OpenFileDialog();
+
+            //判断用户是否正确的选择了文件
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                //获取用户选择文件的后缀名
+                string extension = Path.GetExtension(fileDialog.FileName);
+                //声明允许的后缀名
+                string[] str = new string[] { ".doc", ".pdf" };
+                if (!((IList)str).Contains(extension))
+                {
+                    MessageBox.Show("仅能上传gif,jpge,jpg格式的图片！");
+                }
+                else
+                {
+                    //获取用户选择的文件，并判断文件大小不能超过20K，fileInfo.Length是以字节为单位的
+                    FileInfo fileInfo = new FileInfo(fileDialog.FileName);
+                    if (fileInfo.Length > 2048000)
+                    {
+                        MessageBox.Show("上传的图片不能大于2000K");
+                    }
+                    else
+                    {
+
+                    }
+                }
             }
         }
     }

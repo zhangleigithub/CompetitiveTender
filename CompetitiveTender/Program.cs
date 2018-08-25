@@ -25,7 +25,25 @@ namespace CompetitiveTender
 
             if (login.ShowDialog() == DialogResult.OK)
             {
-                Application.Run(new MainForm(login.UserType));
+                switch (login.UserType)
+                {
+                    case UserType.Unkown:
+                        break;
+                    case UserType.InviteTender:
+                        Application.Run(new InviteTenderMainForm());
+                        break;
+                    case UserType.Agency:
+                        Application.Run(new MainForm(login.UserType));
+                        break;
+                    case UserType.Tender:
+                        Application.Run(new MainForm(login.UserType));
+                        break;
+                    case UserType.Expert:
+                        Application.Run(new MainForm(login.UserType));
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     }

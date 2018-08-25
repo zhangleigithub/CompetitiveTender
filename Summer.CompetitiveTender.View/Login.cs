@@ -2,6 +2,7 @@
 using MetroFramework.Forms;
 using Summer.Common.Utility.WebApi;
 using Summer.CompetitiveTender.Model.Response;
+using Summer.CompetitiveTender.Service.LoginServiceReference;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -80,13 +81,13 @@ namespace Summer.CompetitiveTender.View
         {
             try
             {
-                Service.LoginServiceReference.LoginWebServiceClient client1 = new Service.LoginServiceReference.LoginWebServiceClient();
-                Service.LoginServiceReference.json result = client1.login(this.txtUserName.Text, this.txtPassword.Text, this.UserType.ToLonginString(), string.Empty);
+                LoginWebServiceClient client1 = new LoginWebServiceClient();
+                json result = client1.login(this.txtUserName.Text, this.txtPassword.Text, this.UserType.ToLonginString(), string.Empty);
 
                 if (result.success)
                 {
                     log.Debug(result.obj);
-                    LoginRes loginRes = result.obj.ToObject<LoginRes>();
+                    //LoginRes loginRes = result.obj.ToObject<LoginRes>();
                     this.DialogResult = DialogResult.OK;
                 }
                 else

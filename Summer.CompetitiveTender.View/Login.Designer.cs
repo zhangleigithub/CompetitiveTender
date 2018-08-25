@@ -67,7 +67,8 @@ namespace Summer.CompetitiveTender.View
             this.txtUserName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtUserName.CustomButton.UseSelectable = true;
             this.txtUserName.CustomButton.Visible = false;
-            this.txtUserName.Lines = new string[0];
+            this.txtUserName.Lines = new string[] {
+        "td_zbr"};
             this.txtUserName.Location = new System.Drawing.Point(159, 87);
             this.txtUserName.MaxLength = 32767;
             this.txtUserName.Name = "txtUserName";
@@ -80,6 +81,7 @@ namespace Summer.CompetitiveTender.View
             this.txtUserName.ShortcutsEnabled = true;
             this.txtUserName.Size = new System.Drawing.Size(298, 21);
             this.txtUserName.TabIndex = 1;
+            this.txtUserName.Text = "td_zbr";
             this.txtUserName.UseSelectable = true;
             this.txtUserName.WaterMark = "账号";
             this.txtUserName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -110,7 +112,8 @@ namespace Summer.CompetitiveTender.View
             this.txtPassword.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtPassword.CustomButton.UseSelectable = true;
             this.txtPassword.CustomButton.Visible = false;
-            this.txtPassword.Lines = new string[0];
+            this.txtPassword.Lines = new string[] {
+        "123456"};
             this.txtPassword.Location = new System.Drawing.Point(159, 124);
             this.txtPassword.MaxLength = 32767;
             this.txtPassword.Name = "txtPassword";
@@ -123,6 +126,7 @@ namespace Summer.CompetitiveTender.View
             this.txtPassword.ShortcutsEnabled = true;
             this.txtPassword.Size = new System.Drawing.Size(298, 21);
             this.txtPassword.TabIndex = 3;
+            this.txtPassword.Text = "123456";
             this.txtPassword.UseSelectable = true;
             this.txtPassword.WaterMark = "密码";
             this.txtPassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));

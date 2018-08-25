@@ -168,7 +168,7 @@ namespace Summer.CompetitiveTender.View
 
         private void OnNewITenderTemplateToolStripMenuItemClick(object sender, EventArgs e)
         {
-            CreateITenderTemplateForm createITenderTemplateForm = new CreateITenderTemplateForm();
+            CreateTemplateForm createITenderTemplateForm = new CreateTemplateForm();
             createITenderTemplateForm.ShowDialog(this);
             createITenderTemplateForm.Dispose();
         }
@@ -215,7 +215,7 @@ namespace Summer.CompetitiveTender.View
 
         private void OnQueryITenderTemplateToolStripMenuItemClick(object sender, EventArgs e)
         {
-            QueryITenderTemplateForm queryITenderTemplateForm = new QueryITenderTemplateForm();
+            TemplateManageForm queryITenderTemplateForm = new TemplateManageForm();
             queryITenderTemplateForm.ShowDialog(this);
             queryITenderTemplateForm.Dispose();
         }

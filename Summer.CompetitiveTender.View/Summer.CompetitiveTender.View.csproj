@@ -33,6 +33,24 @@
     <ApplicationIcon>
     </ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.8\lib\net40-full\log4net.dll</HintPath>
@@ -71,6 +89,30 @@
     </Compile>
     <Compile Include="AboutBoxForm.Designer.cs">
       <DependentUpon>AboutBoxForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BidEvaluaMethod\ModifyScoringFactor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BidEvaluaMethod\ModifyScoringFactor.Designer.cs">
+      <DependentUpon>ModifyScoringFactor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InviteTender\BidEvalFactorPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InviteTender\BidEvalFactorPage.Designer.cs">
+      <DependentUpon>BidEvalFactorPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InviteTender\BidEvalScoringPointPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InviteTender\BidEvalScoringPointPage.Designer.cs">
+      <DependentUpon>BidEvalScoringPointPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InviteTender\BidEvalClausePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InviteTender\BidEvalClausePage.Designer.cs">
+      <DependentUpon>BidEvalClausePage.cs</DependentUpon>
     </Compile>
     <Compile Include="BidEvaluaMethod\AddBidEvalMethod.cs">
       <SubType>Form</SubType>
@@ -211,6 +253,18 @@
     <Compile Include="InviteTender\ITenderEditForm.Designer.cs">
       <DependentUpon>ITenderEditForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="InviteTender\EditProjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InviteTender\EditProjectForm.Designer.cs">
+      <DependentUpon>EditProjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InviteTender\BidEvalBodyPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InviteTender\BidEvalBodyPage.Designer.cs">
+      <DependentUpon>BidEvalBodyPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="InviteTender\TemplateNodeManageForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -284,6 +338,18 @@
     <EmbeddedResource Include="AboutBoxForm.resx">
       <DependentUpon>AboutBoxForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BidEvaluaMethod\ModifyScoringFactor.resx">
+      <DependentUpon>ModifyScoringFactor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InviteTender\BidEvalFactorPage.resx">
+      <DependentUpon>BidEvalFactorPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InviteTender\BidEvalScoringPointPage.resx">
+      <DependentUpon>BidEvalScoringPointPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InviteTender\BidEvalClausePage.resx">
+      <DependentUpon>BidEvalClausePage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BidEvaluaMethod\AddBidEvalMethod.resx">
       <DependentUpon>AddBidEvalMethod.cs</DependentUpon>
     </EmbeddedResource>
@@ -322,6 +388,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InviteTender\ITenderEditForm.resx">
       <DependentUpon>ITenderEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InviteTender\EditProjectForm.resx">
+      <DependentUpon>EditProjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InviteTender\BidEvalBodyPage.resx">
+      <DependentUpon>BidEvalBodyPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InviteTender\TemplateNodeManageForm.resx">
       <DependentUpon>TemplateNodeManageForm.cs</DependentUpon>

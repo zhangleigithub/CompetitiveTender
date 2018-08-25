@@ -1,6 +1,6 @@
 ﻿namespace Summer.CompetitiveTender.View.BidEvaluaMethod
 {
-    partial class AddScoringFactor
+    partial class ModifyScoringFactor
     {
         /// <summary>
         /// Required designer variable.
@@ -151,7 +151,6 @@
             this.btn_OK.TabIndex = 4;
             this.btn_OK.Text = "确定";
             this.btn_OK.UseSelectable = true;
-            this.btn_OK.Click += new System.EventHandler(this.btn_OK_Click);
             // 
             // btn_cancel
             // 
@@ -163,7 +162,7 @@
             this.btn_cancel.Text = "取消";
             this.btn_cancel.UseSelectable = true;
             // 
-            // AddScoringFactor
+            // ModifyScoringFactor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -178,9 +177,9 @@
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroComboBox3);
             this.Controls.Add(this.metroLabel5);
-            this.Name = "AddScoringFactor";
+            this.Name = "ModifyScoringFactor";
             this.Resizable = false;
-            this.Text = "新建评分因素";
+            this.Text = "编辑评分因素";
             this.ResumeLayout(false);
             this.PerformLayout();
 

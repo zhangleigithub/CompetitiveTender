@@ -8,18 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Summer.CompetitiveTender.View.BidEvaluaMethod
+namespace Summer.CompetitiveTender.View.InviteTender
 {
-    public partial class AddScoringFactor : MetroForm
+    public partial class BidEvalScoringPointPage : MetroFramework.Controls.MetroUserControl
     {
-        public AddScoringFactor()
+        public BidEvalScoringPointPage()
         {
             InitializeComponent();
         }
 
-        private void btn_OK_Click(object sender, EventArgs e)
+        private void btnSummit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            
         }
     }
 }

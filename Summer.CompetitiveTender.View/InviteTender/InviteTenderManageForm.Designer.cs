@@ -824,7 +824,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(907, 431);
             this.Controls.Add(this.metroTabControl1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InviteTenderManageForm";
             this.Text = "招标文件制作";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

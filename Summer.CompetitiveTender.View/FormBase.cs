@@ -8,11 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Summer.CompetitiveTender.View.BidEvaluaMethod
+namespace Summer.CompetitiveTender.View
 {
-    public partial class ModifyScoringFactor : FormBase
+    public partial class FormBase : MetroForm
     {
-        public ModifyScoringFactor()
+        public FormBase()
         {
             InitializeComponent();
         }

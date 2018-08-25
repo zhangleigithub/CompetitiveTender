@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Summer.CompetitiveTender.View
 {
-    partial class AboutBoxForm : MetroForm
+    partial class AboutBoxForm : FormBase
     {
         public AboutBoxForm()
         {

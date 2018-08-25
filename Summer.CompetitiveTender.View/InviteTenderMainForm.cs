@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace Summer.CompetitiveTender.View
 {
-    public partial class InviteTenderMainForm : MetroForm
+    public partial class InviteTenderMainForm : FormBase
     {
         #region 方法
 
@@ -29,9 +29,16 @@ namespace Summer.CompetitiveTender.View
 
         private void OnNewProjectToolStripMenuItemClick(object sender, EventArgs e)
         {
-            EditITenderForm editProjectForm = new EditITenderForm();
-            editProjectForm.ShowDialog(this);
-            editProjectForm.Dispose();
+            CreateITenderForm createITenderForm = new CreateITenderForm();
+
+            if (createITenderForm.ShowDialog(this)==DialogResult.OK)
+            {
+                EditITenderForm editITenderForm = new EditITenderForm();
+                editITenderForm.ShowDialog(this);
+                editITenderForm.Dispose();
+            }
+
+            createITenderForm.Dispose();
         }
 
         private void OnOpenProjectToolStripMenuItemClick(object sender, EventArgs e)
@@ -39,6 +46,13 @@ namespace Summer.CompetitiveTender.View
             QueryITenderForm queryITenderForm = new QueryITenderForm();
             queryITenderForm.ShowDialog(this);
             queryITenderForm.Dispose();
+        }
+
+        private void OnProjectDiscussToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            QueryITenderQuestionForm queryITenderQuestionForm = new QueryITenderQuestionForm();
+            queryITenderQuestionForm.ShowDialog(this);
+            queryITenderQuestionForm.Dispose();
         }
 
         private void OnTemplateManageToolStripMenuItemClick(object sender, EventArgs e)

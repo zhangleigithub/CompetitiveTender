@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.pnlMenu = new MetroFramework.Controls.MetroPanel();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.rbGeneral = new System.Windows.Forms.RadioButton();
             this.rbEvalFactor = new System.Windows.Forms.RadioButton();
             this.rbEvalPoint = new System.Windows.Forms.RadioButton();
             this.rbEvalClause = new System.Windows.Forms.RadioButton();
             this.rbTenderBody = new System.Windows.Forms.RadioButton();
             this.pnelFrame = new MetroFramework.Controls.MetroPanel();
+            this.rbPrint = new System.Windows.Forms.RadioButton();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,8 +43,8 @@
             // 
             this.pnlMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.pnlMenu.Controls.Add(this.radioButton6);
-            this.pnlMenu.Controls.Add(this.radioButton5);
+            this.pnlMenu.Controls.Add(this.rbPrint);
+            this.pnlMenu.Controls.Add(this.rbGeneral);
             this.pnlMenu.Controls.Add(this.rbEvalFactor);
             this.pnlMenu.Controls.Add(this.rbEvalPoint);
             this.pnlMenu.Controls.Add(this.rbEvalClause);
@@ -60,45 +60,25 @@
             this.pnlMenu.VerticalScrollbarHighlightOnWheel = false;
             this.pnlMenu.VerticalScrollbarSize = 10;
             // 
-            // radioButton6
+            // rbGeneral
             // 
-            this.radioButton6.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radioButton6.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.radioButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton6.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.radioButton6.Location = new System.Drawing.Point(0, 130);
-            this.radioButton6.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(152, 26);
-            this.radioButton6.TabIndex = 7;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "生成招标文件";
-            this.radioButton6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton6.UseVisualStyleBackColor = false;
-            this.radioButton6.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radioButton5.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.radioButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton5.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.radioButton5.Location = new System.Drawing.Point(0, 104);
-            this.radioButton5.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(152, 26);
-            this.radioButton5.TabIndex = 6;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "评分办法";
-            this.radioButton5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton5.UseVisualStyleBackColor = false;
-            this.radioButton5.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
+            this.rbGeneral.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbGeneral.AutoSize = true;
+            this.rbGeneral.BackColor = System.Drawing.Color.Transparent;
+            this.rbGeneral.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rbGeneral.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.rbGeneral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbGeneral.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.rbGeneral.Location = new System.Drawing.Point(0, 104);
+            this.rbGeneral.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
+            this.rbGeneral.Name = "rbGeneral";
+            this.rbGeneral.Size = new System.Drawing.Size(152, 26);
+            this.rbGeneral.TabIndex = 7;
+            this.rbGeneral.TabStop = true;
+            this.rbGeneral.Text = "生成招标文件";
+            this.rbGeneral.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbGeneral.UseVisualStyleBackColor = false;
+            this.rbGeneral.Click += new System.EventHandler(this.rb_Click);
             // 
             // rbEvalFactor
             // 
@@ -118,7 +98,7 @@
             this.rbEvalFactor.Text = "评分因素";
             this.rbEvalFactor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbEvalFactor.UseVisualStyleBackColor = false;
-            this.rbEvalFactor.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
+            this.rbEvalFactor.Click += new System.EventHandler(this.rb_Click);
             // 
             // rbEvalPoint
             // 
@@ -138,7 +118,7 @@
             this.rbEvalPoint.Text = "评 分 点";
             this.rbEvalPoint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbEvalPoint.UseVisualStyleBackColor = false;
-            this.rbEvalPoint.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
+            this.rbEvalPoint.Click += new System.EventHandler(this.rb_Click);
             // 
             // rbEvalClause
             // 
@@ -158,7 +138,7 @@
             this.rbEvalClause.Text = "评分条款";
             this.rbEvalClause.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbEvalClause.UseVisualStyleBackColor = false;
-            this.rbEvalClause.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
+            this.rbEvalClause.Click += new System.EventHandler(this.rb_Click);
             // 
             // rbTenderBody
             // 
@@ -180,7 +160,7 @@
             this.rbTenderBody.Text = "招标正文";
             this.rbTenderBody.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbTenderBody.UseVisualStyleBackColor = false;
-            this.rbTenderBody.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
+            this.rbTenderBody.Click += new System.EventHandler(this.rb_Click);
             // 
             // pnelFrame
             // 
@@ -201,15 +181,36 @@
             this.pnelFrame.VerticalScrollbarHighlightOnWheel = true;
             this.pnelFrame.VerticalScrollbarSize = 10;
             // 
-            // EditProjectForm
+            // rbPrint
+            // 
+            this.rbPrint.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbPrint.AutoSize = true;
+            this.rbPrint.BackColor = System.Drawing.Color.Transparent;
+            this.rbPrint.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rbPrint.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.rbPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbPrint.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.rbPrint.Location = new System.Drawing.Point(0, 130);
+            this.rbPrint.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
+            this.rbPrint.Name = "rbPrint";
+            this.rbPrint.Size = new System.Drawing.Size(152, 26);
+            this.rbPrint.TabIndex = 8;
+            this.rbPrint.TabStop = true;
+            this.rbPrint.Text = "打印招标文件";
+            this.rbPrint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbPrint.UseVisualStyleBackColor = false;
+            this.rbPrint.Click += new System.EventHandler(this.rb_Click);
+            // 
+            // EditITenderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.pnelFrame);
             this.Controls.Add(this.pnlMenu);
-            this.Name = "EditProjectForm";
+            this.Name = "EditITenderForm";
             this.Text = "编辑招标文件";
+            this.Shown += new System.EventHandler(this.EditITenderForm_Shown);
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenu.PerformLayout();
             this.ResumeLayout(false);
@@ -222,9 +223,9 @@
         private System.Windows.Forms.RadioButton rbEvalClause;
         private System.Windows.Forms.RadioButton rbTenderBody;
         private MetroFramework.Controls.MetroPanel pnelFrame;
-        private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.RadioButton rbGeneral;
         private System.Windows.Forms.RadioButton rbEvalFactor;
         private System.Windows.Forms.RadioButton rbEvalPoint;
+        private System.Windows.Forms.RadioButton rbPrint;
     }
 }

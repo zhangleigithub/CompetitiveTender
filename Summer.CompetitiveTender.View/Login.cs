@@ -17,7 +17,7 @@ namespace Summer.CompetitiveTender.View
     /// <summary>
     /// Login
     /// </summary>
-    public partial class Login : MetroForm
+    public partial class Login : FormBase
     {
         #region 字段
 

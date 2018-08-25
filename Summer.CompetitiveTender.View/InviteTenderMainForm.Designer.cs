@@ -51,6 +51,8 @@
             this.tsmiIndex = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiProjectDiscuss = new System.Windows.Forms.ToolStripMenuItem();
+            this.tssFile3 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,8 +76,10 @@
             this.tsmiNewProject,
             this.tsmiOpenProject,
             this.tssFile1,
-            this.tsmiTemplateManage,
+            this.tsmiProjectDiscuss,
             this.tssFile2,
+            this.tsmiTemplateManage,
+            this.tssFile3,
             this.tsmiExit});
             this.tsmiFile.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
             this.tsmiFile.Name = "tsmiFile";
@@ -230,13 +234,24 @@
             this.tsmiAbout.Text = "关于(&A) ... ...";
             this.tsmiAbout.Click += new System.EventHandler(this.OnAboutToolStripMenuItemClick);
             // 
+            // tsmiProjectDiscuss
+            // 
+            this.tsmiProjectDiscuss.Name = "tsmiProjectDiscuss";
+            this.tsmiProjectDiscuss.Size = new System.Drawing.Size(152, 22);
+            this.tsmiProjectDiscuss.Text = "招标文件澄清";
+            this.tsmiProjectDiscuss.Click += new System.EventHandler(this.OnProjectDiscussToolStripMenuItemClick);
+            // 
+            // tssFile3
+            // 
+            this.tssFile3.Name = "tssFile3";
+            this.tssFile3.Size = new System.Drawing.Size(149, 6);
+            // 
             // InviteTenderMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(758, 439);
             this.Controls.Add(this.menuStrip);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "InviteTenderMainForm";
@@ -279,6 +294,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiAbout;
         private System.Windows.Forms.ToolStripMenuItem tsmiTemplateManage;
         private System.Windows.Forms.ToolStripSeparator tssFile2;
+        private System.Windows.Forms.ToolStripMenuItem tsmiProjectDiscuss;
+        private System.Windows.Forms.ToolStripSeparator tssFile3;
     }
 }
 

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Summer.CompetitiveTender.View.InviteTender
 {
-    public partial class QueryITenderForm : MetroForm
+    public partial class QueryITenderForm : FormBase
     {
         public QueryITenderForm()
         {

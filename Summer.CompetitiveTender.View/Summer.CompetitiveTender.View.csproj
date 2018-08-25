@@ -96,6 +96,12 @@
     <Compile Include="BidEvaluaMethod\ModifyScoringFactor.Designer.cs">
       <DependentUpon>ModifyScoringFactor.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBase.Designer.cs">
+      <DependentUpon>FormBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="InviteTender\BidEvalFactorPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -241,6 +247,12 @@
     <Compile Include="InviteTender\CreateTemplateForm.Designer.cs">
       <DependentUpon>CreateTemplateForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="InviteTender\ITenderQuestionDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InviteTender\ITenderQuestionDetailForm.Designer.cs">
+      <DependentUpon>ITenderQuestionDetailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="InviteTender\ITenderDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +276,12 @@
     </Compile>
     <Compile Include="InviteTender\BidEvalBodyPage.Designer.cs">
       <DependentUpon>BidEvalBodyPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InviteTender\ReplayQuestionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InviteTender\ReplayQuestionForm.Designer.cs">
+      <DependentUpon>ReplayQuestionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="InviteTender\TemplateNodeManageForm.cs">
       <SubType>Form</SubType>
@@ -341,6 +359,9 @@
     <EmbeddedResource Include="BidEvaluaMethod\ModifyScoringFactor.resx">
       <DependentUpon>ModifyScoringFactor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormBase.resx">
+      <DependentUpon>FormBase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InviteTender\BidEvalFactorPage.resx">
       <DependentUpon>BidEvalFactorPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -383,6 +404,9 @@
     <EmbeddedResource Include="InviteTender\CreateTemplateForm.resx">
       <DependentUpon>CreateTemplateForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InviteTender\ITenderQuestionDetailForm.resx">
+      <DependentUpon>ITenderQuestionDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InviteTender\ITenderDetailForm.resx">
       <DependentUpon>ITenderDetailForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -394,6 +418,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InviteTender\BidEvalBodyPage.resx">
       <DependentUpon>BidEvalBodyPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InviteTender\ReplayQuestionForm.resx">
+      <DependentUpon>ReplayQuestionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InviteTender\TemplateNodeManageForm.resx">
       <DependentUpon>TemplateNodeManageForm.cs</DependentUpon>

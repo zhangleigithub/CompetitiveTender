@@ -374,11 +374,17 @@
     <Compile Include="OpenOfBids\OOBDecryptBidFileForm.Designer.cs">
       <DependentUpon>OOBDecryptBidFileForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OpenOfBids\OpenBidHallToForm.cs">
+    <Compile Include="OpenOfBids\OOBHallToForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OpenOfBids\OpenBidHallToForm.Designer.cs">
-      <DependentUpon>OpenBidHallToForm.cs</DependentUpon>
+    <Compile Include="OpenOfBids\OOBHallToForm.Designer.cs">
+      <DependentUpon>OOBHallToForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpenOfBids\OOBQueryITenderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenOfBids\OOBQueryITenderForm.Designer.cs">
+      <DependentUpon>OOBQueryITenderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -500,8 +506,11 @@
     <EmbeddedResource Include="OpenOfBids\OOBDecryptBidFileForm.resx">
       <DependentUpon>OOBDecryptBidFileForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OpenOfBids\OpenBidHallToForm.resx">
-      <DependentUpon>OpenBidHallToForm.cs</DependentUpon>
+    <EmbeddedResource Include="OpenOfBids\OOBHallToForm.resx">
+      <DependentUpon>OOBHallToForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenOfBids\OOBQueryITenderForm.resx">
+      <DependentUpon>OOBQueryITenderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

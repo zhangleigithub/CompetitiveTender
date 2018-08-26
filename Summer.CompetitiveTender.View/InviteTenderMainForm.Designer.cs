@@ -40,8 +40,6 @@
             this.tssFile3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiExit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiOpenOfBids = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiOOBCheckIn = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiOOBDecryptBidFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEvaluationOfBids = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiIndex = new System.Windows.Forms.ToolStripMenuItem();
@@ -133,26 +131,10 @@
             // 
             // tsmiOpenOfBids
             // 
-            this.tsmiOpenOfBids.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiOOBCheckIn,
-            this.tsmiOOBDecryptBidFile});
             this.tsmiOpenOfBids.Name = "tsmiOpenOfBids";
             this.tsmiOpenOfBids.Size = new System.Drawing.Size(62, 21);
             this.tsmiOpenOfBids.Text = "开标(&O)";
-            // 
-            // tsmiOOBCheckIn
-            // 
-            this.tsmiOOBCheckIn.Name = "tsmiOOBCheckIn";
-            this.tsmiOOBCheckIn.Size = new System.Drawing.Size(148, 22);
-            this.tsmiOOBCheckIn.Text = "在线签到";
-            this.tsmiOOBCheckIn.Click += new System.EventHandler(this.OnOOBCheckInToolStripMenuItemClick);
-            // 
-            // tsmiOOBDecryptBidFile
-            // 
-            this.tsmiOOBDecryptBidFile.Name = "tsmiOOBDecryptBidFile";
-            this.tsmiOOBDecryptBidFile.Size = new System.Drawing.Size(148, 22);
-            this.tsmiOOBDecryptBidFile.Text = "解密投标文件";
-            this.tsmiOOBDecryptBidFile.Click += new System.EventHandler(this.OnOOBDecryptBidFileToolStripMenuItemClick);
+            this.tsmiOpenOfBids.Click += new System.EventHandler(this.OnOpenOfBidsToolStripMenuItemClick);
             // 
             // tsmiEvaluationOfBids
             // 
@@ -223,8 +205,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiExit;
 
         private System.Windows.Forms.ToolStripMenuItem tsmiOpenOfBids;
-        private System.Windows.Forms.ToolStripMenuItem tsmiOOBCheckIn;
-        private System.Windows.Forms.ToolStripMenuItem tsmiOOBDecryptBidFile;
 
         private System.Windows.Forms.ToolStripMenuItem tsmiEvaluationOfBids;
 

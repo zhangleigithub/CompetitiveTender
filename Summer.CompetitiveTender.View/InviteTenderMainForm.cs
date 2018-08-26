@@ -71,18 +71,11 @@ namespace Summer.CompetitiveTender.View
 
         #region 开标
 
-        private void OnOOBCheckInToolStripMenuItemClick(object sender, EventArgs e)
+        private void OnOpenOfBidsToolStripMenuItemClick(object sender, EventArgs e)
         {
-            OOBCheckInForm oOBCheckInForm = new OOBCheckInForm();
-            oOBCheckInForm.ShowDialog(this);
-            oOBCheckInForm.Dispose();
-        }
-
-        private void OnOOBDecryptBidFileToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            OOBDecryptBidFileForm oOBDecryptBidFileForm = new OOBDecryptBidFileForm();
-            oOBDecryptBidFileForm.ShowDialog(this);
-            oOBDecryptBidFileForm.Dispose();
+            OOBQueryITenderForm oOBQueryITenderForm = new OOBQueryITenderForm();
+            oOBQueryITenderForm.ShowDialog(this);
+            oOBQueryITenderForm.Dispose();
         }
 
         #endregion

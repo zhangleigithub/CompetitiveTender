@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Summer.CompetitiveTender.View.OpenOfBids
 {
-    public partial class OpenBidHallToForm : MetroForm
+    public partial class OOBHallToForm : MetroForm
     {
-        public OpenBidHallToForm()
+        public OOBHallToForm()
         {
             InitializeComponent();
         }

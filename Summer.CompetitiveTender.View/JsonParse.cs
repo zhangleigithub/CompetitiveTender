@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Xml;
 
 namespace Summer.CompetitiveTender.View
 {
@@ -15,12 +17,14 @@ namespace Summer.CompetitiveTender.View
         /// <returns>T</returns>
         public static T ToObject<T>(this object obj)
         {
-            if (obj==null)
+            List<string> result = new List<string>();
+
+            foreach (var item in (XmlNode[])obj)
             {
-                return default(T);
+                result.Add(Newtonsoft.Json.JsonConvert.SerializeXmlNode(item).Trim('{', '}'));
             }
 
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(obj.ToString());
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<T>("{" + string.Join(",", result) + "}");
         }
     }
 }

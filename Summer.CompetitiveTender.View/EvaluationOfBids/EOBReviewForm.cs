@@ -1,5 +1,4 @@
-﻿using MetroFramework.Forms;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Summer.CompetitiveTender.View.BidEvaluaMethod
+namespace Summer.CompetitiveTender.View.EvaluationOfBids
 {
-    public partial class ModifyScoringFactor : FormBase
+    public partial class EOBReviewForm : FormBase
     {
-        public ModifyScoringFactor()
+        public EOBReviewForm()
         {
             InitializeComponent();
         }

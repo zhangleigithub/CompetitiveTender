@@ -54,6 +54,7 @@
             this.colITQuestCreateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colITQuestState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colItQuestDetail = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.colReplayQuestion = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdITQuest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -262,6 +263,7 @@
             this.btnQuestQuery.TabIndex = 15;
             this.btnQuestQuery.Text = "查询";
             this.btnQuestQuery.UseSelectable = true;
+            this.btnQuestQuery.Click += new System.EventHandler(this.btnQuestQuery_Click);
             // 
             // grdITQuest
             // 
@@ -294,7 +296,8 @@
             this.colITQuestContent,
             this.colITQuestCreateDate,
             this.colITQuestState,
-            this.colItQuestDetail});
+            this.colItQuestDetail,
+            this.colReplayQuestion});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -323,6 +326,7 @@
             this.grdITQuest.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdITQuest.Size = new System.Drawing.Size(843, 333);
             this.grdITQuest.TabIndex = 14;
+            this.grdITQuest.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdITQuest_CellContentClick);
             // 
             // colITQuestOperationId
             // 
@@ -387,6 +391,12 @@
             this.colItQuestDetail.Name = "colItQuestDetail";
             this.colItQuestDetail.ReadOnly = true;
             // 
+            // colReplayQuestion
+            // 
+            this.colReplayQuestion.HeaderText = "回复";
+            this.colReplayQuestion.Name = "colReplayQuestion";
+            this.colReplayQuestion.ReadOnly = true;
+            // 
             // QueryITenderQuestionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -436,5 +446,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colITQuestCreateDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colITQuestState;
         private System.Windows.Forms.DataGridViewLinkColumn colItQuestDetail;
+        private System.Windows.Forms.DataGridViewLinkColumn colReplayQuestion;
     }
 }

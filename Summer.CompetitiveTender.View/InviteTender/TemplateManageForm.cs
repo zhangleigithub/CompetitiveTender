@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Summer.CompetitiveTender.View.InviteTender
 {
-    public partial class TemplateManageForm : MetroForm
+    public partial class TemplateManageForm : FormBase
     {
         public TemplateManageForm()
         {

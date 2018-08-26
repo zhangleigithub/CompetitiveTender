@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BidEvalBodyPage));
             this.axFramerControl1 = new AxDSOFramer.AxFramerControl();
             this.btnImportFile = new MetroFramework.Controls.MetroButton();
+            this.btnDZQZ = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.axFramerControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,13 +57,23 @@
             this.btnImportFile.UseSelectable = true;
             this.btnImportFile.Click += new System.EventHandler(this.btnImportFile_Click);
             // 
-            // ProjectBodyPage
+            // btnDZQZ
+            // 
+            this.btnDZQZ.Location = new System.Drawing.Point(105, 12);
+            this.btnDZQZ.Name = "btnDZQZ";
+            this.btnDZQZ.Size = new System.Drawing.Size(75, 23);
+            this.btnDZQZ.TabIndex = 1;
+            this.btnDZQZ.Text = "电子签章";
+            this.btnDZQZ.UseSelectable = true;
+            // 
+            // BidEvalBodyPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnDZQZ);
             this.Controls.Add(this.btnImportFile);
             this.Controls.Add(this.axFramerControl1);
-            this.Name = "ProjectBodyPage";
+            this.Name = "BidEvalBodyPage";
             this.Size = new System.Drawing.Size(600, 480);
             ((System.ComponentModel.ISupportInitialize)(this.axFramerControl1)).EndInit();
             this.ResumeLayout(false);
@@ -73,5 +84,6 @@
 
         private AxDSOFramer.AxFramerControl axFramerControl1;
         private MetroFramework.Controls.MetroButton btnImportFile;
+        private MetroFramework.Controls.MetroButton btnDZQZ;
     }
 }

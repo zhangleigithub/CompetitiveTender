@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Summer.CompetitiveTender.View.BidEvaluaMethod
 {
-    public partial class AddScoringFactor : MetroForm
+    public partial class AddScoringFactor : FormBase
     {
         public AddScoringFactor()
         {

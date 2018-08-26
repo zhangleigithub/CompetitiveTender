@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Summer.CompetitiveTender.View.InviteTender
 {
-    public partial class ITenderEditForm : MetroForm
+    public partial class ITenderEditForm : FormBase
     {
         public ITenderEditForm()
         {

@@ -17,7 +17,7 @@ namespace Summer.CompetitiveTender.View
     /// <summary>
     /// Login
     /// </summary>
-    public partial class Login : MetroForm
+    public partial class Login : FormBase
     {
         #region 字段
 
@@ -86,8 +86,8 @@ namespace Summer.CompetitiveTender.View
 
                 if (result.success)
                 {
-                    log.Debug(result.obj);
-                    //LoginRes loginRes = result.obj.ToObject<LoginRes>();
+                    LoginRes loginRes = result.obj.ToObject<LoginRes>();
+                    log.Debug(loginRes.ToString());
                     this.DialogResult = DialogResult.OK;
                 }
                 else

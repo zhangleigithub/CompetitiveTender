@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace Summer.CompetitiveTender.View
 {
-    public partial class InviteTenderMainForm : MetroForm
+    public partial class InviteTenderMainForm : FormBase
     {
         #region 方法
 
@@ -29,9 +29,16 @@ namespace Summer.CompetitiveTender.View
 
         private void OnNewProjectToolStripMenuItemClick(object sender, EventArgs e)
         {
-            EditITenderForm editProjectForm = new EditITenderForm();
-            editProjectForm.ShowDialog(this);
-            editProjectForm.Dispose();
+            CreateITenderForm createITenderForm = new CreateITenderForm();
+
+            if (createITenderForm.ShowDialog(this)==DialogResult.OK)
+            {
+                EditITenderForm editITenderForm = new EditITenderForm();
+                editITenderForm.ShowDialog(this);
+                editITenderForm.Dispose();
+            }
+
+            createITenderForm.Dispose();
         }
 
         private void OnOpenProjectToolStripMenuItemClick(object sender, EventArgs e)
@@ -39,6 +46,13 @@ namespace Summer.CompetitiveTender.View
             QueryITenderForm queryITenderForm = new QueryITenderForm();
             queryITenderForm.ShowDialog(this);
             queryITenderForm.Dispose();
+        }
+
+        private void OnProjectDiscussToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            QueryITenderQuestionForm queryITenderQuestionForm = new QueryITenderQuestionForm();
+            queryITenderQuestionForm.ShowDialog(this);
+            queryITenderQuestionForm.Dispose();
         }
 
         private void OnTemplateManageToolStripMenuItemClick(object sender, EventArgs e)
@@ -75,47 +89,13 @@ namespace Summer.CompetitiveTender.View
 
         #region 评标
 
-        private void OnEOBPrepareToolStripMenuItemClick(object sender, EventArgs e)
+        private void OnEvaluationOfBidsToolStripMenuItemClick(object sender, EventArgs e)
         {
-            EOBPrepareForm eOBPrepareForm = new EOBPrepareForm();
-            eOBPrepareForm.ShowDialog(this);
-            eOBPrepareForm.Dispose();
+            EOBManageForm eOBManageForm = new EOBManageForm();
+            eOBManageForm.ShowDialog(this);
+            eOBManageForm.Dispose();
         }
 
-        private void OnEOBCleanToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            EOBCleanForm eOBClean = new EOBCleanForm();
-            eOBClean.ShowDialog(this);
-            eOBClean.Dispose();
-        }
-
-        private void OnEOBQualificationReviewToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            EOBQualificationReviewForm eOBQualificationReviewForm = new EOBQualificationReviewForm();
-            eOBQualificationReviewForm.ShowDialog(this);
-            eOBQualificationReviewForm.Dispose();
-        }
-
-        private void OnEOBTechnologyReviewToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            EOBTechnologyReviewForm eOBTechnologyReviewForm = new EOBTechnologyReviewForm();
-            eOBTechnologyReviewForm.ShowDialog(this);
-            eOBTechnologyReviewForm.Dispose();
-        }
-
-        private void OnEOBCommerceReviewToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            EOBCommerceReviewForm eOBCommerceReviewForm = new EOBCommerceReviewForm();
-            eOBCommerceReviewForm.ShowDialog(this);
-            eOBCommerceReviewForm.Dispose();
-        }
-
-        private void OnReviewResultToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            ReviewResultForm reviewResultForm = new ReviewResultForm();
-            reviewResultForm.ShowDialog(this);
-            reviewResultForm.Dispose();
-        }
         #endregion
 
         #region 帮助

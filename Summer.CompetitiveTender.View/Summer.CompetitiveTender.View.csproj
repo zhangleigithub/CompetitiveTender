@@ -96,6 +96,36 @@
     <Compile Include="BidEvaluaMethod\ModifyScoringFactor.Designer.cs">
       <DependentUpon>ModifyScoringFactor.cs</DependentUpon>
     </Compile>
+    <Compile Include="EvaluationOfBids\EOBResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EvaluationOfBids\EOBResultForm.Designer.cs">
+      <DependentUpon>EOBResultForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluationOfBids\EOBForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EvaluationOfBids\EOBForm.Designer.cs">
+      <DependentUpon>EOBForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluationOfBids\EOBManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EvaluationOfBids\EOBManageForm.Designer.cs">
+      <DependentUpon>EOBManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluationOfBids\EOBReviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EvaluationOfBids\EOBReviewForm.Designer.cs">
+      <DependentUpon>EOBReviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluationOfBids\SetRecJudgesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EvaluationOfBids\SetRecJudgesForm.Designer.cs">
+      <DependentUpon>SetRecJudgesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -358,6 +388,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BidEvaluaMethod\ModifyScoringFactor.resx">
       <DependentUpon>ModifyScoringFactor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EvaluationOfBids\EOBResultForm.resx">
+      <DependentUpon>EOBResultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EvaluationOfBids\EOBForm.resx">
+      <DependentUpon>EOBForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EvaluationOfBids\EOBManageForm.resx">
+      <DependentUpon>EOBManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EvaluationOfBids\EOBReviewForm.resx">
+      <DependentUpon>EOBReviewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EvaluationOfBids\SetRecJudgesForm.resx">
+      <DependentUpon>SetRecJudgesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBase.resx">
       <DependentUpon>FormBase.cs</DependentUpon>

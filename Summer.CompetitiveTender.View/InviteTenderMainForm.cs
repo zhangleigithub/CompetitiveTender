@@ -89,47 +89,13 @@ namespace Summer.CompetitiveTender.View
 
         #region 评标
 
-        private void OnEOBPrepareToolStripMenuItemClick(object sender, EventArgs e)
+        private void OnEvaluationOfBidsToolStripMenuItemClick(object sender, EventArgs e)
         {
-            EOBPrepareForm eOBPrepareForm = new EOBPrepareForm();
-            eOBPrepareForm.ShowDialog(this);
-            eOBPrepareForm.Dispose();
+            EOBManageForm eOBManageForm = new EOBManageForm();
+            eOBManageForm.ShowDialog(this);
+            eOBManageForm.Dispose();
         }
 
-        private void OnEOBCleanToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            EOBCleanForm eOBClean = new EOBCleanForm();
-            eOBClean.ShowDialog(this);
-            eOBClean.Dispose();
-        }
-
-        private void OnEOBQualificationReviewToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            EOBQualificationReviewForm eOBQualificationReviewForm = new EOBQualificationReviewForm();
-            eOBQualificationReviewForm.ShowDialog(this);
-            eOBQualificationReviewForm.Dispose();
-        }
-
-        private void OnEOBTechnologyReviewToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            EOBTechnologyReviewForm eOBTechnologyReviewForm = new EOBTechnologyReviewForm();
-            eOBTechnologyReviewForm.ShowDialog(this);
-            eOBTechnologyReviewForm.Dispose();
-        }
-
-        private void OnEOBCommerceReviewToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            EOBCommerceReviewForm eOBCommerceReviewForm = new EOBCommerceReviewForm();
-            eOBCommerceReviewForm.ShowDialog(this);
-            eOBCommerceReviewForm.Dispose();
-        }
-
-        private void OnReviewResultToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            ReviewResultForm reviewResultForm = new ReviewResultForm();
-            reviewResultForm.ShowDialog(this);
-            reviewResultForm.Dispose();
-        }
         #endregion
 
         #region 帮助

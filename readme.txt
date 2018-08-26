@@ -1,0 +1,2 @@
+1、安装ActiveX中的DsoFramer_KB311765_x86.exe，默认安装在C盘
+2、以管理员身份运行，注册word插件.bat

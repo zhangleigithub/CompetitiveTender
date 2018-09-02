@@ -1,6 +1,7 @@
 ﻿using log4net;
 using MetroFramework.Forms;
 using Summer.Common.Utility.WebApi;
+using Summer.CompetitiveTender.Model;
 using Summer.CompetitiveTender.Model.Response;
 using Summer.CompetitiveTender.Service.LoginServiceReference;
 using System;
@@ -87,6 +88,7 @@ namespace Summer.CompetitiveTender.View
                 if (result.success)
                 {
                     LoginRes loginRes = result.obj.ToObject<LoginRes>();
+                    CacheData.GetInstance().SetValue("login", loginRes);
                     log.Debug(loginRes.ToString());
                     this.DialogResult = DialogResult.OK;
                 }

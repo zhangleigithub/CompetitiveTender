@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webservice.govpurchase.opensource.com/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="GpTemplateWebServiceService" targetNamespace="http://webservice.govpurchase.opensource.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://webservice.govpurchase.opensource.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="DownLoadFile" type="tns:DownLoadFile" />
+      <xs:element name="DownLoadFileResponse" type="tns:DownLoadFileResponse" />
+      <xs:element name="add" type="tns:add" />
+      <xs:element name="addResponse" type="tns:addResponse" />
+      <xs:element name="edit" type="tns:edit" />
+      <xs:element name="editResponse" type="tns:editResponse" />
+      <xs:element name="findList" type="tns:findList" />
+      <xs:element name="findListResponse" type="tns:findListResponse" />
+      <xs:element name="getById" type="tns:getById" />
+      <xs:element name="getByIdResponse" type="tns:getByIdResponse" />
+      <xs:element name="remove" type="tns:remove" />
+      <xs:element name="removeResponse" type="tns:removeResponse" />
+      <xs:element name="uploadFile" type="tns:uploadFile" />
+      <xs:element name="uploadFileResponse" type="tns:uploadFileResponse" />
+      <xs:complexType name="DownLoadFile">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gpTemplateWebDO" type="tns:gpTemplateWebDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="gpTemplateWebDO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:baseEntity">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="adtCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="adtId" type="xs:string" />
+              <xs:element minOccurs="0" name="adtTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="fileMakeState" type="xs:int" />
+              <xs:element minOccurs="0" name="fileUrl" type="xs:string" />
+              <xs:element minOccurs="0" name="gtCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gtContent" type="xs:string" />
+              <xs:element minOccurs="0" name="gtGroup" type="xs:int" />
+              <xs:element minOccurs="0" name="gtGroupName" type="xs:string" />
+              <xs:element minOccurs="0" name="gtId" type="xs:string" />
+              <xs:element minOccurs="0" name="gtName" type="xs:string" />
+              <xs:element minOccurs="0" name="gtType" type="xs:int" />
+              <xs:element minOccurs="0" name="gtTypeName" type="xs:string" />
+              <xs:element minOccurs="0" name="optCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="optId" type="xs:string" />
+              <xs:element minOccurs="0" name="optTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="remark" type="xs:string" />
+              <xs:element minOccurs="0" name="sort" type="xs:int" />
+              <xs:element minOccurs="0" name="state" type="xs:int" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="baseEntity" abstract="true">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="DownLoadFileResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="remove">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="removeResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="resultDO">
+        <xs:sequence>
+          <xs:element name="code" type="xs:int" />
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+          <xs:element minOccurs="0" name="obj" type="xs:anyType" />
+          <xs:element name="success" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="add">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gtName" type="xs:string" />
+          <xs:element minOccurs="0" name="gtType" type="xs:int" />
+          <xs:element minOccurs="0" name="gtGroup" type="xs:int" />
+          <xs:element minOccurs="0" name="remark" type="xs:string" />
+          <xs:element minOccurs="0" name="adtId" type="xs:string" />
+          <xs:element minOccurs="0" name="adtCoId" type="xs:string" />
+          <xs:element minOccurs="0" name="adtTime" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="addResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="uploadFile">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gpTemplateWebDO" type="tns:gpTemplateWebDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="uploadFileResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="edit">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gtId" type="xs:string" />
+          <xs:element minOccurs="0" name="gtName" type="xs:string" />
+          <xs:element minOccurs="0" name="gtType" type="xs:int" />
+          <xs:element minOccurs="0" name="gtGroup" type="xs:int" />
+          <xs:element minOccurs="0" name="remark" type="xs:string" />
+          <xs:element minOccurs="0" name="adtId" type="xs:string" />
+          <xs:element minOccurs="0" name="adtCoId" type="xs:string" />
+          <xs:element minOccurs="0" name="adtTime" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="editResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getById">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gtId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getByIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findList">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="auID" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findListResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="IOException" type="tns:IOException" />
+      <xs:complexType name="IOException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="removeResponse">
+    <wsdl:part name="parameters" element="tns:removeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOException">
+    <wsdl:part name="IOException" element="tns:IOException" />
+  </wsdl:message>
+  <wsdl:message name="findListResponse">
+    <wsdl:part name="parameters" element="tns:findListResponse" />
+  </wsdl:message>
+  <wsdl:message name="remove">
+    <wsdl:part name="parameters" element="tns:remove" />
+  </wsdl:message>
+  <wsdl:message name="add">
+    <wsdl:part name="parameters" element="tns:add" />
+  </wsdl:message>
+  <wsdl:message name="uploadFile">
+    <wsdl:part name="parameters" element="tns:uploadFile" />
+  </wsdl:message>
+  <wsdl:message name="getByIdResponse">
+    <wsdl:part name="parameters" element="tns:getByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownLoadFileResponse">
+    <wsdl:part name="parameters" element="tns:DownLoadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="edit">
+    <wsdl:part name="parameters" element="tns:edit" />
+  </wsdl:message>
+  <wsdl:message name="addResponse">
+    <wsdl:part name="parameters" element="tns:addResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownLoadFile">
+    <wsdl:part name="parameters" element="tns:DownLoadFile" />
+  </wsdl:message>
+  <wsdl:message name="uploadFileResponse">
+    <wsdl:part name="parameters" element="tns:uploadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="editResponse">
+    <wsdl:part name="parameters" element="tns:editResponse" />
+  </wsdl:message>
+  <wsdl:message name="getById">
+    <wsdl:part name="parameters" element="tns:getById" />
+  </wsdl:message>
+  <wsdl:message name="findList">
+    <wsdl:part name="parameters" element="tns:findList" />
+  </wsdl:message>
+  <wsdl:portType name="GpTemplateWebService">
+    <wsdl:operation name="DownLoadFile">
+      <wsdl:input name="DownLoadFile" message="tns:DownLoadFile" />
+      <wsdl:output name="DownLoadFileResponse" message="tns:DownLoadFileResponse" />
+      <wsdl:fault name="IOException" message="tns:IOException" />
+    </wsdl:operation>
+    <wsdl:operation name="remove">
+      <wsdl:input name="remove" message="tns:remove" />
+      <wsdl:output name="removeResponse" message="tns:removeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="add">
+      <wsdl:input name="add" message="tns:add" />
+      <wsdl:output name="addResponse" message="tns:addResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="uploadFile">
+      <wsdl:input name="uploadFile" message="tns:uploadFile" />
+      <wsdl:output name="uploadFileResponse" message="tns:uploadFileResponse" />
+      <wsdl:fault name="IOException" message="tns:IOException" />
+    </wsdl:operation>
+    <wsdl:operation name="edit">
+      <wsdl:input name="edit" message="tns:edit" />
+      <wsdl:output name="editResponse" message="tns:editResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getById">
+      <wsdl:input name="getById" message="tns:getById" />
+      <wsdl:output name="getByIdResponse" message="tns:getByIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="findList">
+      <wsdl:input name="findList" message="tns:findList" />
+      <wsdl:output name="findListResponse" message="tns:findListResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GpTemplateWebServiceServiceSoapBinding" type="tns:GpTemplateWebService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DownLoadFile">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="DownLoadFile">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DownLoadFileResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IOException">
+        <soap:fault use="literal" name="IOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="remove">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="remove">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="removeResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="add">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="add">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="addResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="uploadFile">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="uploadFile">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="uploadFileResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IOException">
+        <soap:fault use="literal" name="IOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="edit">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="edit">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="editResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getById">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getById">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getByIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findList">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="findList">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="findListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GpTemplateWebServiceService">
+    <wsdl:port name="GpTemplateWebServicePort" binding="tns:GpTemplateWebServiceServiceSoapBinding">
+      <soap:address location="http://121.28.95.246:9090/webservice/gpTemplateWebService/add" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

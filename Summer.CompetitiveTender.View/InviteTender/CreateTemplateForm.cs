@@ -1,4 +1,8 @@
-﻿using MetroFramework.Forms;
+﻿using log4net;
+using MetroFramework.Forms;
+using Summer.CompetitiveTender.Model;
+using Summer.CompetitiveTender.Model.Response;
+using Summer.CompetitiveTender.Service.ServiceReferenceGpTemplate;
 using Summer.CompetitiveTender.View.Common;
 using System;
 using System.Collections.Generic;
@@ -13,6 +17,17 @@ namespace Summer.CompetitiveTender.View.InviteTender
 {
     public partial class CreateTemplateForm : FormBase
     {
+        #region 字段
+
+        /// <summary>
+        /// log
+        /// </summary>
+        private static ILog log = LogManager.GetLogger(typeof(CreateTemplateForm));
+
+        #endregion
+
+        #region 方法
+
         public CreateTemplateForm()
         {
             InitializeComponent();
@@ -34,5 +49,39 @@ namespace Summer.CompetitiveTender.View.InviteTender
             this.cboProjectType.DisplayMember = "Text";
             this.cboProjectType.ValueMember = "Value";
         }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LoginRes loginRes = CacheData.GetInstance().GetValue<LoginRes>("login");
+
+                GpTemplateWebServiceClient client = new GpTemplateWebServiceClient();
+                resultDO result = client.add(this.txtName.Text.Trim(),
+                    (int)this.cboType.SelectedValue,
+                    (int)this.cboProjectType.SelectedValue,
+                    this.txtRemark.Text.Trim(),
+                    loginRes.bcId ,
+                    loginRes.bctId,
+                    DateTime.Now);
+
+                if (result.success)
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    log.Error(result.message);
+                    MetroFramework.MetroMessageBox.Show(this, "新建模板失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+                MetroFramework.MetroMessageBox.Show(this, "新建模板失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        #endregion
     }
 }

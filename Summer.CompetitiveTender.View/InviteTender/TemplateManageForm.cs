@@ -1,5 +1,9 @@
-﻿using MetroFramework;
+﻿using log4net;
+using MetroFramework;
 using MetroFramework.Forms;
+using Summer.CompetitiveTender.Model;
+using Summer.CompetitiveTender.Model.Response;
+using Summer.CompetitiveTender.Service.ServiceReferenceGpTemplate;
 using Summer.CompetitiveTender.View.Common;
 using System;
 using System.Collections.Generic;
@@ -14,10 +18,16 @@ namespace Summer.CompetitiveTender.View.InviteTender
 {
     public partial class TemplateManageForm : FormBase
     {
-        public TemplateManageForm()
-        {
-            InitializeComponent();
-        }
+        #region 字段
+
+        /// <summary>
+        /// log
+        /// </summary>
+        private static ILog log = LogManager.GetLogger(typeof(TemplateManageForm));
+
+        #endregion
+
+        #region 事件
 
         private void QueryITenderTemplateForm_Shown(object sender, EventArgs e)
         {
@@ -45,6 +55,16 @@ namespace Summer.CompetitiveTender.View.InviteTender
             for (int i = 0; i < 30; i++)
             {
                 this.grdTemplate.Rows.Add(i, i, "测试", 0, (i % 4 == 0) ? 1 : i % 4, "测试", DateTime.Now.ToLocalTime(), i % 2);
+            }
+
+            try
+            {
+                this.LoadData();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+                MetroFramework.MetroMessageBox.Show(this, "加载失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -99,5 +119,34 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
             }
         }
+
+        #endregion
+
+        #region 方法
+
+        public TemplateManageForm()
+        {
+            InitializeComponent();
+        }
+
+        public void LoadData()
+        {
+            LoginRes loginRes = CacheData.GetInstance().GetValue<LoginRes>("login");
+
+            GpTemplateWebServiceClient client = new GpTemplateWebServiceClient();
+            resultDO result = client.findList(loginRes.bcId);
+            
+            if (result.success)
+            {
+                //result.obj.ToObject<>();
+            }
+            else
+            {
+                log.Error(result.message);
+                MetroFramework.MetroMessageBox.Show(this, "加载失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        #endregion
     }
 }

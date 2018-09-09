@@ -71,14 +71,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bid\BidControl.cs" />
     <Compile Include="MultiHeaderDataGridView.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="OpenBid\OpenBidControl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Summer.CompetitiveTender.Service\Summer.CompetitiveTender.Service.csproj">
+      <Project>{9164404e-5db4-4e4a-816f-a216fe8013e2}</Project>
+      <Name>Summer.CompetitiveTender.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Summer.Common.Utility.Commnd;
 
 namespace Summer.CompetitiveTender.View.Bid
 {
@@ -75,9 +76,34 @@ namespace Summer.CompetitiveTender.View.Bid
             }
         }
 
+        /// <summary>
+        /// 压缩文件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_upload_Click(object sender, EventArgs e)
         {
+            Utility utility = new Utility();
+            //压缩文件
+            utility.CompressRar(txt_path.Text, txt_StorePath.Text);
             MessageBox.Show("上传成功！");
         }
+        /// <summary>
+        /// 获取压缩文件存放路径
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_StorePath_Click(object sender, EventArgs e)
+        {
+            //初始化一个OpenFileDialog类
+            OpenFileDialog fileDialog = new OpenFileDialog();
+
+            //判断用户是否正确的选择了文件
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                txt_StorePath.Text = fileDialog.FileName;
+            }
+        }
+        
     }
 }

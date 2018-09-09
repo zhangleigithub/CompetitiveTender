@@ -85,8 +85,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bid\BidService.cs" />
+    <Compile Include="Bid\IBidService.cs" />
+    <Compile Include="OpenBid\IOpenBidService.cs" />
+    <Compile Include="OpenBid\OpenBidService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\LoginServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\OpenBidService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -102,6 +111,10 @@
     <None Include="packages.config" />
     <None Include="Service References\LoginServiceReference\LoginWebServiceService.wsdl" />
     <None Include="Service References\LoginServiceReference\Summer.CompetitiveTender.Service.LoginServiceReference.json.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OpenBidService\GpSectionWebServiceService.wsdl" />
+    <None Include="Service References\OpenBidService\Summer.CompetitiveTender.Service.OpenBidService.resultDO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReferenceGpTemplate\GpTemplateWebServiceService.wsdl" />
@@ -124,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\LoginServiceReference\" />
+    <WCFMetadataStorage Include="Service References\OpenBidService\" />
     <WCFMetadataStorage Include="Service References\ServiceReferenceGpTemplate\" />
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +160,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ServiceReferenceGpTemplate\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OpenBidService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OpenBidService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OpenBidService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

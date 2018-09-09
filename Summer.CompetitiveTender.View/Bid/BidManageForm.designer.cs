@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.tab_UploadFile = new MetroFramework.Controls.MetroTabPage();
             this.btn_upload = new MetroFramework.Controls.MetroButton();
@@ -48,13 +48,16 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewLinkColumn1 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.tab_DiscussArea = new MetroFramework.Controls.MetroTabPage();
             this.tab_HistoryData = new MetroFramework.Controls.MetroTabPage();
             this.dgv_historyFile = new MetroFramework.Controls.MetroGrid();
             this.project = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bidDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.c11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.download = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.tab_DiscussArea = new MetroFramework.Controls.MetroTabPage();
+            this.htmlLabel3 = new MetroFramework.Drawing.Html.HtmlLabel();
+            this.txt_StorePath = new MetroFramework.Controls.MetroTextBox();
+            this.btn_StorePath = new MetroFramework.Controls.MetroButton();
             this.tabControl1.SuspendLayout();
             this.tab_UploadFile.SuspendLayout();
             this.tab_MakeTenderFile.SuspendLayout();
@@ -80,7 +83,10 @@
             // tab_UploadFile
             // 
             this.tab_UploadFile.Controls.Add(this.btn_upload);
+            this.tab_UploadFile.Controls.Add(this.btn_StorePath);
+            this.tab_UploadFile.Controls.Add(this.txt_StorePath);
             this.tab_UploadFile.Controls.Add(this.btn_browse);
+            this.tab_UploadFile.Controls.Add(this.htmlLabel3);
             this.tab_UploadFile.Controls.Add(this.txt_path);
             this.tab_UploadFile.Controls.Add(this.htmlLabel2);
             this.tab_UploadFile.Controls.Add(this.metroComboBox1);
@@ -99,7 +105,7 @@
             // 
             // btn_upload
             // 
-            this.btn_upload.Location = new System.Drawing.Point(404, 234);
+            this.btn_upload.Location = new System.Drawing.Point(404, 278);
             this.btn_upload.Name = "btn_upload";
             this.btn_upload.Size = new System.Drawing.Size(75, 23);
             this.btn_upload.TabIndex = 2;
@@ -211,28 +217,28 @@
             this.dgv_tenderFile.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_tenderFile.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgv_tenderFile.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_tenderFile.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_tenderFile.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_tenderFile.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_tenderFile.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewLinkColumn1});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_tenderFile.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_tenderFile.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_tenderFile.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_tenderFile.EnableHeadersVisualStyles = false;
             this.dgv_tenderFile.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -240,14 +246,14 @@
             this.dgv_tenderFile.Location = new System.Drawing.Point(3, 3);
             this.dgv_tenderFile.Name = "dgv_tenderFile";
             this.dgv_tenderFile.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_tenderFile.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_tenderFile.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_tenderFile.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_tenderFile.RowTemplate.Height = 23;
             this.dgv_tenderFile.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -274,21 +280,6 @@
             this.dataGridViewLinkColumn1.HeaderText = "下载";
             this.dataGridViewLinkColumn1.Name = "dataGridViewLinkColumn1";
             // 
-            // tab_DiscussArea
-            // 
-            this.tab_DiscussArea.HorizontalScrollbarBarColor = true;
-            this.tab_DiscussArea.HorizontalScrollbarHighlightOnWheel = false;
-            this.tab_DiscussArea.HorizontalScrollbarSize = 10;
-            this.tab_DiscussArea.Location = new System.Drawing.Point(4, 38);
-            this.tab_DiscussArea.Name = "tab_DiscussArea";
-            this.tab_DiscussArea.Size = new System.Drawing.Size(716, 417);
-            this.tab_DiscussArea.TabIndex = 2;
-            this.tab_DiscussArea.Text = "讨论区";
-            this.tab_DiscussArea.UseVisualStyleBackColor = true;
-            this.tab_DiscussArea.VerticalScrollbarBarColor = true;
-            this.tab_DiscussArea.VerticalScrollbarHighlightOnWheel = false;
-            this.tab_DiscussArea.VerticalScrollbarSize = 10;
-            // 
             // tab_HistoryData
             // 
             this.tab_HistoryData.Controls.Add(this.dgv_historyFile);
@@ -311,28 +302,28 @@
             this.dgv_historyFile.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_historyFile.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgv_historyFile.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_historyFile.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_historyFile.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_historyFile.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_historyFile.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.project,
             this.bidDate,
             this.c11,
             this.download});
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_historyFile.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_historyFile.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_historyFile.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_historyFile.EnableHeadersVisualStyles = false;
             this.dgv_historyFile.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -340,14 +331,14 @@
             this.dgv_historyFile.Location = new System.Drawing.Point(0, 0);
             this.dgv_historyFile.Name = "dgv_historyFile";
             this.dgv_historyFile.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_historyFile.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_historyFile.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_historyFile.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_historyFile.RowTemplate.Height = 23;
             this.dgv_historyFile.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -373,6 +364,74 @@
             // 
             this.download.HeaderText = "下载";
             this.download.Name = "download";
+            // 
+            // tab_DiscussArea
+            // 
+            this.tab_DiscussArea.HorizontalScrollbarBarColor = true;
+            this.tab_DiscussArea.HorizontalScrollbarHighlightOnWheel = false;
+            this.tab_DiscussArea.HorizontalScrollbarSize = 10;
+            this.tab_DiscussArea.Location = new System.Drawing.Point(4, 38);
+            this.tab_DiscussArea.Name = "tab_DiscussArea";
+            this.tab_DiscussArea.Size = new System.Drawing.Size(716, 417);
+            this.tab_DiscussArea.TabIndex = 2;
+            this.tab_DiscussArea.Text = "讨论区";
+            this.tab_DiscussArea.UseVisualStyleBackColor = true;
+            this.tab_DiscussArea.VerticalScrollbarBarColor = true;
+            this.tab_DiscussArea.VerticalScrollbarHighlightOnWheel = false;
+            this.tab_DiscussArea.VerticalScrollbarSize = 10;
+            // 
+            // htmlLabel3
+            // 
+            this.htmlLabel3.AutoScroll = true;
+            this.htmlLabel3.AutoScrollMinSize = new System.Drawing.Size(70, 22);
+            this.htmlLabel3.AutoSize = false;
+            this.htmlLabel3.BackColor = System.Drawing.SystemColors.Window;
+            this.htmlLabel3.Location = new System.Drawing.Point(106, 215);
+            this.htmlLabel3.Name = "htmlLabel3";
+            this.htmlLabel3.Size = new System.Drawing.Size(75, 23);
+            this.htmlLabel3.TabIndex = 4;
+            this.htmlLabel3.Text = "存放位置：";
+            // 
+            // txt_StorePath
+            // 
+            // 
+            // 
+            // 
+            this.txt_StorePath.CustomButton.Image = null;
+            this.txt_StorePath.CustomButton.Location = new System.Drawing.Point(210, 1);
+            this.txt_StorePath.CustomButton.Name = "";
+            this.txt_StorePath.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txt_StorePath.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txt_StorePath.CustomButton.TabIndex = 1;
+            this.txt_StorePath.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txt_StorePath.CustomButton.UseSelectable = true;
+            this.txt_StorePath.CustomButton.Visible = false;
+            this.txt_StorePath.Lines = new string[0];
+            this.txt_StorePath.Location = new System.Drawing.Point(188, 215);
+            this.txt_StorePath.MaxLength = 32767;
+            this.txt_StorePath.Name = "txt_StorePath";
+            this.txt_StorePath.PasswordChar = '\0';
+            this.txt_StorePath.ReadOnly = true;
+            this.txt_StorePath.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txt_StorePath.SelectedText = "";
+            this.txt_StorePath.SelectionLength = 0;
+            this.txt_StorePath.SelectionStart = 0;
+            this.txt_StorePath.ShortcutsEnabled = true;
+            this.txt_StorePath.Size = new System.Drawing.Size(232, 23);
+            this.txt_StorePath.TabIndex = 5;
+            this.txt_StorePath.UseSelectable = true;
+            this.txt_StorePath.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txt_StorePath.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // btn_StorePath
+            // 
+            this.btn_StorePath.Location = new System.Drawing.Point(419, 215);
+            this.btn_StorePath.Name = "btn_StorePath";
+            this.btn_StorePath.Size = new System.Drawing.Size(60, 23);
+            this.btn_StorePath.TabIndex = 1;
+            this.btn_StorePath.Text = "浏览";
+            this.btn_StorePath.UseSelectable = true;
+            this.btn_StorePath.Click += new System.EventHandler(this.btn_StorePath_Click);
             // 
             // BidManageForm
             // 
@@ -417,5 +476,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewLinkColumn dataGridViewLinkColumn1;
+        private MetroFramework.Controls.MetroButton btn_StorePath;
+        private MetroFramework.Controls.MetroTextBox txt_StorePath;
+        private MetroFramework.Drawing.Html.HtmlLabel htmlLabel3;
     }
 }

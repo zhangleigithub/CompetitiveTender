@@ -76,6 +76,7 @@
     <Compile Include="WebApi\ApiMapperConfig.cs" />
     <Compile Include="WebApi\HttpMethod.cs" />
     <Compile Include="WebApi\WebClient.cs" />
+    <Compile Include="WebServiceAgent.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,5 +1,4 @@
-﻿using Summer.CompetitiveTender.Service.ServiceReferenceGpTemplate;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,8 +22,8 @@ namespace Summer.CompetitiveTender.Service.BidService
 
             try
             {
-                GpTemplateWebServiceClient gpTemplateWebService = new GpTemplateWebServiceClient();
-                resultDO ret = gpTemplateWebService.findList(id);
+                //GpTemplateWebServiceClient gpTemplateWebService = new GpTemplateWebServiceClient();
+                //resultDO ret = gpTemplateWebService.findList(id);
             }
             catch (Exception ex)
             {

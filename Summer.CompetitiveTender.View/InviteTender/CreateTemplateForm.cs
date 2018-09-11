@@ -1,8 +1,9 @@
 ﻿using log4net;
 using MetroFramework.Forms;
 using Summer.CompetitiveTender.Model;
+using Summer.CompetitiveTender.Model.Request;
 using Summer.CompetitiveTender.Model.Response;
-using Summer.CompetitiveTender.Service.ServiceReferenceGpTemplate;
+using Summer.CompetitiveTender.Service;
 using Summer.CompetitiveTender.View.Common;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,11 @@ namespace Summer.CompetitiveTender.View.InviteTender
         /// log
         /// </summary>
         private static ILog log = LogManager.GetLogger(typeof(CreateTemplateForm));
+
+        /// <summary>
+        /// gpTemplateService
+        /// </summary>
+        private IGpTemplateService gpTemplateService = new GpTemplateService();
 
         #endregion
 
@@ -54,24 +60,23 @@ namespace Summer.CompetitiveTender.View.InviteTender
         {
             try
             {
-                LoginRes loginRes = CacheData.GetInstance().GetValue<LoginRes>("login");
+                LoginResponse loginResponse = Cache.GetInstance().GetValue<LoginResponse>("login");
 
-                GpTemplateWebServiceClient client = new GpTemplateWebServiceClient();
-                resultDO result = client.add(this.txtName.Text.Trim(),
-                    (int)this.cboType.SelectedValue,
-                    (int)this.cboProjectType.SelectedValue,
-                    this.txtRemark.Text.Trim(),
-                    loginRes.bcId ,
-                    loginRes.bctId,
-                    DateTime.Now);
+                GpTemplateAddRequest gpTemplateAddRequest = new GpTemplateAddRequest();
+                gpTemplateAddRequest.Name = this.txtName.Text.Trim();
+                gpTemplateAddRequest.Type = (int)this.cboType.SelectedValue;
+                gpTemplateAddRequest.Group = (int)this.cboProjectType.SelectedValue;
+                gpTemplateAddRequest.Remark = this.txtRemark.Text.Trim();
+                gpTemplateAddRequest.AdtId = loginResponse.bcId;
+                gpTemplateAddRequest.AdtCoId = loginResponse.bctId;
+                gpTemplateAddRequest.AdtTime = DateTime.Now;
 
-                if (result.success)
+                if (gpTemplateService.Add(gpTemplateAddRequest))
                 {
                     this.DialogResult = DialogResult.OK;
                 }
                 else
                 {
-                    log.Error(result.message);
                     MetroFramework.MetroMessageBox.Show(this, "新建模板失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }

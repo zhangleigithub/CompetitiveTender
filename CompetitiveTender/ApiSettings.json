@@ -1,9 +1,19 @@
 {
   "ApiMappers": {
     "login": {
-      "Resource": "webservice/loginWebService/login?wsdl",
-      "Method": 0,
-      "Desc": "描述1"
+      "Resource": "webservice/loginWebService/login",
+      "MethodName": "login",
+      "Desc": "用户登录"
+    },
+    "gpTemplateAdd": {
+      "Resource": "webservice/gpTemplateWebService/add",
+      "MethodName": "add",
+      "Desc": "招标模板添加"
+    },
+    "gpTemplateFindList": {
+      "Resource": "webservice/gpTemplateWebService/add",
+      "MethodName": "findList",
+      "Desc": "招标模板查找"
     }
   },
   "BaseUrl": "http://121.28.95.246:9090/"

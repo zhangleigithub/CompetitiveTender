@@ -1,5 +1,7 @@
 ﻿using Summer.Common.Utility;
+using Summer.Common.Utility.WebService;
 using Summer.CompetitiveTender.Model.Request;
+using Summer.CompetitiveTender.Model.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +12,7 @@ namespace Summer.CompetitiveTender.Service
     /// <summary>
     /// UserService
     /// </summary>
-    public class UserService
+    public class UserService : IUserService
     {
         #region 字段
 
@@ -20,14 +22,9 @@ namespace Summer.CompetitiveTender.Service
         private WebServiceAgent wsAgent = null;
 
         /// <summary>
-        /// URL
+        /// RESOURCE_ID
         /// </summary>
-        private const string URL = "http://121.28.95.246:9090/webservice/loginWebService/login";
-
-        /// <summary>
-        /// LOGIN
-        /// </summary>
-        private const string LOGIN = "login";
+        private const string RESOURCE_ID = "login";
 
         #endregion
 
@@ -38,22 +35,22 @@ namespace Summer.CompetitiveTender.Service
         /// </summary>
         public UserService()
         {
-            wsAgent = new WebServiceAgent(UserService.URL);
+            wsAgent = new WebServiceAgent(WebServiceResource.Instance().GetResource(UserService.RESOURCE_ID).Url);
         }
 
         /// <summary>
         /// Login
         /// </summary>
-        /// <param name="req"></param>
+        /// <param name="loginRequest">loginRequest</param>
         /// <returns>结果</returns>
-        public object Login(LoginReq req)
+        public LoginResponse Login(LoginRequest loginRequest)
         {
-            if (req == null)
+            if (loginRequest == null)
             {
-                throw new ArgumentNullException(nameof(req));
+                throw new ArgumentNullException(nameof(loginRequest));
             }
 
-            return this.wsAgent.Invoke<string>(UserService.LOGIN, req.ToArgs());
+            return this.wsAgent.Invoke<LoginResponse>(UserService.RESOURCE_ID, loginRequest.ToArgs());
         }
 
         #endregion

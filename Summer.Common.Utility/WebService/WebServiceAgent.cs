@@ -8,7 +8,7 @@ using System.CodeDom;
 using System.CodeDom.Compiler;
 using System.Reflection;
 
-namespace Summer.Common.Utility
+namespace Summer.Common.Utility.WebService
 {
     /// <summary>
     /// WebServiceAgent

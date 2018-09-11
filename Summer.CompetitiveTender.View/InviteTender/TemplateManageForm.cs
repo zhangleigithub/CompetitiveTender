@@ -3,7 +3,7 @@ using MetroFramework;
 using MetroFramework.Forms;
 using Summer.CompetitiveTender.Model;
 using Summer.CompetitiveTender.Model.Response;
-using Summer.CompetitiveTender.Service.ServiceReferenceGpTemplate;
+using Summer.CompetitiveTender.Service;
 using Summer.CompetitiveTender.View.Common;
 using System;
 using System.Collections.Generic;
@@ -24,6 +24,11 @@ namespace Summer.CompetitiveTender.View.InviteTender
         /// log
         /// </summary>
         private static ILog log = LogManager.GetLogger(typeof(TemplateManageForm));
+
+        /// <summary>
+        /// gpTemplateService
+        /// </summary>
+        private IGpTemplateService gpTemplateService = new GpTemplateService();
 
         #endregion
 
@@ -131,20 +136,9 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
         public void LoadData()
         {
-            LoginRes loginRes = CacheData.GetInstance().GetValue<LoginRes>("login");
+            LoginResponse loginResponse = Cache.GetInstance().GetValue<LoginResponse>("login");
 
-            GpTemplateWebServiceClient client = new GpTemplateWebServiceClient();
-            resultDO result = client.findList(loginRes.bcId);
-            
-            if (result.success)
-            {
-                //result.obj.ToObject<>();
-            }
-            else
-            {
-                log.Error(result.message);
-                MetroFramework.MetroMessageBox.Show(this, "加载失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            object result = gpTemplateService.FindListByAuId(loginResponse.bcId);
         }
 
         #endregion

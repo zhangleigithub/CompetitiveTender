@@ -1,9 +1,9 @@
 ﻿using log4net;
 using MetroFramework.Forms;
-using Summer.Common.Utility.WebApi;
 using Summer.CompetitiveTender.Model;
+using Summer.CompetitiveTender.Model.Request;
 using Summer.CompetitiveTender.Model.Response;
-using Summer.CompetitiveTender.Service.LoginServiceReference;
+using Summer.CompetitiveTender.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,6 +26,11 @@ namespace Summer.CompetitiveTender.View
         /// log
         /// </summary>
         private static ILog log = LogManager.GetLogger(typeof(Login));
+
+        /// <summary>
+        /// userService
+        /// </summary>
+        private IUserService userService = new UserService();
 
         #endregion
 
@@ -82,21 +87,18 @@ namespace Summer.CompetitiveTender.View
         {
             try
             {
-                LoginWebServiceClient client1 = new LoginWebServiceClient();
-                json result = client1.login(this.txtUserName.Text, this.txtPassword.Text, this.UserType.ToLonginString(), string.Empty);
+                LoginRequest loginRequest = new LoginRequest();
+                loginRequest.UserName = this.txtUserName.Text.Trim();
+                loginRequest.Password = this.txtPassword.Text.Trim();
+                loginRequest.UserType = this.UserType.ToLonginString();
 
-                if (result.success)
-                {
-                    LoginRes loginRes = result.obj.ToObject<LoginRes>();
-                    CacheData.GetInstance().SetValue("login", loginRes);
-                    log.Debug(loginRes.ToString());
-                    this.DialogResult = DialogResult.OK;
-                }
-                else
-                {
-                    log.Error(result.message);
-                    MetroFramework.MetroMessageBox.Show(this, "登录失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                //登录
+                LoginResponse result = userService.Login(loginRequest);
+
+                //缓存
+                Cache.GetInstance().SetValue("login", result);
+
+                this.DialogResult = DialogResult.OK;
             }
             catch (Exception ex)
             {

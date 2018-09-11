@@ -5,7 +5,10 @@ using System.Text;
 
 namespace Summer.CompetitiveTender.Model.Response
 {
-    public class LoginRes
+    /// <summary>
+    /// LoginResponse
+    /// </summary>
+    public class LoginResponse
     {
         public string applyName { get; set; }
         public DateTime applyTime { get; set; }

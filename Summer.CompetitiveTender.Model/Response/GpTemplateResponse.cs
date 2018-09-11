@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Summer.CompetitiveTender.Model.Response
 {
-    public class GpTemplateRes
+    public class GpTemplateResponse
     {
 
     }

@@ -1,8 +1,11 @@
-﻿using Summer.Common.Utility;
+﻿using Newtonsoft.Json;
+using Summer.Common.Utility;
+using Summer.Common.Utility.WebService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Xml;
 
 namespace Summer.CompetitiveTender.Service
 {
@@ -15,27 +18,54 @@ namespace Summer.CompetitiveTender.Service
         /// 调用指定方法
         /// </summary>
         /// <param name="wsAgent">wsAgent</param>
-        /// <param name="methodName">方法名称</param>
+        /// <param name="resourceId">resourceId</param>
         /// <param name="args">参数</param>
         /// <returns>值</returns>
-        public static T Invoke<T>(this WebServiceAgent wsAgent, string methodName, params object[] args)
+        public static T Invoke<T>(this WebServiceAgent wsAgent, string resourceId, params object[] args)
         {
-            object obj = wsAgent.Invoke(methodName, args);
+            ApiMapper api = WebServiceResource.Instance().GetResource(resourceId);
+
+            object obj = wsAgent.Invoke(api.MethodName, args);
 
             if (obj != null)
             {
                 if ((bool)obj.GetType().GetField("success").GetValue(obj))
                 {
-                    return default(T);
+                    string result = JsonConvert.SerializeObject(obj.GetType().GetField("obj").GetValue(obj));
+
+                    return JsonConvert.DeserializeObject<T>(result);
                 }
                 else
                 {
-                    throw new MethodAccessException(string.Format("{0}:访问失败-{1}", methodName, obj.GetType().GetField("message").GetValue(obj)));
+                    throw new MethodAccessException(string.Format("{0}:访问失败-{1}", api.MethodName, obj.GetType().GetField("message").GetValue(obj)));
                 }
             }
             else
             {
-                throw new MethodAccessException(methodName);
+                throw new MethodAccessException(api.MethodName);
+            }
+        }
+
+        /// <summary>
+        /// 调用指定方法
+        /// </summary>
+        /// <param name="wsAgent">wsAgent</param>
+        /// <param name="resourceId">resourceId</param>
+        /// <param name="args">参数</param>
+        /// <returns>bool</returns>
+        public static bool InvokeToBoolean(this WebServiceAgent wsAgent, string resourceId, params object[] args)
+        {
+            ApiMapper api = WebServiceResource.Instance().GetResource(resourceId);
+            
+            object obj = wsAgent.Invoke(api.MethodName, args);
+
+            if (obj != null)
+            {
+                return (bool)obj.GetType().GetField("success").GetValue(obj);
+            }
+            else
+            {
+                throw new MethodAccessException(api.MethodName);
             }
         }
     }

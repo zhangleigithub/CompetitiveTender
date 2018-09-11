@@ -5,33 +5,36 @@ using System.Text;
 
 namespace Summer.CompetitiveTender.Model
 {
-    public class CacheData
+    /// <summary>
+    /// Cache
+    /// </summary>
+    public class Cache
     {
         #region 字段
 
         /// <summary>
-        /// cacheDatas
+        /// cacheValues
         /// </summary>
-        private IDictionary<string, object> cacheDatas = new Dictionary<string, object>();
+        private IDictionary<string, object> cacheValues = new Dictionary<string, object>();
 
         /// <summary>
         /// instance
         /// </summary>
-        private static CacheData instance = new CacheData();
+        private static Cache instance = new Cache();
 
         #endregion
 
         #region 方法
 
-        private CacheData()
+        private Cache()
         {
         }
 
         /// <summary>
         /// GetInstance
         /// </summary>
-        /// <returns>CacheData</returns>
-        public static CacheData GetInstance()
+        /// <returns>Cache</returns>
+        public static Cache GetInstance()
         {
             return instance;
         }
@@ -43,12 +46,18 @@ namespace Summer.CompetitiveTender.Model
         /// <param name="value">value</param>
         public void SetValue(string key,object value)
         {
-            this.cacheDatas[key] = value;
+            this.cacheValues[key] = value;
         }
 
+        /// <summary>
+        /// GetValue
+        /// </summary>
+        /// <typeparam name="T">T</typeparam>
+        /// <param name="key">key</param>
+        /// <returns>T</returns>
         public T GetValue<T>(string key)
         {
-            return (T)this.cacheDatas[key];
+            return (T)this.cacheValues[key];
         }
 
         #endregion

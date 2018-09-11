@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Summer.Common.Utility.WebApi
+namespace Summer.Common.Utility.WebService
 {
     /// <summary>
     /// ApiMapperConfig

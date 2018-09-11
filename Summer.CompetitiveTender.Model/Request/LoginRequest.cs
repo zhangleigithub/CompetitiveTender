@@ -8,7 +8,7 @@ namespace Summer.CompetitiveTender.Model.Request
     /// <summary>
     /// LoginReq
     /// </summary>
-    public class LoginReq
+    public class LoginRequest : IRequest
     {
         #region 属性
 
@@ -28,9 +28,9 @@ namespace Summer.CompetitiveTender.Model.Request
         public string UserType { get; set; }
 
         /// <summary>
-        /// Address
+        /// MacAddress
         /// </summary>
-        public string Address { get; set; }
+        public string MacAddress { get; set; }
 
         #endregion
 
@@ -47,7 +47,7 @@ namespace Summer.CompetitiveTender.Model.Request
             args[0] = this.UserName;
             args[1] = this.Password;
             args[2] = this.UserType;
-            args[3] = this.Address;
+            args[3] = this.MacAddress;
 
             return args;
         }

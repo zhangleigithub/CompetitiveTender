@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Summer.Common.Utility.WebApi
+namespace Summer.Common.Utility.WebService
 {
     /// <summary>
     /// ApiMapper
     /// </summary>
-    public class ApiMapper
+    public class ApiMapper : ICloneable
     {
         #region 属性
+
+        /// <summary>
+        /// Url
+        /// </summary>
+        public string Url { get; set; }
 
         /// <summary>
         /// resource
@@ -20,7 +25,7 @@ namespace Summer.Common.Utility.WebApi
         /// <summary>
         /// Method
         /// </summary>
-        public HttpMethod Method { get; private set; }
+        public string MethodName { get; private set; }
 
         /// <summary>
         /// Desc
@@ -35,13 +40,22 @@ namespace Summer.Common.Utility.WebApi
         /// 构造函数
         /// </summary>
         /// <param name="resource">resource</param>
-        /// <param name="method">method</param>
+        /// <param name="methodName">methodName</param>
         /// <param name="desc">desc</param>
-        public ApiMapper(string resource, HttpMethod method, string desc)
+        public ApiMapper(string resource, string methodName, string desc)
         {
             this.Resource = resource;
-            this.Method = method;
+            this.MethodName = methodName;
             this.Desc = desc;
+        }
+
+        /// <summary>
+        /// Clone
+        /// </summary>
+        /// <returns>Clone</returns>
+        public object Clone()
+        {
+            return this.MemberwiseClone();
         }
 
         #endregion

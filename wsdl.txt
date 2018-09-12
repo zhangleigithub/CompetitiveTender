@@ -1,0 +1,1 @@
+wsdl /n:Summer.WebServiceAgent.Dynamic /out:D:\\web.cs http://121.28.95.246:9090/webservice/gpTemplateWebService/add?wsdl

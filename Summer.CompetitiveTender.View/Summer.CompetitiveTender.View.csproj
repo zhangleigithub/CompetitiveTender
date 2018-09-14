@@ -337,18 +337,11 @@
     <Compile Include="InviteTender\TemplateManageForm.Designer.cs">
       <DependentUpon>TemplateManageForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="JsonParse.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InviteTender\InviteTenderManageForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InviteTender\InviteTenderManageForm.Designer.cs">
-      <DependentUpon>InviteTenderManageForm.cs</DependentUpon>
     </Compile>
     <Compile Include="InviteTenderMainForm.cs">
       <SubType>Form</SubType>
@@ -493,9 +486,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InviteTender\InviteTenderManageForm.resx">
-      <DependentUpon>InviteTenderManageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InviteTenderMainForm.resx">
       <DependentUpon>InviteTenderMainForm.cs</DependentUpon>

@@ -138,7 +138,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
         {
             LoginResponse loginResponse = Cache.GetInstance().GetValue<LoginResponse>("login");
 
-            object result = gpTemplateService.FindListByAuId(loginResponse.bcId);
+            object result = gpTemplateService.FindListByAuIdAndName(loginResponse.bcId,string.Empty);
         }
 
         #endregion

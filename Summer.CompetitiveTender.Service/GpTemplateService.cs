@@ -25,9 +25,34 @@ namespace Summer.CompetitiveTender.Service
         private const string RESOURCE_ID_ADD = "gpTemplateAdd";
 
         /// <summary>
+        /// RESOURCE_ID_REMOVE
+        /// </summary>
+        private const string RESOURCE_ID_REMOVE = "gpTemplateRemove";
+
+        /// <summary>
+        /// RESOURCE_ID_EDIT
+        /// </summary>
+        private const string RESOURCE_ID_EDIT = "gpTemplateEdit";
+
+        /// <summary>
+        /// RESOURCE_ID_GETBYID
+        /// </summary>
+        private const string RESOURCE_ID_GETBYID = "gpTemplateGetById";
+
+        /// <summary>
         /// RESOURCE_ID_FINDLIST
         /// </summary>
         private const string RESOURCE_ID_FINDLIST = "gpTemplateFindList";
+
+        /// <summary>
+        /// RESOURCE_ID_FILEUPLOAD
+        /// </summary>
+        private const string RESOURCE_ID_FILEUPLOAD = "gpTemplateFileUpload";
+
+        /// <summary>
+        /// RESOURCE_ID_FILEDOWNLOAD
+        /// </summary>
+        private const string RESOURCE_ID_FILEDOWNLOAD = "gpTemplateFileDownload";
 
         #endregion
 
@@ -38,37 +63,93 @@ namespace Summer.CompetitiveTender.Service
         /// </summary>
         public GpTemplateService()
         {
-            wsAgent = new WebServiceAgent(WebServiceResource.Instance().GetResource(GpTemplateService.RESOURCE_ID_ADD).Url);
+            this.wsAgent = new WebServiceAgent(WebServiceResource.Instance().GetResource(GpTemplateService.RESOURCE_ID_ADD).Url);
         }
 
         /// <summary>
         /// Add
         /// </summary>
-        /// <param name="gpTemplateAddRequest">gpTemplateAddRequest</param>
+        /// <param name="gtAddRequest">gtAddRequest</param>
         /// <returns>bool</returns>
-        public bool Add(GpTemplateAddRequest gpTemplateAddRequest)
+        public bool Add(GpTemplateAddRequest gtAddRequest)
         {
-            if (gpTemplateAddRequest == null)
+            if (gtAddRequest == null)
             {
-                throw new ArgumentNullException(nameof(gpTemplateAddRequest));
+                throw new ArgumentNullException(nameof(gtAddRequest));
             }
 
-            return this.wsAgent.InvokeToBoolean(GpTemplateService.RESOURCE_ID_ADD, gpTemplateAddRequest.ToArgs());
+            return this.wsAgent.InvokeToBoolean(GpTemplateService.RESOURCE_ID_ADD, gtAddRequest.ToArgs());
         }
 
         /// <summary>
-        /// FindListByAuId
+        /// Remove
+        /// </summary>
+        /// <param name="gtId">gtId</param>
+        /// <returns>bool</returns>
+        public bool Remove(string gtId)
+        {
+            return false;
+        }
+
+        /// <summary>
+        /// Update
+        /// </summary>
+        /// <param name="gtAddRequest">gtAddRequest</param>
+        /// <returns>bool</returns>
+        public bool Update(GpTemplateAddRequest gtAddRequest)
+        {
+            return false;
+        }
+
+        /// <summary>
+        /// FindListById
+        /// </summary>
+        /// <param name="gtId">gtId</param>
+        /// <returns>object</returns>
+        public object FindListById(string gtId)
+        {
+            if (string.IsNullOrWhiteSpace(gtId))
+            {
+                throw new ArgumentNullException(nameof(gtId));
+            }
+
+            return this.wsAgent.Invoke<object>(GpTemplateService.RESOURCE_ID_GETBYID, gtId);
+        }
+
+        /// <summary>
+        /// FindListByAuIdAndName
         /// </summary>
         /// <param name="auId">auId</param>
+        /// <param name="gtName">gtName</param>
         /// <returns>object</returns>
-        public object FindListByAuId(string auId)
+        public object FindListByAuIdAndName(string auId, string gtName)
         {
             if (string.IsNullOrWhiteSpace(auId))
             {
                 throw new ArgumentNullException(nameof(auId));
             }
 
-            return this.wsAgent.Invoke<object>(GpTemplateService.RESOURCE_ID_FINDLIST, auId);
+            return this.wsAgent.Invoke<object>(GpTemplateService.RESOURCE_ID_FINDLIST, auId, gtName);
+        }
+
+        /// <summary>
+        /// FileUpload
+        /// </summary>
+        /// <param name="obj">obj</param>
+        /// <returns>object</returns>
+        public object FileUpload(object obj)
+        {
+            return null;
+        }
+
+        /// <summary>
+        /// FileDownload
+        /// </summary>
+        /// <param name="obj">obj</param>
+        /// <returns>object</returns>
+        public object FileDownload(object obj)
+        {
+            return null;
         }
 
         #endregion

@@ -35,7 +35,7 @@ namespace Summer.CompetitiveTender.Service
         /// </summary>
         public UserService()
         {
-            wsAgent = new WebServiceAgent(WebServiceResource.Instance().GetResource(UserService.RESOURCE_ID).Url);
+            this.wsAgent = new WebServiceAgent(WebServiceResource.Instance().GetResource(UserService.RESOURCE_ID).Url);
         }
 
         /// <summary>

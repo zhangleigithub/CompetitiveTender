@@ -10,10 +10,60 @@
       "MethodName": "add",
       "Desc": "招标模板添加"
     },
+    "gpTemplateRemove": {
+      "Resource": "webservice/gpTemplateWebService/add",
+      "MethodName": "remove",
+      "Desc": "招标模板删除"
+    },
+    "gpTemplateEdit": {
+      "Resource": "webservice/gpTemplateWebService/add",
+      "MethodName": "edit",
+      "Desc": "招标模板编辑"
+    },
+    "gpTemplateGetById": {
+      "Resource": "webservice/gpTemplateWebService/add",
+      "MethodName": "getById",
+      "Desc": "招标模板编辑"
+    },
     "gpTemplateFindList": {
       "Resource": "webservice/gpTemplateWebService/add",
       "MethodName": "findList",
       "Desc": "招标模板查找"
+    },
+    "gpTemplateFileUpload": {
+      "Resource": "webservice/gpTemplateWebService/add",
+      "MethodName": "fileUpload",
+      "Desc": "招标模板上传"
+    },
+    "gpTemplateFileDownload": {
+      "Resource": "webservice/gpTemplateWebService/add",
+      "MethodName": "templateDownLoad",
+      "Desc": "招标模板下载"
+    },
+    "gpTemplateNodeAdd": {
+      "Resource": "webservice/gpTemplateNodeWebService/add",
+      "MethodName": "add",
+      "Desc": "招标模板节点添加"
+    },
+    "gpTemplateNodeRemove": {
+      "Resource": "webservice/gpTemplateNodeWebService/add",
+      "MethodName": "remove",
+      "Desc": "招标模板节点删除"
+    },
+    "gpTemplateNodeEdit": {
+      "Resource": "webservice/gpTemplateNodeWebService/add",
+      "MethodName": "edit",
+      "Desc": "招标模板节点编辑"
+    },
+    "gpTemplateNodeGetById": {
+      "Resource": "webservice/gpTemplateNodeWebService/add",
+      "MethodName": "getById",
+      "Desc": "招标模板节点编辑"
+    },
+    "gpTemplateNodeFindList": {
+      "Resource": "webservice/gpTemplateNodeWebService/add",
+      "MethodName": "findList",
+      "Desc": "招标模板节点查找"
     }
   },
   "BaseUrl": "http://121.28.95.246:9090/"

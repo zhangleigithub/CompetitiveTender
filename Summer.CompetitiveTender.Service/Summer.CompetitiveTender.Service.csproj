@@ -75,7 +75,9 @@
   <ItemGroup>
     <Compile Include="Bid\BidService.cs" />
     <Compile Include="Bid\IBidService.cs" />
+    <Compile Include="GpTemplateNodeService.cs" />
     <Compile Include="GpTemplateService.cs" />
+    <Compile Include="IGpTemplateNodeService.cs" />
     <Compile Include="IGpTemplateService.cs" />
     <Compile Include="IUserService.cs" />
     <Compile Include="OpenBid\IOpenBidService.cs" />

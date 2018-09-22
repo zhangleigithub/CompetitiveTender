@@ -1,9 +1,8 @@
 ﻿using log4net;
 using MetroFramework.Forms;
 using Summer.CompetitiveTender.Model;
-using Summer.CompetitiveTender.Model.Request;
-using Summer.CompetitiveTender.Model.Response;
 using Summer.CompetitiveTender.Service;
+using Summer.CompetitiveTender.Service.ServiceReferenceLogin;
 using Summer.CompetitiveTender.View.Common;
 using System;
 using System.Collections.Generic;
@@ -13,6 +12,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Summer.CompetitiveTender.Service.ServiceReferenceGpTemplate;
 
 namespace Summer.CompetitiveTender.View.InviteTender
 {
@@ -60,18 +60,18 @@ namespace Summer.CompetitiveTender.View.InviteTender
         {
             try
             {
-                LoginResponse loginResponse = Cache.GetInstance().GetValue<LoginResponse>("login");
+                baseUserWebDO user = Cache.GetInstance().GetValue<baseUserWebDO>("login");
+               
+                gpTemplateWebDO gpTemplate = new gpTemplateWebDO();
+                gpTemplate.gtName = this.txtName.Text.Trim();
+                gpTemplate.gtType = (int)this.cboType.SelectedValue;
+                gpTemplate.gtGroup = (int)this.cboProjectType.SelectedValue;
+                gpTemplate.remark = this.txtRemark.Text.Trim();
+                gpTemplate.adtId = user.acId;
+                gpTemplate.adtCoId = user.auID;
+                gpTemplate.adtTime = DateTime.Now;
 
-                GpTemplateAddRequest gpTemplateAddRequest = new GpTemplateAddRequest();
-                gpTemplateAddRequest.Name = this.txtName.Text.Trim();
-                gpTemplateAddRequest.Type = (int)this.cboType.SelectedValue;
-                gpTemplateAddRequest.Group = (int)this.cboProjectType.SelectedValue;
-                gpTemplateAddRequest.Remark = this.txtRemark.Text.Trim();
-                gpTemplateAddRequest.AdtId = loginResponse.bcId;
-                gpTemplateAddRequest.AdtCoId = loginResponse.bctId;
-                gpTemplateAddRequest.AdtTime = DateTime.Now;
-
-                if (gpTemplateService.Add(gpTemplateAddRequest))
+                if (gpTemplateService.Add(gpTemplate))
                 {
                     this.DialogResult = DialogResult.OK;
                 }

@@ -1,5 +1,4 @@
-﻿using Summer.CompetitiveTender.Model.Request;
-using Summer.CompetitiveTender.Model.Response;
+﻿using Summer.CompetitiveTender.Service.ServiceReferenceLogin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,8 +14,15 @@ namespace Summer.CompetitiveTender.Service
         /// <summary>
         /// Login
         /// </summary>
-        /// <param name="loginRequest">loginRequest</param>
+        /// <param name="login">login</param>
         /// <returns>结果</returns>
-        LoginResponse Login(LoginRequest loginRequest);
+        baseUserWebDO Login(login login);
+
+        /// <summary>
+        /// CALogin
+        /// </summary>
+        /// <param name="calogin">calogin</param>
+        /// <returns>结果</returns>
+        baseUserWebDO CALogin(CAlogin calogin);
     }
 }

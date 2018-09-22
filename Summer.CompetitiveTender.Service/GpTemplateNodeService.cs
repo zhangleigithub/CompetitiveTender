@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode;
 
 namespace Summer.CompetitiveTender.Service
 {
@@ -16,32 +17,7 @@ namespace Summer.CompetitiveTender.Service
         /// <summary>
         /// wsAgent
         /// </summary>
-        private WebServiceAgent wsAgent = null;
-
-        /// <summary>
-        /// RESOURCE_ID_ADD
-        /// </summary>
-        private const string RESOURCE_ID_ADD = "gpTemplateNodeAdd";
-
-        /// <summary>
-        /// RESOURCE_ID_REMOVE
-        /// </summary>
-        private const string RESOURCE_ID_REMOVE = "gpTemplateNodeRemove";
-
-        /// <summary>
-        /// RESOURCE_ID_EDIT
-        /// </summary>
-        private const string RESOURCE_ID_EDIT = "gpTemplateNodeEdit";
-
-        /// <summary>
-        /// RESOURCE_ID_GETBYID
-        /// </summary>
-        private const string RESOURCE_ID_GETBYID = "gpTemplateNodeGetById";
-
-        /// <summary>
-        /// RESOURCE_ID_FINDLIST
-        /// </summary>
-        private const string RESOURCE_ID_FINDLIST = "gpTemplateNodeFindList";
+        private GpTemplateNodeWebServiceClient wsAgent = null;
 
         #endregion
 
@@ -52,17 +28,22 @@ namespace Summer.CompetitiveTender.Service
         /// </summary>
         public GpTemplateNodeService()
         {
-            this.wsAgent = new WebServiceAgent(WebServiceResource.Instance().GetResource(GpTemplateNodeService.RESOURCE_ID_ADD).Url);
+            this.wsAgent = new GpTemplateNodeWebServiceClient();
         }
 
         /// <summary>
         /// Add
         /// </summary>
-        /// <param name="gtnAddRequest">gtnAddRequest</param>
+        /// <param name="gpTemplateNode">gpTemplateNode</param>
         /// <returns>bool</returns>
-        public bool Add(object gtnAddRequest)
+        public bool Add(gpTemplateNodeWebDO gpTemplateNode)
         {
-            return false;
+            if (gpTemplateNode == null)
+            {
+                throw new ArgumentNullException(nameof(gpTemplateNode));
+            }
+
+            return this.wsAgent.add(gpTemplateNode).success;
         }
 
         /// <summary>
@@ -70,39 +51,72 @@ namespace Summer.CompetitiveTender.Service
         /// </summary>
         /// <param name="gtnId">gtnId</param>
         /// <returns>bool</returns>
-        public bool Remove(string gtnId)
+        public bool Remove(long gtnId)
         {
-            return false;
+            return this.wsAgent.remove(gtnId).success;
         }
 
         /// <summary>
         /// Update
         /// </summary>
-        /// <param name="gtnAddRequest">gtnAddRequest</param>
+        /// <param name="gpTemplateNode">gpTemplateNode</param>
         /// <returns>bool</returns>
-        public bool Update(object gtnAddRequest)
+        public bool Update(gpTemplateNodeWebDO gpTemplateNode)
         {
-            return false;
+            if (gpTemplateNode == null)
+            {
+                throw new ArgumentNullException(nameof(gpTemplateNode));
+            }
+
+            return this.wsAgent.edit(gpTemplateNode).success;
         }
 
         /// <summary>
         /// FindListById
         /// </summary>
         /// <param name="gtnId">gtnId</param>
-        /// <returns>object</returns>
-        public object FindListById(string gtnId)
+        /// <returns>gpTemplateNodeWebDO</returns>
+        public gpTemplateNodeWebDO FindListById(string gtnId)
         {
-            return null;
+            if (string.IsNullOrWhiteSpace(gtnId))
+            {
+                throw new ArgumentNullException(nameof(gtnId));
+            }
+
+            resultDO result = this.wsAgent.findList(gtnId);
+
+            if (result.success)
+            {
+                return result.obj as gpTemplateNodeWebDO;
+            }
+            else
+            {
+                throw new Exception(result.message);
+            }
         }
 
         /// <summary>
         /// FindListByGtId
         /// </summary>
         /// <param name="gtId">gtId</param>
-        /// <returns>object</returns>
-        public object FindListByGtId(string gtId)
+        /// <returns>gpTemplateNodeWebDO[]</returns>
+        public gpTemplateNodeWebDO[] FindListByGtId(string gtId)
         {
-            return null;
+            if (string.IsNullOrWhiteSpace(gtId))
+            {
+                throw new ArgumentNullException(nameof(gtId));
+            }
+
+            resultDO result = this.wsAgent.findList(gtId);
+
+            if (result.success)
+            {
+                return result.objList as gpTemplateNodeWebDO[];
+            }
+            else
+            {
+                throw new Exception(result.message);
+            }
         }
 
         #endregion

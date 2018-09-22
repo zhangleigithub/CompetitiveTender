@@ -1,9 +1,8 @@
 ﻿using log4net;
 using MetroFramework.Forms;
 using Summer.CompetitiveTender.Model;
-using Summer.CompetitiveTender.Model.Request;
-using Summer.CompetitiveTender.Model.Response;
 using Summer.CompetitiveTender.Service;
+using Summer.CompetitiveTender.Service.ServiceReferenceLogin;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -87,13 +86,14 @@ namespace Summer.CompetitiveTender.View
         {
             try
             {
-                LoginRequest loginRequest = new LoginRequest();
-                loginRequest.UserName = this.txtUserName.Text.Trim();
-                loginRequest.Password = this.txtPassword.Text.Trim();
-                loginRequest.UserType = this.UserType.ToLonginString();
+                login login = new login();
+                login.account = this.txtUserName.Text.Trim();
+                login.password = this.txtPassword.Text.Trim();
+                login.acRole = this.UserType.ToLonginString();
+                login.macAddress = string.Empty;
 
                 //登录
-                LoginResponse result = userService.Login(loginRequest);
+                baseUserWebDO result = userService.Login(login);
 
                 //缓存
                 Cache.GetInstance().SetValue("login", result);

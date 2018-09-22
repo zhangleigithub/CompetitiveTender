@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webservice.govpurchase.opensource.com/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="LoginWebServiceService" targetNamespace="http://webservice.govpurchase.opensource.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://webservice.govpurchase.opensource.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="CAlogin" type="tns:CAlogin" />
+      <xs:element name="CAloginResponse" type="tns:CAloginResponse" />
+      <xs:element name="login" type="tns:login" />
+      <xs:element name="loginResponse" type="tns:loginResponse" />
+      <xs:complexType name="CAlogin">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="caSignCert" type="xs:string" />
+          <xs:element minOccurs="0" name="password" type="xs:string" />
+          <xs:element minOccurs="0" name="acRole" type="xs:string" />
+          <xs:element minOccurs="0" name="macAddress" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CAloginResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="resultDO">
+        <xs:sequence>
+          <xs:element name="code" type="xs:int" />
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+          <xs:element minOccurs="0" name="obj" type="xs:anyType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="objList" nillable="true" type="xs:anyType" />
+          <xs:element name="success" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="baseUserWebDO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:baseEntity">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="acId" type="xs:string" />
+              <xs:element minOccurs="0" name="acName" type="xs:string" />
+              <xs:element minOccurs="0" name="account" type="xs:string" />
+              <xs:element minOccurs="0" name="acrId" type="xs:long" />
+              <xs:element minOccurs="0" name="acrName" type="xs:string" />
+              <xs:element minOccurs="0" name="auID" type="xs:string" />
+              <xs:element minOccurs="0" name="auName" type="xs:string" />
+              <xs:element minOccurs="0" name="azCode" type="xs:string" />
+              <xs:element minOccurs="0" name="azId" type="xs:long" />
+              <xs:element minOccurs="0" name="azName" type="xs:string" />
+              <xs:element minOccurs="0" name="caBindTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="caEncryptCert" type="xs:string" />
+              <xs:element minOccurs="0" name="caExpireTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="caSignCert" type="xs:string" />
+              <xs:element minOccurs="0" name="caSn" type="xs:string" />
+              <xs:element minOccurs="0" name="caUniqueId" type="xs:string" />
+              <xs:element minOccurs="0" name="idCard" type="xs:string" />
+              <xs:element minOccurs="0" name="idCardEndDate" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="password" type="xs:string" />
+              <xs:element minOccurs="0" name="regType" type="xs:int" />
+              <xs:element minOccurs="0" name="source" type="xs:int" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="baseEntity" abstract="true">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="login">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="account" type="xs:string" />
+          <xs:element minOccurs="0" name="password" type="xs:string" />
+          <xs:element minOccurs="0" name="acRole" type="xs:string" />
+          <xs:element minOccurs="0" name="macAddress" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="loginResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="CAlogin">
+    <wsdl:part name="parameters" element="tns:CAlogin" />
+  </wsdl:message>
+  <wsdl:message name="CAloginResponse">
+    <wsdl:part name="parameters" element="tns:CAloginResponse" />
+  </wsdl:message>
+  <wsdl:message name="login">
+    <wsdl:part name="parameters" element="tns:login" />
+  </wsdl:message>
+  <wsdl:message name="loginResponse">
+    <wsdl:part name="parameters" element="tns:loginResponse" />
+  </wsdl:message>
+  <wsdl:portType name="LoginWebService">
+    <wsdl:operation name="CAlogin">
+      <wsdl:input name="CAlogin" message="tns:CAlogin" />
+      <wsdl:output name="CAloginResponse" message="tns:CAloginResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <wsdl:input name="login" message="tns:login" />
+      <wsdl:output name="loginResponse" message="tns:loginResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LoginWebServiceServiceSoapBinding" type="tns:LoginWebService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CAlogin">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="CAlogin">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CAloginResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="login">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="loginResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LoginWebServiceService">
+    <wsdl:port name="LoginWebServicePort" binding="tns:LoginWebServiceServiceSoapBinding">
+      <soap:address location="http://121.28.95.246:9090/webservice/loginWebService/login" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

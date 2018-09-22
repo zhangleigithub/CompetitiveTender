@@ -88,6 +88,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ServiceReferenceGpTemplateNode\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceGpTemplate\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceLogin\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="UserService.cs" />
     <Compile Include="WebServiceAgentEx.cs" />
   </ItemGroup>
@@ -96,6 +111,21 @@
     <None Include="packages.config" />
     <None Include="Service References\OpenBidService\GpSectionWebServiceService.wsdl" />
     <None Include="Service References\OpenBidService\Summer.CompetitiveTender.Service.OpenBidService.resultDO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceGpTemplateNode\GpTemplateNodeWebServiceService.wsdl" />
+    <None Include="Service References\ServiceReferenceGpTemplateNode\Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.resultDO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceGpTemplate\GpTemplateWebServiceService.wsdl" />
+    <None Include="Service References\ServiceReferenceGpTemplate\Summer.CompetitiveTender.Service.ServiceReferenceGpTemplate.reslultInfoDO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceGpTemplate\Summer.CompetitiveTender.Service.ServiceReferenceGpTemplate.resultDO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceLogin\LoginWebServiceService.wsdl" />
+    <None Include="Service References\ServiceReferenceLogin\Summer.CompetitiveTender.Service.ServiceReferenceLogin.resultDO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
   </ItemGroup>
@@ -114,6 +144,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\OpenBidService\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceGpTemplateNode\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceGpTemplate\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceLogin\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\OpenBidService\configuration91.svcinfo" />
@@ -123,6 +156,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\OpenBidService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceLogin\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceLogin\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceLogin\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceGpTemplate\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceGpTemplate\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceGpTemplate\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceGpTemplateNode\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceGpTemplateNode\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceGpTemplateNode\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

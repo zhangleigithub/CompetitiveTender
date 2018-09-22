@@ -1,7 +1,6 @@
 ﻿using Summer.Common.Utility;
 using Summer.Common.Utility.WebService;
-using Summer.CompetitiveTender.Model.Request;
-using Summer.CompetitiveTender.Model.Response;
+using Summer.CompetitiveTender.Service.ServiceReferenceLogin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,12 +18,7 @@ namespace Summer.CompetitiveTender.Service
         /// <summary>
         /// wsAgent
         /// </summary>
-        private WebServiceAgent wsAgent = null;
-
-        /// <summary>
-        /// RESOURCE_ID
-        /// </summary>
-        private const string RESOURCE_ID = "login";
+        private LoginWebServiceClient wsAgent = null;
 
         #endregion
 
@@ -35,22 +29,55 @@ namespace Summer.CompetitiveTender.Service
         /// </summary>
         public UserService()
         {
-            this.wsAgent = new WebServiceAgent(WebServiceResource.Instance().GetResource(UserService.RESOURCE_ID).Url);
+            this.wsAgent = new LoginWebServiceClient();
         }
 
         /// <summary>
         /// Login
         /// </summary>
-        /// <param name="loginRequest">loginRequest</param>
+        /// <param name="login">login</param>
         /// <returns>结果</returns>
-        public LoginResponse Login(LoginRequest loginRequest)
+        public baseUserWebDO Login(login login)
         {
-            if (loginRequest == null)
+            if (login == null)
             {
-                throw new ArgumentNullException(nameof(loginRequest));
+                throw new ArgumentNullException(nameof(login));
+            }
+          
+            resultDO result= this.wsAgent.login(login.account, login.password, login.acRole, login.macAddress);
+
+            if (result.success)
+            {
+               return result.obj as baseUserWebDO;
+            }
+            else
+            {
+                throw new Exception(result.message);
+            }
+        }
+
+        /// <summary>
+        /// CALogin
+        /// </summary>
+        /// <param name="calogin">calogin</param>
+        /// <returns>结果</returns>
+        public baseUserWebDO CALogin(CAlogin calogin)
+        {
+            if (calogin == null)
+            {
+                throw new ArgumentNullException(nameof(calogin));
             }
 
-            return this.wsAgent.Invoke<LoginResponse>(UserService.RESOURCE_ID, loginRequest.ToArgs());
+            resultDO result = this.wsAgent.CAlogin(calogin.caSignCert, calogin.password, calogin.acRole, calogin.macAddress);
+
+            if (result.success)
+            {
+                return result.obj as baseUserWebDO;
+            }
+            else
+            {
+                throw new Exception(result.message);
+            }
         }
 
         #endregion

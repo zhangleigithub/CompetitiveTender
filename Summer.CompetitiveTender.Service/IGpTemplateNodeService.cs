@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode;
 
 namespace Summer.CompetitiveTender.Service
 {
@@ -13,37 +14,36 @@ namespace Summer.CompetitiveTender.Service
         /// <summary>
         /// Add
         /// </summary>
-        /// <param name="gtnAddRequest">gtnAddRequest</param>
+        /// <param name="gpTemplateNode">gpTemplateNode</param>
         /// <returns>bool</returns>
-        bool Add(object gtnAddRequest);
+        bool Add(gpTemplateNodeWebDO gpTemplateNode);
 
         /// <summary>
         /// Remove
         /// </summary>
         /// <param name="gtnId">gtnId</param>
         /// <returns>bool</returns>
-        bool Remove(string gtnId);
+        bool Remove(long gtnId);
 
         /// <summary>
         /// Update
         /// </summary>
-        /// <param name="gtnAddRequest">gtnAddRequest</param>
+        /// <param name="gpTemplateNode">gpTemplateNode</param>
         /// <returns>bool</returns>
-        bool Update(object gtnAddRequest);
+        bool Update(gpTemplateNodeWebDO gpTemplateNode);
 
         /// <summary>
         /// FindListById
         /// </summary>
         /// <param name="gtnId">gtnId</param>
-        /// <returns>object</returns>
-        object FindListById(string gtnId);
+        /// <returns>gpTemplateNodeWebDO</returns>
+        gpTemplateNodeWebDO FindListById(string gtnId);
 
         /// <summary>
         /// FindListByGtId
         /// </summary>
         /// <param name="gtId">gtId</param>
-        /// <returns>object</returns>
-        object FindListByGtId(string gtId);
-
+        /// <returns>gpTemplateNodeWebDO[]</returns>
+        gpTemplateNodeWebDO[] FindListByGtId(string gtId);
     }
 }

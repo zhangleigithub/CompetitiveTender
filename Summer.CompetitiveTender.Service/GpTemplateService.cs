@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Summer.CompetitiveTender.Model.Request;
+using Summer.CompetitiveTender.Service.ServiceReferenceGpTemplate;
 
 namespace Summer.CompetitiveTender.Service
 {
@@ -17,42 +17,7 @@ namespace Summer.CompetitiveTender.Service
         /// <summary>
         /// wsAgent
         /// </summary>
-        private WebServiceAgent wsAgent = null;
-
-        /// <summary>
-        /// RESOURCE_ID_ADD
-        /// </summary>
-        private const string RESOURCE_ID_ADD = "gpTemplateAdd";
-
-        /// <summary>
-        /// RESOURCE_ID_REMOVE
-        /// </summary>
-        private const string RESOURCE_ID_REMOVE = "gpTemplateRemove";
-
-        /// <summary>
-        /// RESOURCE_ID_EDIT
-        /// </summary>
-        private const string RESOURCE_ID_EDIT = "gpTemplateEdit";
-
-        /// <summary>
-        /// RESOURCE_ID_GETBYID
-        /// </summary>
-        private const string RESOURCE_ID_GETBYID = "gpTemplateGetById";
-
-        /// <summary>
-        /// RESOURCE_ID_FINDLIST
-        /// </summary>
-        private const string RESOURCE_ID_FINDLIST = "gpTemplateFindList";
-
-        /// <summary>
-        /// RESOURCE_ID_FILEUPLOAD
-        /// </summary>
-        private const string RESOURCE_ID_FILEUPLOAD = "gpTemplateFileUpload";
-
-        /// <summary>
-        /// RESOURCE_ID_FILEDOWNLOAD
-        /// </summary>
-        private const string RESOURCE_ID_FILEDOWNLOAD = "gpTemplateFileDownload";
+        private GpTemplateWebServiceClient wsAgent = null;
 
         #endregion
 
@@ -63,22 +28,22 @@ namespace Summer.CompetitiveTender.Service
         /// </summary>
         public GpTemplateService()
         {
-            this.wsAgent = new WebServiceAgent(WebServiceResource.Instance().GetResource(GpTemplateService.RESOURCE_ID_ADD).Url);
+            this.wsAgent = new GpTemplateWebServiceClient();
         }
 
         /// <summary>
         /// Add
         /// </summary>
-        /// <param name="gtAddRequest">gtAddRequest</param>
+        /// <param name="gpTemplate">gpTemplate</param>
         /// <returns>bool</returns>
-        public bool Add(GpTemplateAddRequest gtAddRequest)
+        public bool Add(gpTemplateWebDO gpTemplate)
         {
-            if (gtAddRequest == null)
+            if (gpTemplate == null)
             {
-                throw new ArgumentNullException(nameof(gtAddRequest));
+                throw new ArgumentNullException(nameof(gpTemplate));
             }
 
-            return this.wsAgent.InvokeToBoolean(GpTemplateService.RESOURCE_ID_ADD, gtAddRequest.ToArgs());
+            return this.wsAgent.add(gpTemplate).success;
         }
 
         /// <summary>
@@ -88,7 +53,12 @@ namespace Summer.CompetitiveTender.Service
         /// <returns>bool</returns>
         public bool Remove(string gtId)
         {
-            return false;
+            if (string.IsNullOrEmpty(gtId))
+            {
+                throw new ArgumentNullException(nameof(gtId));
+            }
+
+            return this.wsAgent.remove(gtId).success;
         }
 
         /// <summary>
@@ -96,24 +66,38 @@ namespace Summer.CompetitiveTender.Service
         /// </summary>
         /// <param name="gtAddRequest">gtAddRequest</param>
         /// <returns>bool</returns>
-        public bool Update(GpTemplateAddRequest gtAddRequest)
+        public bool Update(gpTemplateWebDO gpTemplate)
         {
-            return false;
+            if (gpTemplate == null)
+            {
+                throw new ArgumentNullException(nameof(gpTemplate));
+            }
+
+            return this.wsAgent.edit(gpTemplate).success;
         }
 
         /// <summary>
         /// FindListById
         /// </summary>
         /// <param name="gtId">gtId</param>
-        /// <returns>object</returns>
-        public object FindListById(string gtId)
+        /// <returns>gpTemplateWebDO</returns>
+        public gpTemplateWebDO FindListById(string gtId)
         {
             if (string.IsNullOrWhiteSpace(gtId))
             {
                 throw new ArgumentNullException(nameof(gtId));
             }
 
-            return this.wsAgent.Invoke<object>(GpTemplateService.RESOURCE_ID_GETBYID, gtId);
+            resultDO result = this.wsAgent.getById(gtId);
+
+            if (result.success)
+            {
+                return result.obj as gpTemplateWebDO;
+            }
+            else
+            {
+                throw new Exception(result.message);
+            }
         }
 
         /// <summary>
@@ -121,35 +105,53 @@ namespace Summer.CompetitiveTender.Service
         /// </summary>
         /// <param name="auId">auId</param>
         /// <param name="gtName">gtName</param>
-        /// <returns>object</returns>
-        public object FindListByAuIdAndName(string auId, string gtName)
+        /// <returns>gpTemplateWebDO[]</returns>
+        public gpTemplateWebDO[] FindListByAuIdAndName(string auId, string gtName)
         {
             if (string.IsNullOrWhiteSpace(auId))
             {
                 throw new ArgumentNullException(nameof(auId));
             }
 
-            return this.wsAgent.Invoke<object>(GpTemplateService.RESOURCE_ID_FINDLIST, auId, gtName);
+            resultDO result = this.wsAgent.findList(auId, gtName);
+
+            if (result.success)
+            {
+                return result.objList as gpTemplateWebDO[];
+            }
+            else
+            {
+                throw new Exception(result.message);
+            }
         }
 
         /// <summary>
         /// FileUpload
         /// </summary>
-        /// <param name="obj">obj</param>
-        /// <returns>object</returns>
-        public object FileUpload(object obj)
+        /// <param name="fileName">fileName</param>
+        /// <param name="suffix">suffix</param>
+        /// <param name="partLength">partLength</param>
+        /// <param name="fileContent">fileContent</param>
+        /// <param name="totalSegment">totalSegment</param>
+        /// <param name="Segment">Segment</param>
+        /// <param name="isNew">isNew</param>
+        /// <param name="userId">userId</param>
+        /// <returns>bool</returns>
+        public int FileUpload(string fileName, string suffix, long partLength, byte[] fileContent, int totalSegment, int Segment, bool isNew, int userId)
         {
-            return null;
+            return this.wsAgent.fileUpload(fileName, suffix, partLength, fileContent, totalSegment, Segment, isNew, userId);
         }
 
         /// <summary>
         /// FileDownload
         /// </summary>
-        /// <param name="obj">obj</param>
-        /// <returns>object</returns>
-        public object FileDownload(object obj)
+        /// <param name="userId">userId</param>
+        /// <param name="part">part</param>
+        /// <param name="gtId">gtId</param>
+        /// <returns>reslultInfoDO</returns>
+        public reslultInfoDO FileDownload(int userId, int part, string gtId)
         {
-            return null;
+            return this.wsAgent.templateDownLoad(userId, part, gtId);
         }
 
         #endregion

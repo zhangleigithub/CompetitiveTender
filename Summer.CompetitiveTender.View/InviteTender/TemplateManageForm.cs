@@ -2,8 +2,8 @@
 using MetroFramework;
 using MetroFramework.Forms;
 using Summer.CompetitiveTender.Model;
-using Summer.CompetitiveTender.Model.Response;
 using Summer.CompetitiveTender.Service;
+using Summer.CompetitiveTender.Service.ServiceReferenceLogin;
 using Summer.CompetitiveTender.View.Common;
 using System;
 using System.Collections.Generic;
@@ -136,9 +136,9 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
         public void LoadData()
         {
-            LoginResponse loginResponse = Cache.GetInstance().GetValue<LoginResponse>("login");
+            baseUserWebDO loginResponse = Cache.GetInstance().GetValue<baseUserWebDO>("login");
 
-            object result = gpTemplateService.FindListByAuIdAndName(loginResponse.bcId,string.Empty);
+            object result = gpTemplateService.FindListByAuIdAndName(loginResponse.auID,string.Empty);
         }
 
         #endregion

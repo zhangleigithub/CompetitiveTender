@@ -67,8 +67,8 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 gpTemplate.gtType = (int)this.cboType.SelectedValue;
                 gpTemplate.gtGroup = (int)this.cboProjectType.SelectedValue;
                 gpTemplate.remark = this.txtRemark.Text.Trim();
-                gpTemplate.adtId = user.acId;
-                gpTemplate.adtCoId = user.auID;
+                gpTemplate.adtId = user.auID;
+                gpTemplate.adtCoId = user.acId;
                 gpTemplate.adtTime = DateTime.Now;
 
                 if (gpTemplateService.Add(gpTemplate))

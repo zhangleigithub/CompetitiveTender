@@ -76,14 +76,9 @@ namespace Summer.CompetitiveTender.Service
         /// </summary>
         /// <param name="gtnId">gtnId</param>
         /// <returns>gpTemplateNodeWebDO</returns>
-        public gpTemplateNodeWebDO FindListById(string gtnId)
+        public gpTemplateNodeWebDO FindListById(long gtnId)
         {
-            if (string.IsNullOrWhiteSpace(gtnId))
-            {
-                throw new ArgumentNullException(nameof(gtnId));
-            }
-
-            resultDO result = this.wsAgent.findList(gtnId);
+            resultDO result = this.wsAgent.getById(gtnId);
 
             if (result.success)
             {

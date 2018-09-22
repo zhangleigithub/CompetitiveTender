@@ -179,6 +179,7 @@
             this.btnOK.TabIndex = 8;
             this.btnOK.Text = "确定";
             this.btnOK.UseSelectable = true;
+            this.btnOK.Click += new System.EventHandler(this.OnOKClick);
             // 
             // btnCancel
             // 

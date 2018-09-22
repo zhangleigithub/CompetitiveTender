@@ -4,6 +4,7 @@ using MetroFramework.Forms;
 using Summer.CompetitiveTender.Model;
 using Summer.CompetitiveTender.Service;
 using Summer.CompetitiveTender.Service.ServiceReferenceLogin;
+using Summer.CompetitiveTender.Service.ServiceReferenceGpTemplate;
 using Summer.CompetitiveTender.View.Common;
 using System;
 using System.Collections.Generic;
@@ -57,11 +58,6 @@ namespace Summer.CompetitiveTender.View.InviteTender
             this.colTemplateState.DisplayMember = "Text";
             this.colTemplateState.ValueMember = "Value";
 
-            for (int i = 0; i < 30; i++)
-            {
-                this.grdTemplate.Rows.Add(i, i, "测试", 0, (i % 4 == 0) ? 1 : i % 4, "测试", DateTime.Now.ToLocalTime(), i % 2);
-            }
-
             try
             {
                 this.LoadData();
@@ -69,45 +65,87 @@ namespace Summer.CompetitiveTender.View.InviteTender
             catch (Exception ex)
             {
                 log.Error(ex);
-                MetroFramework.MetroMessageBox.Show(this, "加载失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MetroMessageBox.Show(this, "加载失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnNewTemplate_Click(object sender, EventArgs e)
         {
             CreateTemplateForm createTemplateForm = new CreateTemplateForm();
-            createTemplateForm.ShowDialog(this);
+
+            if (createTemplateForm.ShowDialog(this) == DialogResult.OK)
+            {
+                this.LoadData();
+            }
+
             createTemplateForm.Dispose();
         }
 
         private void btnEditTemplate_Click(object sender, EventArgs e)
         {
-            EditTemplateForm editTemplateForm = new EditTemplateForm();
-            editTemplateForm.ShowDialog(this);
-            editTemplateForm.Dispose();
+            if (this.grdTemplate.CurrentRow != null)
+            {
+                gpTemplateWebDO gpt = this.grdTemplate.CurrentRow.Tag as gpTemplateWebDO;
+
+                EditTemplateForm editTemplateForm = new EditTemplateForm(this.gpTemplateService, gpt.gtId);
+
+                if (editTemplateForm.ShowDialog(this) == DialogResult.OK)
+                {
+                    this.LoadData();
+                }
+
+                editTemplateForm.Dispose();
+            }
+            else
+            {
+                MetroMessageBox.Show(this, "请选择要编辑的模板！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnTemplateNode_Click(object sender, EventArgs e)
         {
-            TemplateNodeManageForm templateNodeManageForm = new TemplateNodeManageForm();
-            templateNodeManageForm.ShowDialog(this);
-            templateNodeManageForm.Dispose();
+            if (this.grdTemplate.CurrentRow != null)
+            {
+                gpTemplateWebDO gpt = this.grdTemplate.CurrentRow.Tag as gpTemplateWebDO;
+
+                TemplateNodeManageForm templateNodeManageForm = new TemplateNodeManageForm(gpt.gtId);
+
+                if (templateNodeManageForm.ShowDialog(this) == DialogResult.OK)
+                {
+                    this.LoadData();
+                }
+
+                templateNodeManageForm.Dispose();
+            }
+            else
+            {
+                MetroMessageBox.Show(this, "请选择要编辑的模板！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnDeleteTemplate_Click(object sender, EventArgs e)
         {
             if (this.grdTemplate.CurrentRow != null)
             {
-                DialogResult result = MetroFramework.MetroMessageBox.Show(this, "确定要删除吗？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                DialogResult result = MetroMessageBox.Show(this, "确定要删除吗？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
                 if (result == DialogResult.OK)
                 {
-                    this.grdTemplate.Rows.Remove(this.grdTemplate.CurrentRow);
+                    gpTemplateWebDO gpt = this.grdTemplate.CurrentRow.Tag as gpTemplateWebDO;
+
+                    if (this.gpTemplateService.Remove(gpt.gtId))
+                    {
+                        this.grdTemplate.Rows.Remove(this.grdTemplate.CurrentRow);
+                    }
+                    else
+                    {
+                        MetroMessageBox.Show(this, "删除失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             else
             {
-                MetroFramework.MetroMessageBox.Show(this, "请选择要删除的模板！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MetroMessageBox.Show(this, "请选择要删除的模板！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -129,16 +167,38 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
         #region 方法
 
+        /// <summary>
+        /// 构造函数
+        /// </summary>
         public TemplateManageForm()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// LoadData
+        /// </summary>
         public void LoadData()
         {
+            this.grdTemplate.Rows.Clear();
             baseUserWebDO loginResponse = Cache.GetInstance().GetValue<baseUserWebDO>("login");
+            var result = gpTemplateService.FindListByAuIdAndName(loginResponse.auID, string.Empty);
 
-            object result = gpTemplateService.FindListByAuIdAndName(loginResponse.auID,string.Empty);
+            foreach (var item in result)
+            {
+                DataGridViewRow row = this.grdTemplate.RowTemplate;
+                row.Cells[this.colTemplateId.Index].Value = item.gtId;
+                row.Cells[this.colTemplateCode.Index].Value = item.gtCode;
+                row.Cells[this.colTempleName.Index].Value = item.gtName;
+                row.Cells[this.colTemplateType.Index].Value = item.gtType;
+                row.Cells[this.colTemplateProjectType.Index].Value = item.gtGroup;
+                row.Cells[this.colTemplateDescription.Index].Value = item.remark;
+                row.Cells[this.colTemplateCreateDate.Index].Value = item.adtId;
+                row.Cells[this.colTemplateState.Index].Value = item.fileMakeState;
+                row.Tag = item;
+
+                this.grdTemplate.Rows.Add(row);
+            }
         }
 
         #endregion

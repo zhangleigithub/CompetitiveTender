@@ -32,10 +32,10 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.trvTemplateNode = new System.Windows.Forms.TreeView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiNew = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSubNew = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSummit = new MetroFramework.Controls.MetroButton();
             this.btnSave = new MetroFramework.Controls.MetroButton();
             this.txtSort = new MetroFramework.Controls.MetroTextBox();
@@ -121,39 +121,43 @@
             this.trvTemplateNode.Name = "trvTemplateNode";
             this.trvTemplateNode.Size = new System.Drawing.Size(289, 508);
             this.trvTemplateNode.TabIndex = 0;
+            this.trvTemplateNode.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.trvTemplateNode_AfterSelect);
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2,
+            this.tsmiNew,
+            this.tsmiSubNew,
             this.toolStripSeparator1,
-            this.toolStripMenuItem3});
+            this.tsmiDelete});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(137, 76);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 98);
             // 
-            // toolStripMenuItem1
+            // tsmiNew
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
-            this.toolStripMenuItem1.Text = "新增节点";
+            this.tsmiNew.Name = "tsmiNew";
+            this.tsmiNew.Size = new System.Drawing.Size(152, 22);
+            this.tsmiNew.Text = "新增节点";
+            this.tsmiNew.Click += new System.EventHandler(this.tsmiNew_Click);
             // 
-            // toolStripMenuItem2
+            // tsmiSubNew
             // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(136, 22);
-            this.toolStripMenuItem2.Text = "新增子节点";
+            this.tsmiSubNew.Name = "tsmiSubNew";
+            this.tsmiSubNew.Size = new System.Drawing.Size(152, 22);
+            this.tsmiSubNew.Text = "新增子节点";
+            this.tsmiSubNew.Click += new System.EventHandler(this.tsmiSubNew_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(133, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
-            // toolStripMenuItem3
+            // tsmiDelete
             // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(136, 22);
-            this.toolStripMenuItem3.Text = "删除节点";
+            this.tsmiDelete.Name = "tsmiDelete";
+            this.tsmiDelete.Size = new System.Drawing.Size(152, 22);
+            this.tsmiDelete.Text = "删除节点";
+            this.tsmiDelete.Click += new System.EventHandler(this.tsmiDelete_Click);
             // 
             // btnSummit
             // 
@@ -548,10 +552,10 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroButton btnSave;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem tsmiNew;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSubNew;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDelete;
         private MetroFramework.Controls.MetroButton btnSummit;
     }
 }

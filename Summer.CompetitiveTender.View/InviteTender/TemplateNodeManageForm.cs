@@ -1,5 +1,8 @@
-﻿using MetroFramework.Forms;
+﻿using log4net;
+using MetroFramework.Forms;
+using Summer.CompetitiveTender.Service;
 using Summer.CompetitiveTender.View.Common;
+using Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,23 +11,44 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using MetroFramework;
 
 namespace Summer.CompetitiveTender.View.InviteTender
 {
     public partial class TemplateNodeManageForm : FormBase
     {
-        public TemplateNodeManageForm()
+        #region 字段
+
+        /// <summary>
+        /// log
+        /// </summary>
+        private static ILog log = LogManager.GetLogger(typeof(TemplateNodeManageForm));
+
+        /// <summary>
+        /// gpTemplateNodeService
+        /// </summary>
+        private IGpTemplateNodeService gpTemplateNodeService = new GpTemplateNodeService();
+
+        /// <summary>
+        /// gptId
+        /// </summary>
+        private string gptId;
+
+        /// <summary>
+        /// gptnParentId
+        /// </summary>
+        private long gptnParentId = -1;
+
+        #endregion
+
+        #region 方法
+
+        #endregion
+
+        public TemplateNodeManageForm(string gptId)
         {
             InitializeComponent();
-
-            TreeNode node0 = new TreeNode("开标一览表");
-            TreeNode node1 = new TreeNode("第一章");
-            node1.Nodes.Add("测试");
-            TreeNode node2 = new TreeNode("第二章");
-            node2.Nodes.Add("测试");
-            trvTemplateNode.Nodes.Add(node0);
-            trvTemplateNode.Nodes.Add(node1);
-            trvTemplateNode.Nodes.Add(node2);
+            this.gptId = gptId;
         }
 
         private void TemplateNodeManageForm_Shown(object sender, EventArgs e)
@@ -71,16 +95,194 @@ namespace Summer.CompetitiveTender.View.InviteTender
             this.cboCanModifyITender.DataSource = lstCanModify;
             this.cboCanModifyITender.DisplayMember = "Text";
             this.cboCanModifyITender.ValueMember = "Value";
+
+            try
+            {
+                this.LoadTree();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+                MetroMessageBox.Show(this, "获取失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void trvTemplateNode_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            try
+            {
+                gpTemplateNodeWebDO gptn = e.Node.Tag as gpTemplateNodeWebDO;
+
+                this.txtName.Text = gptn.gtnName;
+                this.txtFileName.Text = gptn.gtnFileName;
+                this.cboProjectType.SelectedValue = gptn.gtnFiletype;
+                this.cboCanModify.SelectedValue = gptn.editState;
+                this.cboCanDelete.SelectedValue = gptn.delState;
+                this.cboProperty.SelectedValue = gptn.gtnAttr;
+                this.cboDocumentType.SelectedValue = gptn.gtnDocType;
+                this.cboCanModifyManage.SelectedValue = gptn.bossEditState;
+                this.cboClient.SelectedValue = gptn.carryState;
+                this.cboCanModifyITender.SelectedValue = gptn.biderEditState;
+                this.txtSort.Text = gptn.sort.ToString();
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+                MetroMessageBox.Show(this, "获取失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void tsmiNew_Click(object sender, EventArgs e)
+        {
+            this.txtName.Text = string.Empty;
+            this.txtFileName.Text = string.Empty;
+            this.txtSort.Text = string.Empty;
+
+            if (this.trvTemplateNode.SelectedNode == null)
+            {
+                this.gptnParentId = 0;
+            }
+            else
+            {
+                gpTemplateNodeWebDO gptn = this.trvTemplateNode.SelectedNode.Tag as gpTemplateNodeWebDO;
+                this.gptnParentId = gptn.gtnPid;
+            }
+        }
+
+        private void tsmiSubNew_Click(object sender, EventArgs e)
+        {
+            if (this.trvTemplateNode.SelectedNode == null)
+            {
+                MetroMessageBox.Show(this, "请选择要添加节点的父节点！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            this.txtName.Text = string.Empty;
+            this.txtFileName.Text = string.Empty;
+            this.txtSort.Text = string.Empty;
+
+            gpTemplateNodeWebDO gptn = this.trvTemplateNode.SelectedNode.Tag as gpTemplateNodeWebDO;
+            this.gptnParentId = gptn.gtnId;
+        }
+
+        private void tsmiDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.trvTemplateNode.SelectedNode == null)
+                {
+                    MetroMessageBox.Show(this, "请选择要删除的节点！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                gpTemplateNodeWebDO gptn = this.trvTemplateNode.SelectedNode.Tag as gpTemplateNodeWebDO;
+
+                if (this.gpTemplateNodeService.Remove(gptn.gtnId))
+                {
+                    this.LoadTree();
+                }
+                else
+                {
+                    MetroMessageBox.Show(this, "删除失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+                MetroMessageBox.Show(this, "删除失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            try
+            {
+                gpTemplateNodeWebDO gptn = null;
 
+                //修改
+                if (this.gptnParentId == -1)
+                {
+                    gptn = this.trvTemplateNode.SelectedNode.Tag as gpTemplateNodeWebDO;
+                }
+                else //新增
+                {
+                    gptn = new gpTemplateNodeWebDO();
+                    gptn.gtnPid = this.gptnParentId;
+                }
+
+                gptn.gtnName = this.txtName.Text.Trim();
+                gptn.gtnFileName = this.txtFileName.Text.Trim();
+                gptn.gtnFiletype = (int)this.cboProjectType.SelectedValue;
+                gptn.editState = (int)this.cboCanModify.SelectedValue;
+                gptn.delState = (int)this.cboCanDelete.SelectedValue;
+                gptn.gtnAttr = (int)this.cboProperty.SelectedValue;
+                gptn.gtnDocType = (int)this.cboDocumentType.SelectedValue;
+                gptn.bossEditState = (int)this.cboCanModifyManage.SelectedValue;
+                gptn.carryState = (int)this.cboClient.SelectedValue;
+                gptn.biderEditState = (int)this.cboCanModifyITender.SelectedValue;
+                gptn.sort = int.Parse(this.txtSort.Text.Trim());
+
+                //修改
+                if (this.gptnParentId == -1)
+                {
+                    if (this.gpTemplateNodeService.Update(gptn))
+                    {
+                        this.LoadTree();
+                    }
+                    else
+                    {
+                        MetroFramework.MetroMessageBox.Show(this, "保存失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else //新增
+                {
+                    if (this.gpTemplateNodeService.Add(gptn))
+                    {
+                        this.LoadTree();
+                    }
+                    else
+                    {
+                        MetroFramework.MetroMessageBox.Show(this, "保存失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+                MetroFramework.MetroMessageBox.Show(this, "保存失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSummit_Click(object sender, EventArgs e)
         {
+        }
 
+        public void LoadTree()
+        {
+            this.trvTemplateNode.Nodes.Clear();
+
+            gpTemplateNodeWebDO[] gptns = this.gpTemplateNodeService.FindListByGtId(this.gptId);
+
+            foreach (var item in gptns.Where(x => x.gtnPid == 0).OrderBy(x => x.sort))
+            {
+                TreeNode node = new TreeNode(item.gtnName);
+                node.Tag = item;
+                this.SetTreeData(gptns, node, item.gtnId);
+                this.trvTemplateNode.Nodes.Add(node);
+            }
+
+            this.trvTemplateNode.ExpandAll();
+        }
+
+        public void SetTreeData(gpTemplateNodeWebDO[] gptns, TreeNode parentNode, long parentId)
+        {
+            foreach (var item in gptns.Where(x => x.gtnPid == parentId).OrderBy(x => x.sort))
+            {
+                TreeNode node = new TreeNode(item.gtnName);
+                node.Tag = item;
+
+                parentNode.Nodes.Add(node);
+            }
         }
     }
 }

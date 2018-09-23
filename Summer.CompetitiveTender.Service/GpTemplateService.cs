@@ -77,11 +77,11 @@ namespace Summer.CompetitiveTender.Service
         }
 
         /// <summary>
-        /// FindListById
+        /// FindById
         /// </summary>
         /// <param name="gtId">gtId</param>
         /// <returns>gpTemplateWebDO</returns>
-        public gpTemplateWebDO FindListById(string gtId)
+        public gpTemplateWebDO FindById(string gtId)
         {
             if (string.IsNullOrWhiteSpace(gtId))
             {

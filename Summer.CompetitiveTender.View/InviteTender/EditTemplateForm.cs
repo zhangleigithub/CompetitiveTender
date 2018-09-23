@@ -70,7 +70,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
             try
             {
-                this.gpTemplate = this.gpTemplateService.FindListById(this.gptId);
+                this.gpTemplate = this.gpTemplateService.FindById(this.gptId);
                 this.txtName.Text = this.gpTemplate.gtName;
                 this.cboType.SelectedValue = this.gpTemplate.gtType;
                 this.cboProjectType.SelectedValue = this.gpTemplate.gtGroup;

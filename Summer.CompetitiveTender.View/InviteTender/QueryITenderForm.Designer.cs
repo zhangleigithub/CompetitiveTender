@@ -57,6 +57,7 @@
             this.btnQuery.TabIndex = 7;
             this.btnQuery.Text = "查询";
             this.btnQuery.UseSelectable = true;
+            this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
             // 
             // txtProjectId
             // 

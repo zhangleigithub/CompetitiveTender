@@ -37,7 +37,7 @@ namespace Summer.CompetitiveTender.Service
         /// </summary>
         /// <param name="gtId">gtId</param>
         /// <returns>gpTemplateWebDO</returns>
-        gpTemplateWebDO FindListById(string gtId);
+        gpTemplateWebDO FindById(string gtId);
 
         /// <summary>
         /// FindListByAuIdAndName

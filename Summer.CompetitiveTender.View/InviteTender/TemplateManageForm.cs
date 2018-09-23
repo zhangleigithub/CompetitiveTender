@@ -151,15 +151,26 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
         private void btnDownloadTemplate_Click(object sender, EventArgs e)
         {
-            SaveFileDialog sfdl = new SaveFileDialog();
-            sfdl.Filter = "word(*.doc)|*.doc|所有文件|*.*";
-            sfdl.FileName = "xxxx";
-            sfdl.DefaultExt = "doc";
-            sfdl.AddExtension = true;
-
-            if (sfdl.ShowDialog() == DialogResult.OK)
+            if (this.grdTemplate.CurrentRow != null)
             {
+                gpTemplateWebDO gpt = this.grdTemplate.CurrentRow.Tag as gpTemplateWebDO;
 
+                //this.gpTemplateService.FileDownload();
+
+                SaveFileDialog sfdl = new SaveFileDialog();
+                sfdl.Filter = "word(*.doc)|*.doc|所有文件|*.*";
+                sfdl.FileName = "xxxx";
+                sfdl.DefaultExt = "doc";
+                sfdl.AddExtension = true;
+
+                if (sfdl.ShowDialog() == DialogResult.OK)
+                {
+
+                }
+            }
+            else
+            {
+                MetroMessageBox.Show(this, "请选择要下载的模板！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -184,7 +195,8 @@ namespace Summer.CompetitiveTender.View.InviteTender
             baseUserWebDO loginResponse = Cache.GetInstance().GetValue<baseUserWebDO>("login");
             var result = gpTemplateService.FindListByAuIdAndName(loginResponse.auID, string.Empty);
 
-            foreach (var item in result)
+            //升序
+            foreach (var item in result.OrderBy(x => x.sort))
             {
                 DataGridViewRow row = this.grdTemplate.RowTemplate;
                 row.Cells[this.colTemplateId.Index].Value = item.gtId;

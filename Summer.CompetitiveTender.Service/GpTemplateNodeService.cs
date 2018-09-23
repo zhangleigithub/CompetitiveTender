@@ -72,11 +72,11 @@ namespace Summer.CompetitiveTender.Service
         }
 
         /// <summary>
-        /// FindListById
+        /// FindById
         /// </summary>
         /// <param name="gtnId">gtnId</param>
         /// <returns>gpTemplateNodeWebDO</returns>
-        public gpTemplateNodeWebDO FindListById(long gtnId)
+        public gpTemplateNodeWebDO FindById(long gtnId)
         {
             resultDO result = this.wsAgent.getById(gtnId);
 

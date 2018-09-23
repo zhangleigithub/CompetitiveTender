@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webservice.govpurchase.opensource.com/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="GpTenderProjectWebServiceService" targetNamespace="http://webservice.govpurchase.opensource.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://webservice.govpurchase.opensource.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="findBidProjecList" type="tns:findBidProjecList" />
+      <xs:element name="findBidProjecListResponse" type="tns:findBidProjecListResponse" />
+      <xs:element name="findList" type="tns:findList" />
+      <xs:element name="findListResponse" type="tns:findListResponse" />
+      <xs:element name="getById" type="tns:getById" />
+      <xs:element name="getByIdResponse" type="tns:getByIdResponse" />
+      <xs:complexType name="getById">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getByIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="resultDO">
+        <xs:sequence>
+          <xs:element name="code" type="xs:int" />
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+          <xs:element minOccurs="0" name="obj" type="xs:anyType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="objList" nillable="true" type="xs:anyType" />
+          <xs:element name="success" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="gpTenderProjectWebDO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:baseEntity">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="agentCode" type="xs:string" />
+              <xs:element minOccurs="0" name="agentName" type="xs:string" />
+              <xs:element minOccurs="0" name="agentType" type="xs:int" />
+              <xs:element minOccurs="0" name="agentTypeName" type="xs:string" />
+              <xs:element minOccurs="0" name="agentVersion" type="xs:string" />
+              <xs:element minOccurs="0" name="applyName" type="xs:string" />
+              <xs:element minOccurs="0" name="content" type="xs:string" />
+              <xs:element minOccurs="0" name="creatTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="evalState" type="xs:int" />
+              <xs:element minOccurs="0" name="gpCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gpId" type="xs:string" />
+              <xs:element minOccurs="0" name="gsClassIfyCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gsClassIfyName" type="xs:string" />
+              <xs:element minOccurs="0" name="gsCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gsContent" type="xs:string" />
+              <xs:element minOccurs="0" name="gsId" type="xs:string" />
+              <xs:element minOccurs="0" name="gsName" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpAgentId" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpApplyPerson" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpFileid" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpGetangentWays" type="xs:int" />
+              <xs:element minOccurs="0" name="gtpGetangentWaysName" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpName" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpOrganizeTypeName" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpPlatformCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpVerifyCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpVerifyName" type="xs:string" />
+              <xs:element minOccurs="0" name="infoReporterCode" type="xs:string" />
+              <xs:element minOccurs="0" name="infoReporterCodeType" type="xs:int" />
+              <xs:element minOccurs="0" name="infoReporterName" type="xs:string" />
+              <xs:element minOccurs="0" name="ownerName" type="xs:string" />
+              <xs:element minOccurs="0" name="platCode" type="xs:string" />
+              <xs:element minOccurs="0" name="regionCode" type="xs:string" />
+              <xs:element minOccurs="0" name="regionId" type="xs:string" />
+              <xs:element minOccurs="0" name="regionName" type="xs:string" />
+              <xs:element minOccurs="0" name="remark" type="xs:string" />
+              <xs:element minOccurs="0" name="state" type="xs:int" />
+              <xs:element minOccurs="0" name="superviseCode" type="xs:string" />
+              <xs:element minOccurs="0" name="superviseCodeType" type="xs:int" />
+              <xs:element minOccurs="0" name="superviseCodeTypeName" type="xs:string" />
+              <xs:element minOccurs="0" name="superviseId" type="xs:string" />
+              <xs:element minOccurs="0" name="superviseName" type="xs:string" />
+              <xs:element minOccurs="0" name="tdrAgencyCodeType" type="xs:string" />
+              <xs:element minOccurs="0" name="tdrPrjClassifyCode" type="xs:string" />
+              <xs:element minOccurs="0" name="tdrPrjClassifyId" type="xs:string" />
+              <xs:element minOccurs="0" name="tdrPrjClassifyName" type="xs:string" />
+              <xs:element minOccurs="0" name="tdrPrjName" type="xs:string" />
+              <xs:element minOccurs="0" name="tdrPrjType" type="xs:string" />
+              <xs:element minOccurs="0" name="tdrPrjTypeId" type="xs:string" />
+              <xs:element minOccurs="0" name="tenderCode" type="xs:string" />
+              <xs:element minOccurs="0" name="tenderName" type="xs:string" />
+              <xs:element minOccurs="0" name="tenderOrgWay" type="xs:int" />
+              <xs:element minOccurs="0" name="tenderType" type="xs:int" />
+              <xs:element minOccurs="0" name="tenderTypeName" type="xs:string" />
+              <xs:element minOccurs="0" name="tenderWay" type="xs:int" />
+              <xs:element minOccurs="0" name="tenderWayName" type="xs:string" />
+              <xs:element minOccurs="0" name="unifiedDealCode" type="xs:string" />
+              <xs:element minOccurs="0" name="verifyCoCode" type="xs:string" />
+              <xs:element minOccurs="0" name="verifyCoCodeType" type="xs:int" />
+              <xs:element minOccurs="0" name="verifyCoName" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="baseEntity" abstract="true">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="findBidProjecList">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+          <xs:element minOccurs="0" name="gsId" type="xs:string" />
+          <xs:element minOccurs="0" name="gtpName" type="xs:string" />
+          <xs:element minOccurs="0" name="gtpCode" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findBidProjecListResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findList">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="buId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findListResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="findListResponse">
+    <wsdl:part name="parameters" element="tns:findListResponse" />
+  </wsdl:message>
+  <wsdl:message name="getByIdResponse">
+    <wsdl:part name="parameters" element="tns:getByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="findBidProjecListResponse">
+    <wsdl:part name="parameters" element="tns:findBidProjecListResponse" />
+  </wsdl:message>
+  <wsdl:message name="getById">
+    <wsdl:part name="parameters" element="tns:getById" />
+  </wsdl:message>
+  <wsdl:message name="findBidProjecList">
+    <wsdl:part name="parameters" element="tns:findBidProjecList" />
+  </wsdl:message>
+  <wsdl:message name="findList">
+    <wsdl:part name="parameters" element="tns:findList" />
+  </wsdl:message>
+  <wsdl:portType name="GpTenderProjectWebService">
+    <wsdl:operation name="getById">
+      <wsdl:input name="getById" message="tns:getById" />
+      <wsdl:output name="getByIdResponse" message="tns:getByIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="findBidProjecList">
+      <wsdl:input name="findBidProjecList" message="tns:findBidProjecList" />
+      <wsdl:output name="findBidProjecListResponse" message="tns:findBidProjecListResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="findList">
+      <wsdl:input name="findList" message="tns:findList" />
+      <wsdl:output name="findListResponse" message="tns:findListResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GpTenderProjectWebServiceServiceSoapBinding" type="tns:GpTenderProjectWebService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getById">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getById">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getByIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findBidProjecList">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="findBidProjecList">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="findBidProjecListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findList">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="findList">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="findListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GpTenderProjectWebServiceService">
+    <wsdl:port name="GpTenderProjectWebServicePort" binding="tns:GpTenderProjectWebServiceServiceSoapBinding">
+      <soap:address location="http://121.28.95.246:9090/webservice/gpTenderProjectWebService/findList" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

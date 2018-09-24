@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webservice.govpurchase.opensource.com/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="GpTfOperationWebServiceService" targetNamespace="http://webservice.govpurchase.opensource.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://webservice.govpurchase.opensource.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="findQuestions" type="tns:findQuestions" />
+      <xs:element name="findQuestionsResponse" type="tns:findQuestionsResponse" />
+      <xs:element name="getById" type="tns:getById" />
+      <xs:element name="getByIdResponse" type="tns:getByIdResponse" />
+      <xs:element name="replayQuestions" type="tns:replayQuestions" />
+      <xs:element name="replayQuestionsResponse" type="tns:replayQuestionsResponse" />
+      <xs:complexType name="findQuestions">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+          <xs:element minOccurs="0" name="gsId" type="xs:string" />
+          <xs:element minOccurs="0" name="gtoTitle" type="xs:string" />
+          <xs:element minOccurs="0" name="gtoType" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findQuestionsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="resultDO">
+        <xs:sequence>
+          <xs:element name="code" type="xs:int" />
+          <xs:element minOccurs="0" name="fileContent" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+          <xs:element minOccurs="0" name="obj" type="xs:anyType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="objList" nillable="true" type="xs:anyType" />
+          <xs:element name="success" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="gpTfOperationWebDO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:baseEntity">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="gsId" type="xs:string" />
+              <xs:element minOccurs="0" name="gtfId" type="xs:string" />
+              <xs:element minOccurs="0" name="gtoAnswerCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="gtoAnswerFileId" type="xs:string" />
+              <xs:element minOccurs="0" name="gtoAnswerId" type="xs:string" />
+              <xs:element minOccurs="0" name="gtoAnswerTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="gtoBatch" type="xs:int" />
+              <xs:element minOccurs="0" name="gtoCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gtoContent" type="xs:string" />
+              <xs:element minOccurs="0" name="gtoId" type="xs:string" />
+              <xs:element minOccurs="0" name="gtoTitle" type="xs:string" />
+              <xs:element minOccurs="0" name="gtoType" type="xs:int" />
+              <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+              <xs:element minOccurs="0" name="optCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="optId" type="xs:string" />
+              <xs:element minOccurs="0" name="optTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="remark" type="xs:string" />
+              <xs:element minOccurs="0" name="sendCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="sendId" type="xs:string" />
+              <xs:element minOccurs="0" name="sendState" type="xs:int" />
+              <xs:element minOccurs="0" name="sendTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="state" type="xs:int" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="baseEntity" abstract="true">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getById">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gtoId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getByIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="replayQuestions">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gtowd" type="tns:gpTfOperationWebDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="replayQuestionsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="findQuestions">
+    <wsdl:part name="parameters" element="tns:findQuestions" />
+  </wsdl:message>
+  <wsdl:message name="replayQuestionsResponse">
+    <wsdl:part name="parameters" element="tns:replayQuestionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="findQuestionsResponse">
+    <wsdl:part name="parameters" element="tns:findQuestionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getByIdResponse">
+    <wsdl:part name="parameters" element="tns:getByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getById">
+    <wsdl:part name="parameters" element="tns:getById" />
+  </wsdl:message>
+  <wsdl:message name="replayQuestions">
+    <wsdl:part name="parameters" element="tns:replayQuestions" />
+  </wsdl:message>
+  <wsdl:portType name="GpTfOperationWebService">
+    <wsdl:operation name="findQuestions">
+      <wsdl:input name="findQuestions" message="tns:findQuestions" />
+      <wsdl:output name="findQuestionsResponse" message="tns:findQuestionsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getById">
+      <wsdl:input name="getById" message="tns:getById" />
+      <wsdl:output name="getByIdResponse" message="tns:getByIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="replayQuestions">
+      <wsdl:input name="replayQuestions" message="tns:replayQuestions" />
+      <wsdl:output name="replayQuestionsResponse" message="tns:replayQuestionsResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GpTfOperationWebServiceServiceSoapBinding" type="tns:GpTfOperationWebService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="findQuestions">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="findQuestions">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="findQuestionsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getById">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getById">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getByIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="replayQuestions">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="replayQuestions">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="replayQuestionsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GpTfOperationWebServiceService">
+    <wsdl:port name="GpTfOperationWebServicePort" binding="tns:GpTfOperationWebServiceServiceSoapBinding">
+      <soap:address location="http://121.28.95.246:9090/webservice/gpTfOperationWebService/findQuestions" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

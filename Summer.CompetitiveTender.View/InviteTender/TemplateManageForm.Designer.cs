@@ -32,6 +32,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grdTemplate = new MetroFramework.Controls.MetroGrid();
+            this.btnNewTemplate = new MetroFramework.Controls.MetroButton();
+            this.btnEditTemplate = new MetroFramework.Controls.MetroButton();
+            this.btnTemplateNode = new MetroFramework.Controls.MetroButton();
+            this.btnDeleteTemplate = new MetroFramework.Controls.MetroButton();
+            this.btnDownloadTemplate = new MetroFramework.Controls.MetroButton();
             this.colTemplateId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTemplateCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTempleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,11 +45,6 @@
             this.colTemplateDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTemplateCreateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTemplateState = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.btnNewTemplate = new MetroFramework.Controls.MetroButton();
-            this.btnEditTemplate = new MetroFramework.Controls.MetroButton();
-            this.btnTemplateNode = new MetroFramework.Controls.MetroButton();
-            this.btnDeleteTemplate = new MetroFramework.Controls.MetroButton();
-            this.btnDownloadTemplate = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.grdTemplate)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,67 +108,6 @@
             this.grdTemplate.Size = new System.Drawing.Size(984, 477);
             this.grdTemplate.TabIndex = 4;
             // 
-            // colTemplateId
-            // 
-            this.colTemplateId.HeaderText = "模板ID";
-            this.colTemplateId.Name = "colTemplateId";
-            this.colTemplateId.ReadOnly = true;
-            // 
-            // colTemplateCode
-            // 
-            this.colTemplateCode.HeaderText = "模板编号";
-            this.colTemplateCode.Name = "colTemplateCode";
-            this.colTemplateCode.ReadOnly = true;
-            // 
-            // colTempleName
-            // 
-            this.colTempleName.HeaderText = "名称";
-            this.colTempleName.Name = "colTempleName";
-            this.colTempleName.ReadOnly = true;
-            // 
-            // colTemplateType
-            // 
-            this.colTemplateType.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.colTemplateType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.colTemplateType.HeaderText = "类型";
-            this.colTemplateType.Name = "colTemplateType";
-            this.colTemplateType.ReadOnly = true;
-            this.colTemplateType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colTemplateType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // colTemplateProjectType
-            // 
-            this.colTemplateProjectType.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.colTemplateProjectType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.colTemplateProjectType.HeaderText = "项目分类";
-            this.colTemplateProjectType.Name = "colTemplateProjectType";
-            this.colTemplateProjectType.ReadOnly = true;
-            this.colTemplateProjectType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colTemplateProjectType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // colTemplateDescription
-            // 
-            this.colTemplateDescription.HeaderText = "说明";
-            this.colTemplateDescription.Name = "colTemplateDescription";
-            this.colTemplateDescription.ReadOnly = true;
-            // 
-            // colTemplateCreateDate
-            // 
-            this.colTemplateCreateDate.HeaderText = "创建时间";
-            this.colTemplateCreateDate.Name = "colTemplateCreateDate";
-            this.colTemplateCreateDate.ReadOnly = true;
-            this.colTemplateCreateDate.Width = 120;
-            // 
-            // colTemplateState
-            // 
-            this.colTemplateState.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.colTemplateState.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.colTemplateState.HeaderText = "状态";
-            this.colTemplateState.Name = "colTemplateState";
-            this.colTemplateState.ReadOnly = true;
-            this.colTemplateState.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colTemplateState.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // btnNewTemplate
             // 
             this.btnNewTemplate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -223,6 +162,68 @@
             this.btnDownloadTemplate.Text = "下载模板";
             this.btnDownloadTemplate.UseSelectable = true;
             this.btnDownloadTemplate.Click += new System.EventHandler(this.btnDownloadTemplate_Click);
+            // 
+            // colTemplateId
+            // 
+            this.colTemplateId.HeaderText = "模板ID";
+            this.colTemplateId.Name = "colTemplateId";
+            this.colTemplateId.ReadOnly = true;
+            // 
+            // colTemplateCode
+            // 
+            this.colTemplateCode.HeaderText = "模板编号";
+            this.colTemplateCode.Name = "colTemplateCode";
+            this.colTemplateCode.ReadOnly = true;
+            // 
+            // colTempleName
+            // 
+            this.colTempleName.HeaderText = "名称";
+            this.colTempleName.Name = "colTempleName";
+            this.colTempleName.ReadOnly = true;
+            // 
+            // colTemplateType
+            // 
+            this.colTemplateType.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colTemplateType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.colTemplateType.HeaderText = "类型";
+            this.colTemplateType.Name = "colTemplateType";
+            this.colTemplateType.ReadOnly = true;
+            this.colTemplateType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colTemplateType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // colTemplateProjectType
+            // 
+            this.colTemplateProjectType.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colTemplateProjectType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.colTemplateProjectType.HeaderText = "项目分类";
+            this.colTemplateProjectType.Name = "colTemplateProjectType";
+            this.colTemplateProjectType.ReadOnly = true;
+            this.colTemplateProjectType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colTemplateProjectType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // colTemplateDescription
+            // 
+            this.colTemplateDescription.HeaderText = "说明";
+            this.colTemplateDescription.Name = "colTemplateDescription";
+            this.colTemplateDescription.ReadOnly = true;
+            // 
+            // colTemplateCreateDate
+            // 
+            this.colTemplateCreateDate.HeaderText = "创建时间";
+            this.colTemplateCreateDate.Name = "colTemplateCreateDate";
+            this.colTemplateCreateDate.ReadOnly = true;
+            this.colTemplateCreateDate.Width = 120;
+            // 
+            // colTemplateState
+            // 
+            this.colTemplateState.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTemplateState.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colTemplateState.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.colTemplateState.HeaderText = "状态";
+            this.colTemplateState.Name = "colTemplateState";
+            this.colTemplateState.ReadOnly = true;
+            this.colTemplateState.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colTemplateState.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // TemplateManageForm
             // 

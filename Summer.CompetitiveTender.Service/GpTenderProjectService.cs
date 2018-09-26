@@ -65,9 +65,11 @@ namespace Summer.CompetitiveTender.Service
 
             resultDO result = this.wsAgent.findList(auId);
 
+            return ((object[])result.objList).Cast<gpTenderProjectWebDO>().ToArray();
+
             if (result.success)
             {
-                return result.obj as gpTenderProjectWebDO[];
+                return ((object[])result.objList).Cast<gpTenderProjectWebDO>().ToArray();
             }
             else
             {
@@ -89,7 +91,7 @@ namespace Summer.CompetitiveTender.Service
 
             if (result.success)
             {
-                return result.obj as gpTenderProjectWebDO[];
+                return result.objList as gpTenderProjectWebDO[];
             }
             else
             {

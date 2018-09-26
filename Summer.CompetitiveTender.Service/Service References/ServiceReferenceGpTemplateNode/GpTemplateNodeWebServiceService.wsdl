@@ -60,6 +60,7 @@
       <xs:complexType name="resultDO">
         <xs:sequence>
           <xs:element name="code" type="xs:int" />
+          <xs:element minOccurs="0" name="fileContent" type="xs:base64Binary" />
           <xs:element minOccurs="0" name="message" type="xs:string" />
           <xs:element minOccurs="0" name="obj" type="xs:anyType" />
           <xs:element minOccurs="0" maxOccurs="unbounded" name="objList" nillable="true" type="xs:anyType" />

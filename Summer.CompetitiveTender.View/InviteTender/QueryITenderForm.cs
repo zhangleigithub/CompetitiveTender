@@ -126,7 +126,8 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
             foreach (var item in values)
             {
-                DataGridViewRow row = this.grdITender.RowTemplate;
+                DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(this.grdITender);
                 row.Cells[this.colITenderProjectCode.Index].Value = item.gpCode;
                 row.Cells[this.colITenderTYJYBSM.Index].Value = item.unifiedDealCode;
                 row.Cells[this.colITenderProjectName.Index].Value = item.gtpName;

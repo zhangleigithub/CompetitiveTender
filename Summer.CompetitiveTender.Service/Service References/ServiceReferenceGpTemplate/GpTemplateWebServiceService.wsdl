@@ -4,41 +4,24 @@
     <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://webservice.govpurchase.opensource.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
       <xs:element name="add" type="tns:add" />
       <xs:element name="addResponse" type="tns:addResponse" />
+      <xs:element name="downLoadFile" type="tns:downLoadFile" />
+      <xs:element name="downLoadFileResponse" type="tns:downLoadFileResponse" />
       <xs:element name="edit" type="tns:edit" />
       <xs:element name="editResponse" type="tns:editResponse" />
-      <xs:element name="fileUpload" type="tns:fileUpload" />
-      <xs:element name="fileUploadResponse" type="tns:fileUploadResponse" />
       <xs:element name="findList" type="tns:findList" />
       <xs:element name="findListResponse" type="tns:findListResponse" />
       <xs:element name="getById" type="tns:getById" />
       <xs:element name="getByIdResponse" type="tns:getByIdResponse" />
       <xs:element name="remove" type="tns:remove" />
       <xs:element name="removeResponse" type="tns:removeResponse" />
-      <xs:element name="templateDownLoad" type="tns:templateDownLoad" />
-      <xs:element name="templateDownLoadResponse" type="tns:templateDownLoadResponse" />
-      <xs:complexType name="fileUpload">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="fileName" type="xs:string" />
-          <xs:element minOccurs="0" name="suffix" type="xs:string" />
-          <xs:element name="partLength" type="xs:long" />
-          <xs:element minOccurs="0" name="fileContent" type="xs:base64Binary" />
-          <xs:element minOccurs="0" name="totalSegment" type="xs:int" />
-          <xs:element minOccurs="0" name="Segment" type="xs:int" />
-          <xs:element name="isNew" type="xs:boolean" />
-          <xs:element minOccurs="0" name="userId" type="xs:int" />
-        </xs:sequence>
-      </xs:complexType>
-      <xs:complexType name="fileUploadResponse">
-        <xs:sequence>
-          <xs:element name="return" type="xs:int" />
-        </xs:sequence>
-      </xs:complexType>
-      <xs:complexType name="remove">
+      <xs:element name="uploadFile" type="tns:uploadFile" />
+      <xs:element name="uploadFileResponse" type="tns:uploadFileResponse" />
+      <xs:complexType name="downLoadFile">
         <xs:sequence>
           <xs:element minOccurs="0" name="gtId" type="xs:string" />
         </xs:sequence>
       </xs:complexType>
-      <xs:complexType name="removeResponse">
+      <xs:complexType name="downLoadFileResponse">
         <xs:sequence>
           <xs:element minOccurs="0" name="return" type="tns:resultDO" />
         </xs:sequence>
@@ -46,15 +29,11 @@
       <xs:complexType name="resultDO">
         <xs:sequence>
           <xs:element name="code" type="xs:int" />
+          <xs:element minOccurs="0" name="fileContent" type="xs:base64Binary" />
           <xs:element minOccurs="0" name="message" type="xs:string" />
           <xs:element minOccurs="0" name="obj" type="xs:anyType" />
           <xs:element minOccurs="0" maxOccurs="unbounded" name="objList" nillable="true" type="xs:anyType" />
           <xs:element name="success" type="xs:boolean" />
-        </xs:sequence>
-      </xs:complexType>
-      <xs:complexType name="add">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="GpTemplateWebDO" type="tns:gpTemplateWebDO" />
         </xs:sequence>
       </xs:complexType>
       <xs:complexType name="gpTemplateWebDO">
@@ -68,6 +47,9 @@
               <xs:element minOccurs="0" name="fileUrl" type="xs:string" />
               <xs:element minOccurs="0" name="gtCode" type="xs:string" />
               <xs:element minOccurs="0" name="gtContent" type="xs:string" />
+              <xs:element minOccurs="0" name="gtFileName" type="xs:string" />
+              <xs:element minOccurs="0" name="gtFileSize" type="xs:long" />
+              <xs:element minOccurs="0" name="gtFileSuffix" type="xs:string" />
               <xs:element minOccurs="0" name="gtGroup" type="xs:int" />
               <xs:element minOccurs="0" name="gtGroupName" type="xs:string" />
               <xs:element minOccurs="0" name="gtId" type="xs:string" />
@@ -87,32 +69,39 @@
       <xs:complexType name="baseEntity" abstract="true">
         <xs:sequence />
       </xs:complexType>
+      <xs:complexType name="remove">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gtId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="removeResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="add">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GpTemplateWebDO" type="tns:gpTemplateWebDO" />
+        </xs:sequence>
+      </xs:complexType>
       <xs:complexType name="addResponse">
         <xs:sequence>
           <xs:element minOccurs="0" name="return" type="tns:resultDO" />
         </xs:sequence>
       </xs:complexType>
-      <xs:complexType name="templateDownLoad">
+      <xs:complexType name="uploadFile">
         <xs:sequence>
-          <xs:element minOccurs="0" name="userId" type="xs:int" />
-          <xs:element minOccurs="0" name="part" type="xs:int" />
           <xs:element minOccurs="0" name="gtId" type="xs:string" />
+          <xs:element minOccurs="0" name="buId" type="xs:string" />
+          <xs:element minOccurs="0" name="gtFileName" type="xs:string" />
+          <xs:element minOccurs="0" name="gtFileSuffix" type="xs:string" />
+          <xs:element minOccurs="0" name="gtFileSize" type="xs:long" />
+          <xs:element minOccurs="0" name="gtFileContent" type="xs:base64Binary" />
         </xs:sequence>
       </xs:complexType>
-      <xs:complexType name="templateDownLoadResponse">
+      <xs:complexType name="uploadFileResponse">
         <xs:sequence>
-          <xs:element minOccurs="0" name="return" type="tns:reslultInfoDO" />
-        </xs:sequence>
-      </xs:complexType>
-      <xs:complexType name="reslultInfoDO">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="fileContent" type="xs:base64Binary" />
-          <xs:element minOccurs="0" name="fileName" type="xs:string" />
-          <xs:element name="partLength" type="xs:long" />
-          <xs:element minOccurs="0" name="segment" type="xs:int" />
-          <xs:element minOccurs="0" name="suffix" type="xs:string" />
-          <xs:element minOccurs="0" name="totalSegment" type="xs:int" />
-          <xs:element minOccurs="0" name="userId" type="xs:int" />
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
         </xs:sequence>
       </xs:complexType>
       <xs:complexType name="edit">
@@ -157,11 +146,11 @@
   <wsdl:message name="removeResponse">
     <wsdl:part name="parameters" element="tns:removeResponse" />
   </wsdl:message>
+  <wsdl:message name="downLoadFile">
+    <wsdl:part name="parameters" element="tns:downLoadFile" />
+  </wsdl:message>
   <wsdl:message name="IOException">
     <wsdl:part name="IOException" element="tns:IOException" />
-  </wsdl:message>
-  <wsdl:message name="fileUpload">
-    <wsdl:part name="parameters" element="tns:fileUpload" />
   </wsdl:message>
   <wsdl:message name="findListResponse">
     <wsdl:part name="parameters" element="tns:findListResponse" />
@@ -172,6 +161,9 @@
   <wsdl:message name="add">
     <wsdl:part name="parameters" element="tns:add" />
   </wsdl:message>
+  <wsdl:message name="uploadFile">
+    <wsdl:part name="parameters" element="tns:uploadFile" />
+  </wsdl:message>
   <wsdl:message name="getByIdResponse">
     <wsdl:part name="parameters" element="tns:getByIdResponse" />
   </wsdl:message>
@@ -181,14 +173,11 @@
   <wsdl:message name="addResponse">
     <wsdl:part name="parameters" element="tns:addResponse" />
   </wsdl:message>
-  <wsdl:message name="templateDownLoadResponse">
-    <wsdl:part name="parameters" element="tns:templateDownLoadResponse" />
+  <wsdl:message name="downLoadFileResponse">
+    <wsdl:part name="parameters" element="tns:downLoadFileResponse" />
   </wsdl:message>
-  <wsdl:message name="fileUploadResponse">
-    <wsdl:part name="parameters" element="tns:fileUploadResponse" />
-  </wsdl:message>
-  <wsdl:message name="templateDownLoad">
-    <wsdl:part name="parameters" element="tns:templateDownLoad" />
+  <wsdl:message name="uploadFileResponse">
+    <wsdl:part name="parameters" element="tns:uploadFileResponse" />
   </wsdl:message>
   <wsdl:message name="editResponse">
     <wsdl:part name="parameters" element="tns:editResponse" />
@@ -200,9 +189,9 @@
     <wsdl:part name="parameters" element="tns:findList" />
   </wsdl:message>
   <wsdl:portType name="GpTemplateWebService">
-    <wsdl:operation name="fileUpload">
-      <wsdl:input name="fileUpload" message="tns:fileUpload" />
-      <wsdl:output name="fileUploadResponse" message="tns:fileUploadResponse" />
+    <wsdl:operation name="downLoadFile">
+      <wsdl:input name="downLoadFile" message="tns:downLoadFile" />
+      <wsdl:output name="downLoadFileResponse" message="tns:downLoadFileResponse" />
       <wsdl:fault name="IOException" message="tns:IOException" />
     </wsdl:operation>
     <wsdl:operation name="remove">
@@ -213,9 +202,9 @@
       <wsdl:input name="add" message="tns:add" />
       <wsdl:output name="addResponse" message="tns:addResponse" />
     </wsdl:operation>
-    <wsdl:operation name="templateDownLoad">
-      <wsdl:input name="templateDownLoad" message="tns:templateDownLoad" />
-      <wsdl:output name="templateDownLoadResponse" message="tns:templateDownLoadResponse" />
+    <wsdl:operation name="uploadFile">
+      <wsdl:input name="uploadFile" message="tns:uploadFile" />
+      <wsdl:output name="uploadFileResponse" message="tns:uploadFileResponse" />
       <wsdl:fault name="IOException" message="tns:IOException" />
     </wsdl:operation>
     <wsdl:operation name="edit">
@@ -233,12 +222,12 @@
   </wsdl:portType>
   <wsdl:binding name="GpTemplateWebServiceServiceSoapBinding" type="tns:GpTemplateWebService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="fileUpload">
+    <wsdl:operation name="downLoadFile">
       <soap:operation soapAction="" style="document" />
-      <wsdl:input name="fileUpload">
+      <wsdl:input name="downLoadFile">
         <soap:body use="literal" />
       </wsdl:input>
-      <wsdl:output name="fileUploadResponse">
+      <wsdl:output name="downLoadFileResponse">
         <soap:body use="literal" />
       </wsdl:output>
       <wsdl:fault name="IOException">
@@ -263,12 +252,12 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="templateDownLoad">
+    <wsdl:operation name="uploadFile">
       <soap:operation soapAction="" style="document" />
-      <wsdl:input name="templateDownLoad">
+      <wsdl:input name="uploadFile">
         <soap:body use="literal" />
       </wsdl:input>
-      <wsdl:output name="templateDownLoadResponse">
+      <wsdl:output name="uploadFileResponse">
         <soap:body use="literal" />
       </wsdl:output>
       <wsdl:fault name="IOException">

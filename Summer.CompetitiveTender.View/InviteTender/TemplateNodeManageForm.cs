@@ -12,6 +12,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using MetroFramework;
+using Summer.CompetitiveTender.Service.ServiceReferenceLogin;
+using Summer.CompetitiveTender.Model;
+using System.IO;
 
 namespace Summer.CompetitiveTender.View.InviteTender
 {
@@ -23,6 +26,11 @@ namespace Summer.CompetitiveTender.View.InviteTender
         /// log
         /// </summary>
         private static ILog log = LogManager.GetLogger(typeof(TemplateNodeManageForm));
+
+        /// <summary>
+        /// gpTemplateService
+        /// </summary>
+        private IGpTemplateService gpTemplateService = null;
 
         /// <summary>
         /// gpTemplateNodeService
@@ -45,9 +53,10 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
         #endregion
 
-        public TemplateNodeManageForm(string gptId)
+        public TemplateNodeManageForm(IGpTemplateService gpTemplateService, string gptId)
         {
             InitializeComponent();
+            this.gpTemplateService = gpTemplateService;
             this.gptId = gptId;
         }
 
@@ -79,6 +88,12 @@ namespace Summer.CompetitiveTender.View.InviteTender
             this.cboProperty.DataSource = lstProperty;
             this.cboProperty.DisplayMember = "Text";
             this.cboProperty.ValueMember = "Value";
+
+            List<ComboBoxDataSource> lstDocumentType = new List<ComboBoxDataSource>();
+            lstDocumentType.Add(new ComboBoxDataSource() { Text = "doc", Value = 0 });
+            this.cboDocumentType.DataSource = lstDocumentType;
+            this.cboDocumentType.DisplayMember = "Text";
+            this.cboDocumentType.ValueMember = "Value";
 
             this.cboCanModifyManage.DataSource = lstCanModify;
             this.cboCanModifyManage.DisplayMember = "Text";
@@ -124,6 +139,8 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 this.cboClient.SelectedValue = gptn.carryState;
                 this.cboCanModifyITender.SelectedValue = gptn.biderEditState;
                 this.txtSort.Text = gptn.sort.ToString();
+
+                this.gptnParentId = -1;
             }
             catch (Exception ex)
             {
@@ -197,6 +214,8 @@ namespace Summer.CompetitiveTender.View.InviteTender
         {
             try
             {
+                baseUserWebDO user = Cache.GetInstance().GetValue<baseUserWebDO>("login");
+
                 gpTemplateNodeWebDO gptn = null;
 
                 //修改
@@ -208,6 +227,8 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 {
                     gptn = new gpTemplateNodeWebDO();
                     gptn.gtnPid = this.gptnParentId;
+                    gptn.gtId = gptId;
+                    gptn.gtnId = 10;
                 }
 
                 gptn.gtnName = this.txtName.Text.Trim();
@@ -221,6 +242,9 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 gptn.carryState = (int)this.cboClient.SelectedValue;
                 gptn.biderEditState = (int)this.cboCanModifyITender.SelectedValue;
                 gptn.sort = int.Parse(this.txtSort.Text.Trim());
+                gptn.adtId = user.auID;
+                gptn.adtCoId = user.acId;
+                gptn.adtTime = DateTime.Now;
 
                 //修改
                 if (this.gptnParentId == -1)
@@ -242,19 +266,45 @@ namespace Summer.CompetitiveTender.View.InviteTender
                     }
                     else
                     {
-                        MetroFramework.MetroMessageBox.Show(this, "保存失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MetroMessageBox.Show(this, "保存失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             catch (Exception ex)
             {
                 log.Error(ex);
-                MetroFramework.MetroMessageBox.Show(this, "保存失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MetroMessageBox.Show(this, "保存失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnSummit_Click(object sender, EventArgs e)
         {
+            try
+            {
+                OpenFileDialog ofdl = new OpenFileDialog();
+                ofdl.Filter = "word(*.doc)|*.doc";
+
+                if (ofdl.ShowDialog() == DialogResult.OK)
+                {
+                    using (Stream stream=ofdl.OpenFile())
+                    {
+                        string fileName = Path.GetFileNameWithoutExtension(ofdl.FileName);
+                        string extension = Path.GetExtension(ofdl.FileName);
+
+                        byte[] bytes = new byte[stream.Length];
+                        stream.Read(bytes,0, bytes.Length);
+
+                        baseUserWebDO user = Cache.GetInstance().GetValue<baseUserWebDO>("login");
+
+                        this.gpTemplateService.FileUpload(this.gptId, user.auID, fileName, extension, bytes.Length, bytes);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+                MetroMessageBox.Show(this, "提交失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public void LoadTree()

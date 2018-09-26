@@ -90,6 +90,8 @@ namespace Summer.CompetitiveTender.Service
 
             resultDO result = this.wsAgent.getById(gtId);
 
+            return result.obj as gpTemplateWebDO;
+
             if (result.success)
             {
                 return result.obj as gpTemplateWebDO;
@@ -115,43 +117,41 @@ namespace Summer.CompetitiveTender.Service
 
             resultDO result = this.wsAgent.findList(auId, gtName);
 
-            if (result.success)
-            {
-                return result.objList as gpTemplateWebDO[];
-            }
-            else
-            {
-                throw new Exception(result.message);
-            }
+            return ((object[])result.objList).Cast<gpTemplateWebDO>().ToArray();
+
+            //if (result.success)
+            //{
+            //    return ((object[])result.objList).Cast<gpTemplateWebDO>().ToArray();
+            //}
+            //else
+            //{
+            //    throw new Exception(result.message);
+            //}
         }
 
         /// <summary>
         /// FileUpload
         /// </summary>
-        /// <param name="fileName">fileName</param>
-        /// <param name="suffix">suffix</param>
-        /// <param name="partLength">partLength</param>
-        /// <param name="fileContent">fileContent</param>
-        /// <param name="totalSegment">totalSegment</param>
-        /// <param name="Segment">Segment</param>
-        /// <param name="isNew">isNew</param>
-        /// <param name="userId">userId</param>
+        /// <param name="gtId">gtId</param>
+        /// <param name="buId">buId</param>
+        /// <param name="gtFileName">gtFileName</param>
+        /// <param name="gtFileSuffix">gtFileSuffix</param>
+        /// <param name="gtFileSize">gtFileSize</param>
+        /// <param name="gtFileContent">gtFileContent</param>
         /// <returns>bool</returns>
-        public int FileUpload(string fileName, string suffix, long partLength, byte[] fileContent, int totalSegment, int Segment, bool isNew, int userId)
+        public bool FileUpload(string gtId, string buId, string gtFileName, string gtFileSuffix, long gtFileSize, byte[] gtFileContent)
         {
-            return this.wsAgent.fileUpload(fileName, suffix, partLength, fileContent, totalSegment, Segment, isNew, userId);
+            return this.wsAgent.uploadFile( gtId,  buId,  gtFileName,  gtFileSuffix,  gtFileSize,  gtFileContent).success;
         }
 
         /// <summary>
         /// FileDownload
         /// </summary>
-        /// <param name="userId">userId</param>
-        /// <param name="part">part</param>
         /// <param name="gtId">gtId</param>
-        /// <returns>reslultInfoDO</returns>
-        public reslultInfoDO FileDownload(int userId, int part, string gtId)
+        /// <returns>resultDO</returns>
+        public resultDO FileDownload(string gtId)
         {
-            return this.wsAgent.templateDownLoad(userId, part, gtId);
+            return this.wsAgent.downLoadFile(gtId);
         }
 
         #endregion

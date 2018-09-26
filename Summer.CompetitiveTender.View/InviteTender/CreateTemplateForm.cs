@@ -42,7 +42,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
         private void CreateTemplateForm_Shown(object sender, EventArgs e)
         {
             List<ComboBoxDataSource> lstType = new List<ComboBoxDataSource>();
-            lstType.Add(new ComboBoxDataSource() { Text = "招标", Value = 0 });
+            lstType.Add(new ComboBoxDataSource() { Text = "招标", Value = 1 });
             this.cboType.DataSource = lstType;
             this.cboType.DisplayMember = "Text";
             this.cboType.ValueMember = "Value";

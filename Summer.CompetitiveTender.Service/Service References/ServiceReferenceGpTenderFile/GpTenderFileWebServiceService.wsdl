@@ -2,10 +2,46 @@
 <wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webservice.govpurchase.opensource.com/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="GpTenderFileWebServiceService" targetNamespace="http://webservice.govpurchase.opensource.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://webservice.govpurchase.opensource.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-      <xs:element name="getFile" type="tns:getFile" />
-      <xs:element name="getFileResponse" type="tns:getFileResponse" />
+      <xs:element name="downloadTenderpackage" type="tns:downloadTenderpackage" />
+      <xs:element name="downloadTenderpackageResponse" type="tns:downloadTenderpackageResponse" />
       <xs:element name="removeFileInfo" type="tns:removeFileInfo" />
       <xs:element name="removeFileInfoResponse" type="tns:removeFileInfoResponse" />
+      <xs:element name="uploadTenderpackage" type="tns:uploadTenderpackage" />
+      <xs:element name="uploadTenderpackageResponse" type="tns:uploadTenderpackageResponse" />
+      <xs:complexType name="downloadTenderpackage">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+          <xs:element minOccurs="0" name="gsId" type="xs:string" />
+          <xs:element minOccurs="0" name="part" type="xs:int" />
+          <xs:element minOccurs="0" name="buId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="downloadTenderpackageResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="resultDO">
+        <xs:sequence>
+          <xs:element name="code" type="xs:int" />
+          <xs:element minOccurs="0" name="fileContent" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+          <xs:element minOccurs="0" name="obj" type="xs:anyType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="objList" nillable="true" type="xs:anyType" />
+          <xs:element name="success" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="reslultInfoDO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="fileContent" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="fileName" type="xs:string" />
+          <xs:element minOccurs="0" name="fileSize" type="xs:long" />
+          <xs:element name="partLength" type="xs:long" />
+          <xs:element minOccurs="0" name="segment" type="xs:int" />
+          <xs:element minOccurs="0" name="suffix" type="xs:string" />
+          <xs:element minOccurs="0" name="totalSegment" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
       <xs:complexType name="removeFileInfo">
         <xs:sequence>
           <xs:element minOccurs="0" name="gtpId" type="xs:string" />
@@ -17,47 +53,24 @@
           <xs:element minOccurs="0" name="return" type="tns:resultDO" />
         </xs:sequence>
       </xs:complexType>
-      <xs:complexType name="resultDO">
-        <xs:sequence>
-          <xs:element name="code" type="xs:int" />
-          <xs:element minOccurs="0" name="message" type="xs:string" />
-          <xs:element minOccurs="0" name="obj" type="xs:anyType" />
-          <xs:element minOccurs="0" maxOccurs="unbounded" name="objList" nillable="true" type="xs:anyType" />
-          <xs:element name="success" type="xs:boolean" />
-        </xs:sequence>
-      </xs:complexType>
-      <xs:complexType name="getFile">
+      <xs:complexType name="uploadTenderpackage">
         <xs:sequence>
           <xs:element name="partLength" type="xs:long" />
-          <xs:element minOccurs="0" name="fileContent" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="packageFileContent" type="xs:base64Binary" />
           <xs:element minOccurs="0" name="totalSegment" type="xs:int" />
-          <xs:element minOccurs="0" name="Segment" type="xs:int" />
+          <xs:element minOccurs="0" name="segment" type="xs:int" />
           <xs:element name="isNew" type="xs:boolean" />
-          <xs:element minOccurs="0" name="GpTenderFileWebDO" type="tns:gpTenderFileWebDO" />
+          <xs:element minOccurs="0" name="buId" type="xs:string" />
+          <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+          <xs:element minOccurs="0" name="gsId" type="xs:string" />
+          <xs:element minOccurs="0" name="packageFileName" type="xs:string" />
+          <xs:element minOccurs="0" name="packageFileSuffix" type="xs:string" />
+          <xs:element minOccurs="0" name="packageFileSize" type="xs:long" />
         </xs:sequence>
       </xs:complexType>
-      <xs:complexType name="gpTenderFileWebDO">
-        <xs:complexContent mixed="false">
-          <xs:extension base="tns:baseEntity">
-            <xs:sequence>
-              <xs:element minOccurs="0" name="adtId" type="xs:string" />
-              <xs:element minOccurs="0" name="docOldName" type="xs:string" />
-              <xs:element minOccurs="0" name="docSize" type="xs:long" />
-              <xs:element minOccurs="0" name="docSuffix" type="xs:string" />
-              <xs:element minOccurs="0" name="gsId" type="xs:string" />
-              <xs:element minOccurs="0" name="gtfCode" type="xs:string" />
-              <xs:element minOccurs="0" name="gtfId" type="xs:string" />
-              <xs:element minOccurs="0" name="gtpId" type="xs:string" />
-            </xs:sequence>
-          </xs:extension>
-        </xs:complexContent>
-      </xs:complexType>
-      <xs:complexType name="baseEntity" abstract="true">
-        <xs:sequence />
-      </xs:complexType>
-      <xs:complexType name="getFileResponse">
+      <xs:complexType name="uploadTenderpackageResponse">
         <xs:sequence>
-          <xs:element name="return" type="xs:int" />
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
         </xs:sequence>
       </xs:complexType>
       <xs:element name="IOException" type="tns:IOException" />
@@ -68,34 +81,57 @@
       </xs:complexType>
     </xs:schema>
   </wsdl:types>
+  <wsdl:message name="downloadTenderpackage">
+    <wsdl:part name="parameters" element="tns:downloadTenderpackage" />
+  </wsdl:message>
   <wsdl:message name="IOException">
     <wsdl:part name="IOException" element="tns:IOException" />
   </wsdl:message>
   <wsdl:message name="removeFileInfoResponse">
     <wsdl:part name="parameters" element="tns:removeFileInfoResponse" />
   </wsdl:message>
-  <wsdl:message name="getFile">
-    <wsdl:part name="parameters" element="tns:getFile" />
-  </wsdl:message>
   <wsdl:message name="removeFileInfo">
     <wsdl:part name="parameters" element="tns:removeFileInfo" />
   </wsdl:message>
-  <wsdl:message name="getFileResponse">
-    <wsdl:part name="parameters" element="tns:getFileResponse" />
+  <wsdl:message name="uploadTenderpackage">
+    <wsdl:part name="parameters" element="tns:uploadTenderpackage" />
+  </wsdl:message>
+  <wsdl:message name="downloadTenderpackageResponse">
+    <wsdl:part name="parameters" element="tns:downloadTenderpackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="uploadTenderpackageResponse">
+    <wsdl:part name="parameters" element="tns:uploadTenderpackageResponse" />
   </wsdl:message>
   <wsdl:portType name="GpTenderFileWebService">
+    <wsdl:operation name="downloadTenderpackage">
+      <wsdl:input name="downloadTenderpackage" message="tns:downloadTenderpackage" />
+      <wsdl:output name="downloadTenderpackageResponse" message="tns:downloadTenderpackageResponse" />
+      <wsdl:fault name="IOException" message="tns:IOException" />
+    </wsdl:operation>
     <wsdl:operation name="removeFileInfo">
       <wsdl:input name="removeFileInfo" message="tns:removeFileInfo" />
       <wsdl:output name="removeFileInfoResponse" message="tns:removeFileInfoResponse" />
     </wsdl:operation>
-    <wsdl:operation name="getFile">
-      <wsdl:input name="getFile" message="tns:getFile" />
-      <wsdl:output name="getFileResponse" message="tns:getFileResponse" />
+    <wsdl:operation name="uploadTenderpackage">
+      <wsdl:input name="uploadTenderpackage" message="tns:uploadTenderpackage" />
+      <wsdl:output name="uploadTenderpackageResponse" message="tns:uploadTenderpackageResponse" />
       <wsdl:fault name="IOException" message="tns:IOException" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="GpTenderFileWebServiceServiceSoapBinding" type="tns:GpTenderFileWebService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="downloadTenderpackage">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="downloadTenderpackage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="downloadTenderpackageResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IOException">
+        <soap:fault use="literal" name="IOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
     <wsdl:operation name="removeFileInfo">
       <soap:operation soapAction="" style="document" />
       <wsdl:input name="removeFileInfo">
@@ -105,12 +141,12 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getFile">
+    <wsdl:operation name="uploadTenderpackage">
       <soap:operation soapAction="" style="document" />
-      <wsdl:input name="getFile">
+      <wsdl:input name="uploadTenderpackage">
         <soap:body use="literal" />
       </wsdl:input>
-      <wsdl:output name="getFileResponse">
+      <wsdl:output name="uploadTenderpackageResponse">
         <soap:body use="literal" />
       </wsdl:output>
       <wsdl:fault name="IOException">

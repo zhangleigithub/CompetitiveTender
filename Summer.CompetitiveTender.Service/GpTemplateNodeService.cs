@@ -104,14 +104,16 @@ namespace Summer.CompetitiveTender.Service
 
             resultDO result = this.wsAgent.findList(gtId);
 
-            if (result.success)
-            {
-                return result.objList as gpTemplateNodeWebDO[];
-            }
-            else
-            {
-                throw new Exception(result.message);
-            }
+            return ((object[])result.objList).Cast<gpTemplateNodeWebDO>().ToArray();
+
+            //if (result.success)
+            //{
+            //    return ((object[])result.objList).Cast<gpTemplateNodeWebDO>().ToArray();
+            //}
+            //else
+            //{
+            //    throw new Exception(result.message);
+            //}
         }
 
         #endregion

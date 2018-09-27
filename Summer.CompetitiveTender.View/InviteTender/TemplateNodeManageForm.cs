@@ -228,7 +228,6 @@ namespace Summer.CompetitiveTender.View.InviteTender
                     gptn = new gpTemplateNodeWebDO();
                     gptn.gtnPid = this.gptnParentId;
                     gptn.gtId = gptId;
-                    gptn.gtnId = 10;
                 }
 
                 gptn.gtnName = this.txtName.Text.Trim();

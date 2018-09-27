@@ -160,8 +160,8 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 gpTemplateWebDO obj = result.obj as gpTemplateWebDO;
 
                 SaveFileDialog sfdl = new SaveFileDialog();
-                sfdl.Filter = "word(*.doc)|*.doc|所有文件|*.*";
-                sfdl.FileName = obj.gtName;
+                sfdl.Filter = string.Format("{0}(*.{0})|*.{0}", obj.gtFileSuffix);
+                sfdl.FileName = obj.gtFileName;
                 sfdl.DefaultExt = obj.gtFileSuffix;
                 sfdl.AddExtension = true;
 

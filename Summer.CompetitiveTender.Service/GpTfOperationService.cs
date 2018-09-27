@@ -39,16 +39,7 @@ namespace Summer.CompetitiveTender.Service
                 throw new ArgumentNullException(nameof(gtoId));
             }
 
-            resultDO result = this.wsAgent.getById(gtoId);
-
-            if (result.success)
-            {
-                return result.obj as gpTfOperationWebDO;
-            }
-            else
-            {
-                throw new Exception(result.message);
-            }
+            return this.wsAgent.getById(gtoId).obj as gpTfOperationWebDO;
         }
 
         /// <summary>
@@ -63,14 +54,7 @@ namespace Summer.CompetitiveTender.Service
         {
             resultDO result = this.wsAgent.findQuestions(gtpId, gsId, gtoTitle, gtoType);
 
-            if (result.success)
-            {
-                return result.objList as gpTfOperationWebDO[];
-            }
-            else
-            {
-                throw new Exception(result.message);
-            }
+            return ((object[])result.objList).Cast<gpTfOperationWebDO>().ToArray();
         }
 
         /// <summary>
@@ -80,9 +64,7 @@ namespace Summer.CompetitiveTender.Service
         /// <returns>bool</returns>
         public bool ReplayQuestion(gpTfOperationWebDO gtowd)
         {
-            resultDO result = this.wsAgent.replayQuestions(gtowd);
-
-            return result.success;
+            return this.wsAgent.replayQuestions(gtowd).success;
         }
 
         #endregion

@@ -88,18 +88,7 @@ namespace Summer.CompetitiveTender.Service
                 throw new ArgumentNullException(nameof(gtId));
             }
 
-            resultDO result = this.wsAgent.getById(gtId);
-
-            return result.obj as gpTemplateWebDO;
-
-            if (result.success)
-            {
-                return result.obj as gpTemplateWebDO;
-            }
-            else
-            {
-                throw new Exception(result.message);
-            }
+            return this.wsAgent.getById(gtId).obj as gpTemplateWebDO;
         }
 
         /// <summary>
@@ -118,15 +107,6 @@ namespace Summer.CompetitiveTender.Service
             resultDO result = this.wsAgent.findList(auId, gtName);
 
             return ((object[])result.objList).Cast<gpTemplateWebDO>().ToArray();
-
-            //if (result.success)
-            //{
-            //    return ((object[])result.objList).Cast<gpTemplateWebDO>().ToArray();
-            //}
-            //else
-            //{
-            //    throw new Exception(result.message);
-            //}
         }
 
         /// <summary>

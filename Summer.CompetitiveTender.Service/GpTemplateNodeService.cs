@@ -78,16 +78,7 @@ namespace Summer.CompetitiveTender.Service
         /// <returns>gpTemplateNodeWebDO</returns>
         public gpTemplateNodeWebDO FindById(long gtnId)
         {
-            resultDO result = this.wsAgent.getById(gtnId);
-
-            if (result.success)
-            {
-                return result.obj as gpTemplateNodeWebDO;
-            }
-            else
-            {
-                throw new Exception(result.message);
-            }
+            return this.wsAgent.getById(gtnId).obj as gpTemplateNodeWebDO;
         }
 
         /// <summary>
@@ -105,15 +96,6 @@ namespace Summer.CompetitiveTender.Service
             resultDO result = this.wsAgent.findList(gtId);
 
             return ((object[])result.objList).Cast<gpTemplateNodeWebDO>().ToArray();
-
-            //if (result.success)
-            //{
-            //    return ((object[])result.objList).Cast<gpTemplateNodeWebDO>().ToArray();
-            //}
-            //else
-            //{
-            //    throw new Exception(result.message);
-            //}
         }
 
         #endregion

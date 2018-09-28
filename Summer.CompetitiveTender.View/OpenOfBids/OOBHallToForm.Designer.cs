@@ -108,7 +108,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(20, 60);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(984, 688);
+            this.panel1.Size = new System.Drawing.Size(984, 580);
             this.panel1.TabIndex = 0;
             // 
             // groupBox6
@@ -118,7 +118,7 @@
             this.groupBox6.Controls.Add(this.metroGrid4);
             this.groupBox6.Location = new System.Drawing.Point(609, 299);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(372, 383);
+            this.groupBox6.Size = new System.Drawing.Size(372, 275);
             this.groupBox6.TabIndex = 9;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "会场信息";
@@ -171,7 +171,7 @@
             this.metroGrid4.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid4.RowTemplate.Height = 23;
             this.metroGrid4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid4.Size = new System.Drawing.Size(366, 363);
+            this.metroGrid4.Size = new System.Drawing.Size(366, 255);
             this.metroGrid4.TabIndex = 0;
             // 
             // Column27
@@ -274,7 +274,7 @@
             this.groupBox3.Controls.Add(this.metroGrid1);
             this.groupBox3.Location = new System.Drawing.Point(3, 299);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(600, 383);
+            this.groupBox3.Size = new System.Drawing.Size(600, 275);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "已报名的招标项目标段列表";
@@ -333,7 +333,7 @@
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.RowTemplate.Height = 23;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(594, 363);
+            this.metroGrid1.Size = new System.Drawing.Size(594, 255);
             this.metroGrid1.TabIndex = 0;
             // 
             // Column1
@@ -636,7 +636,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 768);
+            this.ClientSize = new System.Drawing.Size(1024, 660);
             this.Controls.Add(this.panel1);
             this.Name = "OOBHallToForm";
             this.Text = "开标大厅";

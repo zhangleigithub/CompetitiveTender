@@ -146,7 +146,7 @@
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(20, 60);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(984, 692);
+            this.metroPanel1.Size = new System.Drawing.Size(984, 580);
             this.metroPanel1.TabIndex = 0;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -159,7 +159,7 @@
             this.groupBox6.Controls.Add(this.metroGrid4);
             this.groupBox6.Location = new System.Drawing.Point(675, 266);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(306, 420);
+            this.groupBox6.Size = new System.Drawing.Size(306, 308);
             this.groupBox6.TabIndex = 8;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "会场信息";
@@ -212,7 +212,7 @@
             this.metroGrid4.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid4.RowTemplate.Height = 23;
             this.metroGrid4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid4.Size = new System.Drawing.Size(300, 400);
+            this.metroGrid4.Size = new System.Drawing.Size(300, 288);
             this.metroGrid4.TabIndex = 0;
             // 
             // Column27
@@ -316,7 +316,7 @@
             this.groupBox4.Controls.Add(this.metroGrid2);
             this.groupBox4.Location = new System.Drawing.Point(2, 479);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(667, 207);
+            this.groupBox4.Size = new System.Drawing.Size(667, 95);
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "开标一览表";
@@ -381,7 +381,7 @@
             this.metroGrid2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid2.RowTemplate.Height = 23;
             this.metroGrid2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid2.Size = new System.Drawing.Size(661, 187);
+            this.metroGrid2.Size = new System.Drawing.Size(661, 75);
             this.metroGrid2.TabIndex = 0;
             // 
             // Column9
@@ -946,7 +946,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 772);
+            this.ClientSize = new System.Drawing.Size(1024, 660);
             this.Controls.Add(this.metroPanel1);
             this.Name = "OOBDecryptBidFileForm";
             this.Text = "开标大厅";

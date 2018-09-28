@@ -163,6 +163,7 @@
             // 
             this.colITenderTYJYBSM.HeaderText = "统一交易标识码";
             this.colITenderTYJYBSM.Name = "colITenderTYJYBSM";
+            this.colITenderTYJYBSM.Visible = false;
             this.colITenderTYJYBSM.Width = 150;
             // 
             // colITenderProjectName

@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InviteTenderMainForm));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.tsmiFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiNewProject = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiOpenProject = new System.Windows.Forms.ToolStripMenuItem();
             this.tssFile1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiProjectDiscuss = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,7 +64,6 @@
             // tsmiFile
             // 
             this.tsmiFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiNewProject,
             this.tsmiOpenProject,
             this.tssFile1,
             this.tsmiProjectDiscuss,
@@ -77,14 +75,6 @@
             this.tsmiFile.Name = "tsmiFile";
             this.tsmiFile.Size = new System.Drawing.Size(58, 21);
             this.tsmiFile.Text = "文件(&F)";
-            // 
-            // tsmiNewProject
-            // 
-            this.tsmiNewProject.ImageTransparentColor = System.Drawing.Color.Black;
-            this.tsmiNewProject.Name = "tsmiNewProject";
-            this.tsmiNewProject.Size = new System.Drawing.Size(148, 22);
-            this.tsmiNewProject.Text = "新建项目";
-            this.tsmiNewProject.Click += new System.EventHandler(this.OnNewProjectToolStripMenuItemClick);
             // 
             // tsmiOpenProject
             // 
@@ -199,7 +189,6 @@
         private System.Windows.Forms.MenuStrip menuStrip;
 
         private System.Windows.Forms.ToolStripMenuItem tsmiFile;
-        private System.Windows.Forms.ToolStripMenuItem tsmiNewProject;
         private System.Windows.Forms.ToolStripMenuItem tsmiOpenProject;
         private System.Windows.Forms.ToolStripSeparator tssFile1;
         private System.Windows.Forms.ToolStripMenuItem tsmiExit;

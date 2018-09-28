@@ -92,6 +92,8 @@
             // 
             // grdITender
             // 
+            this.grdITender.AllowUserToAddRows = false;
+            this.grdITender.AllowUserToDeleteRows = false;
             this.grdITender.AllowUserToResizeRows = false;
             this.grdITender.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -205,7 +207,7 @@
             this.colOpenBid.HeaderText = "进入开标";
             this.colOpenBid.Name = "colOpenBid";
             // 
-            // QueryITenderForm
+            // OOBQueryITenderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -213,8 +215,9 @@
             this.Controls.Add(this.btnQuery);
             this.Controls.Add(this.txtProjectId);
             this.Controls.Add(this.grdITender);
-            this.Name = "QueryITenderForm";
+            this.Name = "OOBQueryITenderForm";
             this.Text = "浏览招标文件";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Shown += new System.EventHandler(this.QueryITenderForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.grdITender)).EndInit();
             this.ResumeLayout(false);

@@ -48,6 +48,20 @@ namespace Summer.CompetitiveTender.View.OpenOfBids
             }
         }
 
+        private void btnQuery_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var result = gpTenderProjectService.FindById(this.txtProjectId.Text.Trim());
+                this.SetGridData(new gpTenderProjectWebDO[] { result });
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+                MetroMessageBox.Show(this, "加载失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void grdITender_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
@@ -107,11 +121,12 @@ namespace Summer.CompetitiveTender.View.OpenOfBids
                 row.Cells[this.colIViewBid.Index].Value = "开标一览";
                 row.Cells[this.colOpenBid.Index].Value = "进入开标";
                 row.Tag = item;
-              
+
                 this.grdITender.Rows.Add(row);
             }
         }
 
         #endregion
+
     }
 }

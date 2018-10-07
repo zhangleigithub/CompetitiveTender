@@ -48,6 +48,19 @@ namespace Summer.CompetitiveTender.Service
         }
 
         /// <summary>
+        /// DownloadFile
+        /// </summary>
+        /// <param name="gtpId">gtpId</param>
+        /// <param name="gsId">gsId</param>
+        /// <param name="part">gsId</param>
+        /// <param name="buId">gsId</param>
+        /// <returns>bool</returns>
+        public bool DownloadFile(string gtpId, string gsId, int part, string buId)
+        {
+            return this.wsAgent.downloadTenderpackage(gtpId, gsId, part, buId).success;
+        }
+
+        /// <summary>
         /// RemoveFile
         /// </summary>
         /// <param name="gtpId">gtpId</param>
@@ -55,16 +68,6 @@ namespace Summer.CompetitiveTender.Service
         /// <returns>bool</returns>
         public bool RemoveFile(string gtpId, string gsId)
         {
-            if (string.IsNullOrWhiteSpace(gtpId))
-            {
-                throw new ArgumentNullException(nameof(gtpId));
-            }
-
-            if (string.IsNullOrWhiteSpace(gsId))
-            {
-                throw new ArgumentNullException(nameof(gsId));
-            }
-
             return this.wsAgent.removeFileInfo(gtpId, gsId).success;
         }
 

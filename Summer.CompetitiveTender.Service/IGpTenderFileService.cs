@@ -26,6 +26,16 @@ namespace Summer.CompetitiveTender.Service
         bool UploadFile(long partLength, byte[] packageFileContent, int totalSegment, int segment, bool isNew, string buId, string gtpId, string gsId, string packageFileName, string packageFileSuffix, long packageFileSize);
 
         /// <summary>
+        /// DownloadFile
+        /// </summary>
+        /// <param name="gtpId">gtpId</param>
+        /// <param name="gsId">gsId</param>
+        /// <param name="part">gsId</param>
+        /// <param name="buId">gsId</param>
+        /// <returns>bool</returns>
+        bool DownloadFile(string gtpId, string gsId, int part, string buId);
+
+        /// <summary>
         /// RemoveFile
         /// </summary>
         /// <param name="gtpId">gtpId</param>

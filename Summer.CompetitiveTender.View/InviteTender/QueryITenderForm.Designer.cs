@@ -197,7 +197,7 @@
             // 
             this.colITenderProjectContent.HeaderText = "内容与范围及招标方案说明";
             this.colITenderProjectContent.Name = "colITenderProjectContent";
-            this.colITenderProjectContent.Width = 180;
+            this.colITenderProjectContent.Width = 210;
             // 
             // colITenderDetail
             // 
@@ -213,6 +213,7 @@
             // 
             // colDeleteITenderFile
             // 
+            this.colDeleteITenderFile.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colDeleteITenderFile.HeaderText = "删除招标文件";
             this.colDeleteITenderFile.Name = "colDeleteITenderFile";
             // 

@@ -350,6 +350,7 @@
             // 
             // colReplayQuestion
             // 
+            this.colReplayQuestion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colReplayQuestion.HeaderText = "回复";
             this.colReplayQuestion.Name = "colReplayQuestion";
             this.colReplayQuestion.ReadOnly = true;

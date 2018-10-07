@@ -28,577 +28,229 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox5 = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox6 = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox7 = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox8 = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox9 = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox10 = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox11 = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
-            this.metroComboBox3 = new MetroFramework.Controls.MetroComboBox();
-            this.btn_OK = new MetroFramework.Controls.MetroButton();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.btnDelete = new MetroFramework.Controls.MetroButton();
+            this.btnEdit = new MetroFramework.Controls.MetroButton();
+            this.btnNew = new MetroFramework.Controls.MetroButton();
+            this.grdData = new MetroFramework.Controls.MetroGrid();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGrads = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaxScore = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMinScore = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStandard = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGreatWay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGreatNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLittleWay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLittleNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCanDelete = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.grdData)).BeginInit();
             this.SuspendLayout();
             // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(152, 28);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(37, 19);
-            this.metroLabel1.TabIndex = 0;
-            this.metroLabel1.Text = "名称";
-            // 
-            // metroTextBox1
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(183, 1);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(195, 26);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.PromptText = "名称";
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(205, 23);
-            this.metroTextBox1.TabIndex = 1;
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.WaterMark = "名称";
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(96, 59);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(93, 19);
-            this.metroLabel4.TabIndex = 0;
-            this.metroLabel4.Text = "评标因素单位";
-            // 
-            // metroTextBox2
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox2.CustomButton.Image = null;
-            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(183, 1);
-            this.metroTextBox2.CustomButton.Name = "";
-            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox2.CustomButton.TabIndex = 1;
-            this.metroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox2.CustomButton.UseSelectable = true;
-            this.metroTextBox2.CustomButton.Visible = false;
-            this.metroTextBox2.Lines = new string[0];
-            this.metroTextBox2.Location = new System.Drawing.Point(195, 57);
-            this.metroTextBox2.MaxLength = 32767;
-            this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.PasswordChar = '\0';
-            this.metroTextBox2.PromptText = "评标因素单位";
-            this.metroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox2.SelectedText = "";
-            this.metroTextBox2.SelectionLength = 0;
-            this.metroTextBox2.SelectionStart = 0;
-            this.metroTextBox2.ShortcutsEnabled = true;
-            this.metroTextBox2.Size = new System.Drawing.Size(205, 23);
-            this.metroTextBox2.TabIndex = 1;
-            this.metroTextBox2.UseSelectable = true;
-            this.metroTextBox2.WaterMark = "评标因素单位";
-            this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(96, 90);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(93, 19);
-            this.metroLabel5.TabIndex = 0;
-            this.metroLabel5.Text = "评标因素数值";
-            // 
-            // metroTextBox3
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox3.CustomButton.Image = null;
-            this.metroTextBox3.CustomButton.Location = new System.Drawing.Point(183, 1);
-            this.metroTextBox3.CustomButton.Name = "";
-            this.metroTextBox3.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox3.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox3.CustomButton.TabIndex = 1;
-            this.metroTextBox3.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox3.CustomButton.UseSelectable = true;
-            this.metroTextBox3.CustomButton.Visible = false;
-            this.metroTextBox3.Lines = new string[0];
-            this.metroTextBox3.Location = new System.Drawing.Point(195, 88);
-            this.metroTextBox3.MaxLength = 32767;
-            this.metroTextBox3.Name = "metroTextBox3";
-            this.metroTextBox3.PasswordChar = '\0';
-            this.metroTextBox3.PromptText = "评标因素数值";
-            this.metroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox3.SelectedText = "";
-            this.metroTextBox3.SelectionLength = 0;
-            this.metroTextBox3.SelectionStart = 0;
-            this.metroTextBox3.ShortcutsEnabled = true;
-            this.metroTextBox3.Size = new System.Drawing.Size(205, 23);
-            this.metroTextBox3.TabIndex = 1;
-            this.metroTextBox3.UseSelectable = true;
-            this.metroTextBox3.WaterMark = "评标因素数值";
-            this.metroTextBox3.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox3.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLabel6
-            // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(68, 121);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(121, 19);
-            this.metroLabel6.TabIndex = 0;
-            this.metroLabel6.Text = "评标因素数值梯度";
-            // 
-            // metroTextBox4
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox4.CustomButton.Image = null;
-            this.metroTextBox4.CustomButton.Location = new System.Drawing.Point(183, 1);
-            this.metroTextBox4.CustomButton.Name = "";
-            this.metroTextBox4.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox4.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox4.CustomButton.TabIndex = 1;
-            this.metroTextBox4.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox4.CustomButton.UseSelectable = true;
-            this.metroTextBox4.CustomButton.Visible = false;
-            this.metroTextBox4.Lines = new string[0];
-            this.metroTextBox4.Location = new System.Drawing.Point(195, 119);
-            this.metroTextBox4.MaxLength = 32767;
-            this.metroTextBox4.Name = "metroTextBox4";
-            this.metroTextBox4.PasswordChar = '\0';
-            this.metroTextBox4.PromptText = "评标因素数值梯度";
-            this.metroTextBox4.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox4.SelectedText = "";
-            this.metroTextBox4.SelectionLength = 0;
-            this.metroTextBox4.SelectionStart = 0;
-            this.metroTextBox4.ShortcutsEnabled = true;
-            this.metroTextBox4.Size = new System.Drawing.Size(205, 23);
-            this.metroTextBox4.TabIndex = 1;
-            this.metroTextBox4.UseSelectable = true;
-            this.metroTextBox4.WaterMark = "评标因素数值梯度";
-            this.metroTextBox4.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox4.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLabel7
-            // 
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(82, 152);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(107, 19);
-            this.metroLabel7.TabIndex = 0;
-            this.metroLabel7.Text = "基准分数最大值";
-            // 
-            // metroTextBox5
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox5.CustomButton.Image = null;
-            this.metroTextBox5.CustomButton.Location = new System.Drawing.Point(183, 1);
-            this.metroTextBox5.CustomButton.Name = "";
-            this.metroTextBox5.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox5.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox5.CustomButton.TabIndex = 1;
-            this.metroTextBox5.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox5.CustomButton.UseSelectable = true;
-            this.metroTextBox5.CustomButton.Visible = false;
-            this.metroTextBox5.Lines = new string[0];
-            this.metroTextBox5.Location = new System.Drawing.Point(195, 150);
-            this.metroTextBox5.MaxLength = 32767;
-            this.metroTextBox5.Name = "metroTextBox5";
-            this.metroTextBox5.PasswordChar = '\0';
-            this.metroTextBox5.PromptText = "基准分数最大值";
-            this.metroTextBox5.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox5.SelectedText = "";
-            this.metroTextBox5.SelectionLength = 0;
-            this.metroTextBox5.SelectionStart = 0;
-            this.metroTextBox5.ShortcutsEnabled = true;
-            this.metroTextBox5.Size = new System.Drawing.Size(205, 23);
-            this.metroTextBox5.TabIndex = 1;
-            this.metroTextBox5.UseSelectable = true;
-            this.metroTextBox5.WaterMark = "基准分数最大值";
-            this.metroTextBox5.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox5.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLabel8
-            // 
-            this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(82, 183);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(107, 19);
-            this.metroLabel8.TabIndex = 0;
-            this.metroLabel8.Text = "基准分数最小值";
-            // 
-            // metroTextBox6
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox6.CustomButton.Image = null;
-            this.metroTextBox6.CustomButton.Location = new System.Drawing.Point(183, 1);
-            this.metroTextBox6.CustomButton.Name = "";
-            this.metroTextBox6.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox6.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox6.CustomButton.TabIndex = 1;
-            this.metroTextBox6.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox6.CustomButton.UseSelectable = true;
-            this.metroTextBox6.CustomButton.Visible = false;
-            this.metroTextBox6.Lines = new string[0];
-            this.metroTextBox6.Location = new System.Drawing.Point(195, 181);
-            this.metroTextBox6.MaxLength = 32767;
-            this.metroTextBox6.Name = "metroTextBox6";
-            this.metroTextBox6.PasswordChar = '\0';
-            this.metroTextBox6.PromptText = "基准分数最小值";
-            this.metroTextBox6.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox6.SelectedText = "";
-            this.metroTextBox6.SelectionLength = 0;
-            this.metroTextBox6.SelectionStart = 0;
-            this.metroTextBox6.ShortcutsEnabled = true;
-            this.metroTextBox6.Size = new System.Drawing.Size(205, 23);
-            this.metroTextBox6.TabIndex = 1;
-            this.metroTextBox6.UseSelectable = true;
-            this.metroTextBox6.WaterMark = "基准分数最小值";
-            this.metroTextBox6.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox6.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLabel9
-            // 
-            this.metroLabel9.AutoSize = true;
-            this.metroLabel9.Location = new System.Drawing.Point(152, 214);
-            this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(37, 19);
-            this.metroLabel9.TabIndex = 0;
-            this.metroLabel9.Text = "基准";
-            // 
-            // metroTextBox7
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox7.CustomButton.Image = null;
-            this.metroTextBox7.CustomButton.Location = new System.Drawing.Point(183, 1);
-            this.metroTextBox7.CustomButton.Name = "";
-            this.metroTextBox7.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox7.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox7.CustomButton.TabIndex = 1;
-            this.metroTextBox7.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox7.CustomButton.UseSelectable = true;
-            this.metroTextBox7.CustomButton.Visible = false;
-            this.metroTextBox7.Lines = new string[0];
-            this.metroTextBox7.Location = new System.Drawing.Point(195, 212);
-            this.metroTextBox7.MaxLength = 32767;
-            this.metroTextBox7.Name = "metroTextBox7";
-            this.metroTextBox7.PasswordChar = '\0';
-            this.metroTextBox7.PromptText = "基准";
-            this.metroTextBox7.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox7.SelectedText = "";
-            this.metroTextBox7.SelectionLength = 0;
-            this.metroTextBox7.SelectionStart = 0;
-            this.metroTextBox7.ShortcutsEnabled = true;
-            this.metroTextBox7.Size = new System.Drawing.Size(205, 23);
-            this.metroTextBox7.TabIndex = 1;
-            this.metroTextBox7.UseSelectable = true;
-            this.metroTextBox7.WaterMark = "基准";
-            this.metroTextBox7.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox7.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLabel10
-            // 
-            this.metroLabel10.AutoSize = true;
-            this.metroLabel10.Location = new System.Drawing.Point(96, 245);
-            this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(93, 19);
-            this.metroLabel10.TabIndex = 0;
-            this.metroLabel10.Text = "大于基准算法";
-            // 
-            // metroTextBox8
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox8.CustomButton.Image = null;
-            this.metroTextBox8.CustomButton.Location = new System.Drawing.Point(183, 1);
-            this.metroTextBox8.CustomButton.Name = "";
-            this.metroTextBox8.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox8.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox8.CustomButton.TabIndex = 1;
-            this.metroTextBox8.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox8.CustomButton.UseSelectable = true;
-            this.metroTextBox8.CustomButton.Visible = false;
-            this.metroTextBox8.Lines = new string[0];
-            this.metroTextBox8.Location = new System.Drawing.Point(195, 243);
-            this.metroTextBox8.MaxLength = 32767;
-            this.metroTextBox8.Name = "metroTextBox8";
-            this.metroTextBox8.PasswordChar = '\0';
-            this.metroTextBox8.PromptText = "大于基准算法";
-            this.metroTextBox8.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox8.SelectedText = "";
-            this.metroTextBox8.SelectionLength = 0;
-            this.metroTextBox8.SelectionStart = 0;
-            this.metroTextBox8.ShortcutsEnabled = true;
-            this.metroTextBox8.Size = new System.Drawing.Size(205, 23);
-            this.metroTextBox8.TabIndex = 1;
-            this.metroTextBox8.UseSelectable = true;
-            this.metroTextBox8.WaterMark = "大于基准算法";
-            this.metroTextBox8.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox8.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLabel11
-            // 
-            this.metroLabel11.AutoSize = true;
-            this.metroLabel11.Location = new System.Drawing.Point(82, 276);
-            this.metroLabel11.Name = "metroLabel11";
-            this.metroLabel11.Size = new System.Drawing.Size(107, 19);
-            this.metroLabel11.TabIndex = 0;
-            this.metroLabel11.Text = "大于基准梯度值";
-            // 
-            // metroTextBox9
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox9.CustomButton.Image = null;
-            this.metroTextBox9.CustomButton.Location = new System.Drawing.Point(183, 1);
-            this.metroTextBox9.CustomButton.Name = "";
-            this.metroTextBox9.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox9.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox9.CustomButton.TabIndex = 1;
-            this.metroTextBox9.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox9.CustomButton.UseSelectable = true;
-            this.metroTextBox9.CustomButton.Visible = false;
-            this.metroTextBox9.Lines = new string[0];
-            this.metroTextBox9.Location = new System.Drawing.Point(195, 274);
-            this.metroTextBox9.MaxLength = 32767;
-            this.metroTextBox9.Name = "metroTextBox9";
-            this.metroTextBox9.PasswordChar = '\0';
-            this.metroTextBox9.PromptText = "大于基准梯度值";
-            this.metroTextBox9.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox9.SelectedText = "";
-            this.metroTextBox9.SelectionLength = 0;
-            this.metroTextBox9.SelectionStart = 0;
-            this.metroTextBox9.ShortcutsEnabled = true;
-            this.metroTextBox9.Size = new System.Drawing.Size(205, 23);
-            this.metroTextBox9.TabIndex = 1;
-            this.metroTextBox9.UseSelectable = true;
-            this.metroTextBox9.WaterMark = "大于基准梯度值";
-            this.metroTextBox9.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox9.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLabel12
-            // 
-            this.metroLabel12.AutoSize = true;
-            this.metroLabel12.Location = new System.Drawing.Point(96, 307);
-            this.metroLabel12.Name = "metroLabel12";
-            this.metroLabel12.Size = new System.Drawing.Size(93, 19);
-            this.metroLabel12.TabIndex = 0;
-            this.metroLabel12.Text = "小于基准算法";
-            // 
-            // metroTextBox10
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox10.CustomButton.Image = null;
-            this.metroTextBox10.CustomButton.Location = new System.Drawing.Point(183, 1);
-            this.metroTextBox10.CustomButton.Name = "";
-            this.metroTextBox10.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox10.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox10.CustomButton.TabIndex = 1;
-            this.metroTextBox10.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox10.CustomButton.UseSelectable = true;
-            this.metroTextBox10.CustomButton.Visible = false;
-            this.metroTextBox10.Lines = new string[0];
-            this.metroTextBox10.Location = new System.Drawing.Point(195, 305);
-            this.metroTextBox10.MaxLength = 32767;
-            this.metroTextBox10.Name = "metroTextBox10";
-            this.metroTextBox10.PasswordChar = '\0';
-            this.metroTextBox10.PromptText = "小于基准算法";
-            this.metroTextBox10.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox10.SelectedText = "";
-            this.metroTextBox10.SelectionLength = 0;
-            this.metroTextBox10.SelectionStart = 0;
-            this.metroTextBox10.ShortcutsEnabled = true;
-            this.metroTextBox10.Size = new System.Drawing.Size(205, 23);
-            this.metroTextBox10.TabIndex = 1;
-            this.metroTextBox10.UseSelectable = true;
-            this.metroTextBox10.WaterMark = "小于基准算法";
-            this.metroTextBox10.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox10.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLabel13
-            // 
-            this.metroLabel13.AutoSize = true;
-            this.metroLabel13.Location = new System.Drawing.Point(82, 338);
-            this.metroLabel13.Name = "metroLabel13";
-            this.metroLabel13.Size = new System.Drawing.Size(107, 19);
-            this.metroLabel13.TabIndex = 0;
-            this.metroLabel13.Text = "小于基准梯度值";
-            // 
-            // metroTextBox11
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox11.CustomButton.Image = null;
-            this.metroTextBox11.CustomButton.Location = new System.Drawing.Point(183, 1);
-            this.metroTextBox11.CustomButton.Name = "";
-            this.metroTextBox11.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox11.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox11.CustomButton.TabIndex = 1;
-            this.metroTextBox11.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox11.CustomButton.UseSelectable = true;
-            this.metroTextBox11.CustomButton.Visible = false;
-            this.metroTextBox11.Lines = new string[0];
-            this.metroTextBox11.Location = new System.Drawing.Point(195, 336);
-            this.metroTextBox11.MaxLength = 32767;
-            this.metroTextBox11.Name = "metroTextBox11";
-            this.metroTextBox11.PasswordChar = '\0';
-            this.metroTextBox11.PromptText = "小于基准梯度值";
-            this.metroTextBox11.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox11.SelectedText = "";
-            this.metroTextBox11.SelectionLength = 0;
-            this.metroTextBox11.SelectionStart = 0;
-            this.metroTextBox11.ShortcutsEnabled = true;
-            this.metroTextBox11.Size = new System.Drawing.Size(205, 23);
-            this.metroTextBox11.TabIndex = 1;
-            this.metroTextBox11.UseSelectable = true;
-            this.metroTextBox11.WaterMark = "小于基准梯度值";
-            this.metroTextBox11.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox11.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLabel14
-            // 
-            this.metroLabel14.AutoSize = true;
-            this.metroLabel14.Location = new System.Drawing.Point(96, 372);
-            this.metroLabel14.Name = "metroLabel14";
-            this.metroLabel14.Size = new System.Drawing.Size(93, 19);
-            this.metroLabel14.TabIndex = 0;
-            this.metroLabel14.Text = "是否可以删除";
-            // 
-            // metroComboBox3
-            // 
-            this.metroComboBox3.FormattingEnabled = true;
-            this.metroComboBox3.ItemHeight = 23;
-            this.metroComboBox3.Items.AddRange(new object[] {
-            "可以",
-            "不可以"});
-            this.metroComboBox3.Location = new System.Drawing.Point(195, 367);
-            this.metroComboBox3.Name = "metroComboBox3";
-            this.metroComboBox3.Size = new System.Drawing.Size(205, 29);
-            this.metroComboBox3.TabIndex = 2;
-            this.metroComboBox3.UseSelectable = true;
-            // 
-            // btn_OK
-            // 
-            this.btn_OK.Location = new System.Drawing.Point(195, 429);
-            this.btn_OK.Name = "btn_OK";
-            this.btn_OK.Size = new System.Drawing.Size(75, 23);
-            this.btn_OK.TabIndex = 3;
-            this.btn_OK.Text = "提交";
-            this.btn_OK.UseSelectable = true;
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(263, 3);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(124, 23);
+            this.btnDelete.TabIndex = 13;
+            this.btnDelete.Text = "删除评分点";
+            this.btnDelete.UseSelectable = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(133, 3);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(124, 23);
+            this.btnEdit.TabIndex = 14;
+            this.btnEdit.Text = "编辑评分点";
+            this.btnEdit.UseSelectable = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnNew
+            // 
+            this.btnNew.Location = new System.Drawing.Point(3, 3);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(124, 23);
+            this.btnNew.TabIndex = 15;
+            this.btnNew.Text = "新建评分点";
+            this.btnNew.UseSelectable = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
+            // grdData
+            // 
+            this.grdData.AllowUserToAddRows = false;
+            this.grdData.AllowUserToDeleteRows = false;
+            this.grdData.AllowUserToResizeRows = false;
+            this.grdData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grdData.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.grdData.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.grdData.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.grdData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.grdData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colName,
+            this.colUnit,
+            this.colNum,
+            this.colGrads,
+            this.colMaxScore,
+            this.colMinScore,
+            this.colStandard,
+            this.colGreatWay,
+            this.colGreatNum,
+            this.colLittleWay,
+            this.colLittleNum,
+            this.colCanDelete});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdData.DefaultCellStyle = dataGridViewCellStyle8;
+            this.grdData.EnableHeadersVisualStyles = false;
+            this.grdData.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.grdData.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.grdData.Location = new System.Drawing.Point(3, 32);
+            this.grdData.MultiSelect = false;
+            this.grdData.Name = "grdData";
+            this.grdData.ReadOnly = true;
+            this.grdData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdData.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.grdData.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.grdData.RowTemplate.Height = 23;
+            this.grdData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grdData.Size = new System.Drawing.Size(715, 378);
+            this.grdData.TabIndex = 12;
+            // 
+            // colName
+            // 
+            this.colName.HeaderText = "评标因素名称";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            // 
+            // colUnit
+            // 
+            this.colUnit.HeaderText = "评标因素单位";
+            this.colUnit.Name = "colUnit";
+            this.colUnit.ReadOnly = true;
+            // 
+            // colNum
+            // 
+            this.colNum.HeaderText = "评标因素数值";
+            this.colNum.Name = "colNum";
+            this.colNum.ReadOnly = true;
+            // 
+            // colGrads
+            // 
+            this.colGrads.HeaderText = "评标因素数值梯度";
+            this.colGrads.Name = "colGrads";
+            this.colGrads.ReadOnly = true;
+            // 
+            // colMaxScore
+            // 
+            this.colMaxScore.HeaderText = "基准分数最大值";
+            this.colMaxScore.Name = "colMaxScore";
+            this.colMaxScore.ReadOnly = true;
+            // 
+            // colMinScore
+            // 
+            this.colMinScore.HeaderText = "基准分数最小值";
+            this.colMinScore.Name = "colMinScore";
+            this.colMinScore.ReadOnly = true;
+            // 
+            // colStandard
+            // 
+            this.colStandard.HeaderText = "基准";
+            this.colStandard.Name = "colStandard";
+            this.colStandard.ReadOnly = true;
+            // 
+            // colGreatWay
+            // 
+            this.colGreatWay.HeaderText = "大于基准算法";
+            this.colGreatWay.Name = "colGreatWay";
+            this.colGreatWay.ReadOnly = true;
+            // 
+            // colGreatNum
+            // 
+            this.colGreatNum.HeaderText = "大于基准梯度值";
+            this.colGreatNum.Name = "colGreatNum";
+            this.colGreatNum.ReadOnly = true;
+            // 
+            // colLittleWay
+            // 
+            this.colLittleWay.HeaderText = "小于基准算法";
+            this.colLittleWay.Name = "colLittleWay";
+            this.colLittleWay.ReadOnly = true;
+            // 
+            // colLittleNum
+            // 
+            this.colLittleNum.HeaderText = "小于基准梯度值";
+            this.colLittleNum.Name = "colLittleNum";
+            this.colLittleNum.ReadOnly = true;
+            // 
+            // colCanDelete
+            // 
+            this.colCanDelete.HeaderText = "是否可以删除";
+            this.colCanDelete.Name = "colCanDelete";
+            this.colCanDelete.ReadOnly = true;
+            this.colCanDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colCanDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // BidEvalScoringPointPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btn_OK);
-            this.Controls.Add(this.metroComboBox3);
-            this.Controls.Add(this.metroLabel14);
-            this.Controls.Add(this.metroTextBox11);
-            this.Controls.Add(this.metroLabel13);
-            this.Controls.Add(this.metroTextBox10);
-            this.Controls.Add(this.metroLabel12);
-            this.Controls.Add(this.metroTextBox9);
-            this.Controls.Add(this.metroLabel11);
-            this.Controls.Add(this.metroTextBox8);
-            this.Controls.Add(this.metroLabel10);
-            this.Controls.Add(this.metroTextBox7);
-            this.Controls.Add(this.metroLabel9);
-            this.Controls.Add(this.metroTextBox6);
-            this.Controls.Add(this.metroLabel8);
-            this.Controls.Add(this.metroTextBox5);
-            this.Controls.Add(this.metroLabel7);
-            this.Controls.Add(this.metroTextBox4);
-            this.Controls.Add(this.metroLabel6);
-            this.Controls.Add(this.metroTextBox3);
-            this.Controls.Add(this.metroLabel5);
-            this.Controls.Add(this.metroTextBox2);
-            this.Controls.Add(this.metroLabel4);
-            this.Controls.Add(this.metroTextBox1);
-            this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnNew);
+            this.Controls.Add(this.grdData);
             this.Name = "BidEvalScoringPointPage";
-            this.Size = new System.Drawing.Size(500, 480);
+            this.Size = new System.Drawing.Size(721, 413);
+            this.Load += new System.EventHandler(this.BidEvalScoringPointPage_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.grdData)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroTextBox metroTextBox2;
-        private MetroFramework.Controls.MetroLabel metroLabel5;
-        private MetroFramework.Controls.MetroTextBox metroTextBox3;
-        private MetroFramework.Controls.MetroLabel metroLabel6;
-        private MetroFramework.Controls.MetroTextBox metroTextBox4;
-        private MetroFramework.Controls.MetroLabel metroLabel7;
-        private MetroFramework.Controls.MetroTextBox metroTextBox5;
-        private MetroFramework.Controls.MetroLabel metroLabel8;
-        private MetroFramework.Controls.MetroTextBox metroTextBox6;
-        private MetroFramework.Controls.MetroLabel metroLabel9;
-        private MetroFramework.Controls.MetroTextBox metroTextBox7;
-        private MetroFramework.Controls.MetroLabel metroLabel10;
-        private MetroFramework.Controls.MetroTextBox metroTextBox8;
-        private MetroFramework.Controls.MetroLabel metroLabel11;
-        private MetroFramework.Controls.MetroTextBox metroTextBox9;
-        private MetroFramework.Controls.MetroLabel metroLabel12;
-        private MetroFramework.Controls.MetroTextBox metroTextBox10;
-        private MetroFramework.Controls.MetroLabel metroLabel13;
-        private MetroFramework.Controls.MetroTextBox metroTextBox11;
-        private MetroFramework.Controls.MetroLabel metroLabel14;
-        private MetroFramework.Controls.MetroComboBox metroComboBox3;
-        private MetroFramework.Controls.MetroButton btn_OK;
+        private MetroFramework.Controls.MetroButton btnDelete;
+        private MetroFramework.Controls.MetroButton btnEdit;
+        private MetroFramework.Controls.MetroButton btnNew;
+        private MetroFramework.Controls.MetroGrid grdData;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUnit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colGrads;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaxScore;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMinScore;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStandard;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colGreatWay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colGreatNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colLittleWay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colLittleNum;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colCanDelete;
     }
 }

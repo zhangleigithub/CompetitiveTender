@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webservice.govpurchase.opensource.com/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="GpTenderEvalEleWebServiceService" targetNamespace="http://webservice.govpurchase.opensource.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://webservice.govpurchase.opensource.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="edit" type="tns:edit" />
+      <xs:element name="editResponse" type="tns:editResponse" />
+      <xs:element name="findAll" type="tns:findAll" />
+      <xs:element name="findAllResponse" type="tns:findAllResponse" />
+      <xs:element name="getById" type="tns:getById" />
+      <xs:element name="getByIdResponse" type="tns:getByIdResponse" />
+      <xs:element name="remove" type="tns:remove" />
+      <xs:element name="removeResponse" type="tns:removeResponse" />
+      <xs:element name="save" type="tns:save" />
+      <xs:element name="saveResponse" type="tns:saveResponse" />
+      <xs:complexType name="save">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GpTenderEvalEleWebDO" type="tns:gpTenderEvalEleWebDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="gpTenderEvalEleWebDO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:baseEntity">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="adtCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="adtId" type="xs:string" />
+              <xs:element minOccurs="0" name="adtTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="canDel" type="xs:int" />
+              <xs:element minOccurs="0" name="evalGrads" type="xs:decimal" />
+              <xs:element minOccurs="0" name="evalNum" type="xs:decimal" />
+              <xs:element minOccurs="0" name="evalUnit" type="xs:string" />
+              <xs:element minOccurs="0" name="gewigId" type="xs:string" />
+              <xs:element minOccurs="0" name="gewigName" type="xs:string" />
+              <xs:element minOccurs="0" name="greatNum" type="xs:decimal" />
+              <xs:element minOccurs="0" name="greatWay" type="xs:int" />
+              <xs:element minOccurs="0" name="gsId" type="xs:string" />
+              <xs:element minOccurs="0" name="gteeCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gteeId" type="xs:string" />
+              <xs:element minOccurs="0" name="gteeName" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+              <xs:element minOccurs="0" name="littleNum" type="xs:decimal" />
+              <xs:element minOccurs="0" name="littleWay" type="xs:int" />
+              <xs:element minOccurs="0" name="maxScore" type="xs:decimal" />
+              <xs:element minOccurs="0" name="minScore" type="xs:decimal" />
+              <xs:element minOccurs="0" name="optCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="optId" type="xs:string" />
+              <xs:element minOccurs="0" name="optTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="standard" type="xs:decimal" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="baseEntity" abstract="true">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="saveResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="resultDO">
+        <xs:sequence>
+          <xs:element name="code" type="xs:int" />
+          <xs:element minOccurs="0" name="fileContent" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+          <xs:element minOccurs="0" name="obj" type="xs:anyType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="objList" nillable="true" type="xs:anyType" />
+          <xs:element name="success" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="edit">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GpTenderEvalEleWebDO" type="tns:gpTenderEvalEleWebDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="editResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findAll">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gsId" type="xs:string" />
+          <xs:element minOccurs="0" name="gteeName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findAllResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getById">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gteeId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getByIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="remove">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gteeId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="removeResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="save">
+    <wsdl:part name="parameters" element="tns:save" />
+  </wsdl:message>
+  <wsdl:message name="removeResponse">
+    <wsdl:part name="parameters" element="tns:removeResponse" />
+  </wsdl:message>
+  <wsdl:message name="findAllResponse">
+    <wsdl:part name="parameters" element="tns:findAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="findAll">
+    <wsdl:part name="parameters" element="tns:findAll" />
+  </wsdl:message>
+  <wsdl:message name="saveResponse">
+    <wsdl:part name="parameters" element="tns:saveResponse" />
+  </wsdl:message>
+  <wsdl:message name="remove">
+    <wsdl:part name="parameters" element="tns:remove" />
+  </wsdl:message>
+  <wsdl:message name="getByIdResponse">
+    <wsdl:part name="parameters" element="tns:getByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="editResponse">
+    <wsdl:part name="parameters" element="tns:editResponse" />
+  </wsdl:message>
+  <wsdl:message name="edit">
+    <wsdl:part name="parameters" element="tns:edit" />
+  </wsdl:message>
+  <wsdl:message name="getById">
+    <wsdl:part name="parameters" element="tns:getById" />
+  </wsdl:message>
+  <wsdl:portType name="GpTenderEvalEleWebService">
+    <wsdl:operation name="save">
+      <wsdl:input name="save" message="tns:save" />
+      <wsdl:output name="saveResponse" message="tns:saveResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="edit">
+      <wsdl:input name="edit" message="tns:edit" />
+      <wsdl:output name="editResponse" message="tns:editResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="findAll">
+      <wsdl:input name="findAll" message="tns:findAll" />
+      <wsdl:output name="findAllResponse" message="tns:findAllResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getById">
+      <wsdl:input name="getById" message="tns:getById" />
+      <wsdl:output name="getByIdResponse" message="tns:getByIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="remove">
+      <wsdl:input name="remove" message="tns:remove" />
+      <wsdl:output name="removeResponse" message="tns:removeResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GpTenderEvalEleWebServiceServiceSoapBinding" type="tns:GpTenderEvalEleWebService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="save">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="save">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="saveResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="edit">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="edit">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="editResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAll">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="findAll">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="findAllResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getById">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getById">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getByIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="remove">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="remove">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="removeResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GpTenderEvalEleWebServiceService">
+    <wsdl:port name="GpTenderEvalEleWebServicePort" binding="tns:GpTenderEvalEleWebServiceServiceSoapBinding">
+      <soap:address location="http://121.28.95.246:9090/webservice/gpTenderEvalEleWebService/save" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

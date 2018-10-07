@@ -75,13 +75,17 @@
   <ItemGroup>
     <Compile Include="Bid\BidService.cs" />
     <Compile Include="Bid\IBidService.cs" />
+    <Compile Include="GpEvalwayItemGtfService.cs" />
     <Compile Include="GpTemplateNodeService.cs" />
     <Compile Include="GpTemplateService.cs" />
+    <Compile Include="GpTenderEvalEleService.cs" />
     <Compile Include="GpTenderFileService.cs" />
     <Compile Include="GpTenderProjectService.cs" />
     <Compile Include="GpTfOperationService.cs" />
+    <Compile Include="IGpEvalwayItemGtfService.cs" />
     <Compile Include="IGpTemplateNodeService.cs" />
     <Compile Include="IGpTemplateService.cs" />
+    <Compile Include="IGpTenderEvalEleService.cs" />
     <Compile Include="IGpTenderFileService.cs" />
     <Compile Include="IGpTenderProjectService.cs" />
     <Compile Include="IGpTfOperationService.cs" />
@@ -105,6 +109,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Service References\ServiceReferenceGpTemplate\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceGpTenderEvalEle\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -151,6 +160,10 @@
     <None Include="Service References\ServiceReferenceGpTemplate\Summer.CompetitiveTender.Service.ServiceReferenceGpTemplate.resultDO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReferenceGpTenderEvalEle\GpTenderEvalEleWebServiceService.wsdl" />
+    <None Include="Service References\ServiceReferenceGpTenderEvalEle\Summer.CompetitiveTender.Service.ServiceReferenceGpTenderEvalEle.resultDO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReferenceGpTenderFile\GpTenderFileWebServiceService.wsdl" />
     <None Include="Service References\ServiceReferenceGpTenderFile\Summer.CompetitiveTender.Service.ServiceReferenceGpTenderFile.resultDO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -186,6 +199,7 @@
     <WCFMetadataStorage Include="Service References\ServiceReferenceGpEvalwayItemGtf\" />
     <WCFMetadataStorage Include="Service References\ServiceReferenceGpTemplateNode\" />
     <WCFMetadataStorage Include="Service References\ServiceReferenceGpTemplate\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceGpTenderEvalEle\" />
     <WCFMetadataStorage Include="Service References\ServiceReferenceGpTenderFile\" />
     <WCFMetadataStorage Include="Service References\ServiceReferenceGpTenderProject\" />
     <WCFMetadataStorage Include="Service References\ServiceReferenceGpTfOperation\" />
@@ -283,6 +297,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ServiceReferenceGpEvalwayItemGtf\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceGpTenderEvalEle\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceGpTenderEvalEle\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceGpTenderEvalEle\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

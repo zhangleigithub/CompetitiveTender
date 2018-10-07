@@ -132,11 +132,23 @@
     <Compile Include="FormBase.Designer.cs">
       <DependentUpon>FormBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="InviteTender\BidEvalClauseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InviteTender\BidEvalClauseForm.Designer.cs">
+      <DependentUpon>BidEvalClauseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="InviteTender\BidEvalFactorPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="InviteTender\BidEvalFactorPage.Designer.cs">
       <DependentUpon>BidEvalFactorPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InviteTender\BidEvalScoringPointForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InviteTender\BidEvalScoringPointForm.Designer.cs">
+      <DependentUpon>BidEvalScoringPointForm.cs</DependentUpon>
     </Compile>
     <Compile Include="InviteTender\BidEvalScoringPointPage.cs">
       <SubType>UserControl</SubType>
@@ -406,8 +418,14 @@
     <EmbeddedResource Include="FormBase.resx">
       <DependentUpon>FormBase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InviteTender\BidEvalClauseForm.resx">
+      <DependentUpon>BidEvalClauseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InviteTender\BidEvalFactorPage.resx">
       <DependentUpon>BidEvalFactorPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InviteTender\BidEvalScoringPointForm.resx">
+      <DependentUpon>BidEvalScoringPointForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InviteTender\BidEvalScoringPointPage.resx">
       <DependentUpon>BidEvalScoringPointPage.cs</DependentUpon>

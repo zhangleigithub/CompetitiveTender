@@ -1,5 +1,7 @@
-﻿using MetroFramework;
+﻿using log4net;
+using MetroFramework;
 using MetroFramework.Forms;
+using Summer.CompetitiveTender.Service;
 using Summer.CompetitiveTender.View.BidEvaluaMethod;
 using System;
 using System.Collections.Generic;
@@ -14,10 +16,31 @@ namespace Summer.CompetitiveTender.View.InviteTender
 {
     public partial class EditITenderForm : FormBase
     {
-        public EditITenderForm()
-        {
-            InitializeComponent();
-        }
+        #region 字段
+
+        /// <summary>
+        /// log
+        /// </summary>
+        private static ILog log = LogManager.GetLogger(typeof(EditITenderForm));
+
+        /// <summary>
+        /// gpEvalwayItemGtfService
+        /// </summary>
+        private IGpEvalwayItemGtfService gpEvalwayItemGtfService = new GpEvalwayItemGtfService();
+
+        /// <summary>
+        /// IGpTenderEvalEleService
+        /// </summary>
+        private IGpTenderEvalEleService gpTenderEvalEleService = new GpTenderEvalEleService();
+
+        /// <summary>
+        /// gsId
+        /// </summary>
+        private string gsId;
+
+        #endregion
+
+        #region 事件
 
         private void EditITenderForm_Shown(object sender, EventArgs e)
         {
@@ -36,12 +59,12 @@ namespace Summer.CompetitiveTender.View.InviteTender
                     this.pnelFrame.Controls.Add(bidEvalBodyPage);
                     break;
                 case "评标条款":
-                    BidEvalClausePage bidEvalClausePage = new BidEvalClausePage();
+                    BidEvalClausePage bidEvalClausePage = new BidEvalClausePage(this.gpEvalwayItemGtfService, this.gsId);
                     bidEvalClausePage.Dock = DockStyle.Fill;
                     this.pnelFrame.Controls.Add(bidEvalClausePage);
                     break;
                 case "评 分 点":
-                    BidEvalScoringPointPage bidEvalScoringPointPage = new BidEvalScoringPointPage();
+                    BidEvalScoringPointPage bidEvalScoringPointPage = new BidEvalScoringPointPage(this.gpTenderEvalEleService, this.gsId);
                     bidEvalScoringPointPage.Dock = DockStyle.Fill;
                     this.pnelFrame.Controls.Add(bidEvalScoringPointPage);
                     break;
@@ -60,5 +83,18 @@ namespace Summer.CompetitiveTender.View.InviteTender
                     break;
             }
         }
+
+        #endregion
+
+        #region 方法
+
+        public EditITenderForm(string gsId)
+        {
+            InitializeComponent();
+
+            this.gsId = gsId;
+        }
+
+        #endregion
     }
 }

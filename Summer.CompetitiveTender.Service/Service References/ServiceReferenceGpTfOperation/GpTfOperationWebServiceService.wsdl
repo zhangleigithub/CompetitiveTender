@@ -76,7 +76,7 @@
       </xs:complexType>
       <xs:complexType name="replayQuestions">
         <xs:sequence>
-          <xs:element minOccurs="0" name="gtowd" type="tns:gpTfOperationWebDO" />
+          <xs:element minOccurs="0" name="GpTfOperationWebDO" type="tns:gpTfOperationWebDO" />
         </xs:sequence>
       </xs:complexType>
       <xs:complexType name="replayQuestionsResponse">

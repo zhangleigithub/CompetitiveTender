@@ -6,7 +6,7 @@ using Summer.CompetitiveTender.Service.ServiceReferenceGpTfOperation;
 
 namespace Summer.CompetitiveTender.Service
 {
-    public class GpTfOperationService
+    public class GpTfOperationService : IGpTfOperationService
     {
         #region 字段
 

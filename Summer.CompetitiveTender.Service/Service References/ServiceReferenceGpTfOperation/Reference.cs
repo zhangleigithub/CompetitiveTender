@@ -197,17 +197,17 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTfOperation {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
     public partial class replayQuestions : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private gpTfOperationWebDO gtowdField;
+        private gpTfOperationWebDO gpTfOperationWebDOField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public gpTfOperationWebDO gtowd {
+        public gpTfOperationWebDO GpTfOperationWebDO {
             get {
-                return this.gtowdField;
+                return this.gpTfOperationWebDOField;
             }
             set {
-                this.gtowdField = value;
-                this.RaisePropertyChanged("gtowd");
+                this.gpTfOperationWebDOField = value;
+                this.RaisePropertyChanged("GpTfOperationWebDO");
             }
         }
         
@@ -934,13 +934,13 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTfOperation {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public Summer.CompetitiveTender.Service.ServiceReferenceGpTfOperation.gpTfOperationWebDO gtowd;
+        public Summer.CompetitiveTender.Service.ServiceReferenceGpTfOperation.gpTfOperationWebDO GpTfOperationWebDO;
         
         public replayQuestions1() {
         }
         
-        public replayQuestions1(Summer.CompetitiveTender.Service.ServiceReferenceGpTfOperation.gpTfOperationWebDO gtowd) {
-            this.gtowd = gtowd;
+        public replayQuestions1(Summer.CompetitiveTender.Service.ServiceReferenceGpTfOperation.gpTfOperationWebDO GpTfOperationWebDO) {
+            this.GpTfOperationWebDO = GpTfOperationWebDO;
         }
     }
     
@@ -1021,9 +1021,9 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTfOperation {
             return base.Channel.replayQuestions(request);
         }
         
-        public Summer.CompetitiveTender.Service.ServiceReferenceGpTfOperation.resultDO replayQuestions(Summer.CompetitiveTender.Service.ServiceReferenceGpTfOperation.gpTfOperationWebDO gtowd) {
+        public Summer.CompetitiveTender.Service.ServiceReferenceGpTfOperation.resultDO replayQuestions(Summer.CompetitiveTender.Service.ServiceReferenceGpTfOperation.gpTfOperationWebDO GpTfOperationWebDO) {
             Summer.CompetitiveTender.Service.ServiceReferenceGpTfOperation.replayQuestions1 inValue = new Summer.CompetitiveTender.Service.ServiceReferenceGpTfOperation.replayQuestions1();
-            inValue.gtowd = gtowd;
+            inValue.GpTfOperationWebDO = GpTfOperationWebDO;
             Summer.CompetitiveTender.Service.ServiceReferenceGpTfOperation.replayQuestionsResponse1 retVal = ((Summer.CompetitiveTender.Service.ServiceReferenceGpTfOperation.GpTfOperationWebService)(this)).replayQuestions(inValue);
             return retVal.@return;
         }

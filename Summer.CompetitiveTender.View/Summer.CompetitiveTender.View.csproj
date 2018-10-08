@@ -132,6 +132,12 @@
     <Compile Include="FormBase.Designer.cs">
       <DependentUpon>FormBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="InviteTender\BidEvalFactorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InviteTender\BidEvalFactorForm.Designer.cs">
+      <DependentUpon>BidEvalFactorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="InviteTender\BidEvalClauseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -417,6 +423,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormBase.resx">
       <DependentUpon>FormBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InviteTender\BidEvalFactorForm.resx">
+      <DependentUpon>BidEvalFactorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InviteTender\BidEvalClauseForm.resx">
       <DependentUpon>BidEvalClauseForm.cs</DependentUpon>

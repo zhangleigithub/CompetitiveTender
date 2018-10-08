@@ -34,9 +34,19 @@ namespace Summer.CompetitiveTender.View.InviteTender
         private IGpTenderEvalEleService gpTenderEvalEleService = new GpTenderEvalEleService();
 
         /// <summary>
-        /// gsId
+        /// IGpBidFileOrgService
         /// </summary>
-        private string gsId;
+        private IGpBidFileOrgService gpBidFileOrgService = new GpBidFileOrgService();
+
+        /// <summary>
+        /// projectId
+        /// </summary>
+        private string projectId;
+
+        /// <summary>
+        /// sectionId
+        /// </summary>
+        private string sectionId;
 
         #endregion
 
@@ -59,17 +69,17 @@ namespace Summer.CompetitiveTender.View.InviteTender
                     this.pnelFrame.Controls.Add(bidEvalBodyPage);
                     break;
                 case "评标条款":
-                    BidEvalClausePage bidEvalClausePage = new BidEvalClausePage(this.gpEvalwayItemGtfService, this.gsId);
+                    BidEvalClausePage bidEvalClausePage = new BidEvalClausePage(this.gpEvalwayItemGtfService, this.sectionId);
                     bidEvalClausePage.Dock = DockStyle.Fill;
                     this.pnelFrame.Controls.Add(bidEvalClausePage);
                     break;
                 case "评 分 点":
-                    BidEvalScoringPointPage bidEvalScoringPointPage = new BidEvalScoringPointPage(this.gpTenderEvalEleService, this.gsId);
+                    BidEvalScoringPointPage bidEvalScoringPointPage = new BidEvalScoringPointPage(this.gpTenderEvalEleService, this.sectionId);
                     bidEvalScoringPointPage.Dock = DockStyle.Fill;
                     this.pnelFrame.Controls.Add(bidEvalScoringPointPage);
                     break;
                 case "评分因素":
-                    BidEvalFactorPage bidEvalFactorPage = new BidEvalFactorPage();
+                    BidEvalFactorPage bidEvalFactorPage = new BidEvalFactorPage(this.gpBidFileOrgService,this.projectId,this.sectionId);
                     bidEvalFactorPage.Dock = DockStyle.Fill;
                     this.pnelFrame.Controls.Add(bidEvalFactorPage);
                     break;
@@ -88,11 +98,11 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
         #region 方法
 
-        public EditITenderForm(string gsId)
+        public EditITenderForm(string projectId,string sectionId)
         {
             InitializeComponent();
-
-            this.gsId = gsId;
+            this.projectId = projectId;
+            this.sectionId = sectionId;
         }
 
         #endregion

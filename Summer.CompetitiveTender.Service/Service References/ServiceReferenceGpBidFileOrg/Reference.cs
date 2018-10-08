@@ -8,97 +8,97 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode {
+namespace Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://webservice.govpurchase.opensource.com/", ConfigurationName="ServiceReferenceGpTemplateNode.GpTemplateNodeWebService")]
-    public interface GpTemplateNodeWebService {
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://webservice.govpurchase.opensource.com/", ConfigurationName="ServiceReferenceGpBidFileOrg.BaseBidFileOrgWebService")]
+    public interface BaseBidFileOrgWebService {
         
         // CODEGEN: 参数“return”需要其他方案信息，使用参数模式无法捕获这些信息。特定特性为“System.Xml.Serialization.XmlElementAttribute”。
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findListResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findList))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(remove))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getByIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getById))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findAllResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findAll))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(editResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(edit))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(add))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(saveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(save))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseEntity))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.addResponse1 add(Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.add1 request);
+        Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.saveResponse1 save(Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.save1 request);
         
         // CODEGEN: 参数“return”需要其他方案信息，使用参数模式无法捕获这些信息。特定特性为“System.Xml.Serialization.XmlElementAttribute”。
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findListResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findList))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(remove))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getByIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getById))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findAllResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findAll))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(editResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(edit))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(add))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(saveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(save))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseEntity))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.editResponse1 edit(Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.edit1 request);
+        Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.editResponse1 edit(Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.edit1 request);
         
         // CODEGEN: 参数“return”需要其他方案信息，使用参数模式无法捕获这些信息。特定特性为“System.Xml.Serialization.XmlElementAttribute”。
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findListResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findList))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(remove))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getByIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getById))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findAllResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findAll))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(editResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(edit))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(add))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(saveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(save))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseEntity))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.getByIdResponse1 getById(Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.getById1 request);
+        Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.findAllResponse1 findAll(Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.findAll1 request);
         
         // CODEGEN: 参数“return”需要其他方案信息，使用参数模式无法捕获这些信息。特定特性为“System.Xml.Serialization.XmlElementAttribute”。
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findListResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findList))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(remove))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getByIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getById))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findAllResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findAll))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(editResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(edit))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(add))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(saveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(save))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseEntity))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.removeResponse1 remove(Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.remove1 request);
+        Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.getByIdResponse1 getById(Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.getById1 request);
         
         // CODEGEN: 参数“return”需要其他方案信息，使用参数模式无法捕获这些信息。特定特性为“System.Xml.Serialization.XmlElementAttribute”。
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findListResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findList))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(removeResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(remove))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getByIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getById))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findAllResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findAll))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(editResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(edit))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(addResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(add))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(saveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(save))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseEntity))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.findListResponse1 findList(Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.findList1 request);
+        Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.removeResponse1 remove(Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.remove1 request);
     }
     
     /// <remarks/>
@@ -107,7 +107,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
-    public partial class gpTemplateNodeWebDO : baseEntity {
+    public partial class gpBidFileOrgWebDO : baseEntity {
         
         private string adtCoIdField;
         
@@ -117,59 +117,15 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode {
         
         private bool adtTimeFieldSpecified;
         
-        private int biderEditStateField;
+        private string bbfoCodeField;
         
-        private bool biderEditStateFieldSpecified;
+        private string bbfoIdField;
         
-        private int bossEditStateField;
+        private string bbfoNameField;
         
-        private bool bossEditStateFieldSpecified;
+        private int isMustField;
         
-        private int carryStateField;
-        
-        private bool carryStateFieldSpecified;
-        
-        private int delStateField;
-        
-        private bool delStateFieldSpecified;
-        
-        private int editStateField;
-        
-        private bool editStateFieldSpecified;
-        
-        private string gtIdField;
-        
-        private int gtnAttrField;
-        
-        private bool gtnAttrFieldSpecified;
-        
-        private string gtnAttrNameField;
-        
-        private string gtnCodeField;
-        
-        private int gtnDocTypeField;
-        
-        private bool gtnDocTypeFieldSpecified;
-        
-        private string gtnFileNameField;
-        
-        private int gtnFiletypeField;
-        
-        private bool gtnFiletypeFieldSpecified;
-        
-        private string gtnFiletypeNameField;
-        
-        private long gtnIdField;
-        
-        private bool gtnIdFieldSpecified;
-        
-        private string gtnNameField;
-        
-        private long gtnPidField;
-        
-        private bool gtnPidFieldSpecified;
-        
-        private string gtnUrlField;
+        private bool isMustFieldSpecified;
         
         private string optCoIdField;
         
@@ -178,6 +134,10 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode {
         private System.DateTime optTimeField;
         
         private bool optTimeFieldSpecified;
+        
+        private string projectIdField;
+        
+        private string sectionIdField;
         
         private int sortField;
         
@@ -233,330 +193,66 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public int biderEditState {
+        public string bbfoCode {
             get {
-                return this.biderEditStateField;
+                return this.bbfoCodeField;
             }
             set {
-                this.biderEditStateField = value;
-                this.RaisePropertyChanged("biderEditState");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool biderEditStateSpecified {
-            get {
-                return this.biderEditStateFieldSpecified;
-            }
-            set {
-                this.biderEditStateFieldSpecified = value;
-                this.RaisePropertyChanged("biderEditStateSpecified");
+                this.bbfoCodeField = value;
+                this.RaisePropertyChanged("bbfoCode");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
-        public int bossEditState {
+        public string bbfoId {
             get {
-                return this.bossEditStateField;
+                return this.bbfoIdField;
             }
             set {
-                this.bossEditStateField = value;
-                this.RaisePropertyChanged("bossEditState");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool bossEditStateSpecified {
-            get {
-                return this.bossEditStateFieldSpecified;
-            }
-            set {
-                this.bossEditStateFieldSpecified = value;
-                this.RaisePropertyChanged("bossEditStateSpecified");
+                this.bbfoIdField = value;
+                this.RaisePropertyChanged("bbfoId");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
-        public int carryState {
+        public string bbfoName {
             get {
-                return this.carryStateField;
+                return this.bbfoNameField;
             }
             set {
-                this.carryStateField = value;
-                this.RaisePropertyChanged("carryState");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool carryStateSpecified {
-            get {
-                return this.carryStateFieldSpecified;
-            }
-            set {
-                this.carryStateFieldSpecified = value;
-                this.RaisePropertyChanged("carryStateSpecified");
+                this.bbfoNameField = value;
+                this.RaisePropertyChanged("bbfoName");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
-        public int delState {
+        public int isMust {
             get {
-                return this.delStateField;
+                return this.isMustField;
             }
             set {
-                this.delStateField = value;
-                this.RaisePropertyChanged("delState");
+                this.isMustField = value;
+                this.RaisePropertyChanged("isMust");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool delStateSpecified {
+        public bool isMustSpecified {
             get {
-                return this.delStateFieldSpecified;
+                return this.isMustFieldSpecified;
             }
             set {
-                this.delStateFieldSpecified = value;
-                this.RaisePropertyChanged("delStateSpecified");
+                this.isMustFieldSpecified = value;
+                this.RaisePropertyChanged("isMustSpecified");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
-        public int editState {
-            get {
-                return this.editStateField;
-            }
-            set {
-                this.editStateField = value;
-                this.RaisePropertyChanged("editState");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool editStateSpecified {
-            get {
-                return this.editStateFieldSpecified;
-            }
-            set {
-                this.editStateFieldSpecified = value;
-                this.RaisePropertyChanged("editStateSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
-        public string gtId {
-            get {
-                return this.gtIdField;
-            }
-            set {
-                this.gtIdField = value;
-                this.RaisePropertyChanged("gtId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
-        public int gtnAttr {
-            get {
-                return this.gtnAttrField;
-            }
-            set {
-                this.gtnAttrField = value;
-                this.RaisePropertyChanged("gtnAttr");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool gtnAttrSpecified {
-            get {
-                return this.gtnAttrFieldSpecified;
-            }
-            set {
-                this.gtnAttrFieldSpecified = value;
-                this.RaisePropertyChanged("gtnAttrSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
-        public string gtnAttrName {
-            get {
-                return this.gtnAttrNameField;
-            }
-            set {
-                this.gtnAttrNameField = value;
-                this.RaisePropertyChanged("gtnAttrName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
-        public string gtnCode {
-            get {
-                return this.gtnCodeField;
-            }
-            set {
-                this.gtnCodeField = value;
-                this.RaisePropertyChanged("gtnCode");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
-        public int gtnDocType {
-            get {
-                return this.gtnDocTypeField;
-            }
-            set {
-                this.gtnDocTypeField = value;
-                this.RaisePropertyChanged("gtnDocType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool gtnDocTypeSpecified {
-            get {
-                return this.gtnDocTypeFieldSpecified;
-            }
-            set {
-                this.gtnDocTypeFieldSpecified = value;
-                this.RaisePropertyChanged("gtnDocTypeSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
-        public string gtnFileName {
-            get {
-                return this.gtnFileNameField;
-            }
-            set {
-                this.gtnFileNameField = value;
-                this.RaisePropertyChanged("gtnFileName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=14)]
-        public int gtnFiletype {
-            get {
-                return this.gtnFiletypeField;
-            }
-            set {
-                this.gtnFiletypeField = value;
-                this.RaisePropertyChanged("gtnFiletype");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool gtnFiletypeSpecified {
-            get {
-                return this.gtnFiletypeFieldSpecified;
-            }
-            set {
-                this.gtnFiletypeFieldSpecified = value;
-                this.RaisePropertyChanged("gtnFiletypeSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=15)]
-        public string gtnFiletypeName {
-            get {
-                return this.gtnFiletypeNameField;
-            }
-            set {
-                this.gtnFiletypeNameField = value;
-                this.RaisePropertyChanged("gtnFiletypeName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=16)]
-        public long gtnId {
-            get {
-                return this.gtnIdField;
-            }
-            set {
-                this.gtnIdField = value;
-                this.RaisePropertyChanged("gtnId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool gtnIdSpecified {
-            get {
-                return this.gtnIdFieldSpecified;
-            }
-            set {
-                this.gtnIdFieldSpecified = value;
-                this.RaisePropertyChanged("gtnIdSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=17)]
-        public string gtnName {
-            get {
-                return this.gtnNameField;
-            }
-            set {
-                this.gtnNameField = value;
-                this.RaisePropertyChanged("gtnName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=18)]
-        public long gtnPid {
-            get {
-                return this.gtnPidField;
-            }
-            set {
-                this.gtnPidField = value;
-                this.RaisePropertyChanged("gtnPid");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool gtnPidSpecified {
-            get {
-                return this.gtnPidFieldSpecified;
-            }
-            set {
-                this.gtnPidFieldSpecified = value;
-                this.RaisePropertyChanged("gtnPidSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=19)]
-        public string gtnUrl {
-            get {
-                return this.gtnUrlField;
-            }
-            set {
-                this.gtnUrlField = value;
-                this.RaisePropertyChanged("gtnUrl");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=20)]
         public string optCoId {
             get {
                 return this.optCoIdField;
@@ -568,7 +264,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=21)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
         public string optId {
             get {
                 return this.optIdField;
@@ -580,7 +276,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=22)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
         public System.DateTime optTime {
             get {
                 return this.optTimeField;
@@ -604,7 +300,31 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=23)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
+        public string projectId {
+            get {
+                return this.projectIdField;
+            }
+            set {
+                this.projectIdField = value;
+                this.RaisePropertyChanged("projectId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
+        public string sectionId {
+            get {
+                return this.sectionIdField;
+            }
+            set {
+                this.sectionIdField = value;
+                this.RaisePropertyChanged("sectionId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
         public int sort {
             get {
                 return this.sortField;
@@ -629,7 +349,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(gpTemplateNodeWebDO))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(gpBidFileOrgWebDO))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -653,7 +373,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
-    public partial class findListResponse : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class removeResponse : object, System.ComponentModel.INotifyPropertyChanged {
         
         private resultDO returnField;
         
@@ -787,97 +507,19 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
-    public partial class findList : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string gtIdField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public string gtId {
-            get {
-                return this.gtIdField;
-            }
-            set {
-                this.gtIdField = value;
-                this.RaisePropertyChanged("gtId");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
-    public partial class removeResponse : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private resultDO returnField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public resultDO @return {
-            get {
-                return this.returnField;
-            }
-            set {
-                this.returnField = value;
-                this.RaisePropertyChanged("return");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
     public partial class remove : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private long gtnIdField;
-        
-        private bool gtnIdFieldSpecified;
+        private string bbfoIdField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public long gtnId {
+        public string bbfoId {
             get {
-                return this.gtnIdField;
+                return this.bbfoIdField;
             }
             set {
-                this.gtnIdField = value;
-                this.RaisePropertyChanged("gtnId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool gtnIdSpecified {
-            get {
-                return this.gtnIdFieldSpecified;
-            }
-            set {
-                this.gtnIdFieldSpecified = value;
-                this.RaisePropertyChanged("gtnIdSpecified");
+                this.bbfoIdField = value;
+                this.RaisePropertyChanged("bbfoId");
             }
         }
         
@@ -931,31 +573,95 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
     public partial class getById : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private long gtnIdField;
-        
-        private bool gtnIdFieldSpecified;
+        private string bbfoIdField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public long gtnId {
+        public string bbfoId {
             get {
-                return this.gtnIdField;
+                return this.bbfoIdField;
             }
             set {
-                this.gtnIdField = value;
-                this.RaisePropertyChanged("gtnId");
+                this.bbfoIdField = value;
+                this.RaisePropertyChanged("bbfoId");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
+    public partial class findAllResponse : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private resultDO returnField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public resultDO @return {
+            get {
+                return this.returnField;
+            }
+            set {
+                this.returnField = value;
+                this.RaisePropertyChanged("return");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
+    public partial class findAll : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string projectIdField;
+        
+        private string sectionIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string projectId {
+            get {
+                return this.projectIdField;
+            }
+            set {
+                this.projectIdField = value;
+                this.RaisePropertyChanged("projectId");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool gtnIdSpecified {
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string sectionId {
             get {
-                return this.gtnIdFieldSpecified;
+                return this.sectionIdField;
             }
             set {
-                this.gtnIdFieldSpecified = value;
-                this.RaisePropertyChanged("gtnIdSpecified");
+                this.sectionIdField = value;
+                this.RaisePropertyChanged("sectionId");
             }
         }
         
@@ -1009,17 +715,17 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
     public partial class edit : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private gpTemplateNodeWebDO gpTemplateNodeWebDOField;
+        private gpBidFileOrgWebDO gpBidFileOrgWebDOField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public gpTemplateNodeWebDO GpTemplateNodeWebDO {
+        public gpBidFileOrgWebDO GpBidFileOrgWebDO {
             get {
-                return this.gpTemplateNodeWebDOField;
+                return this.gpBidFileOrgWebDOField;
             }
             set {
-                this.gpTemplateNodeWebDOField = value;
-                this.RaisePropertyChanged("GpTemplateNodeWebDO");
+                this.gpBidFileOrgWebDOField = value;
+                this.RaisePropertyChanged("GpBidFileOrgWebDO");
             }
         }
         
@@ -1039,7 +745,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
-    public partial class addResponse : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class saveResponse : object, System.ComponentModel.INotifyPropertyChanged {
         
         private resultDO returnField;
         
@@ -1071,19 +777,19 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
-    public partial class add : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class save : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private gpTemplateNodeWebDO gpTemplateNodeWebDOField;
+        private gpBidFileOrgWebDO gpBidFileOrgWebDOField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public gpTemplateNodeWebDO GpTemplateNodeWebDO {
+        public gpBidFileOrgWebDO GpBidFileOrgWebDO {
             get {
-                return this.gpTemplateNodeWebDOField;
+                return this.gpBidFileOrgWebDOField;
             }
             set {
-                this.gpTemplateNodeWebDOField = value;
-                this.RaisePropertyChanged("GpTemplateNodeWebDO");
+                this.gpBidFileOrgWebDOField = value;
+                this.RaisePropertyChanged("GpBidFileOrgWebDO");
             }
         }
         
@@ -1100,35 +806,35 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="add", WrapperNamespace="http://webservice.govpurchase.opensource.com/", IsWrapped=true)]
-    public partial class add1 {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="save", WrapperNamespace="http://webservice.govpurchase.opensource.com/", IsWrapped=true)]
+    public partial class save1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.gpTemplateNodeWebDO GpTemplateNodeWebDO;
+        public Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.gpBidFileOrgWebDO GpBidFileOrgWebDO;
         
-        public add1() {
+        public save1() {
         }
         
-        public add1(Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.gpTemplateNodeWebDO GpTemplateNodeWebDO) {
-            this.GpTemplateNodeWebDO = GpTemplateNodeWebDO;
+        public save1(Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.gpBidFileOrgWebDO GpBidFileOrgWebDO) {
+            this.GpBidFileOrgWebDO = GpBidFileOrgWebDO;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="addResponse", WrapperNamespace="http://webservice.govpurchase.opensource.com/", IsWrapped=true)]
-    public partial class addResponse1 {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="saveResponse", WrapperNamespace="http://webservice.govpurchase.opensource.com/", IsWrapped=true)]
+    public partial class saveResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.resultDO @return;
+        public Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.resultDO @return;
         
-        public addResponse1() {
+        public saveResponse1() {
         }
         
-        public addResponse1(Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.resultDO @return) {
+        public saveResponse1(Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.resultDO @return) {
             this.@return = @return;
         }
     }
@@ -1141,13 +847,13 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.gpTemplateNodeWebDO GpTemplateNodeWebDO;
+        public Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.gpBidFileOrgWebDO GpBidFileOrgWebDO;
         
         public edit1() {
         }
         
-        public edit1(Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.gpTemplateNodeWebDO GpTemplateNodeWebDO) {
-            this.GpTemplateNodeWebDO = GpTemplateNodeWebDO;
+        public edit1(Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.gpBidFileOrgWebDO GpBidFileOrgWebDO) {
+            this.GpBidFileOrgWebDO = GpBidFileOrgWebDO;
         }
     }
     
@@ -1159,12 +865,53 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.resultDO @return;
+        public Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.resultDO @return;
         
         public editResponse1() {
         }
         
-        public editResponse1(Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.resultDO @return) {
+        public editResponse1(Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.resultDO @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="findAll", WrapperNamespace="http://webservice.govpurchase.opensource.com/", IsWrapped=true)]
+    public partial class findAll1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string projectId;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string sectionId;
+        
+        public findAll1() {
+        }
+        
+        public findAll1(string projectId, string sectionId) {
+            this.projectId = projectId;
+            this.sectionId = sectionId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="findAllResponse", WrapperNamespace="http://webservice.govpurchase.opensource.com/", IsWrapped=true)]
+    public partial class findAllResponse1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.resultDO @return;
+        
+        public findAllResponse1() {
+        }
+        
+        public findAllResponse1(Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.resultDO @return) {
             this.@return = @return;
         }
     }
@@ -1177,13 +924,13 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public long gtnId;
+        public string bbfoId;
         
         public getById1() {
         }
         
-        public getById1(long gtnId) {
-            this.gtnId = gtnId;
+        public getById1(string bbfoId) {
+            this.bbfoId = bbfoId;
         }
     }
     
@@ -1195,12 +942,12 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.resultDO @return;
+        public Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.resultDO @return;
         
         public getByIdResponse1() {
         }
         
-        public getByIdResponse1(Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.resultDO @return) {
+        public getByIdResponse1(Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.resultDO @return) {
             this.@return = @return;
         }
     }
@@ -1213,13 +960,13 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public long gtnId;
+        public string bbfoId;
         
         public remove1() {
         }
         
-        public remove1(long gtnId) {
-            this.gtnId = gtnId;
+        public remove1(string bbfoId) {
+            this.bbfoId = bbfoId;
         }
     }
     
@@ -1231,136 +978,101 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.resultDO @return;
+        public Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.resultDO @return;
         
         public removeResponse1() {
         }
         
-        public removeResponse1(Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.resultDO @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="findList", WrapperNamespace="http://webservice.govpurchase.opensource.com/", IsWrapped=true)]
-    public partial class findList1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string gtId;
-        
-        public findList1() {
-        }
-        
-        public findList1(string gtId) {
-            this.gtId = gtId;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="findListResponse", WrapperNamespace="http://webservice.govpurchase.opensource.com/", IsWrapped=true)]
-    public partial class findListResponse1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.resultDO @return;
-        
-        public findListResponse1() {
-        }
-        
-        public findListResponse1(Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.resultDO @return) {
+        public removeResponse1(Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.resultDO @return) {
             this.@return = @return;
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface GpTemplateNodeWebServiceChannel : Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.GpTemplateNodeWebService, System.ServiceModel.IClientChannel {
+    public interface BaseBidFileOrgWebServiceChannel : Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.BaseBidFileOrgWebService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GpTemplateNodeWebServiceClient : System.ServiceModel.ClientBase<Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.GpTemplateNodeWebService>, Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.GpTemplateNodeWebService {
+    public partial class BaseBidFileOrgWebServiceClient : System.ServiceModel.ClientBase<Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.BaseBidFileOrgWebService>, Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.BaseBidFileOrgWebService {
         
-        public GpTemplateNodeWebServiceClient() {
+        public BaseBidFileOrgWebServiceClient() {
         }
         
-        public GpTemplateNodeWebServiceClient(string endpointConfigurationName) : 
+        public BaseBidFileOrgWebServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public GpTemplateNodeWebServiceClient(string endpointConfigurationName, string remoteAddress) : 
+        public BaseBidFileOrgWebServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public GpTemplateNodeWebServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public BaseBidFileOrgWebServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public GpTemplateNodeWebServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public BaseBidFileOrgWebServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.addResponse1 Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.GpTemplateNodeWebService.add(Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.add1 request) {
-            return base.Channel.add(request);
+        Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.saveResponse1 Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.BaseBidFileOrgWebService.save(Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.save1 request) {
+            return base.Channel.save(request);
         }
         
-        public Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.resultDO add(Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.gpTemplateNodeWebDO GpTemplateNodeWebDO) {
-            Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.add1 inValue = new Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.add1();
-            inValue.GpTemplateNodeWebDO = GpTemplateNodeWebDO;
-            Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.addResponse1 retVal = ((Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.GpTemplateNodeWebService)(this)).add(inValue);
+        public Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.resultDO save(Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.gpBidFileOrgWebDO GpBidFileOrgWebDO) {
+            Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.save1 inValue = new Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.save1();
+            inValue.GpBidFileOrgWebDO = GpBidFileOrgWebDO;
+            Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.saveResponse1 retVal = ((Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.BaseBidFileOrgWebService)(this)).save(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.editResponse1 Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.GpTemplateNodeWebService.edit(Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.edit1 request) {
+        Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.editResponse1 Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.BaseBidFileOrgWebService.edit(Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.edit1 request) {
             return base.Channel.edit(request);
         }
         
-        public Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.resultDO edit(Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.gpTemplateNodeWebDO GpTemplateNodeWebDO) {
-            Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.edit1 inValue = new Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.edit1();
-            inValue.GpTemplateNodeWebDO = GpTemplateNodeWebDO;
-            Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.editResponse1 retVal = ((Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.GpTemplateNodeWebService)(this)).edit(inValue);
+        public Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.resultDO edit(Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.gpBidFileOrgWebDO GpBidFileOrgWebDO) {
+            Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.edit1 inValue = new Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.edit1();
+            inValue.GpBidFileOrgWebDO = GpBidFileOrgWebDO;
+            Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.editResponse1 retVal = ((Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.BaseBidFileOrgWebService)(this)).edit(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.getByIdResponse1 Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.GpTemplateNodeWebService.getById(Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.getById1 request) {
+        Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.findAllResponse1 Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.BaseBidFileOrgWebService.findAll(Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.findAll1 request) {
+            return base.Channel.findAll(request);
+        }
+        
+        public Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.resultDO findAll(string projectId, string sectionId) {
+            Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.findAll1 inValue = new Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.findAll1();
+            inValue.projectId = projectId;
+            inValue.sectionId = sectionId;
+            Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.findAllResponse1 retVal = ((Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.BaseBidFileOrgWebService)(this)).findAll(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.getByIdResponse1 Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.BaseBidFileOrgWebService.getById(Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.getById1 request) {
             return base.Channel.getById(request);
         }
         
-        public Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.resultDO getById(long gtnId) {
-            Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.getById1 inValue = new Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.getById1();
-            inValue.gtnId = gtnId;
-            Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.getByIdResponse1 retVal = ((Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.GpTemplateNodeWebService)(this)).getById(inValue);
+        public Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.resultDO getById(string bbfoId) {
+            Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.getById1 inValue = new Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.getById1();
+            inValue.bbfoId = bbfoId;
+            Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.getByIdResponse1 retVal = ((Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.BaseBidFileOrgWebService)(this)).getById(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.removeResponse1 Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.GpTemplateNodeWebService.remove(Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.remove1 request) {
+        Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.removeResponse1 Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.BaseBidFileOrgWebService.remove(Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.remove1 request) {
             return base.Channel.remove(request);
         }
         
-        public Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.resultDO remove(long gtnId) {
-            Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.remove1 inValue = new Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.remove1();
-            inValue.gtnId = gtnId;
-            Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.removeResponse1 retVal = ((Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.GpTemplateNodeWebService)(this)).remove(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.findListResponse1 Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.GpTemplateNodeWebService.findList(Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.findList1 request) {
-            return base.Channel.findList(request);
-        }
-        
-        public Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.resultDO findList(string gtId) {
-            Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.findList1 inValue = new Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.findList1();
-            inValue.gtId = gtId;
-            Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.findListResponse1 retVal = ((Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode.GpTemplateNodeWebService)(this)).findList(inValue);
+        public Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.resultDO remove(string bbfoId) {
+            Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.remove1 inValue = new Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.remove1();
+            inValue.bbfoId = bbfoId;
+            Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.removeResponse1 retVal = ((Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg.BaseBidFileOrgWebService)(this)).remove(inValue);
             return retVal.@return;
         }
     }

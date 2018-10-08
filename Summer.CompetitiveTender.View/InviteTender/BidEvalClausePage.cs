@@ -74,7 +74,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
             }
             else
             {
-                MetroMessageBox.Show(this, "请选择要编辑的模板！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MetroMessageBox.Show(this, "请选择要编辑的评标条款！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

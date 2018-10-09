@@ -316,6 +316,8 @@
             // 
             // colType
             // 
+            this.colType.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.colType.HeaderText = "类型";
             this.colType.Name = "colType";
             this.colType.ReadOnly = true;

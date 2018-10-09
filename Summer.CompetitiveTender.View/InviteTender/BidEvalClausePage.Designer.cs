@@ -158,6 +158,8 @@
             // 
             // colType
             // 
+            this.colType.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.colType.HeaderText = "类型";
             this.colType.Name = "colType";
             this.colType.ReadOnly = true;
@@ -178,6 +180,8 @@
             // 
             // colIsNeedFirstPara
             // 
+            this.colIsNeedFirstPara.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colIsNeedFirstPara.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.colIsNeedFirstPara.HeaderText = "是否需要设置值1";
             this.colIsNeedFirstPara.Name = "colIsNeedFirstPara";
             this.colIsNeedFirstPara.ReadOnly = true;
@@ -192,6 +196,8 @@
             // 
             // colIsNeeSecondPara
             // 
+            this.colIsNeeSecondPara.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colIsNeeSecondPara.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.colIsNeeSecondPara.HeaderText = "是否需要设置值2";
             this.colIsNeeSecondPara.Name = "colIsNeeSecondPara";
             this.colIsNeeSecondPara.ReadOnly = true;

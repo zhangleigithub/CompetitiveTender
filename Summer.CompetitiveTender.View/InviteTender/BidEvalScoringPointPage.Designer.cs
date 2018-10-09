@@ -211,7 +211,9 @@
             this.colLittleNum.ReadOnly = true;
             // 
             // colCanDelete
-            // 
+            //
+            this.colCanDelete.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colCanDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.colCanDelete.HeaderText = "是否可以删除";
             this.colCanDelete.Name = "colCanDelete";
             this.colCanDelete.ReadOnly = true;

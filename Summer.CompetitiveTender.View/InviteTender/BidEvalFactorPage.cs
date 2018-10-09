@@ -119,7 +119,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
             InitializeComponent();
             this.gpBidFileOrgService = gpBidFileOrgService;
             this.projectId = projectId;
-            this.projectId = sectionId;
+            this.sectionId = sectionId;
 
             List<ComboBoxDataSource> lstIsNeed = new List<ComboBoxDataSource>();
             lstIsNeed.Add(new ComboBoxDataSource() { Text = "否", Value = 0 });

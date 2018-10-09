@@ -31,9 +31,14 @@ namespace Summer.CompetitiveTender.View.InviteTender
         private IGpTenderEvalEleService gpTenderEvalEleService;
 
         /// <summary>
-        /// gsId
+        /// projectId
         /// </summary>
-        private string gsId;
+        private string projectId;
+
+        /// <summary>
+        /// sectionId
+        /// </summary>
+        private string sectionId;
 
         /// <summary>
         /// gpTenderEvalEle
@@ -63,13 +68,14 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 else //新增
                 {
                     obj = new gpTenderEvalEleWebDO();
-                    obj.gsId = this.gsId;
+                    obj.gtpId = this.projectId;
+                    obj.gsId = this.sectionId;
                     obj.adtId = user.auID;
                     obj.adtCoId = user.acId;
                     obj.adtTime = DateTime.Now;
                 }
 
-                obj.gewigName = this.txtName.Text.Trim();
+                obj.gteeName = this.txtName.Text.Trim();
                 obj.evalUnit = this.txtUnit.Text.Trim();
                 obj.evalGrads = decimal.Parse(this.txtGrads.Text);
                 obj.maxScore = decimal.Parse(this.txtMaxScore.Text);
@@ -116,7 +122,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
         #region 方法
 
-        public BidEvalScoringPointForm(IGpTenderEvalEleService gpTenderEvalEleService, string gsId, gpTenderEvalEleWebDO gpTenderEvalEle)
+        public BidEvalScoringPointForm(IGpTenderEvalEleService gpTenderEvalEleService, string projectId, string sectionId, gpTenderEvalEleWebDO gpTenderEvalEle)
         {
             InitializeComponent();
 
@@ -128,12 +134,13 @@ namespace Summer.CompetitiveTender.View.InviteTender
             this.cboCanDelete.ValueMember = "Value";
 
             this.gpTenderEvalEleService = gpTenderEvalEleService;
-            this.gsId = gsId;
+            this.projectId = projectId;
+            this.sectionId = sectionId;
             this.gpTenderEvalEle = gpTenderEvalEle;
 
             if (gpTenderEvalEle != null)
             {
-                this.txtName.Text = gpTenderEvalEle.gewigName;
+                this.txtName.Text = gpTenderEvalEle.gteeName;
                 this.txtUnit.Text = gpTenderEvalEle.evalUnit;
                 this.txtGrads.Text = gpTenderEvalEle.evalGrads.ToString();
                 this.txtMaxScore.Text = gpTenderEvalEle.maxScore.ToString();

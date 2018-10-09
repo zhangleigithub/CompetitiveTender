@@ -30,9 +30,14 @@ namespace Summer.CompetitiveTender.View.InviteTender
         private IGpEvalwayItemGtfService gpEvalwayItemGtfService;
 
         /// <summary>
-        /// gsId
+        /// projectId
         /// </summary>
-        private string gsId;
+        private string projectId;
+
+        /// <summary>
+        /// sectionId
+        /// </summary>
+        private string sectionId;
 
         #endregion
 
@@ -45,7 +50,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            BidEvalClauseForm frm = new BidEvalClauseForm(this.gpEvalwayItemGtfService, this.gsId, null);
+            BidEvalClauseForm frm = new BidEvalClauseForm(this.gpEvalwayItemGtfService,this.projectId, this.sectionId, null);
             frm.Text = "新建评标条款";
 
             if (frm.ShowDialog(this) == DialogResult.OK)
@@ -62,7 +67,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
             {
                 gpEvalWayItemGtfWebDO obj = this.grdData.CurrentRow.Tag as gpEvalWayItemGtfWebDO;
 
-                BidEvalClauseForm frm = new BidEvalClauseForm(this.gpEvalwayItemGtfService, obj.gsId, obj);
+                BidEvalClauseForm frm = new BidEvalClauseForm(this.gpEvalwayItemGtfService,this.projectId, obj.gsId, obj);
                 frm.Text = "编辑评标条款";
 
                 if (frm.ShowDialog(this) == DialogResult.OK)
@@ -108,11 +113,12 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
         #region 方法
 
-        public BidEvalClausePage(IGpEvalwayItemGtfService gpEvalwayItemGtfService, string gsId)
+        public BidEvalClausePage(IGpEvalwayItemGtfService gpEvalwayItemGtfService, string projectId, string sectionId)
         {
             InitializeComponent();
             this.gpEvalwayItemGtfService = gpEvalwayItemGtfService;
-            this.gsId = gsId;
+            this.projectId = projectId;
+            this.sectionId = sectionId;
 
             List<ComboBoxDataSource> lstType = new List<ComboBoxDataSource>();
             lstType.Add(new ComboBoxDataSource() { Text = "符合性", Value = 0 });
@@ -138,7 +144,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
             try
             {
                 this.grdData.Rows.Clear();
-                var result = this.gpEvalwayItemGtfService.FindListByGsIdAndGewtgIdName(gsId, -1, string.Empty);
+                var result = this.gpEvalwayItemGtfService.FindListByGsIdAndGewtgIdName(this.sectionId, -1, string.Empty);
                 this.SetGridData(result);
             }
             catch (Exception ex)

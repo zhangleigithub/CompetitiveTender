@@ -134,6 +134,8 @@
             // 
             // colRequire
             // 
+            this.colRequire.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colRequire.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.colRequire.HeaderText = "是否必须";
             this.colRequire.Name = "colRequire";
             this.colRequire.ReadOnly = true;

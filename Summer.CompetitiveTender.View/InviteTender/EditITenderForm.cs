@@ -69,12 +69,12 @@ namespace Summer.CompetitiveTender.View.InviteTender
                     this.pnelFrame.Controls.Add(bidEvalBodyPage);
                     break;
                 case "评标条款":
-                    BidEvalClausePage bidEvalClausePage = new BidEvalClausePage(this.gpEvalwayItemGtfService, this.sectionId);
+                    BidEvalClausePage bidEvalClausePage = new BidEvalClausePage(this.gpEvalwayItemGtfService, this.projectId, this.sectionId);
                     bidEvalClausePage.Dock = DockStyle.Fill;
                     this.pnelFrame.Controls.Add(bidEvalClausePage);
                     break;
                 case "评 分 点":
-                    BidEvalScoringPointPage bidEvalScoringPointPage = new BidEvalScoringPointPage(this.gpTenderEvalEleService, this.sectionId);
+                    BidEvalScoringPointPage bidEvalScoringPointPage = new BidEvalScoringPointPage(this.gpTenderEvalEleService, this.projectId, this.sectionId);
                     bidEvalScoringPointPage.Dock = DockStyle.Fill;
                     this.pnelFrame.Controls.Add(bidEvalScoringPointPage);
                     break;

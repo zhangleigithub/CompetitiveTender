@@ -30,9 +30,14 @@ namespace Summer.CompetitiveTender.View.InviteTender
         private IGpTenderEvalEleService gpTenderEvalEleService;
 
         /// <summary>
-        /// gsId
+        /// projectId
         /// </summary>
-        private string gsId;
+        private string projectId;
+
+        /// <summary>
+        /// sectionId
+        /// </summary>
+        private string sectionId;
 
         #endregion
 
@@ -45,7 +50,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            BidEvalScoringPointForm frm = new BidEvalScoringPointForm(this.gpTenderEvalEleService, this.gsId, null);
+            BidEvalScoringPointForm frm = new BidEvalScoringPointForm(this.gpTenderEvalEleService, this.projectId, this.sectionId, null);
             frm.Text = "新建评分点";
 
             if (frm.ShowDialog(this) == DialogResult.OK)
@@ -62,7 +67,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
             {
                 gpTenderEvalEleWebDO obj = this.grdData.CurrentRow.Tag as gpTenderEvalEleWebDO;
 
-                BidEvalScoringPointForm frm = new BidEvalScoringPointForm(this.gpTenderEvalEleService, obj.gsId, obj);
+                BidEvalScoringPointForm frm = new BidEvalScoringPointForm(this.gpTenderEvalEleService, obj.gtpId, obj.gsId, obj);
                 frm.Text = "编辑评分点";
 
                 if (frm.ShowDialog(this) == DialogResult.OK)
@@ -88,7 +93,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 {
                     gpTenderEvalEleWebDO obj = this.grdData.CurrentRow.Tag as gpTenderEvalEleWebDO;
 
-                    if (this.gpTenderEvalEleService.Remove(obj.gewigId))
+                    if (this.gpTenderEvalEleService.Remove(obj.gteeId))
                     {
                         this.grdData.Rows.Remove(this.grdData.CurrentRow);
                     }
@@ -108,11 +113,12 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
         #region 方法
 
-        public BidEvalScoringPointPage(IGpTenderEvalEleService gpTenderEvalEleService, string gsId)
+        public BidEvalScoringPointPage(IGpTenderEvalEleService gpTenderEvalEleService, string projectId, string sectionId)
         {
             InitializeComponent();
             this.gpTenderEvalEleService = gpTenderEvalEleService;
-            this.gsId = gsId;
+            this.projectId = projectId;
+            this.sectionId = sectionId;
 
             List<ComboBoxDataSource> lstIsNeed = new List<ComboBoxDataSource>();
             lstIsNeed.Add(new ComboBoxDataSource() { Text = "不可以", Value = 0 });
@@ -127,7 +133,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
             try
             {
                 this.grdData.Rows.Clear();
-                var result = this.gpTenderEvalEleService.FindListByGsIdAndGteeName(gsId, string.Empty);
+                var result = this.gpTenderEvalEleService.FindListByGsIdAndGteeName(this.sectionId, string.Empty);
                 this.SetGridData(result);
             }
             catch (Exception ex)
@@ -158,7 +164,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 row.Cells[this.colLittleNum.Index].Value = item.littleNum;
                 row.Cells[this.colCanDelete.Index].Value = item.canDel;
                 row.Tag = item;
-               
+
                 this.grdData.Rows.Add(row);
             }
         }

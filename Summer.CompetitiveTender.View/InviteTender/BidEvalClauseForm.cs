@@ -31,9 +31,14 @@ namespace Summer.CompetitiveTender.View.InviteTender
         private IGpEvalwayItemGtfService gpEvalwayItemGtfService;
 
         /// <summary>
-        /// gsId
+        /// projectId
         /// </summary>
-        private string gsId;
+        private string projectId;
+
+        /// <summary>
+        /// sectionId
+        /// </summary>
+        private string sectionId;
 
         /// <summary>
         /// gpEvalWayItemGtf
@@ -63,7 +68,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 else //新增
                 {
                     obj = new gpEvalWayItemGtfWebDO();
-                    obj.gsId = this.gsId;
+                    obj.gsId = this.sectionId;
                     obj.adtId = user.auID;
                     obj.adtCoId = user.acId;
                     obj.adtTime = DateTime.Now;
@@ -116,7 +121,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
         #region 方法
 
-        public BidEvalClauseForm(IGpEvalwayItemGtfService gpEvalwayItemGtfService, string gsId, gpEvalWayItemGtfWebDO gpEvalWayItemGtf)
+        public BidEvalClauseForm(IGpEvalwayItemGtfService gpEvalwayItemGtfService, string projectId, string sectionId, gpEvalWayItemGtfWebDO gpEvalWayItemGtf)
         {
             InitializeComponent();
 
@@ -139,7 +144,8 @@ namespace Summer.CompetitiveTender.View.InviteTender
             this.cboIsNeeSecondPara.ValueMember = "Value";
 
             this.gpEvalwayItemGtfService = gpEvalwayItemGtfService;
-            this.gsId = gsId;
+            this.projectId = projectId;
+            this.sectionId = sectionId;
             this.gpEvalWayItemGtf = gpEvalWayItemGtf;
 
             if (gpEvalWayItemGtf != null)

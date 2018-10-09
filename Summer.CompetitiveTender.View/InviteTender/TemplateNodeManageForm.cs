@@ -63,6 +63,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
         private void TemplateNodeManageForm_Shown(object sender, EventArgs e)
         {
             List<ComboBoxDataSource> lstProjectType = new List<ComboBoxDataSource>();
+            lstProjectType.Add(new ComboBoxDataSource() { Text = "无", Value = 0 });
             lstProjectType.Add(new ComboBoxDataSource() { Text = "商务", Value = 1 });
             lstProjectType.Add(new ComboBoxDataSource() { Text = "技术", Value = 2 });
             lstProjectType.Add(new ComboBoxDataSource() { Text = "价格", Value = 3 });
@@ -126,6 +127,8 @@ namespace Summer.CompetitiveTender.View.InviteTender
         {
             try
             {
+                this.gptnParentId = -1;
+
                 gpTemplateNodeWebDO gptn = e.Node.Tag as gpTemplateNodeWebDO;
 
                 this.txtName.Text = gptn.gtnName;
@@ -139,8 +142,6 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 this.cboClient.SelectedValue = gptn.carryState;
                 this.cboCanModifyITender.SelectedValue = gptn.biderEditState;
                 this.txtSort.Text = gptn.sort.ToString();
-
-                this.gptnParentId = -1;
             }
             catch (Exception ex)
             {
@@ -222,12 +223,18 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 if (this.gptnParentId == -1)
                 {
                     gptn = this.trvTemplateNode.SelectedNode.Tag as gpTemplateNodeWebDO;
+                    gptn.optId = user.auID;
+                    gptn.optCoId = user.acId;
+                    gptn.optTime = DateTime.Now;
                 }
                 else //新增
                 {
                     gptn = new gpTemplateNodeWebDO();
-                    gptn.gtnPid = this.gptnParentId;
                     gptn.gtId = gptId;
+                    gptn.gtnPid = this.gptnParentId;
+                    gptn.adtId = user.auID;
+                    gptn.adtCoId = user.acId;
+                    gptn.adtTime = DateTime.Now;
                 }
 
                 gptn.gtnName = this.txtName.Text.Trim();
@@ -241,9 +248,6 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 gptn.carryState = (int)this.cboClient.SelectedValue;
                 gptn.biderEditState = (int)this.cboCanModifyITender.SelectedValue;
                 gptn.sort = int.Parse(this.txtSort.Text.Trim());
-                gptn.adtId = user.auID;
-                gptn.adtCoId = user.acId;
-                gptn.adtTime = DateTime.Now;
 
                 //修改
                 if (this.gptnParentId == -1)
@@ -261,6 +265,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 {
                     if (this.gpTemplateNodeService.Add(gptn))
                     {
+                        this.gptnParentId = -1;
                         this.LoadTree();
                     }
                     else

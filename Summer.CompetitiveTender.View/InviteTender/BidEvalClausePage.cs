@@ -144,7 +144,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
             try
             {
                 this.grdData.Rows.Clear();
-                var result = this.gpEvalwayItemGtfService.FindListByGsIdAndGewtgIdName(this.sectionId, -1, string.Empty);
+                var result = this.gpEvalwayItemGtfService.FindListByGsIdAndGewigName(this.sectionId, string.Empty);
                 this.SetGridData(result);
             }
             catch (Exception ex)

@@ -40,12 +40,11 @@ namespace Summer.CompetitiveTender.Service
         gpEvalWayItemGtfWebDO FindById(string gewigId);
 
         /// <summary>
-        /// FindListByGsIdAndGewtgIdName
+        /// FindListByGsIdAndGewigName
         /// </summary>
         /// <param name="gsId">gsId</param>
-        /// <param name="gewtgId">gewtgId</param>
         /// <param name="gewigName">gewigName</param>
         /// <returns>gpEvalWayItemGtfWebDO[]</returns>
-        gpEvalWayItemGtfWebDO[] FindListByGsIdAndGewtgIdName(string gsId, long gewtgId, string gewigName);
+        gpEvalWayItemGtfWebDO[] FindListByGsIdAndGewigName(string gsId, string gewigName);
     }
 }

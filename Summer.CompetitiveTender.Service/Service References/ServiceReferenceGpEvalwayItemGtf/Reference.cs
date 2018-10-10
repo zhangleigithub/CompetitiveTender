@@ -793,10 +793,6 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf {
         
         private string gsIdField;
         
-        private long gewtgIdField;
-        
-        private bool gewtgIdFieldSpecified;
-        
         private string gewigNameField;
         
         /// <remarks/>
@@ -813,30 +809,6 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public long gewtgId {
-            get {
-                return this.gewtgIdField;
-            }
-            set {
-                this.gewtgIdField = value;
-                this.RaisePropertyChanged("gewtgId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool gewtgIdSpecified {
-            get {
-                return this.gewtgIdFieldSpecified;
-            }
-            set {
-                this.gewtgIdFieldSpecified = value;
-                this.RaisePropertyChanged("gewtgIdSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
         public string gewigName {
             get {
                 return this.gewigNameField;
@@ -1069,18 +1041,13 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=1)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public long gewtgId;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string gewigName;
         
         public findAll1() {
         }
         
-        public findAll1(string gsId, long gewtgId, string gewigName) {
+        public findAll1(string gsId, string gewigName) {
             this.gsId = gsId;
-            this.gewtgId = gewtgId;
             this.gewigName = gewigName;
         }
     }
@@ -1231,10 +1198,9 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf {
             return base.Channel.findAll(request);
         }
         
-        public Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf.resultDO findAll(string gsId, long gewtgId, string gewigName) {
+        public Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf.resultDO findAll(string gsId, string gewigName) {
             Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf.findAll1 inValue = new Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf.findAll1();
             inValue.gsId = gsId;
-            inValue.gewtgId = gewtgId;
             inValue.gewigName = gewigName;
             Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf.findAllResponse1 retVal = ((Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf.GpEvalwayItemGtfWebService)(this)).findAll(inValue);
             return retVal.@return;

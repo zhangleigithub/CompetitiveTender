@@ -91,20 +91,19 @@ namespace Summer.CompetitiveTender.Service
         }
 
         /// <summary>
-        /// FindListByGsIdAndGewtgIdName
+        /// FindListByGsIdAndGewigName
         /// </summary>
         /// <param name="gsId">gsId</param>
-        /// <param name="gewtgId">gewtgId</param>
         /// <param name="gewigName">gewigName</param>
         /// <returns>gpEvalWayItemGtfWebDO[]</returns>
-        public gpEvalWayItemGtfWebDO[] FindListByGsIdAndGewtgIdName(string gsId, long gewtgId, string gewigName)
+        public gpEvalWayItemGtfWebDO[] FindListByGsIdAndGewigName(string gsId, string gewigName)
         {
             if (string.IsNullOrWhiteSpace(gsId))
             {
                 throw new ArgumentNullException(nameof(gsId));
             }
 
-            resultDO result = this.wsAgent.findAll(gsId, gewtgId, gewigName);
+            resultDO result = this.wsAgent.findAll(gsId, gewigName);
 
             return ((object[])result.objList).Cast<gpEvalWayItemGtfWebDO>().ToArray();
         }

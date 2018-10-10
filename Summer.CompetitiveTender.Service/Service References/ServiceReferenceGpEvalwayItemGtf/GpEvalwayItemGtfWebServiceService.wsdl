@@ -76,7 +76,6 @@
       <xs:complexType name="findAll">
         <xs:sequence>
           <xs:element minOccurs="0" name="gsId" type="xs:string" />
-          <xs:element minOccurs="0" name="gewtgId" type="xs:long" />
           <xs:element minOccurs="0" name="gewigName" type="xs:string" />
         </xs:sequence>
       </xs:complexType>

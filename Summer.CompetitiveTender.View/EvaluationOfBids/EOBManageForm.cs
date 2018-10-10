@@ -69,7 +69,7 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
             {
                 gpTenderProjectWebDO gptp = this.grdProject.CurrentRow.Tag as gpTenderProjectWebDO;
 
-                EOBForm eOBForm = new EOBForm();
+                EOBForm eOBForm = new EOBForm(gptp.gtpId, gptp.gpId);
                 eOBForm.ShowDialog(this);
                 eOBForm.Dispose();
             }
@@ -104,7 +104,7 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
             {
                 gpTenderProjectWebDO gptp = this.grdProject.CurrentRow.Tag as gpTenderProjectWebDO;
 
-                EOBResultForm eOBResultForm = new EOBResultForm();
+                EOBResultForm eOBResultForm = new EOBResultForm(gptp.gtpId, gptp.gpId);
                 eOBResultForm.ShowDialog(this);
                 eOBResultForm.Dispose();
             }
@@ -147,6 +147,7 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
 
             List<ComboBoxDataSource> lstEvalState = new List<ComboBoxDataSource>();
             lstEvalState.Add(new ComboBoxDataSource() { Text = "失败", Value = -1 });
+            lstEvalState.Add(new ComboBoxDataSource() { Text = "无", Value = 0 });
             lstEvalState.Add(new ComboBoxDataSource() { Text = "成功", Value = 1 });
             lstEvalState.Add(new ComboBoxDataSource() { Text = "启动", Value = 2 });
             this.colProjectEvalState.DataSource = lstEvalState;
@@ -157,7 +158,9 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
         public void LoadData()
         {
             this.grdProject.Rows.Clear();
-            var result = gpTenderProjectService.FindListByCondition(this.txtProjectCode.Text.Trim(), this.txtSectionCode.Text.Trim(),this.txtProjectName.Text.Trim(), this.txtSectionCode.Text.Trim());
+            baseUserWebDO loginResponse = Cache.GetInstance().GetValue<baseUserWebDO>("login");
+            var result = gpTenderProjectService.FindListByAuId(loginResponse.auID);
+            //var result = gpTenderProjectService.FindListByCondition(this.txtProjectCode.Text.Trim(), this.txtSectionCode.Text.Trim(),this.txtProjectName.Text.Trim(), this.txtSectionCode.Text.Trim());
             this.SetGridData(result);
         }
 
@@ -175,7 +178,7 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
                 row.Cells[this.colSectionName.Index].Value = item.gsName;
                 row.Cells[this.colProjectEvalState.Index].Value = item.evalState;
                 row.Tag = item;
-                        
+
                 this.grdProject.Rows.Add(row);
             }
         }

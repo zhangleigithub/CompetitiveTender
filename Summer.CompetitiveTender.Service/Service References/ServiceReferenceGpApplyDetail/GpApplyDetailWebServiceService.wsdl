@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webservice.govpurchase.opensource.com/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="GpApplyDetailWebServiceService" targetNamespace="http://webservice.govpurchase.opensource.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://webservice.govpurchase.opensource.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="applyFileDecrypt" type="tns:applyFileDecrypt" />
+      <xs:element name="applyFileDecryptResponse" type="tns:applyFileDecryptResponse" />
+      <xs:element name="applyFileSing" type="tns:applyFileSing" />
+      <xs:element name="applyFileSingResponse" type="tns:applyFileSingResponse" />
+      <xs:element name="findApplyList" type="tns:findApplyList" />
+      <xs:element name="findApplyListResponse" type="tns:findApplyListResponse" />
+      <xs:element name="findBidderList" type="tns:findBidderList" />
+      <xs:element name="findBidderListResponse" type="tns:findBidderListResponse" />
+      <xs:element name="getApplyById" type="tns:getApplyById" />
+      <xs:element name="getApplyByIdResponse" type="tns:getApplyByIdResponse" />
+      <xs:element name="getApplyFileList" type="tns:getApplyFileList" />
+      <xs:element name="getApplyFileListResponse" type="tns:getApplyFileListResponse" />
+      <xs:complexType name="applyFileSing">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GpApplyDetailWebDO" type="tns:gpApplyDetailWebDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="gpApplyDetailWebDO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:baseEntity">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="bcName" type="xs:string" />
+              <xs:element minOccurs="0" name="decryptOutFile" type="xs:string" />
+              <xs:element minOccurs="0" name="encryptCode" type="xs:string" />
+              <xs:element minOccurs="0" name="encryptState" type="xs:int" />
+              <xs:element minOccurs="0" name="gadBidCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gadBidCompanyId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadBidCompanyName" type="xs:string" />
+              <xs:element minOccurs="0" name="gadBidPersonId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadBidPersonName" type="xs:string" />
+              <xs:element minOccurs="0" name="gadBidSuffix" type="xs:string" />
+              <xs:element minOccurs="0" name="gadBidTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="gadId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadSignCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadSignId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadSignState" type="xs:int" />
+              <xs:element minOccurs="0" name="gadSignTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="gaiApplyCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="gaiApplyCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gaiApplyId" type="xs:string" />
+              <xs:element minOccurs="0" name="gaiApplyName" type="xs:string" />
+              <xs:element minOccurs="0" name="gaiApplyTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="gaiId" type="xs:string" />
+              <xs:element minOccurs="0" name="gsId" type="xs:string" />
+              <xs:element minOccurs="0" name="gsName" type="xs:string" />
+              <xs:element minOccurs="0" name="gtfNewName" type="xs:string" />
+              <xs:element minOccurs="0" name="gtfOldName" type="xs:string" />
+              <xs:element minOccurs="0" name="gtfSize" type="xs:long" />
+              <xs:element minOccurs="0" name="gtfSuffix" type="xs:string" />
+              <xs:element minOccurs="0" name="gtfUploadTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="gtfUrl" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpName" type="xs:string" />
+              <xs:element minOccurs="0" name="optCompanyId" type="xs:string" />
+              <xs:element minOccurs="0" name="optId" type="xs:string" />
+              <xs:element minOccurs="0" name="optTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="registState" type="xs:int" />
+              <xs:element minOccurs="0" name="registTime" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="baseEntity" abstract="true">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="applyFileSingResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="resultDO">
+        <xs:sequence>
+          <xs:element name="code" type="xs:int" />
+          <xs:element minOccurs="0" name="fileContent" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+          <xs:element minOccurs="0" name="obj" type="xs:anyType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="objList" nillable="true" type="xs:anyType" />
+          <xs:element name="success" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findBidderList">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+          <xs:element minOccurs="0" name="gsId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findBidderListResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getApplyFileList">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gsId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getApplyFileListResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findApplyList">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+          <xs:element minOccurs="0" name="gsId" type="xs:string" />
+          <xs:element minOccurs="0" name="gtpName" type="xs:string" />
+          <xs:element minOccurs="0" name="gtpCode" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findApplyListResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="applyFileDecrypt">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gadId" type="xs:string" />
+          <xs:element minOccurs="0" name="decryptionCipher" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="applyFileDecryptResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getApplyById">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gaiApplyId" type="xs:string" />
+          <xs:element minOccurs="0" name="gaiApplyCoId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getApplyByIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getApplyByIdResponse">
+    <wsdl:part name="parameters" element="tns:getApplyByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="applyFileSing">
+    <wsdl:part name="parameters" element="tns:applyFileSing" />
+  </wsdl:message>
+  <wsdl:message name="findBidderList">
+    <wsdl:part name="parameters" element="tns:findBidderList" />
+  </wsdl:message>
+  <wsdl:message name="getApplyFileList">
+    <wsdl:part name="parameters" element="tns:getApplyFileList" />
+  </wsdl:message>
+  <wsdl:message name="getApplyFileListResponse">
+    <wsdl:part name="parameters" element="tns:getApplyFileListResponse" />
+  </wsdl:message>
+  <wsdl:message name="applyFileSingResponse">
+    <wsdl:part name="parameters" element="tns:applyFileSingResponse" />
+  </wsdl:message>
+  <wsdl:message name="findApplyList">
+    <wsdl:part name="parameters" element="tns:findApplyList" />
+  </wsdl:message>
+  <wsdl:message name="applyFileDecrypt">
+    <wsdl:part name="parameters" element="tns:applyFileDecrypt" />
+  </wsdl:message>
+  <wsdl:message name="findApplyListResponse">
+    <wsdl:part name="parameters" element="tns:findApplyListResponse" />
+  </wsdl:message>
+  <wsdl:message name="applyFileDecryptResponse">
+    <wsdl:part name="parameters" element="tns:applyFileDecryptResponse" />
+  </wsdl:message>
+  <wsdl:message name="findBidderListResponse">
+    <wsdl:part name="parameters" element="tns:findBidderListResponse" />
+  </wsdl:message>
+  <wsdl:message name="getApplyById">
+    <wsdl:part name="parameters" element="tns:getApplyById" />
+  </wsdl:message>
+  <wsdl:portType name="GpApplyDetailWebService">
+    <wsdl:operation name="applyFileSing">
+      <wsdl:input name="applyFileSing" message="tns:applyFileSing" />
+      <wsdl:output name="applyFileSingResponse" message="tns:applyFileSingResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="findBidderList">
+      <wsdl:input name="findBidderList" message="tns:findBidderList" />
+      <wsdl:output name="findBidderListResponse" message="tns:findBidderListResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getApplyFileList">
+      <wsdl:input name="getApplyFileList" message="tns:getApplyFileList" />
+      <wsdl:output name="getApplyFileListResponse" message="tns:getApplyFileListResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="findApplyList">
+      <wsdl:input name="findApplyList" message="tns:findApplyList" />
+      <wsdl:output name="findApplyListResponse" message="tns:findApplyListResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="applyFileDecrypt">
+      <wsdl:input name="applyFileDecrypt" message="tns:applyFileDecrypt" />
+      <wsdl:output name="applyFileDecryptResponse" message="tns:applyFileDecryptResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getApplyById">
+      <wsdl:input name="getApplyById" message="tns:getApplyById" />
+      <wsdl:output name="getApplyByIdResponse" message="tns:getApplyByIdResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GpApplyDetailWebServiceServiceSoapBinding" type="tns:GpApplyDetailWebService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="applyFileSing">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="applyFileSing">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="applyFileSingResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findBidderList">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="findBidderList">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="findBidderListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getApplyFileList">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getApplyFileList">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getApplyFileListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findApplyList">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="findApplyList">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="findApplyListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="applyFileDecrypt">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="applyFileDecrypt">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="applyFileDecryptResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getApplyById">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getApplyById">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getApplyByIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GpApplyDetailWebServiceService">
+    <wsdl:port name="GpApplyDetailWebServicePort" binding="tns:GpApplyDetailWebServiceServiceSoapBinding">
+      <soap:address location="http://121.28.95.246:9090/webservice/gpApplyDetailWebService/getApplyFileList" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

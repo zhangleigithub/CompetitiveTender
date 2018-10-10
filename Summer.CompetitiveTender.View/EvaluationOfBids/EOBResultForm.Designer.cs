@@ -33,11 +33,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grdBidEvalResult = new MetroFramework.Controls.MetroGrid();
             this.colTbrCompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTbrName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTbrCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGerResult = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGerScores = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdBidEvalResult)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,11 +60,10 @@
             this.grdBidEvalResult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grdBidEvalResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colTbrCompanyName,
-            this.colTbrName,
-            this.colTbrCode,
             this.colGerResult,
             this.colGerScores,
-            this.colRemark});
+            this.colRemark,
+            this.colDateTime});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -103,20 +101,6 @@
             this.colTbrCompanyName.ReadOnly = true;
             this.colTbrCompanyName.Width = 82;
             // 
-            // colTbrName
-            // 
-            this.colTbrName.HeaderText = "投标人";
-            this.colTbrName.Name = "colTbrName";
-            this.colTbrName.ReadOnly = true;
-            this.colTbrName.Width = 69;
-            // 
-            // colTbrCode
-            // 
-            this.colTbrCode.HeaderText = "投标人代码";
-            this.colTbrCode.Name = "colTbrCode";
-            this.colTbrCode.ReadOnly = true;
-            this.colTbrCode.Width = 95;
-            // 
             // colGerResult
             // 
             this.colGerResult.HeaderText = "符合性评标结果";
@@ -137,6 +121,13 @@
             this.colRemark.Name = "colRemark";
             this.colRemark.ReadOnly = true;
             this.colRemark.Width = 108;
+            // 
+            // ColDateTime
+            // 
+            this.colDateTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDateTime.HeaderText = "评标汇总时间";
+            this.colDateTime.Name = "colDateTime";
+            this.colDateTime.ReadOnly = true;
             // 
             // EOBResultForm
             // 
@@ -159,10 +150,9 @@
 
         private MetroFramework.Controls.MetroGrid grdBidEvalResult;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTbrCompanyName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTbrName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTbrCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGerResult;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGerScores;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRemark;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDateTime;
     }
 }

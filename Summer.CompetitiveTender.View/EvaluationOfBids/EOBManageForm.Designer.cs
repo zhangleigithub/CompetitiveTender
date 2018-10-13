@@ -32,25 +32,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.txtProjectCode = new MetroFramework.Controls.MetroTextBox();
             this.txtProjectName = new MetroFramework.Controls.MetroTextBox();
-            this.txtSectionCode = new MetroFramework.Controls.MetroTextBox();
-            this.txtSectionName = new MetroFramework.Controls.MetroTextBox();
             this.btnQuery = new MetroFramework.Controls.MetroButton();
             this.grdProject = new MetroFramework.Controls.MetroGrid();
-            this.btnRecJudges = new MetroFramework.Controls.MetroButton();
-            this.btnBidEval = new MetroFramework.Controls.MetroButton();
-            this.btnDownloadITenderFile = new MetroFramework.Controls.MetroButton();
-            this.btnResult = new MetroFramework.Controls.MetroButton();
-            this.btnBidEvalReport = new MetroFramework.Controls.MetroButton();
             this.colProjectCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSectionCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSectionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProjectEvalState = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.btnRecJudges = new MetroFramework.Controls.MetroButton();
+            this.btnBidEval = new MetroFramework.Controls.MetroButton();
+            this.btnDownloadITenderFile = new MetroFramework.Controls.MetroButton();
+            this.btnResult = new MetroFramework.Controls.MetroButton();
+            this.btnBidEvalReport = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.grdProject)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,15 +59,6 @@
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "招标项目编号";
             // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(51, 96);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(65, 19);
-            this.metroLabel2.TabIndex = 1;
-            this.metroLabel2.Text = "标段编号";
-            // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
@@ -80,15 +67,6 @@
             this.metroLabel3.Size = new System.Drawing.Size(93, 19);
             this.metroLabel3.TabIndex = 2;
             this.metroLabel3.Text = "招标项目名称";
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(373, 96);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(65, 19);
-            this.metroLabel4.TabIndex = 3;
-            this.metroLabel4.Text = "标段名称";
             // 
             // txtProjectCode
             // 
@@ -130,7 +108,7 @@
             // 
             // 
             this.txtProjectName.CustomButton.Image = null;
-            this.txtProjectName.CustomButton.Location = new System.Drawing.Point(433, 1);
+            this.txtProjectName.CustomButton.Location = new System.Drawing.Point(352, 1);
             this.txtProjectName.CustomButton.Name = "";
             this.txtProjectName.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtProjectName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -149,83 +127,17 @@
             this.txtProjectName.SelectionLength = 0;
             this.txtProjectName.SelectionStart = 0;
             this.txtProjectName.ShortcutsEnabled = true;
-            this.txtProjectName.Size = new System.Drawing.Size(455, 23);
+            this.txtProjectName.Size = new System.Drawing.Size(374, 23);
             this.txtProjectName.TabIndex = 5;
             this.txtProjectName.UseSelectable = true;
             this.txtProjectName.WaterMark = "招标项目名称";
             this.txtProjectName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtProjectName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // txtSectionCode
-            // 
-            // 
-            // 
-            // 
-            this.txtSectionCode.CustomButton.Image = null;
-            this.txtSectionCode.CustomButton.Location = new System.Drawing.Point(195, 1);
-            this.txtSectionCode.CustomButton.Name = "";
-            this.txtSectionCode.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtSectionCode.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtSectionCode.CustomButton.TabIndex = 1;
-            this.txtSectionCode.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtSectionCode.CustomButton.UseSelectable = true;
-            this.txtSectionCode.CustomButton.Visible = false;
-            this.txtSectionCode.Lines = new string[0];
-            this.txtSectionCode.Location = new System.Drawing.Point(122, 94);
-            this.txtSectionCode.MaxLength = 32767;
-            this.txtSectionCode.Name = "txtSectionCode";
-            this.txtSectionCode.PasswordChar = '\0';
-            this.txtSectionCode.PromptText = "标段编号";
-            this.txtSectionCode.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtSectionCode.SelectedText = "";
-            this.txtSectionCode.SelectionLength = 0;
-            this.txtSectionCode.SelectionStart = 0;
-            this.txtSectionCode.ShortcutsEnabled = true;
-            this.txtSectionCode.Size = new System.Drawing.Size(217, 23);
-            this.txtSectionCode.TabIndex = 6;
-            this.txtSectionCode.UseSelectable = true;
-            this.txtSectionCode.WaterMark = "标段编号";
-            this.txtSectionCode.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtSectionCode.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // txtSectionName
-            // 
-            this.txtSectionName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            // 
-            // 
-            // 
-            this.txtSectionName.CustomButton.Image = null;
-            this.txtSectionName.CustomButton.Location = new System.Drawing.Point(433, 1);
-            this.txtSectionName.CustomButton.Name = "";
-            this.txtSectionName.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtSectionName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtSectionName.CustomButton.TabIndex = 1;
-            this.txtSectionName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtSectionName.CustomButton.UseSelectable = true;
-            this.txtSectionName.CustomButton.Visible = false;
-            this.txtSectionName.Lines = new string[0];
-            this.txtSectionName.Location = new System.Drawing.Point(444, 94);
-            this.txtSectionName.MaxLength = 32767;
-            this.txtSectionName.Name = "txtSectionName";
-            this.txtSectionName.PasswordChar = '\0';
-            this.txtSectionName.PromptText = "标段名称";
-            this.txtSectionName.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtSectionName.SelectedText = "";
-            this.txtSectionName.SelectionLength = 0;
-            this.txtSectionName.SelectionStart = 0;
-            this.txtSectionName.ShortcutsEnabled = true;
-            this.txtSectionName.Size = new System.Drawing.Size(455, 23);
-            this.txtSectionName.TabIndex = 7;
-            this.txtSectionName.UseSelectable = true;
-            this.txtSectionName.WaterMark = "标段名称";
-            this.txtSectionName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtSectionName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
             // btnQuery
             // 
             this.btnQuery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnQuery.Location = new System.Drawing.Point(824, 123);
+            this.btnQuery.Location = new System.Drawing.Point(824, 63);
             this.btnQuery.Name = "btnQuery";
             this.btnQuery.Size = new System.Drawing.Size(75, 23);
             this.btnQuery.TabIndex = 8;
@@ -271,7 +183,7 @@
             this.grdProject.EnableHeadersVisualStyles = false;
             this.grdProject.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.grdProject.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.grdProject.Location = new System.Drawing.Point(23, 152);
+            this.grdProject.Location = new System.Drawing.Point(23, 92);
             this.grdProject.MultiSelect = false;
             this.grdProject.Name = "grdProject";
             this.grdProject.ReadOnly = true;
@@ -287,8 +199,45 @@
             this.grdProject.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.grdProject.RowTemplate.Height = 23;
             this.grdProject.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdProject.Size = new System.Drawing.Size(876, 325);
+            this.grdProject.Size = new System.Drawing.Size(876, 385);
             this.grdProject.TabIndex = 9;
+            // 
+            // colProjectCode
+            // 
+            this.colProjectCode.HeaderText = "招标项目编号";
+            this.colProjectCode.Name = "colProjectCode";
+            this.colProjectCode.ReadOnly = true;
+            this.colProjectCode.Width = 108;
+            // 
+            // colProjectName
+            // 
+            this.colProjectName.HeaderText = "招标项目名称";
+            this.colProjectName.Name = "colProjectName";
+            this.colProjectName.ReadOnly = true;
+            this.colProjectName.Width = 108;
+            // 
+            // colSectionCode
+            // 
+            this.colSectionCode.HeaderText = "标段编号";
+            this.colSectionCode.Name = "colSectionCode";
+            this.colSectionCode.ReadOnly = true;
+            this.colSectionCode.Width = 82;
+            // 
+            // colSectionName
+            // 
+            this.colSectionName.HeaderText = "标段名称";
+            this.colSectionName.Name = "colSectionName";
+            this.colSectionName.ReadOnly = true;
+            this.colSectionName.Width = 82;
+            // 
+            // colProjectEvalState
+            // 
+            this.colProjectEvalState.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colProjectEvalState.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colProjectEvalState.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.colProjectEvalState.HeaderText = "评标状态";
+            this.colProjectEvalState.Name = "colProjectEvalState";
+            this.colProjectEvalState.ReadOnly = true;
             // 
             // btnRecJudges
             // 
@@ -345,43 +294,6 @@
             this.btnBidEvalReport.UseSelectable = true;
             this.btnBidEvalReport.Click += new System.EventHandler(this.btnBidEvalReport_Click);
             // 
-            // colProjectCode
-            // 
-            this.colProjectCode.HeaderText = "招标项目编号";
-            this.colProjectCode.Name = "colProjectCode";
-            this.colProjectCode.ReadOnly = true;
-            this.colProjectCode.Width = 108;
-            // 
-            // colProjectName
-            // 
-            this.colProjectName.HeaderText = "招标项目名称";
-            this.colProjectName.Name = "colProjectName";
-            this.colProjectName.ReadOnly = true;
-            this.colProjectName.Width = 108;
-            // 
-            // colSectionCode
-            // 
-            this.colSectionCode.HeaderText = "标段编号";
-            this.colSectionCode.Name = "colSectionCode";
-            this.colSectionCode.ReadOnly = true;
-            this.colSectionCode.Width = 82;
-            // 
-            // colSectionName
-            // 
-            this.colSectionName.HeaderText = "标段名称";
-            this.colSectionName.Name = "colSectionName";
-            this.colSectionName.ReadOnly = true;
-            this.colSectionName.Width = 82;
-            // 
-            // colProjectEvalState
-            // 
-            this.colProjectEvalState.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colProjectEvalState.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.colProjectEvalState.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.colProjectEvalState.HeaderText = "评标状态";
-            this.colProjectEvalState.Name = "colProjectEvalState";
-            this.colProjectEvalState.ReadOnly = true;
-            // 
             // EOBManageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -394,13 +306,9 @@
             this.Controls.Add(this.btnRecJudges);
             this.Controls.Add(this.grdProject);
             this.Controls.Add(this.btnQuery);
-            this.Controls.Add(this.txtSectionName);
-            this.Controls.Add(this.txtSectionCode);
             this.Controls.Add(this.txtProjectName);
             this.Controls.Add(this.txtProjectCode);
-            this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel3);
-            this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.Name = "EOBManageForm";
             this.Text = "评标管理";
@@ -413,13 +321,9 @@
         #endregion
 
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroTextBox txtProjectCode;
         private MetroFramework.Controls.MetroTextBox txtProjectName;
-        private MetroFramework.Controls.MetroTextBox txtSectionCode;
-        private MetroFramework.Controls.MetroTextBox txtSectionName;
         private MetroFramework.Controls.MetroButton btnQuery;
         private MetroFramework.Controls.MetroGrid grdProject;
         private MetroFramework.Controls.MetroButton btnRecJudges;

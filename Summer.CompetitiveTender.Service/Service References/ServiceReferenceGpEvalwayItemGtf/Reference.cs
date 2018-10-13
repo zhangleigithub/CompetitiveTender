@@ -133,13 +133,13 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf {
         
         private string gsIdField;
         
-        private int isNeeSecondParaField;
-        
-        private bool isNeeSecondParaFieldSpecified;
-        
         private int isNeedFirstParaField;
         
         private bool isNeedFirstParaFieldSpecified;
+        
+        private int isNeedSecondParaField;
+        
+        private bool isNeedSecondParaFieldSpecified;
         
         private decimal maxScoreField;
         
@@ -311,30 +311,6 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
-        public int isNeeSecondPara {
-            get {
-                return this.isNeeSecondParaField;
-            }
-            set {
-                this.isNeeSecondParaField = value;
-                this.RaisePropertyChanged("isNeeSecondPara");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool isNeeSecondParaSpecified {
-            get {
-                return this.isNeeSecondParaFieldSpecified;
-            }
-            set {
-                this.isNeeSecondParaFieldSpecified = value;
-                this.RaisePropertyChanged("isNeeSecondParaSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
         public int isNeedFirstPara {
             get {
                 return this.isNeedFirstParaField;
@@ -354,6 +330,30 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf {
             set {
                 this.isNeedFirstParaFieldSpecified = value;
                 this.RaisePropertyChanged("isNeedFirstParaSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
+        public int isNeedSecondPara {
+            get {
+                return this.isNeedSecondParaField;
+            }
+            set {
+                this.isNeedSecondParaField = value;
+                this.RaisePropertyChanged("isNeedSecondPara");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool isNeedSecondParaSpecified {
+            get {
+                return this.isNeedSecondParaFieldSpecified;
+            }
+            set {
+                this.isNeedSecondParaFieldSpecified = value;
+                this.RaisePropertyChanged("isNeedSecondParaSpecified");
             }
         }
         

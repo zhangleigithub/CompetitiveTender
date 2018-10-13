@@ -169,7 +169,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 row.Cells[this.colMinScore.Index].Value = item.minScore;
                 row.Cells[this.colIsNeedFirstPara.Index].Value = item.isNeedFirstPara;
                 row.Cells[this.colFirstParaDesc.Index].Value = item.firstParaDesc;
-                row.Cells[this.colIsNeeSecondPara.Index].Value = item.isNeeSecondPara;
+                row.Cells[this.colIsNeeSecondPara.Index].Value = item.isNeedSecondPara;
                 row.Cells[this.colSecondParaDesc.Index].Value = item.secondParaDesc;
                 row.Cells[this.colAlgoName.Index].Value = item.algoName;
                 row.Cells[this.colRemark.Index].Value = item.remark;

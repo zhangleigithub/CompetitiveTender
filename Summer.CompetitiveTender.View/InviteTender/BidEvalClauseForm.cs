@@ -84,8 +84,8 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 obj.isNeedFirstPara = (int)this.cboIsNeedFirstPara.SelectedValue;
                 obj.isNeedFirstParaSpecified = true;
                 obj.firstParaDesc = this.txtFirstParaDesc.Text;
-                obj.isNeeSecondPara = (int)this.cboIsNeeSecondPara.SelectedValue;
-                obj.isNeeSecondParaSpecified = true;
+                obj.isNeedSecondPara = (int)this.cboIsNeedSecondPara.SelectedValue;
+                obj.isNeedSecondParaSpecified = true;
                 obj.secondParaDesc = this.txtSecondParaDesc.Text;
                 obj.algoName = this.txtAlgoName.Text;
                 obj.sort = int.Parse(this.txtSort.Text);
@@ -145,9 +145,9 @@ namespace Summer.CompetitiveTender.View.InviteTender
             this.cboIsNeedFirstPara.DisplayMember = "Text";
             this.cboIsNeedFirstPara.ValueMember = "Value";
 
-            this.cboIsNeeSecondPara.DataSource = new List<ComboBoxDataSource>(lstIsNeed);
-            this.cboIsNeeSecondPara.DisplayMember = "Text";
-            this.cboIsNeeSecondPara.ValueMember = "Value";
+            this.cboIsNeedSecondPara.DataSource = new List<ComboBoxDataSource>(lstIsNeed);
+            this.cboIsNeedSecondPara.DisplayMember = "Text";
+            this.cboIsNeedSecondPara.ValueMember = "Value";
 
             this.gpEvalwayItemGtfService = gpEvalwayItemGtfService;
             this.projectId = projectId;
@@ -162,7 +162,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 this.txtMinScore.Text = gpEvalWayItemGtf.minScore.ToString();
                 this.cboIsNeedFirstPara.SelectedValue = gpEvalWayItemGtf.isNeedFirstPara;
                 this.txtFirstParaDesc.Text = gpEvalWayItemGtf.firstParaDesc;
-                this.cboIsNeeSecondPara.SelectedValue = gpEvalWayItemGtf.isNeeSecondPara;
+                this.cboIsNeedSecondPara.SelectedValue = gpEvalWayItemGtf.isNeedSecondPara;
                 this.txtSecondParaDesc.Text = gpEvalWayItemGtf.secondParaDesc;
                 this.txtAlgoName.Text = gpEvalWayItemGtf.algoName;
                 this.txtSort.Text = gpEvalWayItemGtf.sort.ToString();

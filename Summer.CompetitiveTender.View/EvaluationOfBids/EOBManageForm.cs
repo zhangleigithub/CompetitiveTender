@@ -69,7 +69,7 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
             {
                 gpTenderProjectWebDO gptp = this.grdProject.CurrentRow.Tag as gpTenderProjectWebDO;
 
-                EOBForm eOBForm = new EOBForm(gptp.gtpId, gptp.gpId);
+                EOBForm eOBForm = new EOBForm(gptp.gtpId, gptp.gsId);
                 eOBForm.ShowDialog(this);
                 eOBForm.Dispose();
             }
@@ -147,7 +147,6 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
 
             List<ComboBoxDataSource> lstEvalState = new List<ComboBoxDataSource>();
             lstEvalState.Add(new ComboBoxDataSource() { Text = "失败", Value = -1 });
-            lstEvalState.Add(new ComboBoxDataSource() { Text = "无", Value = 0 });
             lstEvalState.Add(new ComboBoxDataSource() { Text = "成功", Value = 1 });
             lstEvalState.Add(new ComboBoxDataSource() { Text = "启动", Value = 2 });
             this.colProjectEvalState.DataSource = lstEvalState;
@@ -160,7 +159,7 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
             this.grdProject.Rows.Clear();
             //baseUserWebDO loginResponse = Cache.GetInstance().GetValue<baseUserWebDO>("login");
             //var result = gpTenderProjectService.FindListByAuId(loginResponse.auID);
-            var result = gpTenderProjectService.FindListByCondition(this.txtProjectCode.Text.Trim(), this.txtSectionCode.Text.Trim(), this.txtProjectName.Text.Trim(), this.txtSectionCode.Text.Trim());
+            var result = gpTenderProjectService.FindListByCondition(string.Empty, string.Empty, this.txtProjectName.Text.Trim(), this.txtProjectCode.Text.Trim());
             this.SetGridData(result);
         }
 

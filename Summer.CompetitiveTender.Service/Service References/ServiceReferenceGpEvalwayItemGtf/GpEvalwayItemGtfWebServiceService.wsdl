@@ -31,8 +31,8 @@
               <xs:element minOccurs="0" name="gewigName" type="xs:string" />
               <xs:element minOccurs="0" name="gewigType" type="xs:int" />
               <xs:element minOccurs="0" name="gsId" type="xs:string" />
-              <xs:element minOccurs="0" name="isNeeSecondPara" type="xs:int" />
               <xs:element minOccurs="0" name="isNeedFirstPara" type="xs:int" />
+              <xs:element minOccurs="0" name="isNeedSecondPara" type="xs:int" />
               <xs:element minOccurs="0" name="maxScore" type="xs:decimal" />
               <xs:element minOccurs="0" name="minScore" type="xs:decimal" />
               <xs:element minOccurs="0" name="optCoId" type="xs:string" />

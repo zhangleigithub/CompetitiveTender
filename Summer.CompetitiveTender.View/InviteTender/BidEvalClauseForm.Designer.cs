@@ -37,7 +37,7 @@
             this.txtAlgoName = new MetroFramework.Controls.MetroTextBox();
             this.txtMaxScore = new MetroFramework.Controls.MetroTextBox();
             this.txtName = new MetroFramework.Controls.MetroTextBox();
-            this.cboIsNeeSecondPara = new MetroFramework.Controls.MetroComboBox();
+            this.cboIsNeedSecondPara = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.cboIsNeedFirstPara = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
@@ -330,16 +330,16 @@
             // 
             // cboIsNeeSecondPara
             // 
-            this.cboIsNeeSecondPara.FormattingEnabled = true;
-            this.cboIsNeeSecondPara.ItemHeight = 23;
-            this.cboIsNeeSecondPara.Items.AddRange(new object[] {
+            this.cboIsNeedSecondPara.FormattingEnabled = true;
+            this.cboIsNeedSecondPara.ItemHeight = 23;
+            this.cboIsNeedSecondPara.Items.AddRange(new object[] {
             "需要",
             "不需要"});
-            this.cboIsNeeSecondPara.Location = new System.Drawing.Point(148, 295);
-            this.cboIsNeeSecondPara.Name = "cboIsNeeSecondPara";
-            this.cboIsNeeSecondPara.Size = new System.Drawing.Size(105, 29);
-            this.cboIsNeeSecondPara.TabIndex = 19;
-            this.cboIsNeeSecondPara.UseSelectable = true;
+            this.cboIsNeedSecondPara.Location = new System.Drawing.Point(148, 295);
+            this.cboIsNeedSecondPara.Name = "cboIsNeedSecondPara";
+            this.cboIsNeedSecondPara.Size = new System.Drawing.Size(105, 29);
+            this.cboIsNeedSecondPara.TabIndex = 19;
+            this.cboIsNeedSecondPara.UseSelectable = true;
             // 
             // metroLabel9
             // 
@@ -480,7 +480,7 @@
             this.Controls.Add(this.txtAlgoName);
             this.Controls.Add(this.txtMaxScore);
             this.Controls.Add(this.txtName);
-            this.Controls.Add(this.cboIsNeeSecondPara);
+            this.Controls.Add(this.cboIsNeedSecondPara);
             this.Controls.Add(this.metroLabel9);
             this.Controls.Add(this.cboIsNeedFirstPara);
             this.Controls.Add(this.metroLabel8);
@@ -515,7 +515,7 @@
         private MetroFramework.Controls.MetroTextBox txtAlgoName;
         private MetroFramework.Controls.MetroTextBox txtMaxScore;
         private MetroFramework.Controls.MetroTextBox txtName;
-        private MetroFramework.Controls.MetroComboBox cboIsNeeSecondPara;
+        private MetroFramework.Controls.MetroComboBox cboIsNeedSecondPara;
         private MetroFramework.Controls.MetroLabel metroLabel9;
         private MetroFramework.Controls.MetroComboBox cboIsNeedFirstPara;
         private MetroFramework.Controls.MetroLabel metroLabel8;

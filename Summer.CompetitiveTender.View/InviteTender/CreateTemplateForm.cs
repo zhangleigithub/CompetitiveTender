@@ -65,7 +65,9 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 gpTemplateWebDO gpTemplate = new gpTemplateWebDO();
                 gpTemplate.gtName = this.txtName.Text.Trim();
                 gpTemplate.gtType = (int)this.cboType.SelectedValue;
+                gpTemplate.gtTypeSpecified = true;
                 gpTemplate.gtGroup = (int)this.cboProjectType.SelectedValue;
+                gpTemplate.gtGroupSpecified = true;
                 gpTemplate.remark = this.txtRemark.Text.Trim();
                 gpTemplate.adtId = user.auID;
                 gpTemplate.adtCoId = user.acId;

@@ -78,7 +78,9 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
                 obj.bbfoName = this.txtName.Text.Trim();
                 obj.isMust = (int)this.cboIsMust.SelectedValue;
+                obj.isMustSpecified = true;
                 obj.sort = int.Parse(this.txtSort.Text);
+                obj.sortSpecified = true;
 
                 //修改
                 if (this.gpBidFileOrg != null)

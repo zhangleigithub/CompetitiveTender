@@ -91,7 +91,9 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
                 this.gpTemplate.gtName = this.txtName.Text.Trim();
                 this.gpTemplate.gtType = (int)this.cboType.SelectedValue;
+                this.gpTemplate.gtTypeSpecified = true;
                 this.gpTemplate.gtGroup = (int)this.cboProjectType.SelectedValue;
+                this.gpTemplate.gtGroupSpecified = true;
                 this.gpTemplate.remark = this.txtRemark.Text.Trim();
                 this.gpTemplate.optId = user.auID;
                 this.gpTemplate.optCoId = user.acId;

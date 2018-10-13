@@ -77,15 +77,26 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
                 obj.gteeName = this.txtName.Text.Trim();
                 obj.evalUnit = this.txtUnit.Text.Trim();
+                obj.evalNum = decimal.Parse(this.txtNum.Text);
+                obj.evalNumSpecified = true;
                 obj.evalGrads = decimal.Parse(this.txtGrads.Text);
+                obj.evalGradsSpecified = true;
                 obj.maxScore = decimal.Parse(this.txtMaxScore.Text);
+                obj.maxScoreSpecified = true;
                 obj.minScore = decimal.Parse(this.txtMinScore.Text);
+                obj.minScoreSpecified = true;
                 obj.standard = decimal.Parse(this.txtStandard.Text);
+                obj.standardSpecified = true;
                 obj.greatWay = int.Parse(this.txtGreatWay.Text);
+                obj.greatWaySpecified = true;
                 obj.greatNum = int.Parse(this.txtGreatNum.Text);
+                obj.greatNumSpecified = true;
                 obj.littleWay = int.Parse(this.txtLittleWay.Text);
+                obj.littleWaySpecified = true;
                 obj.littleNum = int.Parse(this.txtLittleNum.Text);
+                obj.littleNumSpecified = true;
                 obj.canDel = (int)this.cboCanDelete.SelectedValue;
+                obj.canDelSpecified = true;
 
                 //修改
                 if (this.gpTenderEvalEle != null)
@@ -142,6 +153,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
             {
                 this.txtName.Text = gpTenderEvalEle.gteeName;
                 this.txtUnit.Text = gpTenderEvalEle.evalUnit;
+                this.txtNum.Text = gpTenderEvalEle.evalNum.ToString();
                 this.txtGrads.Text = gpTenderEvalEle.evalGrads.ToString();
                 this.txtMaxScore.Text = gpTenderEvalEle.maxScore.ToString();
                 this.txtMinScore.Text = gpTenderEvalEle.minScore.ToString();

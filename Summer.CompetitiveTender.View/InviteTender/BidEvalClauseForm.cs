@@ -76,14 +76,20 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
                 obj.gewigName = this.txtName.Text.Trim();
                 obj.gewigType = (int)this.cboType.SelectedValue;
+                obj.gewigTypeSpecified = true;
                 obj.maxScore = decimal.Parse(this.txtMaxScore.Text);
+                obj.maxScoreSpecified = true;
                 obj.minScore = decimal.Parse(this.txtMinScore.Text);
+                obj.minScoreSpecified = true;
                 obj.isNeedFirstPara = (int)this.cboIsNeedFirstPara.SelectedValue;
+                obj.isNeedFirstParaSpecified = true;
                 obj.firstParaDesc = this.txtFirstParaDesc.Text;
                 obj.isNeeSecondPara = (int)this.cboIsNeeSecondPara.SelectedValue;
+                obj.isNeeSecondParaSpecified = true;
                 obj.secondParaDesc = this.txtSecondParaDesc.Text;
                 obj.algoName = this.txtAlgoName.Text;
                 obj.sort = int.Parse(this.txtSort.Text);
+                obj.sortSpecified = true;
                 obj.remark = this.txtRemark.Text;
 
                 //修改
@@ -139,7 +145,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
             this.cboIsNeedFirstPara.DisplayMember = "Text";
             this.cboIsNeedFirstPara.ValueMember = "Value";
 
-            this.cboIsNeeSecondPara.DataSource = lstIsNeed;
+            this.cboIsNeeSecondPara.DataSource = new List<ComboBoxDataSource>(lstIsNeed);
             this.cboIsNeeSecondPara.DisplayMember = "Text";
             this.cboIsNeeSecondPara.ValueMember = "Value";
 

@@ -134,7 +134,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
             this.colIsNeedFirstPara.DisplayMember = "Text";
             this.colIsNeedFirstPara.ValueMember = "Value";
 
-            this.colIsNeeSecondPara.DataSource = lstIsNeed;
+            this.colIsNeeSecondPara.DataSource = new List<ComboBoxDataSource>(lstIsNeed); ;
             this.colIsNeeSecondPara.DisplayMember = "Text";
             this.colIsNeeSecondPara.ValueMember = "Value";
         }

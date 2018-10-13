@@ -78,7 +78,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
             this.cboCanModify.DisplayMember = "Text";
             this.cboCanModify.ValueMember = "Value";
 
-            this.cboCanDelete.DataSource = lstCanModify;
+            this.cboCanDelete.DataSource = new List<ComboBoxDataSource>(lstCanModify);
             this.cboCanDelete.DisplayMember = "Text";
             this.cboCanDelete.ValueMember = "Value";
 
@@ -96,19 +96,19 @@ namespace Summer.CompetitiveTender.View.InviteTender
             this.cboDocumentType.DisplayMember = "Text";
             this.cboDocumentType.ValueMember = "Value";
 
-            this.cboCanModifyManage.DataSource = lstCanModify;
+            this.cboCanModifyManage.DataSource = new List<ComboBoxDataSource>(lstCanModify);
             this.cboCanModifyManage.DisplayMember = "Text";
             this.cboCanModifyManage.ValueMember = "Value";
 
-            this.cboDRBid.DataSource = lstCanModify;
+            this.cboDRBid.DataSource = new List<ComboBoxDataSource>(lstCanModify);
             this.cboDRBid.DisplayMember = "Text";
             this.cboDRBid.ValueMember = "Value";
 
-            this.cboClient.DataSource = lstCanModify;
+            this.cboClient.DataSource = new List<ComboBoxDataSource>(lstCanModify);
             this.cboClient.DisplayMember = "Text";
             this.cboClient.ValueMember = "Value";
 
-            this.cboCanModifyITender.DataSource = lstCanModify;
+            this.cboCanModifyITender.DataSource = new List<ComboBoxDataSource>(lstCanModify);
             this.cboCanModifyITender.DisplayMember = "Text";
             this.cboCanModifyITender.ValueMember = "Value";
 
@@ -232,6 +232,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
                     gptn = new gpTemplateNodeWebDO();
                     gptn.gtId = gptId;
                     gptn.gtnPid = this.gptnParentId;
+                    gptn.gtnPidSpecified = true;
                     gptn.adtId = user.auID;
                     gptn.adtCoId = user.acId;
                     gptn.adtTime = DateTime.Now;
@@ -240,14 +241,23 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 gptn.gtnName = this.txtName.Text.Trim();
                 gptn.gtnFileName = this.txtFileName.Text.Trim();
                 gptn.gtnFiletype = (int)this.cboProjectType.SelectedValue;
+                gptn.gtnFiletypeSpecified = true;
                 gptn.editState = (int)this.cboCanModify.SelectedValue;
+                gptn.editStateSpecified = true;
                 gptn.delState = (int)this.cboCanDelete.SelectedValue;
+                gptn.delStateSpecified = true;
                 gptn.gtnAttr = (int)this.cboProperty.SelectedValue;
+                gptn.gtnAttrSpecified = true;
                 gptn.gtnDocType = (int)this.cboDocumentType.SelectedValue;
+                gptn.gtnDocTypeSpecified = true;
                 gptn.bossEditState = (int)this.cboCanModifyManage.SelectedValue;
+                gptn.bossEditStateSpecified = true;
                 gptn.carryState = (int)this.cboClient.SelectedValue;
+                gptn.carryStateSpecified = true;
                 gptn.biderEditState = (int)this.cboCanModifyITender.SelectedValue;
+                gptn.biderEditStateSpecified = true;
                 gptn.sort = int.Parse(this.txtSort.Text.Trim());
+                gptn.sortSpecified = true;
 
                 //修改
                 if (this.gptnParentId == -1)
@@ -290,13 +300,13 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
                 if (ofdl.ShowDialog() == DialogResult.OK)
                 {
-                    using (Stream stream=ofdl.OpenFile())
+                    using (Stream stream = ofdl.OpenFile())
                     {
                         string fileName = Path.GetFileNameWithoutExtension(ofdl.FileName);
                         string extension = Path.GetExtension(ofdl.FileName);
 
                         byte[] bytes = new byte[stream.Length];
-                        stream.Read(bytes,0, bytes.Length);
+                        stream.Read(bytes, 0, bytes.Length);
 
                         baseUserWebDO user = Cache.GetInstance().GetValue<baseUserWebDO>("login");
 

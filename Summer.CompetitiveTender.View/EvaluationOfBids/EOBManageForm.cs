@@ -158,9 +158,9 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
         public void LoadData()
         {
             this.grdProject.Rows.Clear();
-            baseUserWebDO loginResponse = Cache.GetInstance().GetValue<baseUserWebDO>("login");
-            var result = gpTenderProjectService.FindListByAuId(loginResponse.auID);
-            //var result = gpTenderProjectService.FindListByCondition(this.txtProjectCode.Text.Trim(), this.txtSectionCode.Text.Trim(),this.txtProjectName.Text.Trim(), this.txtSectionCode.Text.Trim());
+            //baseUserWebDO loginResponse = Cache.GetInstance().GetValue<baseUserWebDO>("login");
+            //var result = gpTenderProjectService.FindListByAuId(loginResponse.auID);
+            var result = gpTenderProjectService.FindListByCondition(this.txtProjectCode.Text.Trim(), this.txtSectionCode.Text.Trim(), this.txtProjectName.Text.Trim(), this.txtSectionCode.Text.Trim());
             this.SetGridData(result);
         }
 

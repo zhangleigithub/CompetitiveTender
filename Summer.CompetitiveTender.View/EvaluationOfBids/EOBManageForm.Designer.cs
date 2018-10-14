@@ -33,8 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.txtProjectCode = new MetroFramework.Controls.MetroTextBox();
-            this.txtProjectName = new MetroFramework.Controls.MetroTextBox();
+            this.txtProjectCode = new Summer.Common.Controls.MetroSearchTextBox();
+            this.txtProjectName = new Summer.Common.Controls.MetroSearchTextBox();
             this.btnQuery = new MetroFramework.Controls.MetroButton();
             this.grdProject = new MetroFramework.Controls.MetroGrid();
             this.colProjectCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,6 +82,7 @@
             this.txtProjectCode.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtProjectCode.CustomButton.UseSelectable = true;
             this.txtProjectCode.CustomButton.Visible = false;
+            this.txtProjectCode.Guid = "37e14759-b13d-483c-948f-9a6bcaf03a93";
             this.txtProjectCode.Lines = new string[0];
             this.txtProjectCode.Location = new System.Drawing.Point(122, 63);
             this.txtProjectCode.MaxLength = 32767;
@@ -116,6 +117,7 @@
             this.txtProjectName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtProjectName.CustomButton.UseSelectable = true;
             this.txtProjectName.CustomButton.Visible = false;
+            this.txtProjectName.Guid = "2a1fc15b-d557-4722-b49e-bcc11aa2d209";
             this.txtProjectName.Lines = new string[0];
             this.txtProjectName.Location = new System.Drawing.Point(444, 63);
             this.txtProjectName.MaxLength = 32767;
@@ -322,8 +324,8 @@
 
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroTextBox txtProjectCode;
-        private MetroFramework.Controls.MetroTextBox txtProjectName;
+        private Summer.Common.Controls.MetroSearchTextBox txtProjectCode;
+        private Summer.Common.Controls.MetroSearchTextBox txtProjectName;
         private MetroFramework.Controls.MetroButton btnQuery;
         private MetroFramework.Controls.MetroGrid grdProject;
         private MetroFramework.Controls.MetroButton btnRecJudges;

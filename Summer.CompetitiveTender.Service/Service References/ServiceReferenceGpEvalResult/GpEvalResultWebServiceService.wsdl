@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webservice.govpurchase.opensource.com/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="GpEvalResultWebServiceService" targetNamespace="http://webservice.govpurchase.opensource.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://webservice.govpurchase.opensource.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="save" type="tns:save" />
+      <xs:element name="saveResponse" type="tns:saveResponse" />
+      <xs:complexType name="save">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GpEvalResultWebDO" type="tns:gpEvalResultWebDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="gpEvalResultWebDO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:baseEntity">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="gadBidCompanyId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadBidCompanyName" type="xs:string" />
+              <xs:element minOccurs="0" name="gadBidPersonId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadId" type="xs:string" />
+              <xs:element minOccurs="0" name="gerCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gerCompanyId" type="xs:string" />
+              <xs:element minOccurs="0" name="gerId" type="xs:string" />
+              <xs:element minOccurs="0" name="gerPersonId" type="xs:string" />
+              <xs:element minOccurs="0" name="gerResult" type="xs:int" />
+              <xs:element minOccurs="0" name="gerScores" type="xs:double" />
+              <xs:element minOccurs="0" name="gerTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="gewtId" type="xs:long" />
+              <xs:element minOccurs="0" name="gsId" type="xs:string" />
+              <xs:element minOccurs="0" name="gsewiId" type="xs:string" />
+              <xs:element minOccurs="0" name="gsewiName" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+              <xs:element minOccurs="0" name="optCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="optId" type="xs:string" />
+              <xs:element minOccurs="0" name="optTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="remark" type="xs:string" />
+              <xs:element minOccurs="0" name="state" type="xs:int" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="baseEntity" abstract="true">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="saveResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="resultDO">
+        <xs:sequence>
+          <xs:element name="code" type="xs:int" />
+          <xs:element minOccurs="0" name="fileContent" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+          <xs:element minOccurs="0" name="obj" type="xs:anyType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="objList" nillable="true" type="xs:anyType" />
+          <xs:element name="success" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="save">
+    <wsdl:part name="parameters" element="tns:save" />
+  </wsdl:message>
+  <wsdl:message name="saveResponse">
+    <wsdl:part name="parameters" element="tns:saveResponse" />
+  </wsdl:message>
+  <wsdl:portType name="GpEvalResultWebService">
+    <wsdl:operation name="save">
+      <wsdl:input name="save" message="tns:save" />
+      <wsdl:output name="saveResponse" message="tns:saveResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GpEvalResultWebServiceServiceSoapBinding" type="tns:GpEvalResultWebService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="save">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="save">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="saveResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GpEvalResultWebServiceService">
+    <wsdl:port name="GpEvalResultWebServicePort" binding="tns:GpEvalResultWebServiceServiceSoapBinding">
+      <soap:address location="http://121.28.95.246:9090/webservice/gpEvalResultWebService/save" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

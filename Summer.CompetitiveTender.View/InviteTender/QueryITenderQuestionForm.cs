@@ -38,10 +38,10 @@ namespace Summer.CompetitiveTender.View.InviteTender
             List<ComboBoxDataSource> lstType = new List<ComboBoxDataSource>();
             lstType.Add(new ComboBoxDataSource() { Text = "澄清", Value = 1 });
             lstType.Add(new ComboBoxDataSource() { Text = "修改", Value = 2 });
-            this.txtType.DataSource = lstType;
-            this.txtType.DisplayMember = "Text";
-            this.txtType.ValueMember = "Value";
-            this.txtType.SelectedValue = 1;
+            this.cboType.DataSource = lstType;
+            this.cboType.DisplayMember = "Text";
+            this.cboType.ValueMember = "Value";
+            this.cboType.SelectedValue = 1;
 
             this.colType.DataSource = lstType;
             this.colType.DisplayMember = "Text";
@@ -96,7 +96,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
         public void LoadData()
         {
             this.grdITQuest.Rows.Clear();
-            var result = gpTfOperationService.FindQuestions(this.txtProjectCode.Text.Trim(), this.txtSectionCode.Text.Trim(), this.txtTitle.Text.Trim(), (int)this.txtType.SelectedValue);
+            var result = gpTfOperationService.FindQuestions(this.txtProjectCode.Text.Trim(), this.txtSectionCode.Text.Trim(), this.txtTitle.Text.Trim(), (int)this.cboType.SelectedValue);
             this.SetGridData(result);
         }
 

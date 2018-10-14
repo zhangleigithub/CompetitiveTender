@@ -104,7 +104,7 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
             {
                 gpTenderProjectWebDO gptp = this.grdProject.CurrentRow.Tag as gpTenderProjectWebDO;
 
-                EOBResultForm eOBResultForm = new EOBResultForm(gptp.gtpId, gptp.gpId);
+                EOBResultForm eOBResultForm = new EOBResultForm(gptp.gtpId, gptp.gsId);
                 eOBResultForm.ShowDialog(this);
                 eOBResultForm.Dispose();
             }
@@ -146,9 +146,14 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
             InitializeComponent();
 
             List<ComboBoxDataSource> lstEvalState = new List<ComboBoxDataSource>();
-            lstEvalState.Add(new ComboBoxDataSource() { Text = "失败", Value = -1 });
-            lstEvalState.Add(new ComboBoxDataSource() { Text = "成功", Value = 1 });
-            lstEvalState.Add(new ComboBoxDataSource() { Text = "启动", Value = 2 });
+            lstEvalState.Add(new ComboBoxDataSource() { Text = "评标失败", Value = -1 });
+            lstEvalState.Add(new ComboBoxDataSource() { Text = "未启动", Value = 0 });
+            lstEvalState.Add(new ComboBoxDataSource() { Text = "评标成功", Value = 1 });
+            lstEvalState.Add(new ComboBoxDataSource() { Text = "启动评标", Value = 2 });
+            lstEvalState.Add(new ComboBoxDataSource() { Text = "启动评标变动", Value = 3 });
+            lstEvalState.Add(new ComboBoxDataSource() { Text = "启动二次报价", Value = 4 });
+            lstEvalState.Add(new ComboBoxDataSource() { Text = "结束二次报价", Value = 5 });
+
             this.colProjectEvalState.DataSource = lstEvalState;
             this.colProjectEvalState.DisplayMember = "Text";
             this.colProjectEvalState.ValueMember = "Value";

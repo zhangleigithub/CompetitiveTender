@@ -93,8 +93,8 @@ namespace Summer.CompetitiveTender.View.InviteTender
         {
             try
             {
-                var result = gpTenderProjectService.FindById(this.txtProjectId.Text.Trim());
-                this.SetGridData(new gpTenderProjectWebDO[] { result });
+                var result = gpTenderProjectService.FindListByCondition(string.Empty, string.Empty, string.Empty, this.txtProjectId.Text.Trim());
+                this.SetGridData(result);
             }
             catch (Exception ex)
             {

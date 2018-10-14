@@ -52,7 +52,7 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
             {
                 gpApplyDetailWebDO obj = this.grdBids.CurrentRow.Tag as gpApplyDetailWebDO;
 
-                EOBReviewForm eOBReviewForm = new EOBReviewForm();
+                EOBReviewForm eOBReviewForm = new EOBReviewForm(obj);
                 eOBReviewForm.ShowDialog(this);
                 eOBReviewForm.Dispose();
             }

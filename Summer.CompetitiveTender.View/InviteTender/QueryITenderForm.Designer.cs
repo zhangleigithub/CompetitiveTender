@@ -32,7 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnQuery = new MetroFramework.Controls.MetroButton();
-            this.txtProjectId = new MetroFramework.Controls.MetroTextBox();
+            this.txtProjectId = new Summer.Common.Controls.MetroSearchTextBox();
             this.grdITender = new MetroFramework.Controls.MetroGrid();
             this.colITenderProjectCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colITenderTYJYBSM = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,11 +62,13 @@
             // txtProjectId
             // 
             this.txtProjectId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtProjectId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtProjectId.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             // 
             // 
             // 
             this.txtProjectId.CustomButton.Image = null;
-            this.txtProjectId.CustomButton.Location = new System.Drawing.Point(189, 1);
+            this.txtProjectId.CustomButton.Location = new System.Drawing.Point(188, 1);
             this.txtProjectId.CustomButton.Name = "";
             this.txtProjectId.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtProjectId.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -74,6 +76,7 @@
             this.txtProjectId.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtProjectId.CustomButton.UseSelectable = true;
             this.txtProjectId.CustomButton.Visible = false;
+            this.txtProjectId.Guid = "d92b3fde-1663-4962-9210-051b92257d88";
             this.txtProjectId.Lines = new string[0];
             this.txtProjectId.Location = new System.Drawing.Point(709, 63);
             this.txtProjectId.MaxLength = 32767;
@@ -85,7 +88,7 @@
             this.txtProjectId.SelectionLength = 0;
             this.txtProjectId.SelectionStart = 0;
             this.txtProjectId.ShortcutsEnabled = true;
-            this.txtProjectId.Size = new System.Drawing.Size(211, 23);
+            this.txtProjectId.Size = new System.Drawing.Size(210, 23);
             this.txtProjectId.TabIndex = 6;
             this.txtProjectId.UseSelectable = true;
             this.txtProjectId.WaterMark = "项目编号";
@@ -236,7 +239,7 @@
         #endregion
 
         private MetroFramework.Controls.MetroButton btnQuery;
-        private MetroFramework.Controls.MetroTextBox txtProjectId;
+        private Summer.Common.Controls.MetroSearchTextBox txtProjectId;
         private MetroFramework.Controls.MetroGrid grdITender;
         private System.Windows.Forms.DataGridViewTextBoxColumn colITenderProjectCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn colITenderTYJYBSM;

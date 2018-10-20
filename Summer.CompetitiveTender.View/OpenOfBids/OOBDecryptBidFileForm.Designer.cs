@@ -52,22 +52,7 @@
             this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.metroGrid2 = new MetroFramework.Controls.MetroGrid();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gOpenBidList = new MetroFramework.Controls.MetroGrid();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
@@ -81,25 +66,25 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtSign = new System.Windows.Forms.TextBox();
+            this.txtConfirmPrice = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDecrypt = new System.Windows.Forms.TextBox();
+            this.txtSignInTime = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_continue = new System.Windows.Forms.Button();
+            this.btn_pause = new System.Windows.Forms.Button();
+            this.btn_Start = new System.Windows.Forms.Button();
+            this.btn_sign = new System.Windows.Forms.Button();
+            this.btn_setDecrypt = new System.Windows.Forms.Button();
+            this.btn_confirmPrice = new System.Windows.Forms.Button();
+            this.btn_setSignIn = new System.Windows.Forms.Button();
+            this.btn_signIn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -114,13 +99,28 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.gtpCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gtpName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gsCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bcName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gadDecryptState = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gsSecdePosit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gadCashDepositState = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gadBidPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gadDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gadTradAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gadDecryptName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gadDecryptTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gadRecSignState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroPanel1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid4)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid3)).BeginInit();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gOpenBidList)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
@@ -313,7 +313,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.BackColor = System.Drawing.Color.White;
-            this.groupBox4.Controls.Add(this.metroGrid2);
+            this.groupBox4.Controls.Add(this.gOpenBidList);
             this.groupBox4.Location = new System.Drawing.Point(2, 479);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(667, 95);
@@ -321,15 +321,15 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "开标一览表";
             // 
-            // metroGrid2
+            // gOpenBidList
             // 
-            this.metroGrid2.AllowUserToAddRows = false;
-            this.metroGrid2.AllowUserToDeleteRows = false;
-            this.metroGrid2.AllowUserToResizeRows = false;
-            this.metroGrid2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.metroGrid2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.metroGrid2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.gOpenBidList.AllowUserToAddRows = false;
+            this.gOpenBidList.AllowUserToDeleteRows = false;
+            this.gOpenBidList.AllowUserToResizeRows = false;
+            this.gOpenBidList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gOpenBidList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gOpenBidList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.gOpenBidList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -337,24 +337,24 @@
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.metroGrid2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.metroGrid2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column9,
-            this.Column10,
-            this.Column11,
-            this.Column12,
-            this.Column13,
-            this.Column14,
-            this.Column15,
-            this.Column16,
-            this.Column17,
-            this.Column18,
-            this.Column19,
-            this.Column20,
-            this.Column21,
-            this.Column22,
-            this.Column23});
+            this.gOpenBidList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.gOpenBidList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gOpenBidList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gtpCode,
+            this.gtpName,
+            this.gsCode,
+            this.gsName,
+            this.bcName,
+            this.gadDecryptState,
+            this.gsSecdePosit,
+            this.gadCashDepositState,
+            this.gadBidPrice,
+            this.quantity,
+            this.gadDuration,
+            this.gadTradAddress,
+            this.gadDecryptName,
+            this.gadDecryptTime,
+            this.gadRecSignState});
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -362,14 +362,14 @@
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGrid2.DefaultCellStyle = dataGridViewCellStyle8;
-            this.metroGrid2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroGrid2.EnableHeadersVisualStyles = false;
-            this.metroGrid2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.metroGrid2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid2.Location = new System.Drawing.Point(3, 17);
-            this.metroGrid2.Name = "metroGrid2";
-            this.metroGrid2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.gOpenBidList.DefaultCellStyle = dataGridViewCellStyle8;
+            this.gOpenBidList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gOpenBidList.EnableHeadersVisualStyles = false;
+            this.gOpenBidList.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.gOpenBidList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gOpenBidList.Location = new System.Drawing.Point(3, 17);
+            this.gOpenBidList.Name = "gOpenBidList";
+            this.gOpenBidList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -377,89 +377,12 @@
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid2.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.metroGrid2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.metroGrid2.RowTemplate.Height = 23;
-            this.metroGrid2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid2.Size = new System.Drawing.Size(661, 75);
-            this.metroGrid2.TabIndex = 0;
-            // 
-            // Column9
-            // 
-            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column9.HeaderText = "招标项目编号";
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 76;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "招标项目名称";
-            this.Column10.Name = "Column10";
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "标段编号";
-            this.Column11.Name = "Column11";
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "标段名称";
-            this.Column12.Name = "Column12";
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "投标单位名称";
-            this.Column13.Name = "Column13";
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "密封情况";
-            this.Column14.Name = "Column14";
-            // 
-            // Column15
-            // 
-            this.Column15.HeaderText = "保证金";
-            this.Column15.Name = "Column15";
-            // 
-            // Column16
-            // 
-            this.Column16.HeaderText = "缴纳状态";
-            this.Column16.Name = "Column16";
-            // 
-            // Column17
-            // 
-            this.Column17.HeaderText = "投标报价";
-            this.Column17.Name = "Column17";
-            // 
-            // Column18
-            // 
-            this.Column18.HeaderText = "质量";
-            this.Column18.Name = "Column18";
-            // 
-            // Column19
-            // 
-            this.Column19.HeaderText = "工期（天）";
-            this.Column19.Name = "Column19";
-            // 
-            // Column20
-            // 
-            this.Column20.HeaderText = "交货地点";
-            this.Column20.Name = "Column20";
-            // 
-            // Column21
-            // 
-            this.Column21.HeaderText = "解密人";
-            this.Column21.Name = "Column21";
-            // 
-            // Column22
-            // 
-            this.Column22.HeaderText = "解密时间";
-            this.Column22.Name = "Column22";
-            // 
-            // Column23
-            // 
-            this.Column23.HeaderText = "投标人签名";
-            this.Column23.Name = "Column23";
+            this.gOpenBidList.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.gOpenBidList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.gOpenBidList.RowTemplate.Height = 23;
+            this.gOpenBidList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gOpenBidList.Size = new System.Drawing.Size(661, 75);
+            this.gOpenBidList.TabIndex = 0;
             // 
             // groupBox3
             // 
@@ -603,25 +526,25 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.BackColor = System.Drawing.Color.White;
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.txtSign);
+            this.groupBox2.Controls.Add(this.txtConfirmPrice);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txtDecrypt);
+            this.groupBox2.Controls.Add(this.txtSignInTime);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.button7);
             this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button11);
-            this.groupBox2.Controls.Add(this.button10);
-            this.groupBox2.Controls.Add(this.button9);
-            this.groupBox2.Controls.Add(this.button8);
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.btn_continue);
+            this.groupBox2.Controls.Add(this.btn_pause);
+            this.groupBox2.Controls.Add(this.btn_Start);
+            this.groupBox2.Controls.Add(this.btn_sign);
+            this.groupBox2.Controls.Add(this.btn_setDecrypt);
+            this.groupBox2.Controls.Add(this.btn_confirmPrice);
+            this.groupBox2.Controls.Add(this.btn_setSignIn);
+            this.groupBox2.Controls.Add(this.btn_signIn);
             this.groupBox2.Location = new System.Drawing.Point(2, 135);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(667, 130);
@@ -629,19 +552,19 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "操作";
             // 
-            // textBox4
+            // txtSign
             // 
-            this.textBox4.Location = new System.Drawing.Point(493, 91);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 21);
-            this.textBox4.TabIndex = 2;
+            this.txtSign.Location = new System.Drawing.Point(493, 91);
+            this.txtSign.Name = "txtSign";
+            this.txtSign.Size = new System.Drawing.Size(100, 21);
+            this.txtSign.TabIndex = 2;
             // 
-            // textBox2
+            // txtConfirmPrice
             // 
-            this.textBox2.Location = new System.Drawing.Point(128, 89);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 21);
-            this.textBox2.TabIndex = 2;
+            this.txtConfirmPrice.Location = new System.Drawing.Point(128, 89);
+            this.txtConfirmPrice.Name = "txtConfirmPrice";
+            this.txtConfirmPrice.Size = new System.Drawing.Size(100, 21);
+            this.txtConfirmPrice.TabIndex = 2;
             // 
             // label16
             // 
@@ -661,19 +584,19 @@
             this.label14.TabIndex = 1;
             this.label14.Text = "确认价格时间：";
             // 
-            // textBox3
+            // txtDecrypt
             // 
-            this.textBox3.Location = new System.Drawing.Point(493, 60);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 21);
-            this.textBox3.TabIndex = 2;
+            this.txtDecrypt.Location = new System.Drawing.Point(493, 60);
+            this.txtDecrypt.Name = "txtDecrypt";
+            this.txtDecrypt.Size = new System.Drawing.Size(100, 21);
+            this.txtDecrypt.TabIndex = 2;
             // 
-            // textBox1
+            // txtSignInTime
             // 
-            this.textBox1.Location = new System.Drawing.Point(128, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 2;
+            this.txtSignInTime.Location = new System.Drawing.Point(128, 58);
+            this.txtSignInTime.Name = "txtSignInTime";
+            this.txtSignInTime.Size = new System.Drawing.Size(100, 21);
+            this.txtSignInTime.TabIndex = 2;
             // 
             // label15
             // 
@@ -720,77 +643,85 @@
             this.button5.Text = "宣读开标规则";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btn_continue
             // 
-            this.button4.Location = new System.Drawing.Point(258, 20);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(63, 23);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "继续";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_continue.Location = new System.Drawing.Point(258, 20);
+            this.btn_continue.Name = "btn_continue";
+            this.btn_continue.Size = new System.Drawing.Size(63, 23);
+            this.btn_continue.TabIndex = 0;
+            this.btn_continue.Text = "继续";
+            this.btn_continue.UseVisualStyleBackColor = true;
+            this.btn_continue.Click += new System.EventHandler(this.btn_continue_Click);
             // 
-            // button3
+            // btn_pause
             // 
-            this.button3.Location = new System.Drawing.Point(180, 20);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(63, 23);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "暂停";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_pause.Location = new System.Drawing.Point(180, 20);
+            this.btn_pause.Name = "btn_pause";
+            this.btn_pause.Size = new System.Drawing.Size(63, 23);
+            this.btn_pause.TabIndex = 0;
+            this.btn_pause.Text = "暂停";
+            this.btn_pause.UseVisualStyleBackColor = true;
+            this.btn_pause.Click += new System.EventHandler(this.btn_pause_Click);
             // 
-            // button2
+            // btn_Start
             // 
-            this.button2.Location = new System.Drawing.Point(101, 20);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(63, 23);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "开始";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_Start.Location = new System.Drawing.Point(101, 20);
+            this.btn_Start.Name = "btn_Start";
+            this.btn_Start.Size = new System.Drawing.Size(63, 23);
+            this.btn_Start.TabIndex = 0;
+            this.btn_Start.Text = "开始";
+            this.btn_Start.UseVisualStyleBackColor = true;
+            this.btn_Start.Click += new System.EventHandler(this.btn_Start_Click);
             // 
-            // button11
+            // btn_sign
             // 
-            this.button11.Location = new System.Drawing.Point(599, 89);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(57, 23);
-            this.button11.TabIndex = 0;
-            this.button11.Text = "设定";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btn_sign.Location = new System.Drawing.Point(599, 89);
+            this.btn_sign.Name = "btn_sign";
+            this.btn_sign.Size = new System.Drawing.Size(57, 23);
+            this.btn_sign.TabIndex = 0;
+            this.btn_sign.Text = "设定";
+            this.btn_sign.UseVisualStyleBackColor = true;
+            this.btn_sign.Click += new System.EventHandler(this.btn_sign_Click);
             // 
-            // button10
+            // btn_setDecrypt
             // 
-            this.button10.Location = new System.Drawing.Point(599, 58);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(57, 23);
-            this.button10.TabIndex = 0;
-            this.button10.Text = "设定";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btn_setDecrypt.Location = new System.Drawing.Point(599, 58);
+            this.btn_setDecrypt.Name = "btn_setDecrypt";
+            this.btn_setDecrypt.Size = new System.Drawing.Size(57, 23);
+            this.btn_setDecrypt.TabIndex = 0;
+            this.btn_setDecrypt.Text = "设定";
+            this.btn_setDecrypt.UseVisualStyleBackColor = true;
+            this.btn_setDecrypt.Click += new System.EventHandler(this.btn_setDecrypt_Click);
             // 
-            // button9
+            // btn_confirmPrice
             // 
-            this.button9.Location = new System.Drawing.Point(234, 87);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(57, 23);
-            this.button9.TabIndex = 0;
-            this.button9.Text = "设定";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btn_confirmPrice.Location = new System.Drawing.Point(234, 87);
+            this.btn_confirmPrice.Name = "btn_confirmPrice";
+            this.btn_confirmPrice.Size = new System.Drawing.Size(57, 23);
+            this.btn_confirmPrice.TabIndex = 0;
+            this.btn_confirmPrice.Text = "设定";
+            this.btn_confirmPrice.UseVisualStyleBackColor = true;
+            this.btn_confirmPrice.Click += new System.EventHandler(this.btn_confirmPrice_Click);
             // 
-            // button8
+            // btn_setSignIn
             // 
-            this.button8.Location = new System.Drawing.Point(234, 56);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(57, 23);
-            this.button8.TabIndex = 0;
-            this.button8.Text = "设定";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btn_setSignIn.Location = new System.Drawing.Point(234, 56);
+            this.btn_setSignIn.Name = "btn_setSignIn";
+            this.btn_setSignIn.Size = new System.Drawing.Size(57, 23);
+            this.btn_setSignIn.TabIndex = 0;
+            this.btn_setSignIn.Text = "设定";
+            this.btn_setSignIn.UseVisualStyleBackColor = true;
+            this.btn_setSignIn.Click += new System.EventHandler(this.btn_setSignIn_Click);
             // 
-            // button1
+            // btn_signIn
             // 
-            this.button1.Location = new System.Drawing.Point(21, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(63, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "签到";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_signIn.Location = new System.Drawing.Point(21, 20);
+            this.btn_signIn.Name = "btn_signIn";
+            this.btn_signIn.Size = new System.Drawing.Size(63, 23);
+            this.btn_signIn.TabIndex = 0;
+            this.btn_signIn.Text = "签到";
+            this.btn_signIn.UseVisualStyleBackColor = true;
+            this.btn_signIn.Click += new System.EventHandler(this.btn_signIn_Click);
             // 
             // groupBox1
             // 
@@ -942,6 +873,83 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "招标项目：";
             // 
+            // gtpCode
+            // 
+            this.gtpCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.gtpCode.HeaderText = "招标项目编号";
+            this.gtpCode.Name = "gtpCode";
+            this.gtpCode.Width = 76;
+            // 
+            // gtpName
+            // 
+            this.gtpName.HeaderText = "招标项目名称";
+            this.gtpName.Name = "gtpName";
+            // 
+            // gsCode
+            // 
+            this.gsCode.HeaderText = "标段编号";
+            this.gsCode.Name = "gsCode";
+            // 
+            // gsName
+            // 
+            this.gsName.HeaderText = "标段名称";
+            this.gsName.Name = "gsName";
+            // 
+            // bcName
+            // 
+            this.bcName.HeaderText = "投标单位名称";
+            this.bcName.Name = "bcName";
+            // 
+            // gadDecryptState
+            // 
+            this.gadDecryptState.HeaderText = "密封情况";
+            this.gadDecryptState.Name = "gadDecryptState";
+            // 
+            // gsSecdePosit
+            // 
+            this.gsSecdePosit.HeaderText = "保证金";
+            this.gsSecdePosit.Name = "gsSecdePosit";
+            // 
+            // gadCashDepositState
+            // 
+            this.gadCashDepositState.HeaderText = "缴纳状态";
+            this.gadCashDepositState.Name = "gadCashDepositState";
+            // 
+            // gadBidPrice
+            // 
+            this.gadBidPrice.HeaderText = "投标报价";
+            this.gadBidPrice.Name = "gadBidPrice";
+            // 
+            // quantity
+            // 
+            this.quantity.HeaderText = "质量";
+            this.quantity.Name = "quantity";
+            // 
+            // gadDuration
+            // 
+            this.gadDuration.HeaderText = "工期（天）";
+            this.gadDuration.Name = "gadDuration";
+            // 
+            // gadTradAddress
+            // 
+            this.gadTradAddress.HeaderText = "交货地点";
+            this.gadTradAddress.Name = "gadTradAddress";
+            // 
+            // gadDecryptName
+            // 
+            this.gadDecryptName.HeaderText = "解密人";
+            this.gadDecryptName.Name = "gadDecryptName";
+            // 
+            // gadDecryptTime
+            // 
+            this.gadDecryptTime.HeaderText = "解密时间";
+            this.gadDecryptTime.Name = "gadDecryptTime";
+            // 
+            // gadRecSignState
+            // 
+            this.gadRecSignState.HeaderText = "投标人签名";
+            this.gadRecSignState.Name = "gadRecSignState";
+            // 
             // OOBDecryptBidFileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -951,13 +959,14 @@
             this.Name = "OOBDecryptBidFileForm";
             this.Text = "开标大厅";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.OOBDecryptBidFileForm_Load);
             this.metroPanel1.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid4)).EndInit();
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid3)).EndInit();
             this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gOpenBidList)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
@@ -978,25 +987,25 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtSign;
+        private System.Windows.Forms.TextBox txtConfirmPrice;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDecrypt;
+        private System.Windows.Forms.TextBox txtSignInTime;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_continue;
+        private System.Windows.Forms.Button btn_pause;
+        private System.Windows.Forms.Button btn_Start;
+        private System.Windows.Forms.Button btn_sign;
+        private System.Windows.Forms.Button btn_setDecrypt;
+        private System.Windows.Forms.Button btn_confirmPrice;
+        private System.Windows.Forms.Button btn_setSignIn;
+        private System.Windows.Forms.Button btn_signIn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label12;
@@ -1023,22 +1032,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column25;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column26;
         private System.Windows.Forms.GroupBox groupBox4;
-        private MetroFramework.Controls.MetroGrid metroGrid2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
+        private MetroFramework.Controls.MetroGrid gOpenBidList;
         private MetroFramework.Controls.MetroGrid metroGrid1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -1048,5 +1042,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gtpCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gtpName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gsCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gsName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bcName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gadDecryptState;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gsSecdePosit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gadCashDepositState;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gadBidPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gadDuration;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gadTradAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gadDecryptName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gadDecryptTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gadRecSignState;
     }
 }

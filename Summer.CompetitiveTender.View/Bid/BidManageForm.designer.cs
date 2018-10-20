@@ -34,20 +34,19 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.tabControl1 = new MetroFramework.Controls.MetroTabControl();
+            this.tab_tenderList = new MetroFramework.Controls.MetroTabControl();
             this.tab_UploadFile = new MetroFramework.Controls.MetroTabPage();
             this.btn_upload = new MetroFramework.Controls.MetroButton();
+            this.btn_StorePath = new MetroFramework.Controls.MetroButton();
+            this.txt_StorePath = new MetroFramework.Controls.MetroTextBox();
             this.btn_browse = new MetroFramework.Controls.MetroButton();
+            this.htmlLabel3 = new MetroFramework.Drawing.Html.HtmlLabel();
             this.txt_path = new MetroFramework.Controls.MetroTextBox();
             this.htmlLabel2 = new MetroFramework.Drawing.Html.HtmlLabel();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.cob_objectList = new MetroFramework.Controls.MetroComboBox();
             this.htmlLabel1 = new MetroFramework.Drawing.Html.HtmlLabel();
             this.tab_MakeTenderFile = new MetroFramework.Controls.MetroTabPage();
             this.dgv_tenderFile = new MetroFramework.Controls.MetroGrid();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewLinkColumn1 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.tab_HistoryData = new MetroFramework.Controls.MetroTabPage();
             this.dgv_historyFile = new MetroFramework.Controls.MetroGrid();
             this.project = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,10 +54,12 @@
             this.c11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.download = new System.Windows.Forms.DataGridViewLinkColumn();
             this.tab_DiscussArea = new MetroFramework.Controls.MetroTabPage();
-            this.htmlLabel3 = new MetroFramework.Drawing.Html.HtmlLabel();
-            this.txt_StorePath = new MetroFramework.Controls.MetroTextBox();
-            this.btn_StorePath = new MetroFramework.Controls.MetroButton();
-            this.tabControl1.SuspendLayout();
+            this.colProjectCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSectionCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSectionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDownLoad = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.tab_tenderList.SuspendLayout();
             this.tab_UploadFile.SuspendLayout();
             this.tab_MakeTenderFile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tenderFile)).BeginInit();
@@ -66,19 +67,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_historyFile)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tab_tenderList
             // 
-            this.tabControl1.Controls.Add(this.tab_UploadFile);
-            this.tabControl1.Controls.Add(this.tab_MakeTenderFile);
-            this.tabControl1.Controls.Add(this.tab_HistoryData);
-            this.tabControl1.Controls.Add(this.tab_DiscussArea);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(20, 60);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(724, 459);
-            this.tabControl1.TabIndex = 0;
-            this.tabControl1.UseSelectable = true;
+            this.tab_tenderList.Controls.Add(this.tab_UploadFile);
+            this.tab_tenderList.Controls.Add(this.tab_MakeTenderFile);
+            this.tab_tenderList.Controls.Add(this.tab_HistoryData);
+            this.tab_tenderList.Controls.Add(this.tab_DiscussArea);
+            this.tab_tenderList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tab_tenderList.Location = new System.Drawing.Point(20, 60);
+            this.tab_tenderList.Name = "tab_tenderList";
+            this.tab_tenderList.SelectedIndex = 0;
+            this.tab_tenderList.Size = new System.Drawing.Size(724, 459);
+            this.tab_tenderList.TabIndex = 0;
+            this.tab_tenderList.UseSelectable = true;
             // 
             // tab_UploadFile
             // 
@@ -89,7 +90,7 @@
             this.tab_UploadFile.Controls.Add(this.htmlLabel3);
             this.tab_UploadFile.Controls.Add(this.txt_path);
             this.tab_UploadFile.Controls.Add(this.htmlLabel2);
-            this.tab_UploadFile.Controls.Add(this.metroComboBox1);
+            this.tab_UploadFile.Controls.Add(this.cob_objectList);
             this.tab_UploadFile.Controls.Add(this.htmlLabel1);
             this.tab_UploadFile.HorizontalScrollbarBarColor = true;
             this.tab_UploadFile.HorizontalScrollbarHighlightOnWheel = false;
@@ -113,6 +114,47 @@
             this.btn_upload.UseSelectable = true;
             this.btn_upload.Click += new System.EventHandler(this.btn_upload_Click);
             // 
+            // btn_StorePath
+            // 
+            this.btn_StorePath.Location = new System.Drawing.Point(419, 215);
+            this.btn_StorePath.Name = "btn_StorePath";
+            this.btn_StorePath.Size = new System.Drawing.Size(60, 23);
+            this.btn_StorePath.TabIndex = 1;
+            this.btn_StorePath.Text = "浏览";
+            this.btn_StorePath.UseSelectable = true;
+            this.btn_StorePath.Click += new System.EventHandler(this.btn_StorePath_Click);
+            // 
+            // txt_StorePath
+            // 
+            // 
+            // 
+            // 
+            this.txt_StorePath.CustomButton.Image = null;
+            this.txt_StorePath.CustomButton.Location = new System.Drawing.Point(210, 1);
+            this.txt_StorePath.CustomButton.Name = "";
+            this.txt_StorePath.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txt_StorePath.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txt_StorePath.CustomButton.TabIndex = 1;
+            this.txt_StorePath.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txt_StorePath.CustomButton.UseSelectable = true;
+            this.txt_StorePath.CustomButton.Visible = false;
+            this.txt_StorePath.Lines = new string[0];
+            this.txt_StorePath.Location = new System.Drawing.Point(188, 215);
+            this.txt_StorePath.MaxLength = 32767;
+            this.txt_StorePath.Name = "txt_StorePath";
+            this.txt_StorePath.PasswordChar = '\0';
+            this.txt_StorePath.ReadOnly = true;
+            this.txt_StorePath.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txt_StorePath.SelectedText = "";
+            this.txt_StorePath.SelectionLength = 0;
+            this.txt_StorePath.SelectionStart = 0;
+            this.txt_StorePath.ShortcutsEnabled = true;
+            this.txt_StorePath.Size = new System.Drawing.Size(232, 23);
+            this.txt_StorePath.TabIndex = 5;
+            this.txt_StorePath.UseSelectable = true;
+            this.txt_StorePath.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txt_StorePath.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // btn_browse
             // 
             this.btn_browse.Location = new System.Drawing.Point(420, 151);
@@ -122,6 +164,18 @@
             this.btn_browse.Text = "浏览";
             this.btn_browse.UseSelectable = true;
             this.btn_browse.Click += new System.EventHandler(this.btn_browse_Click);
+            // 
+            // htmlLabel3
+            // 
+            this.htmlLabel3.AutoScroll = true;
+            this.htmlLabel3.AutoScrollMinSize = new System.Drawing.Size(70, 22);
+            this.htmlLabel3.AutoSize = false;
+            this.htmlLabel3.BackColor = System.Drawing.SystemColors.Window;
+            this.htmlLabel3.Location = new System.Drawing.Point(106, 215);
+            this.htmlLabel3.Name = "htmlLabel3";
+            this.htmlLabel3.Size = new System.Drawing.Size(75, 23);
+            this.htmlLabel3.TabIndex = 4;
+            this.htmlLabel3.Text = "存放位置：";
             // 
             // txt_path
             // 
@@ -166,19 +220,19 @@
             this.htmlLabel2.TabIndex = 4;
             this.htmlLabel2.Text = "投标文件：";
             // 
-            // metroComboBox1
+            // cob_objectList
             // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Items.AddRange(new object[] {
+            this.cob_objectList.FormattingEnabled = true;
+            this.cob_objectList.ItemHeight = 23;
+            this.cob_objectList.Items.AddRange(new object[] {
             "项目1",
             "项目2",
             "项目3"});
-            this.metroComboBox1.Location = new System.Drawing.Point(189, 82);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(291, 29);
-            this.metroComboBox1.TabIndex = 0;
-            this.metroComboBox1.UseSelectable = true;
+            this.cob_objectList.Location = new System.Drawing.Point(189, 82);
+            this.cob_objectList.Name = "cob_objectList";
+            this.cob_objectList.Size = new System.Drawing.Size(291, 29);
+            this.cob_objectList.TabIndex = 0;
+            this.cob_objectList.UseSelectable = true;
             // 
             // htmlLabel1
             // 
@@ -212,6 +266,7 @@
             // dgv_tenderFile
             // 
             this.dgv_tenderFile.AllowUserToAddRows = false;
+            this.dgv_tenderFile.AllowUserToDeleteRows = false;
             this.dgv_tenderFile.AllowUserToResizeRows = false;
             this.dgv_tenderFile.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dgv_tenderFile.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -227,10 +282,11 @@
             this.dgv_tenderFile.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_tenderFile.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_tenderFile.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewLinkColumn1});
+            this.colProjectCode,
+            this.colProjectName,
+            this.colSectionCode,
+            this.colSectionName,
+            this.colDownLoad});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -245,6 +301,7 @@
             this.dgv_tenderFile.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dgv_tenderFile.Location = new System.Drawing.Point(3, 3);
             this.dgv_tenderFile.Name = "dgv_tenderFile";
+            this.dgv_tenderFile.ReadOnly = true;
             this.dgv_tenderFile.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
@@ -259,26 +316,6 @@
             this.dgv_tenderFile.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_tenderFile.Size = new System.Drawing.Size(710, 411);
             this.dgv_tenderFile.TabIndex = 3;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "文件名称";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "所属项目";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "创建时间";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewLinkColumn1
-            // 
-            this.dataGridViewLinkColumn1.HeaderText = "下载";
-            this.dataGridViewLinkColumn1.Name = "dataGridViewLinkColumn1";
             // 
             // tab_HistoryData
             // 
@@ -380,70 +417,47 @@
             this.tab_DiscussArea.VerticalScrollbarHighlightOnWheel = false;
             this.tab_DiscussArea.VerticalScrollbarSize = 10;
             // 
-            // htmlLabel3
+            // colProjectCode
             // 
-            this.htmlLabel3.AutoScroll = true;
-            this.htmlLabel3.AutoScrollMinSize = new System.Drawing.Size(70, 22);
-            this.htmlLabel3.AutoSize = false;
-            this.htmlLabel3.BackColor = System.Drawing.SystemColors.Window;
-            this.htmlLabel3.Location = new System.Drawing.Point(106, 215);
-            this.htmlLabel3.Name = "htmlLabel3";
-            this.htmlLabel3.Size = new System.Drawing.Size(75, 23);
-            this.htmlLabel3.TabIndex = 4;
-            this.htmlLabel3.Text = "存放位置：";
+            this.colProjectCode.HeaderText = "项目编号";
+            this.colProjectCode.Name = "colProjectCode";
+            this.colProjectCode.ReadOnly = true;
             // 
-            // txt_StorePath
+            // colProjectName
             // 
+            this.colProjectName.HeaderText = "项目名称";
+            this.colProjectName.Name = "colProjectName";
+            this.colProjectName.ReadOnly = true;
             // 
+            // colSectionCode
             // 
+            this.colSectionCode.HeaderText = "标段编号";
+            this.colSectionCode.Name = "colSectionCode";
+            this.colSectionCode.ReadOnly = true;
             // 
-            this.txt_StorePath.CustomButton.Image = null;
-            this.txt_StorePath.CustomButton.Location = new System.Drawing.Point(210, 1);
-            this.txt_StorePath.CustomButton.Name = "";
-            this.txt_StorePath.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txt_StorePath.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txt_StorePath.CustomButton.TabIndex = 1;
-            this.txt_StorePath.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txt_StorePath.CustomButton.UseSelectable = true;
-            this.txt_StorePath.CustomButton.Visible = false;
-            this.txt_StorePath.Lines = new string[0];
-            this.txt_StorePath.Location = new System.Drawing.Point(188, 215);
-            this.txt_StorePath.MaxLength = 32767;
-            this.txt_StorePath.Name = "txt_StorePath";
-            this.txt_StorePath.PasswordChar = '\0';
-            this.txt_StorePath.ReadOnly = true;
-            this.txt_StorePath.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txt_StorePath.SelectedText = "";
-            this.txt_StorePath.SelectionLength = 0;
-            this.txt_StorePath.SelectionStart = 0;
-            this.txt_StorePath.ShortcutsEnabled = true;
-            this.txt_StorePath.Size = new System.Drawing.Size(232, 23);
-            this.txt_StorePath.TabIndex = 5;
-            this.txt_StorePath.UseSelectable = true;
-            this.txt_StorePath.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txt_StorePath.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // colSectionName
             // 
-            // btn_StorePath
+            this.colSectionName.HeaderText = "标段名称";
+            this.colSectionName.Name = "colSectionName";
+            this.colSectionName.ReadOnly = true;
             // 
-            this.btn_StorePath.Location = new System.Drawing.Point(419, 215);
-            this.btn_StorePath.Name = "btn_StorePath";
-            this.btn_StorePath.Size = new System.Drawing.Size(60, 23);
-            this.btn_StorePath.TabIndex = 1;
-            this.btn_StorePath.Text = "浏览";
-            this.btn_StorePath.UseSelectable = true;
-            this.btn_StorePath.Click += new System.EventHandler(this.btn_StorePath_Click);
+            // colDownLoad
+            // 
+            this.colDownLoad.HeaderText = "下载";
+            this.colDownLoad.Name = "colDownLoad";
+            this.colDownLoad.ReadOnly = true;
             // 
             // BidManageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(764, 539);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tab_tenderList);
             this.Name = "BidManageForm";
             this.Text = "投标管理";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.BidManage_Load);
-            this.tabControl1.ResumeLayout(false);
+            this.tab_tenderList.ResumeLayout(false);
             this.tab_UploadFile.ResumeLayout(false);
             this.tab_MakeTenderFile.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tenderFile)).EndInit();
@@ -455,7 +469,7 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroTabControl tabControl1;
+        private MetroFramework.Controls.MetroTabControl tab_tenderList;
         private MetroFramework.Controls.MetroTabPage tab_MakeTenderFile;
         private MetroFramework.Controls.MetroTabPage tab_DiscussArea;
         private MetroFramework.Controls.MetroTabPage tab_HistoryData;
@@ -466,18 +480,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn c11;
         private System.Windows.Forms.DataGridViewLinkColumn download;
         private MetroFramework.Drawing.Html.HtmlLabel htmlLabel2;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
+        private MetroFramework.Controls.MetroComboBox cob_objectList;
         private MetroFramework.Drawing.Html.HtmlLabel htmlLabel1;
         private MetroFramework.Controls.MetroButton btn_upload;
         private MetroFramework.Controls.MetroButton btn_browse;
         private MetroFramework.Controls.MetroTextBox txt_path;
         private MetroFramework.Controls.MetroGrid dgv_tenderFile;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewLinkColumn dataGridViewLinkColumn1;
         private MetroFramework.Controls.MetroButton btn_StorePath;
         private MetroFramework.Controls.MetroTextBox txt_StorePath;
         private MetroFramework.Drawing.Html.HtmlLabel htmlLabel3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProjectCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProjectName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSectionCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSectionName;
+        private System.Windows.Forms.DataGridViewLinkColumn colDownLoad;
     }
 }

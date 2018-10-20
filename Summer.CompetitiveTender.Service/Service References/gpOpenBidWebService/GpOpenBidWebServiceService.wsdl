@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webservice.govpurchase.opensource.com/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="GpOpenBidWebServiceService" targetNamespace="http://webservice.govpurchase.opensource.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://webservice.govpurchase.opensource.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="getDecRecordByGtpId" type="tns:getDecRecordByGtpId" />
+      <xs:element name="getDecRecordByGtpIdResponse" type="tns:getDecRecordByGtpIdResponse" />
+      <xs:complexType name="getDecRecordByGtpId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getDecRecordByGtpIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="resultDO">
+        <xs:sequence>
+          <xs:element name="code" type="xs:int" />
+          <xs:element minOccurs="0" name="fileContent" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+          <xs:element minOccurs="0" name="obj" type="xs:anyType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="objList" nillable="true" type="xs:anyType" />
+          <xs:element name="success" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="gpApplyDetailDTO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:gpApplyDetailDO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="applySectionCount" type="xs:int" />
+              <xs:element minOccurs="0" name="arriveTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="backPersonCoName" type="xs:string" />
+              <xs:element minOccurs="0" name="backPersonName" type="xs:string" />
+              <xs:element minOccurs="0" name="bcId" type="xs:string" />
+              <xs:element minOccurs="0" name="bcLandTaxCode" type="xs:string" />
+              <xs:element minOccurs="0" name="bcName" type="xs:string" />
+              <xs:element minOccurs="0" name="bcOptTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="bidPriceConversion" type="xs:int" />
+              <xs:element minOccurs="0" name="bidPriceDatum" type="xs:int" />
+              <xs:element minOccurs="0" name="bidPricePuName" type="xs:string" />
+              <xs:element minOccurs="0" name="bmnName" type="xs:string" />
+              <xs:element minOccurs="0" name="bptCode" type="xs:string" />
+              <xs:element minOccurs="0" name="buCode" type="xs:string" />
+              <xs:element minOccurs="0" name="buId" type="xs:string" />
+              <xs:element minOccurs="0" name="buName" type="xs:string" />
+              <xs:element minOccurs="0" name="canApplySectionCount" type="xs:int" />
+              <xs:element minOccurs="0" name="canBidFile" type="xs:int" />
+              <xs:element minOccurs="0" name="canCashDeposit" type="xs:int" />
+              <xs:element minOccurs="0" name="canGetTenderFile" type="xs:int" />
+              <xs:element minOccurs="0" name="canRegist" type="xs:int" />
+              <xs:element minOccurs="0" name="cashDepositBmnName" type="xs:string" />
+              <xs:element minOccurs="0" name="cashdePayMethod" type="xs:int" />
+              <xs:element minOccurs="0" name="cashdePayState" type="xs:int" />
+              <xs:element minOccurs="0" name="evalAvg" type="xs:double" />
+              <xs:element minOccurs="0" name="evalSumScore" type="xs:double" />
+              <xs:element minOccurs="0" name="exceptionState" type="xs:double" />
+              <xs:element minOccurs="0" name="filePayMethod" type="xs:int" />
+              <xs:element minOccurs="0" name="filePayState" type="xs:int" />
+              <xs:element minOccurs="0" name="filingState" type="xs:int" />
+              <xs:element minOccurs="0" name="flag" type="xs:int" />
+              <xs:element minOccurs="0" name="gadAddr" type="xs:string" />
+              <xs:element minOccurs="0" name="gadApplyCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadApplyCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gadApplyName" type="xs:string" />
+              <xs:element minOccurs="0" name="gadApplyTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="gadBackInterest" type="xs:decimal" />
+              <xs:element minOccurs="0" name="gadCashDepositPuName" type="xs:string" />
+              <xs:element minOccurs="0" name="gadDecryptName" type="xs:string" />
+              <xs:element minOccurs="0" name="gadManagerCodeTypeName" type="xs:string" />
+              <xs:element minOccurs="0" name="gadSignName" type="xs:string" />
+              <xs:element minOccurs="0" name="gatherAvg" type="xs:double" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="gbfcList" nillable="true" type="tns:gpBidFileContentDTO" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="gblList" nillable="true" type="tns:gpBiddingListDTO" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="gewtList" nillable="true" type="tns:gpBaseEvalWayTypeDTO" />
+              <xs:element minOccurs="0" name="gnCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gnId" type="xs:string" />
+              <xs:element minOccurs="0" name="gnState" type="xs:int" />
+              <xs:element minOccurs="0" name="gnType" type="xs:int" />
+              <xs:element minOccurs="0" name="gsClassIfyCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gsCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gsContent" type="xs:string" />
+              <xs:element minOccurs="0" name="gsEstPrice" type="xs:double" />
+              <xs:element minOccurs="0" name="gsFileFee" type="xs:double" />
+              <xs:element minOccurs="0" name="gsHebCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gsMoneyCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gsName" type="xs:string" />
+              <xs:element minOccurs="0" name="gsRemark" type="xs:string" />
+              <xs:element minOccurs="0" name="gsSecdePosit" type="xs:double" />
+              <xs:element minOccurs="0" name="gtpCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpGetFileBeginTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="gtpGetFileEndTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="gtpHebCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpName" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpOpenBidTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="gtpPayEndTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="gtpState" type="xs:int" />
+              <xs:element minOccurs="0" name="gtpSubmitEndTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="gtpSubmitStartTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="gtpType" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpWayName" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpWays" type="xs:int" />
+              <xs:element minOccurs="0" name="isApply" type="xs:int" />
+              <xs:element minOccurs="0" name="isOpenBidTime" type="xs:int" />
+              <xs:element minOccurs="0" name="isRegistTimeSub" type="xs:int" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="itemList" nillable="true" type="tns:gpSectEvalWaysItem" />
+              <xs:element minOccurs="0" name="openBidState" type="xs:int" />
+              <xs:element minOccurs="0" name="priceScore" type="xs:double" />
+              <xs:element minOccurs="0" name="puConversion" type="xs:int" />
+              <xs:element minOccurs="0" name="puDatum" type="xs:int" />
+              <xs:element minOccurs="0" name="puName" type="xs:string" />
+              <xs:element minOccurs="0" name="receiveCoName" type="xs:string" />
+              <xs:element minOccurs="0" name="receiverName" type="xs:string" />
+              <xs:element minOccurs="0" name="registState" type="xs:int" />
+              <xs:element minOccurs="0" name="registTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="score" type="xs:double" />
+              <xs:element minOccurs="0" name="strBidPrice" type="xs:string" />
+              <xs:element minOccurs="0" name="strGadDecryptTime" type="xs:string" />
+              <xs:element minOccurs="0" name="syncState" type="xs:int" />
+              <xs:element minOccurs="0" name="verifyState" type="xs:int" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="gpApplyDetailDO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:baseEntity">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="amount" type="xs:double" />
+              <xs:element minOccurs="0" name="backPersonCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="backPersonId" type="xs:string" />
+              <xs:element minOccurs="0" name="backState" type="xs:int" />
+              <xs:element minOccurs="0" name="backTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="content" type="xs:string" />
+              <xs:element minOccurs="0" name="convertState" type="xs:int" />
+              <xs:element minOccurs="0" name="decryptOutFile" type="xs:string" />
+              <xs:element minOccurs="0" name="encryptCode" type="xs:string" />
+              <xs:element minOccurs="0" name="encryptState" type="xs:int" />
+              <xs:element minOccurs="0" name="gadAllCashDeposit" type="xs:decimal" />
+              <xs:element minOccurs="0" name="gadApplyId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadBackCashDeposit" type="xs:decimal" />
+              <xs:element minOccurs="0" name="gadBidCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gadBidCompanyId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadBidFileId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadBidMoneyCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gadBidOldName" type="xs:string" />
+              <xs:element minOccurs="0" name="gadBidPersonId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadBidPersonName" type="xs:string" />
+              <xs:element minOccurs="0" name="gadBidPrice" type="xs:double" />
+              <xs:element minOccurs="0" name="gadBidPriceType" type="xs:int" />
+              <xs:element minOccurs="0" name="gadBidSignCert" type="xs:string" />
+              <xs:element minOccurs="0" name="gadBidSignCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadBidSignState" type="xs:int" />
+              <xs:element minOccurs="0" name="gadBidSignTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="gadBidSignedValue" type="xs:string" />
+              <xs:element minOccurs="0" name="gadBidSignerId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadBidSort" type="xs:int" />
+              <xs:element minOccurs="0" name="gadBidState" type="xs:int" />
+              <xs:element minOccurs="0" name="gadBidSuffix" type="xs:string" />
+              <xs:element minOccurs="0" name="gadBidTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="gadBidValidity" type="xs:int" />
+              <xs:element minOccurs="0" name="gadCashDeposit" type="xs:decimal" />
+              <xs:element minOccurs="0" name="gadCashDepositNeed" type="xs:int" />
+              <xs:element minOccurs="0" name="gadCashDepositState" type="xs:int" />
+              <xs:element minOccurs="0" name="gadCashMoneyCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gadCashPriceType" type="xs:int" />
+              <xs:element minOccurs="0" name="gadCashdePositWay" type="xs:int" />
+              <xs:element minOccurs="0" name="gadCommercialName" type="xs:string" />
+              <xs:element minOccurs="0" name="gadCommercialNewName" type="xs:string" />
+              <xs:element minOccurs="0" name="gadCommercialSize" type="xs:long" />
+              <xs:element minOccurs="0" name="gadCommercialSuffix" type="xs:string" />
+              <xs:element minOccurs="0" name="gadCommercialUrl" type="xs:string" />
+              <xs:element minOccurs="0" name="gadDecryptCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadDecryptId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadDecryptState" type="xs:int" />
+              <xs:element minOccurs="0" name="gadDecryptTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="gadDeposit" type="xs:decimal" />
+              <xs:element minOccurs="0" name="gadDuration" type="xs:int" />
+              <xs:element minOccurs="0" name="gadFileAllPrice" type="xs:decimal" />
+              <xs:element minOccurs="0" name="gadFileDownload" type="xs:int" />
+              <xs:element minOccurs="0" name="gadFileKey" type="xs:string" />
+              <xs:element minOccurs="0" name="gadFilePrice" type="xs:decimal" />
+              <xs:element minOccurs="0" name="gadFileState" type="xs:int" />
+              <xs:element minOccurs="0" name="gadId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadIsBid" type="xs:int" />
+              <xs:element minOccurs="0" name="gadIsPreBid" type="xs:int" />
+              <xs:element minOccurs="0" name="gadIsProPose" type="xs:int" />
+              <xs:element minOccurs="0" name="gadManagerCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gadManagerCodeType" type="xs:string" />
+              <xs:element minOccurs="0" name="gadManagerName" type="xs:string" />
+              <xs:element minOccurs="0" name="gadPriceName" type="xs:string" />
+              <xs:element minOccurs="0" name="gadPriceNewName" type="xs:string" />
+              <xs:element minOccurs="0" name="gadPriceSize" type="xs:long" />
+              <xs:element minOccurs="0" name="gadPriceSuffix" type="xs:string" />
+              <xs:element minOccurs="0" name="gadPriceUrl" type="xs:string" />
+              <xs:element minOccurs="0" name="gadProjectFileId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadRecSignCert" type="xs:string" />
+              <xs:element minOccurs="0" name="gadRecSignCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadRecSignState" type="xs:int" />
+              <xs:element minOccurs="0" name="gadRecSignTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="gadRecSignedValue" type="xs:string" />
+              <xs:element minOccurs="0" name="gadRecSignerId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadReceiveCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadReceiveState" type="xs:int" />
+              <xs:element minOccurs="0" name="gadReceiveTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="gadReceiverId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadSecondFileUrl" type="xs:string" />
+              <xs:element minOccurs="0" name="gadSignCert" type="xs:string" />
+              <xs:element minOccurs="0" name="gadSignCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadSignId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadSignState" type="xs:int" />
+              <xs:element minOccurs="0" name="gadSignTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="gadSignedValue" type="xs:string" />
+              <xs:element minOccurs="0" name="gadSurePriceCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadSurePriceId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadSurePriceState" type="xs:int" />
+              <xs:element minOccurs="0" name="gadSurePriceTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="gadTechnicalName" type="xs:string" />
+              <xs:element minOccurs="0" name="gadTechnicalNewName" type="xs:string" />
+              <xs:element minOccurs="0" name="gadTechnicalSize" type="xs:long" />
+              <xs:element minOccurs="0" name="gadTechnicalSuffix" type="xs:string" />
+              <xs:element minOccurs="0" name="gadTechnicalUrl" type="xs:string" />
+              <xs:element minOccurs="0" name="gadTradAddress" type="xs:string" />
+              <xs:element minOccurs="0" name="gaiId" type="xs:string" />
+              <xs:element minOccurs="0" name="gsId" type="xs:string" />
+              <xs:element minOccurs="0" name="gtfMakeUrl" type="xs:string" />
+              <xs:element minOccurs="0" name="gtfNewName" type="xs:string" />
+              <xs:element minOccurs="0" name="gtfOldName" type="xs:string" />
+              <xs:element minOccurs="0" name="gtfSize" type="xs:long" />
+              <xs:element minOccurs="0" name="gtfSuffix" type="xs:string" />
+              <xs:element minOccurs="0" name="gtfUploadTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="gtfUrl" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+              <xs:element minOccurs="0" name="quantity" type="xs:int" />
+              <xs:element minOccurs="0" name="sendBackId" type="xs:string" />
+              <xs:element minOccurs="0" name="sendBackState" type="xs:int" />
+              <xs:element minOccurs="0" name="state" type="xs:int" />
+              <xs:element minOccurs="0" name="wordBidNewName" type="xs:string" />
+              <xs:element minOccurs="0" name="wordBidOldName" type="xs:string" />
+              <xs:element minOccurs="0" name="wordBidUrl" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="baseEntity" abstract="true">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="gpBidFileContentDTO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:gpBidFileContentDO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="adtCoName" type="xs:string" />
+              <xs:element minOccurs="0" name="adtName" type="xs:string" />
+              <xs:element minOccurs="0" name="gsCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gsName" type="xs:string" />
+              <xs:element minOccurs="0" name="gtcGsId" type="xs:string" />
+              <xs:element minOccurs="0" name="gtcTitle" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpName" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="gpBidFileContentDO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:baseEntity">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="adtCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="adtId" type="xs:string" />
+              <xs:element minOccurs="0" name="adtTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="gadId" type="xs:string" />
+              <xs:element minOccurs="0" name="gbfcContent" type="xs:string" />
+              <xs:element minOccurs="0" name="gbfcId" type="xs:string" />
+              <xs:element minOccurs="0" name="gbfcTitle" type="xs:string" />
+              <xs:element minOccurs="0" name="gsId" type="xs:string" />
+              <xs:element minOccurs="0" name="gtcId" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+              <xs:element minOccurs="0" name="optId" type="xs:string" />
+              <xs:element minOccurs="0" name="optTime" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="gpBiddingListDTO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:gpBiddingListDO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="bmnName" type="xs:string" />
+              <xs:element minOccurs="0" name="buName" type="xs:string" />
+              <xs:element minOccurs="0" name="gplPrice" type="xs:decimal" />
+              <xs:element minOccurs="0" name="gplUnit" type="xs:int" />
+              <xs:element minOccurs="0" name="gsCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gsName" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpName" type="xs:string" />
+              <xs:element minOccurs="0" name="multiple" type="xs:double" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="gpBiddingListDO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:baseEntity">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="adtCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="adtId" type="xs:string" />
+              <xs:element minOccurs="0" name="adtTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="currency" type="xs:string" />
+              <xs:element minOccurs="0" name="gblCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gblId" type="xs:string" />
+              <xs:element minOccurs="0" name="gblName" type="xs:string" />
+              <xs:element minOccurs="0" name="gblPrice" type="xs:decimal" />
+              <xs:element minOccurs="0" name="gblUnit" type="xs:int" />
+              <xs:element minOccurs="0" name="gplId" type="xs:string" />
+              <xs:element minOccurs="0" name="gsId" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+              <xs:element minOccurs="0" name="optCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="optId" type="xs:string" />
+              <xs:element minOccurs="0" name="optTime" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="gpBaseEvalWayTypeDTO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:baseEntity">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="applyBackState" type="xs:int" />
+              <xs:element minOccurs="0" name="bewtCode" type="xs:string" />
+              <xs:element minOccurs="0" name="bewtId" type="xs:long" />
+              <xs:element minOccurs="0" name="bewtName" type="xs:string" />
+              <xs:element minOccurs="0" name="bewtPid" type="xs:long" />
+              <xs:element minOccurs="0" name="bewtType" type="xs:int" />
+              <xs:element minOccurs="0" name="canDel" type="xs:int" />
+              <xs:element minOccurs="0" name="canGather" type="xs:int" />
+              <xs:element minOccurs="0" name="canSubmit" type="xs:int" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="childList" nillable="true" type="tns:gpBaseEvalWayTypeDTO" />
+              <xs:element minOccurs="0" name="evalOrder" type="xs:int" />
+              <xs:element minOccurs="0" name="evalType" type="xs:int" />
+              <xs:element minOccurs="0" name="gatherState" type="xs:int" />
+              <xs:element minOccurs="0" name="gatherSubmitState" type="xs:int" />
+              <xs:element minOccurs="0" name="gewtgCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gewtgId" type="xs:long" />
+              <xs:element minOccurs="0" name="gewtgName" type="xs:string" />
+              <xs:element minOccurs="0" name="gewtgPid" type="xs:long" />
+              <xs:element minOccurs="0" name="gewtgType" type="xs:int" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="gsItemList" nillable="true" type="tns:gpSectEvalWaysItem" />
+              <xs:element minOccurs="0" name="isPriceScore" type="xs:int" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="itemList" nillable="true" type="tns:gpBaseEvalWayItemDTO" />
+              <xs:element minOccurs="0" name="itemsType" type="xs:int" />
+              <xs:element minOccurs="0" name="moduleType" type="xs:int" />
+              <xs:element minOccurs="0" name="priceGatherState" type="xs:int" />
+              <xs:element minOccurs="0" name="projectType" type="xs:int" />
+              <xs:element minOccurs="0" name="score" type="xs:decimal" />
+              <xs:element minOccurs="0" name="sort" type="xs:int" />
+              <xs:element minOccurs="0" name="state" type="xs:int" />
+              <xs:element minOccurs="0" name="submitState" type="xs:int" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="gpSectEvalWaysItem">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:baseEntity">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="adtCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="adtId" type="xs:string" />
+              <xs:element minOccurs="0" name="adtTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="avgScores" type="xs:double" />
+              <xs:element minOccurs="0" name="firstNum" type="xs:double" />
+              <xs:element minOccurs="0" name="gerRemark" type="xs:string" />
+              <xs:element minOccurs="0" name="gerResult" type="xs:int" />
+              <xs:element minOccurs="0" name="gerScores" type="xs:double" />
+              <xs:element minOccurs="0" name="gewiId" type="xs:string" />
+              <xs:element minOccurs="0" name="gewtCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gewtId" type="xs:long" />
+              <xs:element minOccurs="0" name="gewtName" type="xs:string" />
+              <xs:element minOccurs="0" name="gsCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gsId" type="xs:string" />
+              <xs:element minOccurs="0" name="gsName" type="xs:string" />
+              <xs:element minOccurs="0" name="gseEntity" type="tns:gpSectionEval" />
+              <xs:element minOccurs="0" name="gseRemark" type="xs:string" />
+              <xs:element minOccurs="0" name="gseResult" type="xs:int" />
+              <xs:element minOccurs="0" name="gseScores" type="xs:double" />
+              <xs:element minOccurs="0" name="gsewiCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gsewiContent" type="xs:string" />
+              <xs:element minOccurs="0" name="gsewiId" type="xs:string" />
+              <xs:element minOccurs="0" name="gsewiMax" type="xs:double" />
+              <xs:element minOccurs="0" name="gsewiMin" type="xs:double" />
+              <xs:element minOccurs="0" name="gsewiName" type="xs:string" />
+              <xs:element minOccurs="0" name="gsewiType" type="xs:int" />
+              <xs:element minOccurs="0" name="gtpCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpName" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="list" nillable="true" type="tns:gpSectionEval" />
+              <xs:element minOccurs="0" name="optCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="optId" type="xs:string" />
+              <xs:element minOccurs="0" name="optTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="remark" type="xs:string" />
+              <xs:element minOccurs="0" name="remarks" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="resultList" nillable="true" type="tns:gpEvalResult" />
+              <xs:element minOccurs="0" name="rightCount" type="xs:int" />
+              <xs:element minOccurs="0" name="secondNum" type="xs:double" />
+              <xs:element minOccurs="0" name="sort" type="xs:int" />
+              <xs:element minOccurs="0" name="state" type="xs:int" />
+              <xs:element minOccurs="0" name="wrongCount" type="xs:int" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="gpSectionEval">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:baseEntity">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="gadId" type="xs:string" />
+              <xs:element minOccurs="0" name="gbfCompanyId" type="xs:string" />
+              <xs:element minOccurs="0" name="gbfPersonId" type="xs:string" />
+              <xs:element minOccurs="0" name="gewtId" type="xs:long" />
+              <xs:element minOccurs="0" name="gsId" type="xs:string" />
+              <xs:element minOccurs="0" name="gseCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gseId" type="xs:string" />
+              <xs:element minOccurs="0" name="gsePersonId" type="xs:string" />
+              <xs:element minOccurs="0" name="gsePersonName" type="xs:string" />
+              <xs:element minOccurs="0" name="gseResult" type="xs:int" />
+              <xs:element minOccurs="0" name="gseScores" type="xs:double" />
+              <xs:element minOccurs="0" name="gseTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="gsewiCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gsewiId" type="xs:string" />
+              <xs:element minOccurs="0" name="gsewiName" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+              <xs:element minOccurs="0" name="optCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="optId" type="xs:string" />
+              <xs:element minOccurs="0" name="optTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="remark" type="xs:string" />
+              <xs:element minOccurs="0" name="state" type="xs:int" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="gpEvalResult">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:baseEntity">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="gadBidCompanyId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadBidCompanyName" type="xs:string" />
+              <xs:element minOccurs="0" name="gadBidPersonId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadBidPrice" type="xs:double" />
+              <xs:element minOccurs="0" name="gadId" type="xs:string" />
+              <xs:element minOccurs="0" name="gerCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gerCompanyId" type="xs:string" />
+              <xs:element minOccurs="0" name="gerId" type="xs:string" />
+              <xs:element minOccurs="0" name="gerPersonId" type="xs:string" />
+              <xs:element minOccurs="0" name="gerResult" type="xs:int" />
+              <xs:element minOccurs="0" name="gerScores" type="xs:double" />
+              <xs:element minOccurs="0" name="gerTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="gewtId" type="xs:long" />
+              <xs:element minOccurs="0" name="gsId" type="xs:string" />
+              <xs:element minOccurs="0" name="gsewiId" type="xs:string" />
+              <xs:element minOccurs="0" name="gsewiName" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+              <xs:element minOccurs="0" name="optCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="optId" type="xs:string" />
+              <xs:element minOccurs="0" name="optTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="remark" type="xs:string" />
+              <xs:element minOccurs="0" name="state" type="xs:int" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="gpBaseEvalWayItemDTO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:baseEntity">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="algoName" type="xs:string" />
+              <xs:element minOccurs="0" name="bewiCode" type="xs:string" />
+              <xs:element minOccurs="0" name="bewiId" type="xs:string" />
+              <xs:element minOccurs="0" name="bewiName" type="xs:string" />
+              <xs:element minOccurs="0" name="bewiType" type="xs:int" />
+              <xs:element minOccurs="0" name="bewtId" type="xs:long" />
+              <xs:element minOccurs="0" name="bewtName" type="xs:string" />
+              <xs:element minOccurs="0" name="checked" type="xs:int" />
+              <xs:element minOccurs="0" name="firstParaDesc" type="xs:string" />
+              <xs:element minOccurs="0" name="isNeedFirstPara" type="xs:int" />
+              <xs:element minOccurs="0" name="isNeedSecondPara" type="xs:int" />
+              <xs:element minOccurs="0" name="maxScore" type="xs:decimal" />
+              <xs:element minOccurs="0" name="minScore" type="xs:decimal" />
+              <xs:element minOccurs="0" name="remark" type="xs:string" />
+              <xs:element minOccurs="0" name="secondParaDesc" type="xs:string" />
+              <xs:element minOccurs="0" name="sort" type="xs:int" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getDecRecordByGtpId">
+    <wsdl:part name="parameters" element="tns:getDecRecordByGtpId" />
+  </wsdl:message>
+  <wsdl:message name="getDecRecordByGtpIdResponse">
+    <wsdl:part name="parameters" element="tns:getDecRecordByGtpIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="GpOpenBidWebService">
+    <wsdl:operation name="getDecRecordByGtpId">
+      <wsdl:input name="getDecRecordByGtpId" message="tns:getDecRecordByGtpId" />
+      <wsdl:output name="getDecRecordByGtpIdResponse" message="tns:getDecRecordByGtpIdResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GpOpenBidWebServiceServiceSoapBinding" type="tns:GpOpenBidWebService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getDecRecordByGtpId">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getDecRecordByGtpId">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getDecRecordByGtpIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GpOpenBidWebServiceService">
+    <wsdl:port name="GpOpenBidWebServicePort" binding="tns:GpOpenBidWebServiceServiceSoapBinding">
+      <soap:address location="http://121.28.95.246:9090/webservice/gpOpenBidWebService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

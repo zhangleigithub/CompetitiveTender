@@ -2,16 +2,20 @@
 <wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webservice.govpurchase.opensource.com/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="GpSectionWebServiceService" targetNamespace="http://webservice.govpurchase.opensource.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <xs:schema elementFormDefault="unqualified" targetNamespace="http://webservice.govpurchase.opensource.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="findOpenBidSectionList" type="tns:findOpenBidSectionList" />
+      <xs:element name="findOpenBidSectionListResponse" type="tns:findOpenBidSectionListResponse" />
       <xs:element name="findSectionList" type="tns:findSectionList" />
       <xs:element name="findSectionListResponse" type="tns:findSectionListResponse" />
       <xs:element name="getSectionById" type="tns:getSectionById" />
       <xs:element name="getSectionByIdResponse" type="tns:getSectionByIdResponse" />
-      <xs:complexType name="getSectionById">
+      <xs:complexType name="findOpenBidSectionList">
         <xs:sequence>
-          <xs:element minOccurs="0" name="gsId" type="xs:string" />
+          <xs:element minOccurs="0" name="gtpName" type="xs:string" />
+          <xs:element minOccurs="0" name="gsName" type="xs:string" />
+          <xs:element minOccurs="0" name="auId" type="xs:string" />
         </xs:sequence>
       </xs:complexType>
-      <xs:complexType name="getSectionByIdResponse">
+      <xs:complexType name="findOpenBidSectionListResponse">
         <xs:sequence>
           <xs:element minOccurs="0" name="return" type="tns:resultDO" />
         </xs:sequence>
@@ -19,8 +23,10 @@
       <xs:complexType name="resultDO">
         <xs:sequence>
           <xs:element name="code" type="xs:int" />
+          <xs:element minOccurs="0" name="fileContent" type="xs:base64Binary" />
           <xs:element minOccurs="0" name="message" type="xs:string" />
           <xs:element minOccurs="0" name="obj" type="xs:anyType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="objList" nillable="true" type="xs:anyType" />
           <xs:element name="success" type="xs:boolean" />
         </xs:sequence>
       </xs:complexType>
@@ -79,12 +85,13 @@
               <xs:element minOccurs="0" name="gsEstPrice" type="xs:decimal" />
               <xs:element minOccurs="0" name="gsEvalWays" type="xs:long" />
               <xs:element minOccurs="0" name="gsFileFee" type="xs:decimal" />
-              <xs:element minOccurs="0" name="gsHebCode" type="xs:string" />
               <xs:element minOccurs="0" name="gsId" type="xs:string" />
               <xs:element minOccurs="0" name="gsMoneyCode" type="xs:string" />
               <xs:element minOccurs="0" name="gsMoneyCodeName" type="xs:string" />
+              <xs:element minOccurs="0" name="gsMoneyID" type="xs:string" />
               <xs:element minOccurs="0" name="gsName" type="xs:string" />
               <xs:element minOccurs="0" name="gsPriceType" type="xs:int" />
+              <xs:element minOccurs="0" name="gsPriceTypeID" type="xs:string" />
               <xs:element minOccurs="0" name="gsPriceTypeName" type="xs:string" />
               <xs:element minOccurs="0" name="gsRegistState" type="xs:int" />
               <xs:element minOccurs="0" name="gsSecdePosit" type="xs:decimal" />
@@ -126,9 +133,19 @@
       <xs:complexType name="baseEntity" abstract="true">
         <xs:sequence />
       </xs:complexType>
+      <xs:complexType name="getSectionById">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gsId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getSectionByIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
       <xs:complexType name="findSectionList">
         <xs:sequence>
-          <xs:element minOccurs="0" name="gtpName" type="xs:string" />
+          <xs:element minOccurs="0" name="gtpId" type="xs:string" />
         </xs:sequence>
       </xs:complexType>
       <xs:complexType name="findSectionListResponse">
@@ -138,6 +155,12 @@
       </xs:complexType>
     </xs:schema>
   </wsdl:types>
+  <wsdl:message name="findOpenBidSectionList">
+    <wsdl:part name="parameters" element="tns:findOpenBidSectionList" />
+  </wsdl:message>
+  <wsdl:message name="findOpenBidSectionListResponse">
+    <wsdl:part name="parameters" element="tns:findOpenBidSectionListResponse" />
+  </wsdl:message>
   <wsdl:message name="getSectionByIdResponse">
     <wsdl:part name="parameters" element="tns:getSectionByIdResponse" />
   </wsdl:message>
@@ -151,6 +174,10 @@
     <wsdl:part name="parameters" element="tns:findSectionList" />
   </wsdl:message>
   <wsdl:portType name="GpSectionWebService">
+    <wsdl:operation name="findOpenBidSectionList">
+      <wsdl:input name="findOpenBidSectionList" message="tns:findOpenBidSectionList" />
+      <wsdl:output name="findOpenBidSectionListResponse" message="tns:findOpenBidSectionListResponse" />
+    </wsdl:operation>
     <wsdl:operation name="getSectionById">
       <wsdl:input name="getSectionById" message="tns:getSectionById" />
       <wsdl:output name="getSectionByIdResponse" message="tns:getSectionByIdResponse" />
@@ -162,6 +189,15 @@
   </wsdl:portType>
   <wsdl:binding name="GpSectionWebServiceServiceSoapBinding" type="tns:GpSectionWebService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="findOpenBidSectionList">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="findOpenBidSectionList">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="findOpenBidSectionListResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="getSectionById">
       <soap:operation soapAction="" style="document" />
       <wsdl:input name="getSectionById">

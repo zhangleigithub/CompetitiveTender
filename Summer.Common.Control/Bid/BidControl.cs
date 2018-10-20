@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Summer.CompetitiveTender.Service.BidService;
+using Summer.CompetitiveTender.Service;
+using Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject;
 
 namespace Summer.Common.Controls.BidControl
 {
@@ -12,16 +14,19 @@ namespace Summer.Common.Controls.BidControl
     /// </summary>
     public class BidControl
     {
-        IBidService bidService = new BidService();
+        //投标服务层实体
+        private IBidService bidService = new BidService();
+        //招标服务层实体
+        private IGpTenderProjectService gpTenderProjectService = new GpTenderProjectService();
+
 
         /// <summary>
         /// 获取招标文件列表
         /// </summary>
-        /// <param name="id">登录人ID</param>
         /// <returns></returns>
-        public string GetBidData(string id)
+        public gpTenderProjectWebDO[] GetBidData()
         {
-            return bidService.FindList(id);
+            return gpTenderProjectService.FindListByCondition(string.Empty, string.Empty, string.Empty, string.Empty);
         }
     }
 }

@@ -1,8 +1,10 @@
 ﻿using log4net;
 using MetroFramework.Forms;
+using Summer.Common.Utility;
 using Summer.CompetitiveTender.Model;
 using Summer.CompetitiveTender.Service;
 using Summer.CompetitiveTender.Service.ServiceReferenceLogin;
+using Summer.CompetitiveTender.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -75,6 +77,27 @@ namespace Summer.CompetitiveTender.View
         public Login()
         {
             InitializeComponent();
+
+            //登录方式
+            this.cboLoginType.SelectedIndex = MonitorXTX.GetInstance().XTX.GetDeviceCount() > 0 ? 1 : 0;
+        }
+
+        private void cboLoginType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.cboLoginType.SelectedIndex == 0)
+            {
+                this.txtUserName.Text = "td_zbr";
+            }
+            else
+            {
+                //填充账号
+                string[] certIds = MonitorXTX.GetInstance().GetCertID();
+   
+                if (certIds.Length > 0)
+                {
+                    this.txtUserName.Text = certIds[0];
+                }
+            }
         }
 
         /// <summary>
@@ -86,14 +109,27 @@ namespace Summer.CompetitiveTender.View
         {
             try
             {
-                login login = new login();
-                login.account = this.txtUserName.Text.Trim();
-                login.password = this.txtPassword.Text.Trim();
-                login.acRole = this.UserType.ToLonginString();
-                login.macAddress = string.Empty;
+                baseUserWebDO result;
 
-                //登录
-                baseUserWebDO result = userService.Login(login);
+                //账号
+                if (this.cboLoginType.SelectedIndex == 0)
+                {
+                    login login = new login();
+                    login.account = this.txtUserName.Text.Trim();
+                    login.password = this.txtPassword.Text.Trim();
+                    login.acRole = this.UserType.ToLonginString();
+                    login.macAddress = LocalInfo.GetMacAddress();
+                    result = userService.Login(login);
+                }
+                else //CA
+                {
+                    CAlogin login = new CAlogin();
+                    login.caSignCert = this.txtUserName.Text.Trim();
+                    login.password = this.txtPassword.Text.Trim();
+                    login.acRole = this.UserType.ToLonginString();
+                    login.macAddress = LocalInfo.GetMacAddress();
+                    result = userService.CALogin(login);
+                }
 
                 //缓存
                 Cache.GetInstance().SetValue("login", result);

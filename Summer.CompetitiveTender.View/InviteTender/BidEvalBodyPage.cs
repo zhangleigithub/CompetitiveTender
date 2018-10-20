@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Summer.CompetitiveTender.Utility;
 
 namespace Summer.CompetitiveTender.View.InviteTender
 {
@@ -21,9 +22,19 @@ namespace Summer.CompetitiveTender.View.InviteTender
             OpenFileDialog ofdl = new OpenFileDialog();
             ofdl.Filter = "word(*.doc)|*.doc";
 
-            if (ofdl.ShowDialog()==DialogResult.OK)
+            if (ofdl.ShowDialog() == DialogResult.OK)
             {
                 this.axFramerControl1.Open(ofdl.FileName);
+            }
+        }
+
+        private void btnDZQZ_Click(object sender, EventArgs e)
+        {
+            string[] certIds = MonitorXTX.GetInstance().GetCertID();
+
+            if (certIds.Length > 0)
+            {
+                MonitorXTX.GetInstance().XTX.SOF_SignFile(certIds[0], this.axFramerControl1.DocumentFullName);
             }
         }
     }

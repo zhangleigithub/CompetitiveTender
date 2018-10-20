@@ -104,9 +104,9 @@ namespace Summer.CompetitiveTender.View.Bid
         /// <param name="e"></param>
         private void btn_upload_Click(object sender, EventArgs e)
         {
-            Utility utility = new Utility();
+            //Utility utility = new Utility();
             //压缩文件
-            utility.CompressRar(txt_path.Text, txt_StorePath.Text);
+            //utility.CompressRar(txt_path.Text, txt_StorePath.Text);
             MessageBox.Show("上传成功！");
         }
         /// <summary>

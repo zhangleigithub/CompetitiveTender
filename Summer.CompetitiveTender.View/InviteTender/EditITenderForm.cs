@@ -48,6 +48,11 @@ namespace Summer.CompetitiveTender.View.InviteTender
         /// </summary>
         private string sectionId;
 
+        /// <summary>
+        /// bidEvalBodyPage
+        /// </summary>
+        private BidEvalBodyPage bidEvalBodyPage = new BidEvalBodyPage();
+
         #endregion
 
         #region 事件
@@ -64,7 +69,6 @@ namespace Summer.CompetitiveTender.View.InviteTender
             switch (e.Node.Text)
             {
                 case "招标正文":
-                    BidEvalBodyPage bidEvalBodyPage = new BidEvalBodyPage();
                     bidEvalBodyPage.Dock = DockStyle.Fill;
                     this.pnelFrame.Controls.Add(bidEvalBodyPage);
                     break;

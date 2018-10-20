@@ -30,71 +30,84 @@ namespace Summer.CompetitiveTender.View
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.label1 = new MetroFramework.Controls.MetroLabel();
-            this.txtUserName = new MetroFramework.Controls.MetroTextBox();
-            this.label2 = new MetroFramework.Controls.MetroLabel();
-            this.txtPassword = new MetroFramework.Controls.MetroTextBox();
-            this.btnOk = new MetroFramework.Controls.MetroButton();
-            this.rbInviteTender = new MetroFramework.Controls.MetroRadioButton();
-            this.rbTender = new MetroFramework.Controls.MetroRadioButton();
-            this.rbExpert = new MetroFramework.Controls.MetroRadioButton();
+            this.cboLoginType = new System.Windows.Forms.ComboBox();
             this.rbAgency = new MetroFramework.Controls.MetroRadioButton();
+            this.rbExpert = new MetroFramework.Controls.MetroRadioButton();
+            this.rbTender = new MetroFramework.Controls.MetroRadioButton();
+            this.rbInviteTender = new MetroFramework.Controls.MetroRadioButton();
+            this.btnOk = new MetroFramework.Controls.MetroButton();
+            this.txtPassword = new MetroFramework.Controls.MetroTextBox();
+            this.label2 = new MetroFramework.Controls.MetroLabel();
+            this.txtUserName = new MetroFramework.Controls.MetroTextBox();
+            this.label1 = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
-            // label1
+            // cboLoginType
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(112, 88);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "账号：";
+            this.cboLoginType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboLoginType.FormattingEnabled = true;
+            this.cboLoginType.Items.AddRange(new object[] {
+            "账号",
+            "CA"});
+            this.cboLoginType.Location = new System.Drawing.Point(492, 239);
+            this.cboLoginType.Name = "cboLoginType";
+            this.cboLoginType.Size = new System.Drawing.Size(57, 20);
+            this.cboLoginType.TabIndex = 8;
+            this.cboLoginType.SelectedIndexChanged += new System.EventHandler(this.cboLoginType_SelectedIndexChanged);
             // 
-            // txtUserName
+            // rbAgency
             // 
-            this.txtUserName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.rbAgency.AutoSize = true;
+            this.rbAgency.Location = new System.Drawing.Point(229, 170);
+            this.rbAgency.Name = "rbAgency";
+            this.rbAgency.Size = new System.Drawing.Size(75, 15);
+            this.rbAgency.TabIndex = 7;
+            this.rbAgency.Text = "代理机构";
+            this.rbAgency.UseSelectable = true;
+            // 
+            // rbExpert
+            // 
+            this.rbExpert.AutoSize = true;
+            this.rbExpert.Location = new System.Drawing.Point(382, 170);
+            this.rbExpert.Name = "rbExpert";
+            this.rbExpert.Size = new System.Drawing.Size(75, 15);
+            this.rbExpert.TabIndex = 7;
+            this.rbExpert.Text = "评标专家";
+            this.rbExpert.UseSelectable = true;
+            // 
+            // rbTender
+            // 
+            this.rbTender.AutoSize = true;
+            this.rbTender.Location = new System.Drawing.Point(312, 170);
+            this.rbTender.Name = "rbTender";
+            this.rbTender.Size = new System.Drawing.Size(62, 15);
+            this.rbTender.TabIndex = 6;
+            this.rbTender.Text = "投标人";
+            this.rbTender.UseSelectable = true;
+            // 
+            // rbInviteTender
+            // 
+            this.rbInviteTender.AutoSize = true;
+            this.rbInviteTender.Checked = true;
+            this.rbInviteTender.Location = new System.Drawing.Point(159, 170);
+            this.rbInviteTender.Name = "rbInviteTender";
+            this.rbInviteTender.Size = new System.Drawing.Size(62, 15);
+            this.rbInviteTender.TabIndex = 5;
+            this.rbInviteTender.TabStop = true;
+            this.rbInviteTender.Text = "招标人";
+            this.rbInviteTender.UseSelectable = true;
+            // 
+            // btnOk
+            // 
+            this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            // 
-            // 
-            // 
-            this.txtUserName.CustomButton.Image = null;
-            this.txtUserName.CustomButton.Location = new System.Drawing.Point(278, 1);
-            this.txtUserName.CustomButton.Name = "";
-            this.txtUserName.CustomButton.Size = new System.Drawing.Size(19, 19);
-            this.txtUserName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtUserName.CustomButton.TabIndex = 1;
-            this.txtUserName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtUserName.CustomButton.UseSelectable = true;
-            this.txtUserName.CustomButton.Visible = false;
-            this.txtUserName.Lines = new string[] {
-        "td_zbr"};
-            this.txtUserName.Location = new System.Drawing.Point(159, 87);
-            this.txtUserName.MaxLength = 32767;
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.PasswordChar = '\0';
-            this.txtUserName.PromptText = "账号";
-            this.txtUserName.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtUserName.SelectedText = "";
-            this.txtUserName.SelectionLength = 0;
-            this.txtUserName.SelectionStart = 0;
-            this.txtUserName.ShortcutsEnabled = true;
-            this.txtUserName.Size = new System.Drawing.Size(298, 21);
-            this.txtUserName.TabIndex = 1;
-            this.txtUserName.Text = "td_zbr";
-            this.txtUserName.UseSelectable = true;
-            this.txtUserName.WaterMark = "账号";
-            this.txtUserName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtUserName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(112, 125);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 19);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "密码：";
+            this.btnOk.Location = new System.Drawing.Point(114, 214);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(343, 33);
+            this.btnOk.TabIndex = 4;
+            this.btnOk.Text = "登  录";
+            this.btnOk.UseSelectable = true;
+            this.btnOk.Click += new System.EventHandler(this.OnOkClick);
             // 
             // txtPassword
             // 
@@ -132,59 +145,61 @@ namespace Summer.CompetitiveTender.View
             this.txtPassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // btnOk
+            // label2
             // 
-            this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(112, 125);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 19);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "密码：";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtUserName
+            // 
+            this.txtUserName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOk.Location = new System.Drawing.Point(114, 214);
-            this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(343, 33);
-            this.btnOk.TabIndex = 4;
-            this.btnOk.Text = "登  录";
-            this.btnOk.UseSelectable = true;
-            this.btnOk.Click += new System.EventHandler(this.OnOkClick);
             // 
-            // rbInviteTender
             // 
-            this.rbInviteTender.AutoSize = true;
-            this.rbInviteTender.Checked = true;
-            this.rbInviteTender.Location = new System.Drawing.Point(159, 170);
-            this.rbInviteTender.Name = "rbInviteTender";
-            this.rbInviteTender.Size = new System.Drawing.Size(62, 15);
-            this.rbInviteTender.TabIndex = 5;
-            this.rbInviteTender.TabStop = true;
-            this.rbInviteTender.Text = "招标人";
-            this.rbInviteTender.UseSelectable = true;
             // 
-            // rbTender
+            this.txtUserName.CustomButton.Image = null;
+            this.txtUserName.CustomButton.Location = new System.Drawing.Point(278, 1);
+            this.txtUserName.CustomButton.Name = "";
+            this.txtUserName.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.txtUserName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtUserName.CustomButton.TabIndex = 1;
+            this.txtUserName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtUserName.CustomButton.UseSelectable = true;
+            this.txtUserName.CustomButton.Visible = false;
+            this.txtUserName.Lines = new string[] {
+        "td_zbr"};
+            this.txtUserName.Location = new System.Drawing.Point(159, 87);
+            this.txtUserName.MaxLength = 32767;
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.PasswordChar = '\0';
+            this.txtUserName.PromptText = "账号";
+            this.txtUserName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtUserName.SelectedText = "";
+            this.txtUserName.SelectionLength = 0;
+            this.txtUserName.SelectionStart = 0;
+            this.txtUserName.ShortcutsEnabled = true;
+            this.txtUserName.Size = new System.Drawing.Size(298, 21);
+            this.txtUserName.TabIndex = 1;
+            this.txtUserName.Text = "td_zbr";
+            this.txtUserName.UseSelectable = true;
+            this.txtUserName.WaterMark = "账号";
+            this.txtUserName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtUserName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            this.rbTender.AutoSize = true;
-            this.rbTender.Location = new System.Drawing.Point(312, 170);
-            this.rbTender.Name = "rbTender";
-            this.rbTender.Size = new System.Drawing.Size(62, 15);
-            this.rbTender.TabIndex = 6;
-            this.rbTender.Text = "投标人";
-            this.rbTender.UseSelectable = true;
+            // label1
             // 
-            // rbExpert
-            // 
-            this.rbExpert.AutoSize = true;
-            this.rbExpert.Location = new System.Drawing.Point(382, 170);
-            this.rbExpert.Name = "rbExpert";
-            this.rbExpert.Size = new System.Drawing.Size(75, 15);
-            this.rbExpert.TabIndex = 7;
-            this.rbExpert.Text = "评标专家";
-            this.rbExpert.UseSelectable = true;
-            // 
-            // rbAgency
-            // 
-            this.rbAgency.AutoSize = true;
-            this.rbAgency.Location = new System.Drawing.Point(229, 170);
-            this.rbAgency.Name = "rbAgency";
-            this.rbAgency.Size = new System.Drawing.Size(75, 15);
-            this.rbAgency.TabIndex = 7;
-            this.rbAgency.Text = "代理机构";
-            this.rbAgency.UseSelectable = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(112, 88);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "账号：";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Login
             // 
@@ -192,6 +207,7 @@ namespace Summer.CompetitiveTender.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(560, 270);
+            this.Controls.Add(this.cboLoginType);
             this.Controls.Add(this.rbAgency);
             this.Controls.Add(this.rbExpert);
             this.Controls.Add(this.rbTender);
@@ -223,5 +239,6 @@ namespace Summer.CompetitiveTender.View
         private MetroRadioButton rbTender;
         private MetroRadioButton rbExpert;
         private MetroRadioButton rbAgency;
+        private System.Windows.Forms.ComboBox cboLoginType;
     }
 }

@@ -65,6 +65,7 @@
             this.btnDZQZ.TabIndex = 1;
             this.btnDZQZ.Text = "电子签章";
             this.btnDZQZ.UseSelectable = true;
+            this.btnDZQZ.Click += new System.EventHandler(this.btnDZQZ_Click);
             // 
             // BidEvalBodyPage
             // 

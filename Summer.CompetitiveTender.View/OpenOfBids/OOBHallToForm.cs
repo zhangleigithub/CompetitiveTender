@@ -16,5 +16,10 @@ namespace Summer.CompetitiveTender.View.OpenOfBids
         {
             InitializeComponent();
         }
+
+        private void OOBHallToForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

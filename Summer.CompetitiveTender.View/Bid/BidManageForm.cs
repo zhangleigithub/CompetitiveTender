@@ -11,11 +11,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Summer.Common.Utility.Commnd;
+using Summer.Common.Controls.BidControl;
 
 namespace Summer.CompetitiveTender.View.Bid
 {
     public partial class BidManageForm : MetroForm
     {
+        //投标文件业务层实体
+        BidControl bidControl = new BidControl();
+
         public BidManageForm()
         {
             InitializeComponent();
@@ -23,20 +27,37 @@ namespace Summer.CompetitiveTender.View.Bid
 
         private void BidManage_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < 30; i++)
+            //绑定招标文件
+            BindTenderData();
+        }
+
+        /// <summary>
+        /// 绑定招标文件
+        /// </summary>
+        public void BindTenderData()
+        {
+            //获取招标文件数据
+            var tenderData = bidControl.GetBidData();
+            //清空招标文件展示列表
+            this.dgv_tenderFile.Rows.Clear();
+            //绑定招标文件列表
+            foreach (var item in tenderData)
             {
-                DataGridViewRow Row = new DataGridViewRow();
-                int index = dgv_tenderFile.Rows.Add(Row);
-                dgv_tenderFile.Rows[index].Cells[0].Value = "测试" + i.ToString();
-                dgv_tenderFile.Rows[index].Cells[1].Value = "项目" + i.ToString();
-                dgv_tenderFile.Rows[index].Cells[2].Value = DateTime.Now.ToShortDateString();
-                dgv_tenderFile.Rows[index].Cells[3].Value = "下载";
-                int indexOnHistory = dgv_historyFile.Rows.Add(Row.Clone());
-                dgv_historyFile.Rows[indexOnHistory].Cells[0].Value = "项目" + i.ToString();
-                dgv_historyFile.Rows[indexOnHistory].Cells[1].Value = DateTime.Now.ToShortDateString();
-                dgv_historyFile.Rows[indexOnHistory].Cells[2].Value = "结果" + i.ToString();
-                dgv_historyFile.Rows[indexOnHistory].Cells[3].Value = "下载";
+                DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(this.dgv_tenderFile);
+                row.Cells[this.colProjectCode.Index].Value = item.gtpCode;
+                row.Cells[this.colProjectName.Index].Value = item.gtpName;
+                row.Cells[this.colSectionCode.Index].Value = item.gsCode;
+                row.Cells[this.colSectionName.Index].Value = item.gsName;
+                row.Cells[this.colDownLoad.Index].Value = "下载";
+                row.Tag = item;
+
+                this.dgv_tenderFile.Rows.Add(row);
             }
+            //绑定招标文件下拉框
+            this.cob_objectList.DataSource = tenderData;
+            this.cob_objectList.DisplayMember = "gtpName";
+            this.cob_objectList.ValueMember = "gtpCode";
         }
 
         /// <summary>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Summer.CompetitiveTender.Service.openBidWebService;
 
 namespace Summer.CompetitiveTender.Service.OpenBid
 {
@@ -12,19 +13,71 @@ namespace Summer.CompetitiveTender.Service.OpenBid
     public interface IOpenBidService
     {
         /// <summary>
-        /// 招标项目标段列表信息查询
+        /// 主持人签到
         /// </summary>
-        /// <param name="gtpName">招标项目名称</param>
-        /// <param name="gsName">标段名称</param>
-        /// <param name="auId">当前能登陆人id</param>
+        /// <param name="gtpId">项目ID</param>
+        /// <param name="loginId">登录人ID</param>
         /// <returns></returns>
-        string FindSectionList(string gtpName, string gsName, string auId);
+        resultDO HostSignIn(string gtpId, string loginId);
 
         /// <summary>
-        /// 招标项目标段信息查询
+        /// 修改签到时间
         /// </summary>
-        /// <param name="gsId">标段ID</param>
+        /// <param name="gtpId">项目ID</param>
+        /// <param name="time">时间</param>
         /// <returns></returns>
-        string getSectionById(string gsId);
+        resultDO UpdataSignInTime(string gtpId, long time);
+
+        /// <summary>
+        /// 修改解密时间
+        /// </summary>
+        /// <param name="gtpId">项目ID</param>
+        /// <param name="time">时间</param>
+        /// <returns></returns>
+        resultDO UpdataDecryptTime(string gtpId, long time);
+
+        /// <summary>
+        /// 修改确认价格时间
+        /// </summary>
+        /// <param name="gtpId">项目ID</param>
+        /// <param name="time">时间</param>
+        /// <returns></returns>
+        resultDO UpdataConfirmPriceTime(string gtpId, long time);
+
+        /// <summary>
+        /// 修改签字时间
+        /// </summary>
+        /// <param name="gtpId">项目ID</param>
+        /// <param name="time">时间</param>
+        /// <returns></returns>
+        resultDO UpdataSignTime(string gtpId, long time);
+
+        /// <summary>
+        /// 开标开始
+        /// </summary>
+        /// <param name="gtpId">项目ID</param>
+        /// <returns></returns>
+        resultDO OpenBidStart(string gtpId);
+
+        /// <summary>
+        /// 开标暂停
+        /// </summary>
+        /// <param name="gtpId">项目ID</param>
+        /// <returns></returns>
+        resultDO OpenBidPause(string gtpId);
+
+        /// <summary>
+        /// 开标继续
+        /// </summary>
+        /// <param name="gtpId">项目ID</param>
+        /// <returns></returns>
+        resultDO OpenBidContinue(string gtpId);
+
+        /// <summary>
+        /// 开标一览表
+        /// </summary>
+        /// <param name="gtpId">项目ID</param>
+        /// <returns></returns>
+        gpOpenBidWebService.resultDO GetOpenBidList(string gtpId);
     }
 }

@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webservice.govpurchase.opensource.com/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="OpenBidWebServiceService" targetNamespace="http://webservice.govpurchase.opensource.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://webservice.govpurchase.opensource.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="getAppliedSections" type="tns:getAppliedSections" />
+      <xs:element name="getAppliedSectionsResponse" type="tns:getAppliedSectionsResponse" />
+      <xs:element name="moderatorRegistIn" type="tns:moderatorRegistIn" />
+      <xs:element name="moderatorRegistInResponse" type="tns:moderatorRegistInResponse" />
+      <xs:element name="openBidContinue" type="tns:openBidContinue" />
+      <xs:element name="openBidContinueResponse" type="tns:openBidContinueResponse" />
+      <xs:element name="openBidPause" type="tns:openBidPause" />
+      <xs:element name="openBidPauseResponse" type="tns:openBidPauseResponse" />
+      <xs:element name="openBidStart" type="tns:openBidStart" />
+      <xs:element name="openBidStartResponse" type="tns:openBidStartResponse" />
+      <xs:element name="sendNotice" type="tns:sendNotice" />
+      <xs:element name="sendNoticeResponse" type="tns:sendNoticeResponse" />
+      <xs:element name="setConfirmTimeLimit" type="tns:setConfirmTimeLimit" />
+      <xs:element name="setConfirmTimeLimitResponse" type="tns:setConfirmTimeLimitResponse" />
+      <xs:element name="setDecodeTimeLimit" type="tns:setDecodeTimeLimit" />
+      <xs:element name="setDecodeTimeLimitResponse" type="tns:setDecodeTimeLimitResponse" />
+      <xs:element name="setRegistTimeLimit" type="tns:setRegistTimeLimit" />
+      <xs:element name="setRegistTimeLimitResponse" type="tns:setRegistTimeLimitResponse" />
+      <xs:element name="setSignTimeLimit" type="tns:setSignTimeLimit" />
+      <xs:element name="setSignTimeLimitResponse" type="tns:setSignTimeLimitResponse" />
+      <xs:element name="supervisorRegistIn" type="tns:supervisorRegistIn" />
+      <xs:element name="supervisorRegistInResponse" type="tns:supervisorRegistInResponse" />
+      <xs:element name="supervisorSignOut" type="tns:supervisorSignOut" />
+      <xs:element name="supervisorSignOutResponse" type="tns:supervisorSignOutResponse" />
+      <xs:element name="tendererConfirmBidInfo" type="tns:tendererConfirmBidInfo" />
+      <xs:element name="tendererConfirmBidInfoResponse" type="tns:tendererConfirmBidInfoResponse" />
+      <xs:element name="tendererDecodeFile" type="tns:tendererDecodeFile" />
+      <xs:element name="tendererDecodeFileResponse" type="tns:tendererDecodeFileResponse" />
+      <xs:element name="tendererRegistIn" type="tns:tendererRegistIn" />
+      <xs:element name="tendererRegistInResponse" type="tns:tendererRegistInResponse" />
+      <xs:element name="tendererSignName" type="tns:tendererSignName" />
+      <xs:element name="tendererSignNameResponse" type="tns:tendererSignNameResponse" />
+      <xs:complexType name="openBidPause">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="openBidPauseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="resultDO">
+        <xs:sequence>
+          <xs:element name="code" type="xs:int" />
+          <xs:element minOccurs="0" name="fileContent" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+          <xs:element minOccurs="0" name="obj" type="xs:anyType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="objList" nillable="true" type="xs:anyType" />
+          <xs:element name="success" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="supervisorSignOut">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+          <xs:element minOccurs="0" name="buId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="supervisorSignOutResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tendererRegistIn">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="buId" type="xs:string" />
+          <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+          <xs:element minOccurs="0" name="registId" type="xs:string" />
+          <xs:element minOccurs="0" name="registName" type="xs:string" />
+          <xs:element minOccurs="0" name="registPhone" type="xs:string" />
+          <xs:element minOccurs="0" name="registFax" type="xs:string" />
+          <xs:element minOccurs="0" name="registEmail" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tendererRegistInResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="setRegistTimeLimit">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+          <xs:element minOccurs="0" name="regTimeLimit" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="setRegistTimeLimitResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tendererSignName">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gadId" type="xs:string" />
+          <xs:element minOccurs="0" name="signCert" type="xs:string" />
+          <xs:element minOccurs="0" name="signedValue" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tendererSignNameResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tendererDecodeFile">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tendererDecodeFileResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="moderatorRegistIn">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+          <xs:element minOccurs="0" name="buId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="moderatorRegistInResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sendNotice">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+          <xs:element minOccurs="0" name="noticeContent" type="xs:string" />
+          <xs:element minOccurs="0" name="buId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sendNoticeResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAppliedSections">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAppliedSectionsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="gpSectionWebDO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:baseEntity">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="adtCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="adtCoName" type="xs:string" />
+              <xs:element minOccurs="0" name="adtId" type="xs:string" />
+              <xs:element minOccurs="0" name="adtName" type="xs:string" />
+              <xs:element minOccurs="0" name="adtTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="bidPublicityDays" type="xs:int" />
+              <xs:element minOccurs="0" name="bidVerifyCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="bidVerifyId" type="xs:string" />
+              <xs:element minOccurs="0" name="bidVerifyState" type="xs:int" />
+              <xs:element minOccurs="0" name="bidVerifyTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="bidVerifyView" type="xs:string" />
+              <xs:element minOccurs="0" name="bidderCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="bidderCoName" type="xs:string" />
+              <xs:element minOccurs="0" name="bidderEndTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="bidderId" type="xs:string" />
+              <xs:element minOccurs="0" name="bidderName" type="xs:string" />
+              <xs:element minOccurs="0" name="bidderStartTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="bidderTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="contractNum" type="xs:string" />
+              <xs:element minOccurs="0" name="contractState" type="xs:int" />
+              <xs:element minOccurs="0" name="contractTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="evalBasePrice" type="xs:double" />
+              <xs:element minOccurs="0" name="evalFormFileName" type="xs:string" />
+              <xs:element minOccurs="0" name="evalFormUploadState" type="xs:int" />
+              <xs:element minOccurs="0" name="evalFormUploadTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="evalFormUrl" type="xs:string" />
+              <xs:element minOccurs="0" name="evalReportFileName" type="xs:string" />
+              <xs:element minOccurs="0" name="evalReportSendCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="evalReportSendId" type="xs:string" />
+              <xs:element minOccurs="0" name="evalReportSendState" type="xs:int" />
+              <xs:element minOccurs="0" name="evalReportSendTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="evalReportUploadState" type="xs:int" />
+              <xs:element minOccurs="0" name="evalReportUploadTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="evalReportUrl" type="xs:string" />
+              <xs:element minOccurs="0" name="evalState" type="xs:int" />
+              <xs:element minOccurs="0" name="evalType" type="xs:int" />
+              <xs:element minOccurs="0" name="firstPara" type="xs:decimal" />
+              <xs:element minOccurs="0" name="gnSendCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="gnSendTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="gnSenderId" type="xs:string" />
+              <xs:element minOccurs="0" name="gnState" type="xs:int" />
+              <xs:element minOccurs="0" name="gsBidQc" type="xs:string" />
+              <xs:element minOccurs="0" name="gsClassIfyCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gsClassIfyCodeName" type="xs:string" />
+              <xs:element minOccurs="0" name="gsCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gsConfirmState" type="xs:int" />
+              <xs:element minOccurs="0" name="gsContent" type="xs:string" />
+              <xs:element minOccurs="0" name="gsDecryptState" type="xs:int" />
+              <xs:element minOccurs="0" name="gsEstPrice" type="xs:decimal" />
+              <xs:element minOccurs="0" name="gsEvalWays" type="xs:long" />
+              <xs:element minOccurs="0" name="gsFileFee" type="xs:decimal" />
+              <xs:element minOccurs="0" name="gsId" type="xs:string" />
+              <xs:element minOccurs="0" name="gsMoneyCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gsMoneyCodeName" type="xs:string" />
+              <xs:element minOccurs="0" name="gsMoneyID" type="xs:string" />
+              <xs:element minOccurs="0" name="gsName" type="xs:string" />
+              <xs:element minOccurs="0" name="gsPriceType" type="xs:int" />
+              <xs:element minOccurs="0" name="gsPriceTypeID" type="xs:string" />
+              <xs:element minOccurs="0" name="gsPriceTypeName" type="xs:string" />
+              <xs:element minOccurs="0" name="gsRegistState" type="xs:int" />
+              <xs:element minOccurs="0" name="gsSecdePosit" type="xs:decimal" />
+              <xs:element minOccurs="0" name="gsSignState" type="xs:int" />
+              <xs:element minOccurs="0" name="gsewiMax" type="xs:decimal" />
+              <xs:element minOccurs="0" name="gstrState" type="xs:int" />
+              <xs:element minOccurs="0" name="gtpCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpName" type="xs:string" />
+              <xs:element minOccurs="0" name="isApply" type="xs:int" />
+              <xs:element minOccurs="0" name="isBuyFile" type="xs:int" />
+              <xs:element minOccurs="0" name="isCashdePosit" type="xs:int" />
+              <xs:element minOccurs="0" name="openBidState" type="xs:int" />
+              <xs:element minOccurs="0" name="optCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="optId" type="xs:string" />
+              <xs:element minOccurs="0" name="optTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="preBidEndTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="preBidPublicityDays" type="xs:int" />
+              <xs:element minOccurs="0" name="preBidStartTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="preBiderCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="preBiderCoName" type="xs:string" />
+              <xs:element minOccurs="0" name="preBiderId" type="xs:string" />
+              <xs:element minOccurs="0" name="preBiderName" type="xs:string" />
+              <xs:element minOccurs="0" name="preVerifyCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="preVerifyId" type="xs:string" />
+              <xs:element minOccurs="0" name="preVerifyState" type="xs:int" />
+              <xs:element minOccurs="0" name="preVerifyTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="preVerifyView" type="xs:string" />
+              <xs:element minOccurs="0" name="remark" type="xs:string" />
+              <xs:element minOccurs="0" name="signCert" type="xs:string" />
+              <xs:element minOccurs="0" name="signState" type="xs:int" />
+              <xs:element minOccurs="0" name="signatureWay" type="xs:int" />
+              <xs:element minOccurs="0" name="signedValue" type="xs:string" />
+              <xs:element minOccurs="0" name="state" type="xs:int" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="baseEntity" abstract="true">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="setConfirmTimeLimit">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+          <xs:element minOccurs="0" name="confirmTimeLimit" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="setConfirmTimeLimitResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="setSignTimeLimit">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+          <xs:element minOccurs="0" name="signTimeLimit" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="setSignTimeLimitResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="setDecodeTimeLimit">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+          <xs:element minOccurs="0" name="decodeTimeLimit" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="setDecodeTimeLimitResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tendererConfirmBidInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="buId" type="xs:string" />
+          <xs:element minOccurs="0" name="gadId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tendererConfirmBidInfoResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="openBidStart">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="openBidStartResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="openBidContinue">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="openBidContinueResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="supervisorRegistIn">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+          <xs:element minOccurs="0" name="buId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="supervisorRegistInResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="openBidPause">
+    <wsdl:part name="parameters" element="tns:openBidPause" />
+  </wsdl:message>
+  <wsdl:message name="supervisorRegistInResponse">
+    <wsdl:part name="parameters" element="tns:supervisorRegistInResponse" />
+  </wsdl:message>
+  <wsdl:message name="tendererConfirmBidInfoResponse">
+    <wsdl:part name="parameters" element="tns:tendererConfirmBidInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="setRegistTimeLimit">
+    <wsdl:part name="parameters" element="tns:setRegistTimeLimit" />
+  </wsdl:message>
+  <wsdl:message name="moderatorRegistInResponse">
+    <wsdl:part name="parameters" element="tns:moderatorRegistInResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAppliedSectionsResponse">
+    <wsdl:part name="parameters" element="tns:getAppliedSectionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="openBidStartResponse">
+    <wsdl:part name="parameters" element="tns:openBidStartResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendNotice">
+    <wsdl:part name="parameters" element="tns:sendNotice" />
+  </wsdl:message>
+  <wsdl:message name="setRegistTimeLimitResponse">
+    <wsdl:part name="parameters" element="tns:setRegistTimeLimitResponse" />
+  </wsdl:message>
+  <wsdl:message name="setDecodeTimeLimit">
+    <wsdl:part name="parameters" element="tns:setDecodeTimeLimit" />
+  </wsdl:message>
+  <wsdl:message name="supervisorSignOutResponse">
+    <wsdl:part name="parameters" element="tns:supervisorSignOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="openBidPauseResponse">
+    <wsdl:part name="parameters" element="tns:openBidPauseResponse" />
+  </wsdl:message>
+  <wsdl:message name="openBidStart">
+    <wsdl:part name="parameters" element="tns:openBidStart" />
+  </wsdl:message>
+  <wsdl:message name="openBidContinue">
+    <wsdl:part name="parameters" element="tns:openBidContinue" />
+  </wsdl:message>
+  <wsdl:message name="supervisorRegistIn">
+    <wsdl:part name="parameters" element="tns:supervisorRegistIn" />
+  </wsdl:message>
+  <wsdl:message name="supervisorSignOut">
+    <wsdl:part name="parameters" element="tns:supervisorSignOut" />
+  </wsdl:message>
+  <wsdl:message name="setDecodeTimeLimitResponse">
+    <wsdl:part name="parameters" element="tns:setDecodeTimeLimitResponse" />
+  </wsdl:message>
+  <wsdl:message name="tendererRegistIn">
+    <wsdl:part name="parameters" element="tns:tendererRegistIn" />
+  </wsdl:message>
+  <wsdl:message name="tendererSignName">
+    <wsdl:part name="parameters" element="tns:tendererSignName" />
+  </wsdl:message>
+  <wsdl:message name="tendererDecodeFile">
+    <wsdl:part name="parameters" element="tns:tendererDecodeFile" />
+  </wsdl:message>
+  <wsdl:message name="openBidContinueResponse">
+    <wsdl:part name="parameters" element="tns:openBidContinueResponse" />
+  </wsdl:message>
+  <wsdl:message name="tendererRegistInResponse">
+    <wsdl:part name="parameters" element="tns:tendererRegistInResponse" />
+  </wsdl:message>
+  <wsdl:message name="moderatorRegistIn">
+    <wsdl:part name="parameters" element="tns:moderatorRegistIn" />
+  </wsdl:message>
+  <wsdl:message name="getAppliedSections">
+    <wsdl:part name="parameters" element="tns:getAppliedSections" />
+  </wsdl:message>
+  <wsdl:message name="setConfirmTimeLimit">
+    <wsdl:part name="parameters" element="tns:setConfirmTimeLimit" />
+  </wsdl:message>
+  <wsdl:message name="setSignTimeLimit">
+    <wsdl:part name="parameters" element="tns:setSignTimeLimit" />
+  </wsdl:message>
+  <wsdl:message name="setConfirmTimeLimitResponse">
+    <wsdl:part name="parameters" element="tns:setConfirmTimeLimitResponse" />
+  </wsdl:message>
+  <wsdl:message name="tendererConfirmBidInfo">
+    <wsdl:part name="parameters" element="tns:tendererConfirmBidInfo" />
+  </wsdl:message>
+  <wsdl:message name="tendererDecodeFileResponse">
+    <wsdl:part name="parameters" element="tns:tendererDecodeFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="tendererSignNameResponse">
+    <wsdl:part name="parameters" element="tns:tendererSignNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="setSignTimeLimitResponse">
+    <wsdl:part name="parameters" element="tns:setSignTimeLimitResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendNoticeResponse">
+    <wsdl:part name="parameters" element="tns:sendNoticeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="OpenBidWebService">
+    <wsdl:operation name="openBidPause">
+      <wsdl:input name="openBidPause" message="tns:openBidPause" />
+      <wsdl:output name="openBidPauseResponse" message="tns:openBidPauseResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="supervisorSignOut">
+      <wsdl:input name="supervisorSignOut" message="tns:supervisorSignOut" />
+      <wsdl:output name="supervisorSignOutResponse" message="tns:supervisorSignOutResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="tendererRegistIn">
+      <wsdl:input name="tendererRegistIn" message="tns:tendererRegistIn" />
+      <wsdl:output name="tendererRegistInResponse" message="tns:tendererRegistInResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="setRegistTimeLimit">
+      <wsdl:input name="setRegistTimeLimit" message="tns:setRegistTimeLimit" />
+      <wsdl:output name="setRegistTimeLimitResponse" message="tns:setRegistTimeLimitResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="tendererSignName">
+      <wsdl:input name="tendererSignName" message="tns:tendererSignName" />
+      <wsdl:output name="tendererSignNameResponse" message="tns:tendererSignNameResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="tendererDecodeFile">
+      <wsdl:input name="tendererDecodeFile" message="tns:tendererDecodeFile" />
+      <wsdl:output name="tendererDecodeFileResponse" message="tns:tendererDecodeFileResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="moderatorRegistIn">
+      <wsdl:input name="moderatorRegistIn" message="tns:moderatorRegistIn" />
+      <wsdl:output name="moderatorRegistInResponse" message="tns:moderatorRegistInResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="sendNotice">
+      <wsdl:input name="sendNotice" message="tns:sendNotice" />
+      <wsdl:output name="sendNoticeResponse" message="tns:sendNoticeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAppliedSections">
+      <wsdl:input name="getAppliedSections" message="tns:getAppliedSections" />
+      <wsdl:output name="getAppliedSectionsResponse" message="tns:getAppliedSectionsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="setConfirmTimeLimit">
+      <wsdl:input name="setConfirmTimeLimit" message="tns:setConfirmTimeLimit" />
+      <wsdl:output name="setConfirmTimeLimitResponse" message="tns:setConfirmTimeLimitResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="setSignTimeLimit">
+      <wsdl:input name="setSignTimeLimit" message="tns:setSignTimeLimit" />
+      <wsdl:output name="setSignTimeLimitResponse" message="tns:setSignTimeLimitResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="setDecodeTimeLimit">
+      <wsdl:input name="setDecodeTimeLimit" message="tns:setDecodeTimeLimit" />
+      <wsdl:output name="setDecodeTimeLimitResponse" message="tns:setDecodeTimeLimitResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="tendererConfirmBidInfo">
+      <wsdl:input name="tendererConfirmBidInfo" message="tns:tendererConfirmBidInfo" />
+      <wsdl:output name="tendererConfirmBidInfoResponse" message="tns:tendererConfirmBidInfoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="openBidStart">
+      <wsdl:input name="openBidStart" message="tns:openBidStart" />
+      <wsdl:output name="openBidStartResponse" message="tns:openBidStartResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="openBidContinue">
+      <wsdl:input name="openBidContinue" message="tns:openBidContinue" />
+      <wsdl:output name="openBidContinueResponse" message="tns:openBidContinueResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="supervisorRegistIn">
+      <wsdl:input name="supervisorRegistIn" message="tns:supervisorRegistIn" />
+      <wsdl:output name="supervisorRegistInResponse" message="tns:supervisorRegistInResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OpenBidWebServiceServiceSoapBinding" type="tns:OpenBidWebService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="supervisorSignOut">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="supervisorSignOut">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="supervisorSignOutResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="openBidPause">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="openBidPause">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="openBidPauseResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="tendererRegistIn">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="tendererRegistIn">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="tendererRegistInResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setRegistTimeLimit">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="setRegistTimeLimit">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="setRegistTimeLimitResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="tendererSignName">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="tendererSignName">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="tendererSignNameResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="tendererDecodeFile">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="tendererDecodeFile">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="tendererDecodeFileResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="moderatorRegistIn">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="moderatorRegistIn">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="moderatorRegistInResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendNotice">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="sendNotice">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="sendNoticeResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAppliedSections">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getAppliedSections">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAppliedSectionsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setConfirmTimeLimit">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="setConfirmTimeLimit">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="setConfirmTimeLimitResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSignTimeLimit">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="setSignTimeLimit">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="setSignTimeLimitResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setDecodeTimeLimit">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="setDecodeTimeLimit">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="setDecodeTimeLimitResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="tendererConfirmBidInfo">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="tendererConfirmBidInfo">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="tendererConfirmBidInfoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="openBidStart">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="openBidStart">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="openBidStartResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="openBidContinue">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="openBidContinue">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="openBidContinueResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="supervisorRegistIn">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="supervisorRegistIn">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="supervisorRegistInResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OpenBidWebServiceService">
+    <wsdl:port name="OpenBidWebServicePort" binding="tns:OpenBidWebServiceServiceSoapBinding">
+      <soap:address location="http://121.28.95.246:9090/webservice/openBidWebService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

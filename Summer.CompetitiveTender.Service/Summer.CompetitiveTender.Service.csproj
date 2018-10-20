@@ -101,7 +101,17 @@
     <Compile Include="OpenBid\IOpenBidService.cs" />
     <Compile Include="OpenBid\OpenBidService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\gpOpenBidWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\OpenBidService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\openBidWebService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -172,8 +182,16 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="Service References\gpOpenBidWebService\GpOpenBidWebServiceService.wsdl" />
+    <None Include="Service References\gpOpenBidWebService\Summer.CompetitiveTender.Service.gpOpenBidWebService.resultDO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\OpenBidService\GpSectionWebServiceService.wsdl" />
     <None Include="Service References\OpenBidService\Summer.CompetitiveTender.Service.OpenBidService.resultDO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\openBidWebService\OpenBidWebServiceService.wsdl" />
+    <None Include="Service References\openBidWebService\Summer.CompetitiveTender.Service.openBidWebService.resultDO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReferenceBidEvaluation\BidEvaluationWebServiceService.wsdl" />
@@ -239,7 +257,9 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\gpOpenBidWebService\" />
     <WCFMetadataStorage Include="Service References\OpenBidService\" />
+    <WCFMetadataStorage Include="Service References\openBidWebService\" />
     <WCFMetadataStorage Include="Service References\ServiceReferenceBidEvaluation\" />
     <WCFMetadataStorage Include="Service References\ServiceReferenceGpApplyDetail\" />
     <WCFMetadataStorage Include="Service References\ServiceReferenceGpBidFileOrg\" />
@@ -405,6 +425,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ServiceReferenceGpEvalResult\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\openBidWebService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\openBidWebService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\openBidWebService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\gpOpenBidWebService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\gpOpenBidWebService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\gpOpenBidWebService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

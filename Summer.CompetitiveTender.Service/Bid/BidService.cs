@@ -23,7 +23,7 @@ namespace Summer.CompetitiveTender.Service.BidService
             try
             {
                 //GpTemplateWebServiceClient gpTemplateWebService = new GpTemplateWebServiceClient();
-                //resultDO ret = gpTemplateWebService.findList(id);
+                //openBidWebService.resultDO ret = gpTemplateWebService.findList(id);
             }
             catch (Exception ex)
             {

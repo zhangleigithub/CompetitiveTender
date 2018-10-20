@@ -39,16 +39,7 @@ namespace Summer.CompetitiveTender.Service
                 throw new ArgumentNullException(nameof(gtpId));
             }
 
-            resultDO result = this.wsAgent.getById(gtpId);
-
-            if (result.success)
-            {
-                return result.obj as gpTenderProjectWebDO;
-            }
-            else
-            {
-                throw new Exception(result.message);
-            }
+            return this.wsAgent.getById(gtpId).obj as gpTenderProjectWebDO;
         }
 
         /// <summary>
@@ -65,14 +56,7 @@ namespace Summer.CompetitiveTender.Service
 
             resultDO result = this.wsAgent.findList(auId);
 
-            if (result.success)
-            {
-                return result.obj as gpTenderProjectWebDO[];
-            }
-            else
-            {
-                throw new Exception(result.message);
-            }
+            return ((object[])result.objList).Cast<gpTenderProjectWebDO>().ToArray();
         }
 
         /// <summary>
@@ -87,14 +71,7 @@ namespace Summer.CompetitiveTender.Service
         {
             resultDO result = this.wsAgent.findBidProjecList(gtpId, gsId, gtpName, gtpCode);
 
-            if (result.success)
-            {
-                return result.obj as gpTenderProjectWebDO[];
-            }
-            else
-            {
-                throw new Exception(result.message);
-            }
+            return ((object[])result.objList).Cast<gpTenderProjectWebDO>().ToArray();
         }
 
         #endregion

@@ -69,7 +69,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
             }
             else if (e.ColumnIndex == this.colEditITenderFile.Index)
             {
-                EditITenderForm editProjectForm = new EditITenderForm();
+                EditITenderForm editProjectForm = new EditITenderForm(gptp.gtpId, gptp.gpId);
                 editProjectForm.ShowDialog(this);
                 editProjectForm.Dispose();
             }
@@ -93,8 +93,8 @@ namespace Summer.CompetitiveTender.View.InviteTender
         {
             try
             {
-                var result = gpTenderProjectService.FindListByCondition(string.Empty, string.Empty, string.Empty, this.txtProjectId.Text.Trim());
-                this.SetGridData(result);
+                var result = gpTenderProjectService.FindById( this.txtProjectId.Text.Trim());
+                this.SetGridData(new gpTenderProjectWebDO[] { result });
             }
             catch (Exception ex)
             {
@@ -126,7 +126,8 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
             foreach (var item in values)
             {
-                DataGridViewRow row = this.grdITender.RowTemplate;
+                DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(this.grdITender);
                 row.Cells[this.colITenderProjectCode.Index].Value = item.gpCode;
                 row.Cells[this.colITenderTYJYBSM.Index].Value = item.unifiedDealCode;
                 row.Cells[this.colITenderProjectName.Index].Value = item.gtpName;

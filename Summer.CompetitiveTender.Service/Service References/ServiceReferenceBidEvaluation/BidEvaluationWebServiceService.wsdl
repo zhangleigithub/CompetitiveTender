@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webservice.govpurchase.opensource.com/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="BidEvaluationWebServiceService" targetNamespace="http://webservice.govpurchase.opensource.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://webservice.govpurchase.opensource.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="automaticScoreResult" type="tns:automaticScoreResult" />
+      <xs:element name="automaticScoreResultResponse" type="tns:automaticScoreResultResponse" />
+      <xs:element name="auxiliaryAnalysis" type="tns:auxiliaryAnalysis" />
+      <xs:element name="auxiliaryAnalysisResponse" type="tns:auxiliaryAnalysisResponse" />
+      <xs:element name="bidFileResave" type="tns:bidFileResave" />
+      <xs:element name="bidFileResaveResponse" type="tns:bidFileResaveResponse" />
+      <xs:element name="conformanceContrastResult" type="tns:conformanceContrastResult" />
+      <xs:element name="conformanceContrastResultResponse" type="tns:conformanceContrastResultResponse" />
+      <xs:element name="evaluationFactorsAnalysis" type="tns:evaluationFactorsAnalysis" />
+      <xs:element name="evaluationFactorsAnalysisResponse" type="tns:evaluationFactorsAnalysisResponse" />
+      <xs:element name="evaluationFactorsContrastResult" type="tns:evaluationFactorsContrastResult" />
+      <xs:element name="evaluationFactorsContrastResultResponse" type="tns:evaluationFactorsContrastResultResponse" />
+      <xs:element name="fileDifferenceResult" type="tns:fileDifferenceResult" />
+      <xs:element name="fileDifferenceResultResponse" type="tns:fileDifferenceResultResponse" />
+      <xs:element name="fileExceptionResult" type="tns:fileExceptionResult" />
+      <xs:element name="fileExceptionResultResponse" type="tns:fileExceptionResultResponse" />
+      <xs:element name="getBidEvaluationReportFile" type="tns:getBidEvaluationReportFile" />
+      <xs:element name="getBidEvaluationReportFileResponse" type="tns:getBidEvaluationReportFileResponse" />
+      <xs:element name="getBidEvaluationResult" type="tns:getBidEvaluationResult" />
+      <xs:element name="getBidEvaluationResultResponse" type="tns:getBidEvaluationResultResponse" />
+      <xs:element name="priceAnalysis" type="tns:priceAnalysis" />
+      <xs:element name="priceAnalysisResponse" type="tns:priceAnalysisResponse" />
+      <xs:element name="updateBidEvaluationSingState" type="tns:updateBidEvaluationSingState" />
+      <xs:element name="updateBidEvaluationSingStateResponse" type="tns:updateBidEvaluationSingStateResponse" />
+      <xs:complexType name="priceAnalysis">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gsId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="priceAnalysisResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="resultDO">
+        <xs:sequence>
+          <xs:element name="code" type="xs:int" />
+          <xs:element minOccurs="0" name="fileContent" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+          <xs:element minOccurs="0" name="obj" type="xs:anyType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="objList" nillable="true" type="xs:anyType" />
+          <xs:element name="success" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="evaluationFactorsAnalysis">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gsId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="evaluationFactorsAnalysisResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="automaticScoreResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gsId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="automaticScoreResultResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="bidFileResave">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GpSectionWebDO" type="tns:gpSectionWebDO" />
+          <xs:element minOccurs="0" name="evalReportFile" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="gpSectionWebDO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:baseEntity">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="adtCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="adtCoName" type="xs:string" />
+              <xs:element minOccurs="0" name="adtId" type="xs:string" />
+              <xs:element minOccurs="0" name="adtName" type="xs:string" />
+              <xs:element minOccurs="0" name="adtTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="bidPublicityDays" type="xs:int" />
+              <xs:element minOccurs="0" name="bidVerifyCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="bidVerifyId" type="xs:string" />
+              <xs:element minOccurs="0" name="bidVerifyState" type="xs:int" />
+              <xs:element minOccurs="0" name="bidVerifyTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="bidVerifyView" type="xs:string" />
+              <xs:element minOccurs="0" name="bidderCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="bidderCoName" type="xs:string" />
+              <xs:element minOccurs="0" name="bidderEndTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="bidderId" type="xs:string" />
+              <xs:element minOccurs="0" name="bidderName" type="xs:string" />
+              <xs:element minOccurs="0" name="bidderStartTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="bidderTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="contractNum" type="xs:string" />
+              <xs:element minOccurs="0" name="contractState" type="xs:int" />
+              <xs:element minOccurs="0" name="contractTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="evalBasePrice" type="xs:double" />
+              <xs:element minOccurs="0" name="evalFormFileName" type="xs:string" />
+              <xs:element minOccurs="0" name="evalFormUploadState" type="xs:int" />
+              <xs:element minOccurs="0" name="evalFormUploadTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="evalFormUrl" type="xs:string" />
+              <xs:element minOccurs="0" name="evalReportFileName" type="xs:string" />
+              <xs:element minOccurs="0" name="evalReportSendCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="evalReportSendId" type="xs:string" />
+              <xs:element minOccurs="0" name="evalReportSendState" type="xs:int" />
+              <xs:element minOccurs="0" name="evalReportSendTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="evalReportUploadState" type="xs:int" />
+              <xs:element minOccurs="0" name="evalReportUploadTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="evalReportUrl" type="xs:string" />
+              <xs:element minOccurs="0" name="evalState" type="xs:int" />
+              <xs:element minOccurs="0" name="evalType" type="xs:int" />
+              <xs:element minOccurs="0" name="firstPara" type="xs:decimal" />
+              <xs:element minOccurs="0" name="gnSendCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="gnSendTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="gnSenderId" type="xs:string" />
+              <xs:element minOccurs="0" name="gnState" type="xs:int" />
+              <xs:element minOccurs="0" name="gsBidQc" type="xs:string" />
+              <xs:element minOccurs="0" name="gsClassIfyCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gsClassIfyCodeName" type="xs:string" />
+              <xs:element minOccurs="0" name="gsCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gsConfirmState" type="xs:int" />
+              <xs:element minOccurs="0" name="gsContent" type="xs:string" />
+              <xs:element minOccurs="0" name="gsDecryptState" type="xs:int" />
+              <xs:element minOccurs="0" name="gsEstPrice" type="xs:decimal" />
+              <xs:element minOccurs="0" name="gsEvalWays" type="xs:long" />
+              <xs:element minOccurs="0" name="gsFileFee" type="xs:decimal" />
+              <xs:element minOccurs="0" name="gsId" type="xs:string" />
+              <xs:element minOccurs="0" name="gsMoneyCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gsMoneyCodeName" type="xs:string" />
+              <xs:element minOccurs="0" name="gsMoneyID" type="xs:string" />
+              <xs:element minOccurs="0" name="gsName" type="xs:string" />
+              <xs:element minOccurs="0" name="gsPriceType" type="xs:int" />
+              <xs:element minOccurs="0" name="gsPriceTypeID" type="xs:string" />
+              <xs:element minOccurs="0" name="gsPriceTypeName" type="xs:string" />
+              <xs:element minOccurs="0" name="gsRegistState" type="xs:int" />
+              <xs:element minOccurs="0" name="gsSecdePosit" type="xs:decimal" />
+              <xs:element minOccurs="0" name="gsSignState" type="xs:int" />
+              <xs:element minOccurs="0" name="gsewiMax" type="xs:decimal" />
+              <xs:element minOccurs="0" name="gstrState" type="xs:int" />
+              <xs:element minOccurs="0" name="gtpCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpName" type="xs:string" />
+              <xs:element minOccurs="0" name="isApply" type="xs:int" />
+              <xs:element minOccurs="0" name="isBuyFile" type="xs:int" />
+              <xs:element minOccurs="0" name="isCashdePosit" type="xs:int" />
+              <xs:element minOccurs="0" name="openBidState" type="xs:int" />
+              <xs:element minOccurs="0" name="optCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="optId" type="xs:string" />
+              <xs:element minOccurs="0" name="optTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="preBidEndTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="preBidPublicityDays" type="xs:int" />
+              <xs:element minOccurs="0" name="preBidStartTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="preBiderCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="preBiderCoName" type="xs:string" />
+              <xs:element minOccurs="0" name="preBiderId" type="xs:string" />
+              <xs:element minOccurs="0" name="preBiderName" type="xs:string" />
+              <xs:element minOccurs="0" name="preVerifyCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="preVerifyId" type="xs:string" />
+              <xs:element minOccurs="0" name="preVerifyState" type="xs:int" />
+              <xs:element minOccurs="0" name="preVerifyTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="preVerifyView" type="xs:string" />
+              <xs:element minOccurs="0" name="remark" type="xs:string" />
+              <xs:element minOccurs="0" name="signCert" type="xs:string" />
+              <xs:element minOccurs="0" name="signState" type="xs:int" />
+              <xs:element minOccurs="0" name="signatureWay" type="xs:int" />
+              <xs:element minOccurs="0" name="signedValue" type="xs:string" />
+              <xs:element minOccurs="0" name="state" type="xs:int" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="baseEntity" abstract="true">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="bidFileResaveResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="fileExceptionResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gsId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="fileExceptionResultResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="auxiliaryAnalysis">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gsId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="auxiliaryAnalysisResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getBidEvaluationReportFile">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gsId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getBidEvaluationReportFileResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="fileDifferenceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gsId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="fileDifferenceResultResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="evaluationFactorsContrastResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+          <xs:element minOccurs="0" name="gsId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="evaluationFactorsContrastResultResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getBidEvaluationResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+          <xs:element minOccurs="0" name="gsId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getBidEvaluationResultResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="gpEvalResultWebDO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:baseEntity">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="gadBidCompanyId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadBidCompanyName" type="xs:string" />
+              <xs:element minOccurs="0" name="gadBidPersonId" type="xs:string" />
+              <xs:element minOccurs="0" name="gadId" type="xs:string" />
+              <xs:element minOccurs="0" name="gerCode" type="xs:string" />
+              <xs:element minOccurs="0" name="gerCompanyId" type="xs:string" />
+              <xs:element minOccurs="0" name="gerId" type="xs:string" />
+              <xs:element minOccurs="0" name="gerPersonId" type="xs:string" />
+              <xs:element minOccurs="0" name="gerResult" type="xs:int" />
+              <xs:element minOccurs="0" name="gerScores" type="xs:double" />
+              <xs:element minOccurs="0" name="gerTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="gewtId" type="xs:long" />
+              <xs:element minOccurs="0" name="gsId" type="xs:string" />
+              <xs:element minOccurs="0" name="gsewiId" type="xs:string" />
+              <xs:element minOccurs="0" name="gsewiName" type="xs:string" />
+              <xs:element minOccurs="0" name="gtpId" type="xs:string" />
+              <xs:element minOccurs="0" name="optCoId" type="xs:string" />
+              <xs:element minOccurs="0" name="optId" type="xs:string" />
+              <xs:element minOccurs="0" name="optTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="remark" type="xs:string" />
+              <xs:element minOccurs="0" name="state" type="xs:int" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="updateBidEvaluationSingState">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GpSectionWebDO" type="tns:gpSectionWebDO" />
+          <xs:element minOccurs="0" name="evalReportFile" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateBidEvaluationSingStateResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="conformanceContrastResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gsId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="conformanceContrastResultResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="fileDifferenceResultResponse">
+    <wsdl:part name="parameters" element="tns:fileDifferenceResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="priceAnalysis">
+    <wsdl:part name="parameters" element="tns:priceAnalysis" />
+  </wsdl:message>
+  <wsdl:message name="updateBidEvaluationSingStateResponse">
+    <wsdl:part name="parameters" element="tns:updateBidEvaluationSingStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="evaluationFactorsAnalysis">
+    <wsdl:part name="parameters" element="tns:evaluationFactorsAnalysis" />
+  </wsdl:message>
+  <wsdl:message name="getBidEvaluationResultResponse">
+    <wsdl:part name="parameters" element="tns:getBidEvaluationResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="automaticScoreResult">
+    <wsdl:part name="parameters" element="tns:automaticScoreResult" />
+  </wsdl:message>
+  <wsdl:message name="bidFileResaveResponse">
+    <wsdl:part name="parameters" element="tns:bidFileResaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="bidFileResave">
+    <wsdl:part name="parameters" element="tns:bidFileResave" />
+  </wsdl:message>
+  <wsdl:message name="getBidEvaluationReportFileResponse">
+    <wsdl:part name="parameters" element="tns:getBidEvaluationReportFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="fileExceptionResultResponse">
+    <wsdl:part name="parameters" element="tns:fileExceptionResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="fileExceptionResult">
+    <wsdl:part name="parameters" element="tns:fileExceptionResult" />
+  </wsdl:message>
+  <wsdl:message name="auxiliaryAnalysis">
+    <wsdl:part name="parameters" element="tns:auxiliaryAnalysis" />
+  </wsdl:message>
+  <wsdl:message name="automaticScoreResultResponse">
+    <wsdl:part name="parameters" element="tns:automaticScoreResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="auxiliaryAnalysisResponse">
+    <wsdl:part name="parameters" element="tns:auxiliaryAnalysisResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBidEvaluationReportFile">
+    <wsdl:part name="parameters" element="tns:getBidEvaluationReportFile" />
+  </wsdl:message>
+  <wsdl:message name="evaluationFactorsAnalysisResponse">
+    <wsdl:part name="parameters" element="tns:evaluationFactorsAnalysisResponse" />
+  </wsdl:message>
+  <wsdl:message name="fileDifferenceResult">
+    <wsdl:part name="parameters" element="tns:fileDifferenceResult" />
+  </wsdl:message>
+  <wsdl:message name="evaluationFactorsContrastResult">
+    <wsdl:part name="parameters" element="tns:evaluationFactorsContrastResult" />
+  </wsdl:message>
+  <wsdl:message name="getBidEvaluationResult">
+    <wsdl:part name="parameters" element="tns:getBidEvaluationResult" />
+  </wsdl:message>
+  <wsdl:message name="conformanceContrastResultResponse">
+    <wsdl:part name="parameters" element="tns:conformanceContrastResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateBidEvaluationSingState">
+    <wsdl:part name="parameters" element="tns:updateBidEvaluationSingState" />
+  </wsdl:message>
+  <wsdl:message name="evaluationFactorsContrastResultResponse">
+    <wsdl:part name="parameters" element="tns:evaluationFactorsContrastResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="conformanceContrastResult">
+    <wsdl:part name="parameters" element="tns:conformanceContrastResult" />
+  </wsdl:message>
+  <wsdl:message name="priceAnalysisResponse">
+    <wsdl:part name="parameters" element="tns:priceAnalysisResponse" />
+  </wsdl:message>
+  <wsdl:portType name="BidEvaluationWebService">
+    <wsdl:operation name="priceAnalysis">
+      <wsdl:input name="priceAnalysis" message="tns:priceAnalysis" />
+      <wsdl:output name="priceAnalysisResponse" message="tns:priceAnalysisResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="evaluationFactorsAnalysis">
+      <wsdl:input name="evaluationFactorsAnalysis" message="tns:evaluationFactorsAnalysis" />
+      <wsdl:output name="evaluationFactorsAnalysisResponse" message="tns:evaluationFactorsAnalysisResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="automaticScoreResult">
+      <wsdl:input name="automaticScoreResult" message="tns:automaticScoreResult" />
+      <wsdl:output name="automaticScoreResultResponse" message="tns:automaticScoreResultResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="bidFileResave">
+      <wsdl:input name="bidFileResave" message="tns:bidFileResave" />
+      <wsdl:output name="bidFileResaveResponse" message="tns:bidFileResaveResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="fileExceptionResult">
+      <wsdl:input name="fileExceptionResult" message="tns:fileExceptionResult" />
+      <wsdl:output name="fileExceptionResultResponse" message="tns:fileExceptionResultResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="auxiliaryAnalysis">
+      <wsdl:input name="auxiliaryAnalysis" message="tns:auxiliaryAnalysis" />
+      <wsdl:output name="auxiliaryAnalysisResponse" message="tns:auxiliaryAnalysisResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getBidEvaluationReportFile">
+      <wsdl:input name="getBidEvaluationReportFile" message="tns:getBidEvaluationReportFile" />
+      <wsdl:output name="getBidEvaluationReportFileResponse" message="tns:getBidEvaluationReportFileResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="fileDifferenceResult">
+      <wsdl:input name="fileDifferenceResult" message="tns:fileDifferenceResult" />
+      <wsdl:output name="fileDifferenceResultResponse" message="tns:fileDifferenceResultResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="evaluationFactorsContrastResult">
+      <wsdl:input name="evaluationFactorsContrastResult" message="tns:evaluationFactorsContrastResult" />
+      <wsdl:output name="evaluationFactorsContrastResultResponse" message="tns:evaluationFactorsContrastResultResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getBidEvaluationResult">
+      <wsdl:input name="getBidEvaluationResult" message="tns:getBidEvaluationResult" />
+      <wsdl:output name="getBidEvaluationResultResponse" message="tns:getBidEvaluationResultResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateBidEvaluationSingState">
+      <wsdl:input name="updateBidEvaluationSingState" message="tns:updateBidEvaluationSingState" />
+      <wsdl:output name="updateBidEvaluationSingStateResponse" message="tns:updateBidEvaluationSingStateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="conformanceContrastResult">
+      <wsdl:input name="conformanceContrastResult" message="tns:conformanceContrastResult" />
+      <wsdl:output name="conformanceContrastResultResponse" message="tns:conformanceContrastResultResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BidEvaluationWebServiceServiceSoapBinding" type="tns:BidEvaluationWebService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="priceAnalysis">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="priceAnalysis">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="priceAnalysisResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="evaluationFactorsAnalysis">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="evaluationFactorsAnalysis">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="evaluationFactorsAnalysisResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="automaticScoreResult">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="automaticScoreResult">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="automaticScoreResultResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bidFileResave">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="bidFileResave">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="bidFileResaveResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fileExceptionResult">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="fileExceptionResult">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fileExceptionResultResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="auxiliaryAnalysis">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="auxiliaryAnalysis">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="auxiliaryAnalysisResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBidEvaluationReportFile">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getBidEvaluationReportFile">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getBidEvaluationReportFileResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fileDifferenceResult">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="fileDifferenceResult">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fileDifferenceResultResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="evaluationFactorsContrastResult">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="evaluationFactorsContrastResult">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="evaluationFactorsContrastResultResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBidEvaluationResult">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getBidEvaluationResult">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getBidEvaluationResultResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateBidEvaluationSingState">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="updateBidEvaluationSingState">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="updateBidEvaluationSingStateResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="conformanceContrastResult">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="conformanceContrastResult">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="conformanceContrastResultResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BidEvaluationWebServiceService">
+    <wsdl:port name="BidEvaluationWebServicePort" binding="tns:BidEvaluationWebServiceServiceSoapBinding">
+      <soap:address location="http://121.28.95.246:9090/webservice/bidEvaluationWebService/getBidEvaluationResult" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

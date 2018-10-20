@@ -32,193 +32,157 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.cboType = new MetroFramework.Controls.MetroComboBox();
+            this.txtTitle = new Summer.Common.Controls.MetroSearchTextBox();
+            this.txtProjectCode = new Summer.Common.Controls.MetroSearchTextBox();
+            this.txtSectionCode = new Summer.Common.Controls.MetroSearchTextBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.btnQuestQuery = new MetroFramework.Controls.MetroButton();
             this.grdITQuest = new MetroFramework.Controls.MetroGrid();
-            this.colITQuestOperationId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInviteTenderCreateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colITQuerstSectionId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colITQuestFileId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colITQuestCaption = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colITQuestType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colITQuestContent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colITQuestCreateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colITQuestState = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colItQuestDetail = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.colOperationId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProjectCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSectionCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFileId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCaption = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colType = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colContent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCreateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colState = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDetail = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colReplayQuestion = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdITQuest)).BeginInit();
             this.SuspendLayout();
             // 
-            // metroComboBox1
+            // cboType
             // 
-            this.metroComboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Items.AddRange(new object[] {
+            this.cboType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboType.FormattingEnabled = true;
+            this.cboType.ItemHeight = 23;
+            this.cboType.Items.AddRange(new object[] {
             "澄清",
             "修改"});
-            this.metroComboBox1.Location = new System.Drawing.Point(468, 63);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(121, 29);
-            this.metroComboBox1.TabIndex = 25;
-            this.metroComboBox1.UseSelectable = true;
+            this.cboType.Location = new System.Drawing.Point(881, 63);
+            this.cboType.Name = "cboType";
+            this.cboType.Size = new System.Drawing.Size(121, 29);
+            this.cboType.TabIndex = 25;
+            this.cboType.UseSelectable = true;
             // 
-            // metroTextBox4
+            // txtTitle
             // 
-            this.metroTextBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            // 
-            // 
-            // 
-            this.metroTextBox4.CustomButton.Image = null;
-            this.metroTextBox4.CustomButton.Location = new System.Drawing.Point(98, 1);
-            this.metroTextBox4.CustomButton.Name = "";
-            this.metroTextBox4.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox4.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox4.CustomButton.TabIndex = 1;
-            this.metroTextBox4.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox4.CustomButton.UseSelectable = true;
-            this.metroTextBox4.CustomButton.Visible = false;
-            this.metroTextBox4.Lines = new string[0];
-            this.metroTextBox4.Location = new System.Drawing.Point(271, 105);
-            this.metroTextBox4.MaxLength = 32767;
-            this.metroTextBox4.Name = "metroTextBox4";
-            this.metroTextBox4.PasswordChar = '\0';
-            this.metroTextBox4.PromptText = "标题";
-            this.metroTextBox4.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox4.SelectedText = "";
-            this.metroTextBox4.SelectionLength = 0;
-            this.metroTextBox4.SelectionStart = 0;
-            this.metroTextBox4.ShortcutsEnabled = true;
-            this.metroTextBox4.Size = new System.Drawing.Size(120, 23);
-            this.metroTextBox4.TabIndex = 24;
-            this.metroTextBox4.UseSelectable = true;
-            this.metroTextBox4.WaterMark = "标题";
-            this.metroTextBox4.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox4.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroTextBox3
-            // 
-            this.metroTextBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTitle.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtTitle.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             // 
             // 
             // 
-            this.metroTextBox3.CustomButton.Image = null;
-            this.metroTextBox3.CustomButton.Location = new System.Drawing.Point(98, 1);
-            this.metroTextBox3.CustomButton.Name = "";
-            this.metroTextBox3.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox3.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox3.CustomButton.TabIndex = 1;
-            this.metroTextBox3.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox3.CustomButton.UseSelectable = true;
-            this.metroTextBox3.CustomButton.Visible = false;
-            this.metroTextBox3.Lines = new string[0];
-            this.metroTextBox3.Location = new System.Drawing.Point(271, 66);
-            this.metroTextBox3.MaxLength = 32767;
-            this.metroTextBox3.Name = "metroTextBox3";
-            this.metroTextBox3.PasswordChar = '\0';
-            this.metroTextBox3.PromptText = "操作编码";
-            this.metroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox3.SelectedText = "";
-            this.metroTextBox3.SelectionLength = 0;
-            this.metroTextBox3.SelectionStart = 0;
-            this.metroTextBox3.ShortcutsEnabled = true;
-            this.metroTextBox3.Size = new System.Drawing.Size(120, 23);
-            this.metroTextBox3.TabIndex = 23;
-            this.metroTextBox3.UseSelectable = true;
-            this.metroTextBox3.WaterMark = "操作编码";
-            this.metroTextBox3.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox3.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtTitle.CustomButton.Image = null;
+            this.txtTitle.CustomButton.Location = new System.Drawing.Point(188, 1);
+            this.txtTitle.CustomButton.Name = "";
+            this.txtTitle.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtTitle.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtTitle.CustomButton.TabIndex = 1;
+            this.txtTitle.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtTitle.CustomButton.UseSelectable = true;
+            this.txtTitle.CustomButton.Visible = false;
+            this.txtTitle.Guid = "c3071cfc-24a9-4014-ae6d-4cd7d84444cc";
+            this.txtTitle.Lines = new string[0];
+            this.txtTitle.Location = new System.Drawing.Point(665, 66);
+            this.txtTitle.MaxLength = 32767;
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.PasswordChar = '\0';
+            this.txtTitle.PromptText = "标题";
+            this.txtTitle.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtTitle.SelectedText = "";
+            this.txtTitle.SelectionLength = 0;
+            this.txtTitle.SelectionStart = 0;
+            this.txtTitle.ShortcutsEnabled = true;
+            this.txtTitle.Size = new System.Drawing.Size(210, 23);
+            this.txtTitle.TabIndex = 24;
+            this.txtTitle.UseSelectable = true;
+            this.txtTitle.WaterMark = "标题";
+            this.txtTitle.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtTitle.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroTextBox2
+            // txtProjectCode
             // 
-            this.metroTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            // 
-            // 
-            // 
-            this.metroTextBox2.CustomButton.Image = null;
-            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(98, 1);
-            this.metroTextBox2.CustomButton.Name = "";
-            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox2.CustomButton.TabIndex = 1;
-            this.metroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox2.CustomButton.UseSelectable = true;
-            this.metroTextBox2.CustomButton.Visible = false;
-            this.metroTextBox2.Lines = new string[0];
-            this.metroTextBox2.Location = new System.Drawing.Point(468, 105);
-            this.metroTextBox2.MaxLength = 32767;
-            this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.PasswordChar = '\0';
-            this.metroTextBox2.PromptText = "项目编码";
-            this.metroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox2.SelectedText = "";
-            this.metroTextBox2.SelectionLength = 0;
-            this.metroTextBox2.SelectionStart = 0;
-            this.metroTextBox2.ShortcutsEnabled = true;
-            this.metroTextBox2.Size = new System.Drawing.Size(120, 23);
-            this.metroTextBox2.TabIndex = 22;
-            this.metroTextBox2.UseSelectable = true;
-            this.metroTextBox2.WaterMark = "项目编码";
-            this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroTextBox1
-            // 
-            this.metroTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtProjectCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtProjectCode.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtProjectCode.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             // 
             // 
             // 
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(98, 1);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(665, 105);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.PromptText = "标段编码";
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(120, 23);
-            this.metroTextBox1.TabIndex = 21;
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.WaterMark = "标段编码";
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtProjectCode.CustomButton.Image = null;
+            this.txtProjectCode.CustomButton.Location = new System.Drawing.Point(128, 1);
+            this.txtProjectCode.CustomButton.Name = "";
+            this.txtProjectCode.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtProjectCode.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtProjectCode.CustomButton.TabIndex = 1;
+            this.txtProjectCode.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtProjectCode.CustomButton.UseSelectable = true;
+            this.txtProjectCode.CustomButton.Visible = false;
+            this.txtProjectCode.Guid = "6324d129-1d87-4430-9f2c-7a34427718a8";
+            this.txtProjectCode.Lines = new string[0];
+            this.txtProjectCode.Location = new System.Drawing.Point(239, 66);
+            this.txtProjectCode.MaxLength = 32767;
+            this.txtProjectCode.Name = "txtProjectCode";
+            this.txtProjectCode.PasswordChar = '\0';
+            this.txtProjectCode.PromptText = "项目编码";
+            this.txtProjectCode.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtProjectCode.SelectedText = "";
+            this.txtProjectCode.SelectionLength = 0;
+            this.txtProjectCode.SelectionStart = 0;
+            this.txtProjectCode.ShortcutsEnabled = true;
+            this.txtProjectCode.Size = new System.Drawing.Size(150, 23);
+            this.txtProjectCode.TabIndex = 22;
+            this.txtProjectCode.UseSelectable = true;
+            this.txtProjectCode.WaterMark = "项目编码";
+            this.txtProjectCode.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtProjectCode.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroLabel5
+            // txtSectionCode
             // 
-            this.metroLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(200, 68);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(65, 19);
-            this.metroLabel5.TabIndex = 20;
-            this.metroLabel5.Text = "操作编码";
+            this.txtSectionCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSectionCode.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtSectionCode.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            // 
+            // 
+            // 
+            this.txtSectionCode.CustomButton.Image = null;
+            this.txtSectionCode.CustomButton.Location = new System.Drawing.Point(128, 1);
+            this.txtSectionCode.CustomButton.Name = "";
+            this.txtSectionCode.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtSectionCode.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtSectionCode.CustomButton.TabIndex = 1;
+            this.txtSectionCode.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtSectionCode.CustomButton.UseSelectable = true;
+            this.txtSectionCode.CustomButton.Visible = false;
+            this.txtSectionCode.Guid = "29af409d-e6a2-423d-ad53-e2d2ac8b5d26";
+            this.txtSectionCode.Lines = new string[0];
+            this.txtSectionCode.Location = new System.Drawing.Point(466, 66);
+            this.txtSectionCode.MaxLength = 32767;
+            this.txtSectionCode.Name = "txtSectionCode";
+            this.txtSectionCode.PasswordChar = '\0';
+            this.txtSectionCode.PromptText = "标段编码";
+            this.txtSectionCode.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtSectionCode.SelectedText = "";
+            this.txtSectionCode.SelectionLength = 0;
+            this.txtSectionCode.SelectionStart = 0;
+            this.txtSectionCode.ShortcutsEnabled = true;
+            this.txtSectionCode.Size = new System.Drawing.Size(150, 23);
+            this.txtSectionCode.TabIndex = 21;
+            this.txtSectionCode.UseSelectable = true;
+            this.txtSectionCode.WaterMark = "标段编码";
+            this.txtSectionCode.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtSectionCode.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // metroLabel4
             // 
             this.metroLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(425, 68);
+            this.metroLabel4.Location = new System.Drawing.Point(838, 68);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(37, 19);
             this.metroLabel4.TabIndex = 19;
@@ -228,7 +192,7 @@
             // 
             this.metroLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(594, 107);
+            this.metroLabel3.Location = new System.Drawing.Point(395, 68);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(65, 19);
             this.metroLabel3.TabIndex = 18;
@@ -238,7 +202,7 @@
             // 
             this.metroLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(228, 107);
+            this.metroLabel2.Location = new System.Drawing.Point(622, 68);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(37, 19);
             this.metroLabel2.TabIndex = 17;
@@ -248,7 +212,7 @@
             // 
             this.metroLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(397, 107);
+            this.metroLabel1.Location = new System.Drawing.Point(168, 68);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(65, 19);
             this.metroLabel1.TabIndex = 16;
@@ -257,7 +221,7 @@
             // btnQuestQuery
             // 
             this.btnQuestQuery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnQuestQuery.Location = new System.Drawing.Point(791, 105);
+            this.btnQuestQuery.Location = new System.Drawing.Point(1008, 66);
             this.btnQuestQuery.Name = "btnQuestQuery";
             this.btnQuestQuery.Size = new System.Drawing.Size(75, 23);
             this.btnQuestQuery.TabIndex = 15;
@@ -287,16 +251,16 @@
             this.grdITQuest.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grdITQuest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdITQuest.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colITQuestOperationId,
-            this.colInviteTenderCreateDate,
-            this.colITQuerstSectionId,
-            this.colITQuestFileId,
-            this.colITQuestCaption,
-            this.colITQuestType,
-            this.colITQuestContent,
-            this.colITQuestCreateDate,
-            this.colITQuestState,
-            this.colItQuestDetail,
+            this.colOperationId,
+            this.colProjectCode,
+            this.colSectionCode,
+            this.colFileId,
+            this.colCaption,
+            this.colType,
+            this.colContent,
+            this.colCreateDate,
+            this.colState,
+            this.colDetail,
             this.colReplayQuestion});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -309,7 +273,7 @@
             this.grdITQuest.EnableHeadersVisualStyles = false;
             this.grdITQuest.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.grdITQuest.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.grdITQuest.Location = new System.Drawing.Point(23, 141);
+            this.grdITQuest.Location = new System.Drawing.Point(23, 98);
             this.grdITQuest.Name = "grdITQuest";
             this.grdITQuest.ReadOnly = true;
             this.grdITQuest.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -324,75 +288,80 @@
             this.grdITQuest.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.grdITQuest.RowTemplate.Height = 23;
             this.grdITQuest.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdITQuest.Size = new System.Drawing.Size(843, 333);
+            this.grdITQuest.Size = new System.Drawing.Size(1060, 376);
             this.grdITQuest.TabIndex = 14;
             this.grdITQuest.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdITQuest_CellContentClick);
             // 
-            // colITQuestOperationId
+            // colOperationId
             // 
-            this.colITQuestOperationId.HeaderText = "操作编码";
-            this.colITQuestOperationId.Name = "colITQuestOperationId";
-            this.colITQuestOperationId.ReadOnly = true;
+            this.colOperationId.HeaderText = "操作编码";
+            this.colOperationId.Name = "colOperationId";
+            this.colOperationId.ReadOnly = true;
             // 
-            // colInviteTenderCreateDate
+            // colProjectCode
             // 
-            this.colInviteTenderCreateDate.HeaderText = "项目编码";
-            this.colInviteTenderCreateDate.Name = "colInviteTenderCreateDate";
-            this.colInviteTenderCreateDate.ReadOnly = true;
-            this.colInviteTenderCreateDate.Width = 120;
+            this.colProjectCode.HeaderText = "项目编码";
+            this.colProjectCode.Name = "colProjectCode";
+            this.colProjectCode.ReadOnly = true;
+            this.colProjectCode.Width = 120;
             // 
-            // colITQuerstSectionId
+            // colSectionCode
             // 
-            this.colITQuerstSectionId.HeaderText = "标段编码";
-            this.colITQuerstSectionId.Name = "colITQuerstSectionId";
-            this.colITQuerstSectionId.ReadOnly = true;
+            this.colSectionCode.HeaderText = "标段编码";
+            this.colSectionCode.Name = "colSectionCode";
+            this.colSectionCode.ReadOnly = true;
             // 
-            // colITQuestFileId
+            // colFileId
             // 
-            this.colITQuestFileId.HeaderText = "文件标识";
-            this.colITQuestFileId.Name = "colITQuestFileId";
-            this.colITQuestFileId.ReadOnly = true;
+            this.colFileId.HeaderText = "文件标识";
+            this.colFileId.Name = "colFileId";
+            this.colFileId.ReadOnly = true;
             // 
-            // colITQuestCaption
+            // colCaption
             // 
-            this.colITQuestCaption.HeaderText = "标题";
-            this.colITQuestCaption.Name = "colITQuestCaption";
-            this.colITQuestCaption.ReadOnly = true;
+            this.colCaption.HeaderText = "标题";
+            this.colCaption.Name = "colCaption";
+            this.colCaption.ReadOnly = true;
             // 
-            // colITQuestType
+            // colType
             // 
-            this.colITQuestType.HeaderText = "类型";
-            this.colITQuestType.Name = "colITQuestType";
-            this.colITQuestType.ReadOnly = true;
+            this.colType.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.colType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.colType.HeaderText = "类型";
+            this.colType.Name = "colType";
+            this.colType.ReadOnly = true;
+            this.colType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // colITQuestContent
+            // colContent
             // 
-            this.colITQuestContent.HeaderText = "内容";
-            this.colITQuestContent.Name = "colITQuestContent";
-            this.colITQuestContent.ReadOnly = true;
+            this.colContent.HeaderText = "内容";
+            this.colContent.Name = "colContent";
+            this.colContent.ReadOnly = true;
             // 
-            // colITQuestCreateDate
+            // colCreateDate
             // 
-            this.colITQuestCreateDate.HeaderText = "创建时间";
-            this.colITQuestCreateDate.Name = "colITQuestCreateDate";
-            this.colITQuestCreateDate.ReadOnly = true;
+            this.colCreateDate.HeaderText = "创建时间";
+            this.colCreateDate.Name = "colCreateDate";
+            this.colCreateDate.ReadOnly = true;
             // 
-            // colITQuestState
+            // colState
             // 
-            this.colITQuestState.HeaderText = "状态";
-            this.colITQuestState.Name = "colITQuestState";
-            this.colITQuestState.ReadOnly = true;
+            this.colState.HeaderText = "状态";
+            this.colState.Name = "colState";
+            this.colState.ReadOnly = true;
             // 
-            // colItQuestDetail
+            // colDetail
             // 
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colItQuestDetail.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colItQuestDetail.HeaderText = "详情";
-            this.colItQuestDetail.Name = "colItQuestDetail";
-            this.colItQuestDetail.ReadOnly = true;
+            this.colDetail.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colDetail.HeaderText = "详情";
+            this.colDetail.Name = "colDetail";
+            this.colDetail.ReadOnly = true;
             // 
             // colReplayQuestion
             // 
+            this.colReplayQuestion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colReplayQuestion.HeaderText = "回复";
             this.colReplayQuestion.Name = "colReplayQuestion";
             this.colReplayQuestion.ReadOnly = true;
@@ -401,13 +370,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(889, 497);
-            this.Controls.Add(this.metroComboBox1);
-            this.Controls.Add(this.metroTextBox4);
-            this.Controls.Add(this.metroTextBox3);
-            this.Controls.Add(this.metroTextBox2);
-            this.Controls.Add(this.metroTextBox1);
-            this.Controls.Add(this.metroLabel5);
+            this.ClientSize = new System.Drawing.Size(1106, 497);
+            this.Controls.Add(this.cboType);
+            this.Controls.Add(this.txtTitle);
+            this.Controls.Add(this.txtProjectCode);
+            this.Controls.Add(this.txtSectionCode);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
@@ -416,6 +383,7 @@
             this.Controls.Add(this.grdITQuest);
             this.Name = "QueryITenderQuestionForm";
             this.Text = "招标文件澄清";
+            this.Shown += new System.EventHandler(this.QueryITenderQuestionForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.grdITQuest)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -424,28 +392,26 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
-        private MetroFramework.Controls.MetroTextBox metroTextBox4;
-        private MetroFramework.Controls.MetroTextBox metroTextBox3;
-        private MetroFramework.Controls.MetroTextBox metroTextBox2;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
-        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroComboBox cboType;
+        private Summer.Common.Controls.MetroSearchTextBox txtTitle;
+        private Summer.Common.Controls.MetroSearchTextBox txtProjectCode;
+        private Summer.Common.Controls.MetroSearchTextBox txtSectionCode;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroButton btnQuestQuery;
         private MetroFramework.Controls.MetroGrid grdITQuest;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colITQuestOperationId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colInviteTenderCreateDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colITQuerstSectionId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colITQuestFileId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colITQuestCaption;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colITQuestType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colITQuestContent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colITQuestCreateDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colITQuestState;
-        private System.Windows.Forms.DataGridViewLinkColumn colItQuestDetail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colOperationId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProjectCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSectionCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFileId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCaption;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colContent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCreateDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colState;
+        private System.Windows.Forms.DataGridViewLinkColumn colDetail;
         private System.Windows.Forms.DataGridViewLinkColumn colReplayQuestion;
     }
 }

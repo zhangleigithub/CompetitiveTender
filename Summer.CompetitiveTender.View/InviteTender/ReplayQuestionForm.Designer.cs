@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.txtContent = new MetroFramework.Controls.MetroTextBox();
             this.btnOK = new MetroFramework.Controls.MetroButton();
             this.btnCancel = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
@@ -43,38 +43,38 @@
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "内容";
             // 
-            // metroTextBox1
+            // txtContent
             // 
             // 
             // 
             // 
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(98, 1);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(203, 203);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(75, 63);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Multiline = true;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.PromptText = "说点什么...";
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(302, 205);
-            this.metroTextBox1.TabIndex = 1;
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.WaterMark = "说点什么...";
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtContent.CustomButton.Image = null;
+            this.txtContent.CustomButton.Location = new System.Drawing.Point(98, 1);
+            this.txtContent.CustomButton.Name = "";
+            this.txtContent.CustomButton.Size = new System.Drawing.Size(203, 203);
+            this.txtContent.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtContent.CustomButton.TabIndex = 1;
+            this.txtContent.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtContent.CustomButton.UseSelectable = true;
+            this.txtContent.CustomButton.Visible = false;
+            this.txtContent.Lines = new string[0];
+            this.txtContent.Location = new System.Drawing.Point(75, 63);
+            this.txtContent.MaxLength = 32767;
+            this.txtContent.Multiline = true;
+            this.txtContent.Name = "txtContent";
+            this.txtContent.PasswordChar = '\0';
+            this.txtContent.PromptText = "说点什么...";
+            this.txtContent.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtContent.SelectedText = "";
+            this.txtContent.SelectionLength = 0;
+            this.txtContent.SelectionStart = 0;
+            this.txtContent.ShortcutsEnabled = true;
+            this.txtContent.Size = new System.Drawing.Size(302, 205);
+            this.txtContent.TabIndex = 1;
+            this.txtContent.UseSelectable = true;
+            this.txtContent.WaterMark = "说点什么...";
+            this.txtContent.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtContent.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // btnOK
             // 
@@ -85,6 +85,7 @@
             this.btnOK.TabIndex = 2;
             this.btnOK.Text = "确认";
             this.btnOK.UseSelectable = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
@@ -105,7 +106,7 @@
             this.ClientSize = new System.Drawing.Size(400, 320);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.metroTextBox1);
+            this.Controls.Add(this.txtContent);
             this.Controls.Add(this.metroLabel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -120,7 +121,7 @@
         #endregion
 
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
+        private MetroFramework.Controls.MetroTextBox txtContent;
         private MetroFramework.Controls.MetroButton btnOK;
         private MetroFramework.Controls.MetroButton btnCancel;
     }

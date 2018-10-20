@@ -12,6 +12,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using MetroFramework;
+using Summer.CompetitiveTender.Service.ServiceReferenceLogin;
+using Summer.CompetitiveTender.Model;
+using System.IO;
 
 namespace Summer.CompetitiveTender.View.InviteTender
 {
@@ -23,6 +26,11 @@ namespace Summer.CompetitiveTender.View.InviteTender
         /// log
         /// </summary>
         private static ILog log = LogManager.GetLogger(typeof(TemplateNodeManageForm));
+
+        /// <summary>
+        /// gpTemplateService
+        /// </summary>
+        private IGpTemplateService gpTemplateService = null;
 
         /// <summary>
         /// gpTemplateNodeService
@@ -45,15 +53,17 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
         #endregion
 
-        public TemplateNodeManageForm(string gptId)
+        public TemplateNodeManageForm(IGpTemplateService gpTemplateService, string gptId)
         {
             InitializeComponent();
+            this.gpTemplateService = gpTemplateService;
             this.gptId = gptId;
         }
 
         private void TemplateNodeManageForm_Shown(object sender, EventArgs e)
         {
             List<ComboBoxDataSource> lstProjectType = new List<ComboBoxDataSource>();
+            lstProjectType.Add(new ComboBoxDataSource() { Text = "无", Value = 0 });
             lstProjectType.Add(new ComboBoxDataSource() { Text = "商务", Value = 1 });
             lstProjectType.Add(new ComboBoxDataSource() { Text = "技术", Value = 2 });
             lstProjectType.Add(new ComboBoxDataSource() { Text = "价格", Value = 3 });
@@ -68,7 +78,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
             this.cboCanModify.DisplayMember = "Text";
             this.cboCanModify.ValueMember = "Value";
 
-            this.cboCanDelete.DataSource = lstCanModify;
+            this.cboCanDelete.DataSource = new List<ComboBoxDataSource>(lstCanModify);
             this.cboCanDelete.DisplayMember = "Text";
             this.cboCanDelete.ValueMember = "Value";
 
@@ -80,19 +90,25 @@ namespace Summer.CompetitiveTender.View.InviteTender
             this.cboProperty.DisplayMember = "Text";
             this.cboProperty.ValueMember = "Value";
 
-            this.cboCanModifyManage.DataSource = lstCanModify;
+            List<ComboBoxDataSource> lstDocumentType = new List<ComboBoxDataSource>();
+            lstDocumentType.Add(new ComboBoxDataSource() { Text = "doc", Value = 0 });
+            this.cboDocumentType.DataSource = lstDocumentType;
+            this.cboDocumentType.DisplayMember = "Text";
+            this.cboDocumentType.ValueMember = "Value";
+
+            this.cboCanModifyManage.DataSource = new List<ComboBoxDataSource>(lstCanModify);
             this.cboCanModifyManage.DisplayMember = "Text";
             this.cboCanModifyManage.ValueMember = "Value";
 
-            this.cboDRBid.DataSource = lstCanModify;
+            this.cboDRBid.DataSource = new List<ComboBoxDataSource>(lstCanModify);
             this.cboDRBid.DisplayMember = "Text";
             this.cboDRBid.ValueMember = "Value";
 
-            this.cboClient.DataSource = lstCanModify;
+            this.cboClient.DataSource = new List<ComboBoxDataSource>(lstCanModify);
             this.cboClient.DisplayMember = "Text";
             this.cboClient.ValueMember = "Value";
 
-            this.cboCanModifyITender.DataSource = lstCanModify;
+            this.cboCanModifyITender.DataSource = new List<ComboBoxDataSource>(lstCanModify);
             this.cboCanModifyITender.DisplayMember = "Text";
             this.cboCanModifyITender.ValueMember = "Value";
 
@@ -111,6 +127,8 @@ namespace Summer.CompetitiveTender.View.InviteTender
         {
             try
             {
+                this.gptnParentId = -1;
+
                 gpTemplateNodeWebDO gptn = e.Node.Tag as gpTemplateNodeWebDO;
 
                 this.txtName.Text = gptn.gtnName;
@@ -197,30 +215,49 @@ namespace Summer.CompetitiveTender.View.InviteTender
         {
             try
             {
+                baseUserWebDO user = Cache.GetInstance().GetValue<baseUserWebDO>("login");
+
                 gpTemplateNodeWebDO gptn = null;
 
                 //修改
                 if (this.gptnParentId == -1)
                 {
                     gptn = this.trvTemplateNode.SelectedNode.Tag as gpTemplateNodeWebDO;
+                    gptn.optId = user.auID;
+                    gptn.optCoId = user.acId;
+                    gptn.optTime = DateTime.Now;
                 }
                 else //新增
                 {
                     gptn = new gpTemplateNodeWebDO();
+                    gptn.gtId = gptId;
                     gptn.gtnPid = this.gptnParentId;
+                    gptn.gtnPidSpecified = true;
+                    gptn.adtId = user.auID;
+                    gptn.adtCoId = user.acId;
+                    gptn.adtTime = DateTime.Now;
                 }
 
                 gptn.gtnName = this.txtName.Text.Trim();
                 gptn.gtnFileName = this.txtFileName.Text.Trim();
                 gptn.gtnFiletype = (int)this.cboProjectType.SelectedValue;
+                gptn.gtnFiletypeSpecified = true;
                 gptn.editState = (int)this.cboCanModify.SelectedValue;
+                gptn.editStateSpecified = true;
                 gptn.delState = (int)this.cboCanDelete.SelectedValue;
+                gptn.delStateSpecified = true;
                 gptn.gtnAttr = (int)this.cboProperty.SelectedValue;
+                gptn.gtnAttrSpecified = true;
                 gptn.gtnDocType = (int)this.cboDocumentType.SelectedValue;
+                gptn.gtnDocTypeSpecified = true;
                 gptn.bossEditState = (int)this.cboCanModifyManage.SelectedValue;
+                gptn.bossEditStateSpecified = true;
                 gptn.carryState = (int)this.cboClient.SelectedValue;
+                gptn.carryStateSpecified = true;
                 gptn.biderEditState = (int)this.cboCanModifyITender.SelectedValue;
+                gptn.biderEditStateSpecified = true;
                 gptn.sort = int.Parse(this.txtSort.Text.Trim());
+                gptn.sortSpecified = true;
 
                 //修改
                 if (this.gptnParentId == -1)
@@ -238,23 +275,50 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 {
                     if (this.gpTemplateNodeService.Add(gptn))
                     {
+                        this.gptnParentId = -1;
                         this.LoadTree();
                     }
                     else
                     {
-                        MetroFramework.MetroMessageBox.Show(this, "保存失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MetroMessageBox.Show(this, "保存失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             catch (Exception ex)
             {
                 log.Error(ex);
-                MetroFramework.MetroMessageBox.Show(this, "保存失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MetroMessageBox.Show(this, "保存失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnSummit_Click(object sender, EventArgs e)
         {
+            try
+            {
+                OpenFileDialog ofdl = new OpenFileDialog();
+                ofdl.Filter = "word(*.doc)|*.doc";
+
+                if (ofdl.ShowDialog() == DialogResult.OK)
+                {
+                    using (Stream stream = ofdl.OpenFile())
+                    {
+                        string fileName = Path.GetFileNameWithoutExtension(ofdl.FileName);
+                        string extension = Path.GetExtension(ofdl.FileName);
+
+                        byte[] bytes = new byte[stream.Length];
+                        stream.Read(bytes, 0, bytes.Length);
+
+                        baseUserWebDO user = Cache.GetInstance().GetValue<baseUserWebDO>("login");
+
+                        this.gpTemplateService.FileUpload(this.gptId, user.auID, fileName, extension, bytes.Length, bytes);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+                MetroMessageBox.Show(this, "提交失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public void LoadTree()

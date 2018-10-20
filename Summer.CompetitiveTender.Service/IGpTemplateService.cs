@@ -50,24 +50,20 @@ namespace Summer.CompetitiveTender.Service
         /// <summary>
         /// FileUpload
         /// </summary>
-        /// <param name="fileName">fileName</param>
-        /// <param name="suffix">suffix</param>
-        /// <param name="partLength">partLength</param>
-        /// <param name="fileContent">fileContent</param>
-        /// <param name="totalSegment">totalSegment</param>
-        /// <param name="Segment">Segment</param>
-        /// <param name="isNew">isNew</param>
-        /// <param name="userId">userId</param>
+        /// <param name="gtId">gtId</param>
+        /// <param name="buId">buId</param>
+        /// <param name="gtFileName">gtFileName</param>
+        /// <param name="gtFileSuffix">gtFileSuffix</param>
+        /// <param name="gtFileSize">gtFileSize</param>
+        /// <param name="gtFileContent">gtFileContent</param>
         /// <returns>bool</returns>
-        int FileUpload(string fileName, string suffix, long partLength, byte[] fileContent, int totalSegment, int Segment, bool isNew, int userId);
+        bool FileUpload(string gtId, string buId, string gtFileName, string gtFileSuffix, long gtFileSize, byte[] gtFileContent);
 
         /// <summary>
         /// FileDownload
         /// </summary>
-        /// <param name="userId">userId</param>
-        /// <param name="part">part</param>
         /// <param name="gtId">gtId</param>
-        /// <returns>reslultInfoDO</returns>
-        reslultInfoDO FileDownload(int userId, int part, string gtId);
+        /// <returns>resultDO</returns>
+        resultDO FileDownload(string gtId);
     }
 }

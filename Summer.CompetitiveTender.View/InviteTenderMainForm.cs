@@ -27,20 +27,6 @@ namespace Summer.CompetitiveTender.View
 
         #region 文件
 
-        private void OnNewProjectToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            CreateITenderForm createITenderForm = new CreateITenderForm();
-
-            if (createITenderForm.ShowDialog(this)==DialogResult.OK)
-            {
-                EditITenderForm editITenderForm = new EditITenderForm();
-                editITenderForm.ShowDialog(this);
-                editITenderForm.Dispose();
-            }
-
-            createITenderForm.Dispose();
-        }
-
         private void OnOpenProjectToolStripMenuItemClick(object sender, EventArgs e)
         {
             QueryITenderForm queryITenderForm = new QueryITenderForm();

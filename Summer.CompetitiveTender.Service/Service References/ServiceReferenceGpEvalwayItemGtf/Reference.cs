@@ -102,7 +102,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -133,13 +133,13 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf {
         
         private string gsIdField;
         
-        private int isNeeSecondParaField;
-        
-        private bool isNeeSecondParaFieldSpecified;
-        
         private int isNeedFirstParaField;
         
         private bool isNeedFirstParaFieldSpecified;
+        
+        private int isNeedSecondParaField;
+        
+        private bool isNeedSecondParaFieldSpecified;
         
         private decimal maxScoreField;
         
@@ -311,30 +311,6 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
-        public int isNeeSecondPara {
-            get {
-                return this.isNeeSecondParaField;
-            }
-            set {
-                this.isNeeSecondParaField = value;
-                this.RaisePropertyChanged("isNeeSecondPara");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool isNeeSecondParaSpecified {
-            get {
-                return this.isNeeSecondParaFieldSpecified;
-            }
-            set {
-                this.isNeeSecondParaFieldSpecified = value;
-                this.RaisePropertyChanged("isNeeSecondParaSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
         public int isNeedFirstPara {
             get {
                 return this.isNeedFirstParaField;
@@ -354,6 +330,30 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf {
             set {
                 this.isNeedFirstParaFieldSpecified = value;
                 this.RaisePropertyChanged("isNeedFirstParaSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
+        public int isNeedSecondPara {
+            get {
+                return this.isNeedSecondParaField;
+            }
+            set {
+                this.isNeedSecondParaField = value;
+                this.RaisePropertyChanged("isNeedSecondPara");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool isNeedSecondParaSpecified {
+            get {
+                return this.isNeedSecondParaFieldSpecified;
+            }
+            set {
+                this.isNeedSecondParaFieldSpecified = value;
+                this.RaisePropertyChanged("isNeedSecondParaSpecified");
             }
         }
         
@@ -504,7 +504,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(gpEvalWayItemGtfWebDO))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -522,7 +522,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -554,7 +554,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -656,7 +656,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -688,7 +688,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -720,7 +720,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -752,7 +752,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -784,7 +784,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -792,10 +792,6 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf {
     public partial class findAll : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string gsIdField;
-        
-        private long gewtgIdField;
-        
-        private bool gewtgIdFieldSpecified;
         
         private string gewigNameField;
         
@@ -813,30 +809,6 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public long gewtgId {
-            get {
-                return this.gewtgIdField;
-            }
-            set {
-                this.gewtgIdField = value;
-                this.RaisePropertyChanged("gewtgId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool gewtgIdSpecified {
-            get {
-                return this.gewtgIdFieldSpecified;
-            }
-            set {
-                this.gewtgIdFieldSpecified = value;
-                this.RaisePropertyChanged("gewtgIdSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
         public string gewigName {
             get {
                 return this.gewigNameField;
@@ -858,7 +830,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -890,7 +862,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -922,7 +894,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -954,7 +926,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1069,18 +1041,13 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=1)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public long gewtgId;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string gewigName;
         
         public findAll1() {
         }
         
-        public findAll1(string gsId, long gewtgId, string gewigName) {
+        public findAll1(string gsId, string gewigName) {
             this.gsId = gsId;
-            this.gewtgId = gewtgId;
             this.gewigName = gewigName;
         }
     }
@@ -1231,10 +1198,9 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf {
             return base.Channel.findAll(request);
         }
         
-        public Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf.resultDO findAll(string gsId, long gewtgId, string gewigName) {
+        public Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf.resultDO findAll(string gsId, string gewigName) {
             Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf.findAll1 inValue = new Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf.findAll1();
             inValue.gsId = gsId;
-            inValue.gewtgId = gewtgId;
             inValue.gewigName = gewigName;
             Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf.findAllResponse1 retVal = ((Summer.CompetitiveTender.Service.ServiceReferenceGpEvalwayItemGtf.GpEvalwayItemGtfWebService)(this)).findAll(inValue);
             return retVal.@return;

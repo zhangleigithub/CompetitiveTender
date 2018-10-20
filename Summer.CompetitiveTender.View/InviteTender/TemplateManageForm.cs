@@ -14,6 +14,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Summer.CompetitiveTender.View.InviteTender
 {
@@ -38,7 +39,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
         private void QueryITenderTemplateForm_Shown(object sender, EventArgs e)
         {
             List<ComboBoxDataSource> lstType = new List<ComboBoxDataSource>();
-            lstType.Add(new ComboBoxDataSource() { Text = "招标", Value = 0 });
+            lstType.Add(new ComboBoxDataSource() { Text = "招标", Value = 1 });
             this.colTemplateType.DataSource = lstType;
             this.colTemplateType.DisplayMember = "Text";
             this.colTemplateType.ValueMember = "Value";
@@ -108,7 +109,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
             {
                 gpTemplateWebDO gpt = this.grdTemplate.CurrentRow.Tag as gpTemplateWebDO;
 
-                TemplateNodeManageForm templateNodeManageForm = new TemplateNodeManageForm(gpt.gtId);
+                TemplateNodeManageForm templateNodeManageForm = new TemplateNodeManageForm(this.gpTemplateService, gpt.gtId);
 
                 if (templateNodeManageForm.ShowDialog(this) == DialogResult.OK)
                 {
@@ -155,17 +156,21 @@ namespace Summer.CompetitiveTender.View.InviteTender
             {
                 gpTemplateWebDO gpt = this.grdTemplate.CurrentRow.Tag as gpTemplateWebDO;
 
-                //this.gpTemplateService.FileDownload();
+                Service.ServiceReferenceGpTemplate.resultDO result = this.gpTemplateService.FileDownload(gpt.gtId);
+                gpTemplateWebDO obj = result.obj as gpTemplateWebDO;
 
                 SaveFileDialog sfdl = new SaveFileDialog();
-                sfdl.Filter = "word(*.doc)|*.doc|所有文件|*.*";
-                sfdl.FileName = "xxxx";
-                sfdl.DefaultExt = "doc";
+                sfdl.Filter = string.Format("{0}(*.{0})|*.{0}", obj.gtFileSuffix);
+                sfdl.FileName = obj.gtFileName;
+                sfdl.DefaultExt = obj.gtFileSuffix;
                 sfdl.AddExtension = true;
 
                 if (sfdl.ShowDialog() == DialogResult.OK)
                 {
-
+                    using (FileStream fs = File.Create(sfdl.FileName))
+                    {
+                        fs.Write(result.fileContent, 0, result.fileContent.Length);
+                    }
                 }
             }
             else
@@ -198,14 +203,15 @@ namespace Summer.CompetitiveTender.View.InviteTender
             //升序
             foreach (var item in result.OrderBy(x => x.sort))
             {
-                DataGridViewRow row = this.grdTemplate.RowTemplate;
+                DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(this.grdTemplate);
                 row.Cells[this.colTemplateId.Index].Value = item.gtId;
                 row.Cells[this.colTemplateCode.Index].Value = item.gtCode;
                 row.Cells[this.colTempleName.Index].Value = item.gtName;
                 row.Cells[this.colTemplateType.Index].Value = item.gtType;
                 row.Cells[this.colTemplateProjectType.Index].Value = item.gtGroup;
                 row.Cells[this.colTemplateDescription.Index].Value = item.remark;
-                row.Cells[this.colTemplateCreateDate.Index].Value = item.adtId;
+                row.Cells[this.colTemplateCreateDate.Index].Value = item.adtTime;
                 row.Cells[this.colTemplateState.Index].Value = item.fileMakeState;
                 row.Tag = item;
 

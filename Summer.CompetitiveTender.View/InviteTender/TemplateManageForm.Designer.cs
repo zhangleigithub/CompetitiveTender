@@ -168,6 +168,7 @@
             this.colTemplateId.HeaderText = "模板ID";
             this.colTemplateId.Name = "colTemplateId";
             this.colTemplateId.ReadOnly = true;
+            this.colTemplateId.Visible = false;
             // 
             // colTemplateCode
             // 

@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnQuery = new MetroFramework.Controls.MetroButton();
-            this.txtProjectId = new MetroFramework.Controls.MetroTextBox();
+            this.txtProjectId = new Summer.Common.Controls.MetroSearchTextBox();
             this.grdITender = new MetroFramework.Controls.MetroGrid();
             this.colITenderProjectCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colITenderTYJYBSM = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,10 +56,13 @@
             this.btnQuery.TabIndex = 7;
             this.btnQuery.Text = "查询";
             this.btnQuery.UseSelectable = true;
+            this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
             // 
             // txtProjectId
             // 
             this.txtProjectId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtProjectId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtProjectId.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             // 
             // 
             // 
@@ -72,8 +75,9 @@
             this.txtProjectId.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtProjectId.CustomButton.UseSelectable = true;
             this.txtProjectId.CustomButton.Visible = false;
+            this.txtProjectId.Guid = "ef433e2c-b0ea-4f94-89bc-cc6f5a0c7dc2";
             this.txtProjectId.Lines = new string[0];
-            this.txtProjectId.Location = new System.Drawing.Point(709, 63);
+            this.txtProjectId.Location = new System.Drawing.Point(642, 63);
             this.txtProjectId.MaxLength = 32767;
             this.txtProjectId.Name = "txtProjectId";
             this.txtProjectId.PasswordChar = '\0';
@@ -83,7 +87,7 @@
             this.txtProjectId.SelectionLength = 0;
             this.txtProjectId.SelectionStart = 0;
             this.txtProjectId.ShortcutsEnabled = true;
-            this.txtProjectId.Size = new System.Drawing.Size(211, 23);
+            this.txtProjectId.Size = new System.Drawing.Size(278, 23);
             this.txtProjectId.TabIndex = 6;
             this.txtProjectId.UseSelectable = true;
             this.txtProjectId.WaterMark = "项目编号";
@@ -92,6 +96,8 @@
             // 
             // grdITender
             // 
+            this.grdITender.AllowUserToAddRows = false;
+            this.grdITender.AllowUserToDeleteRows = false;
             this.grdITender.AllowUserToResizeRows = false;
             this.grdITender.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -100,14 +106,14 @@
             this.grdITender.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grdITender.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.grdITender.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdITender.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdITender.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.grdITender.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdITender.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colITenderProjectCode,
@@ -120,28 +126,28 @@
             this.colITenderProjectContent,
             this.colIViewBid,
             this.colOpenBid});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdITender.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdITender.DefaultCellStyle = dataGridViewCellStyle5;
             this.grdITender.EnableHeadersVisualStyles = false;
             this.grdITender.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.grdITender.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.grdITender.Location = new System.Drawing.Point(23, 92);
             this.grdITender.Name = "grdITender";
             this.grdITender.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdITender.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdITender.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.grdITender.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.grdITender.RowTemplate.Height = 23;
             this.grdITender.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -205,7 +211,7 @@
             this.colOpenBid.HeaderText = "进入开标";
             this.colOpenBid.Name = "colOpenBid";
             // 
-            // QueryITenderForm
+            // OOBQueryITenderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -213,8 +219,9 @@
             this.Controls.Add(this.btnQuery);
             this.Controls.Add(this.txtProjectId);
             this.Controls.Add(this.grdITender);
-            this.Name = "QueryITenderForm";
+            this.Name = "OOBQueryITenderForm";
             this.Text = "浏览招标文件";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Shown += new System.EventHandler(this.QueryITenderForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.grdITender)).EndInit();
             this.ResumeLayout(false);
@@ -224,7 +231,7 @@
         #endregion
 
         private MetroFramework.Controls.MetroButton btnQuery;
-        private MetroFramework.Controls.MetroTextBox txtProjectId;
+        private Summer.Common.Controls.MetroSearchTextBox txtProjectId;
         private MetroFramework.Controls.MetroGrid grdITender;
         private System.Windows.Forms.DataGridViewTextBoxColumn colITenderProjectCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn colITenderTYJYBSM;

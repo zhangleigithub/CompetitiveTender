@@ -56,7 +56,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -64,6 +64,8 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
     public partial class resultDO : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int codeField;
+        
+        private byte[] fileContentField;
         
         private string messageField;
         
@@ -86,7 +88,19 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary", Order=1)]
+        public byte[] fileContent {
+            get {
+                return this.fileContentField;
+            }
+            set {
+                this.fileContentField = value;
+                this.RaisePropertyChanged("fileContent");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
         public string message {
             get {
                 return this.messageField;
@@ -98,7 +112,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
         public object obj {
             get {
                 return this.objField;
@@ -110,7 +124,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("objList", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute("objList", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=4)]
         public object[] objList {
             get {
                 return this.objListField;
@@ -122,7 +136,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
         public bool success {
             get {
                 return this.successField;
@@ -144,7 +158,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -176,7 +190,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -208,7 +222,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -240,7 +254,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -315,7 +329,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(gpTenderProjectWebDO))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -333,7 +347,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -480,9 +494,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         
         private string verifyCoCodeField;
         
-        private int verifyCoCodeTypeField;
-        
-        private bool verifyCoCodeTypeFieldSpecified;
+        private string verifyCoCodeTypeField;
         
         private string verifyCoNameField;
         
@@ -1328,25 +1340,13 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=60)]
-        public int verifyCoCodeType {
+        public string verifyCoCodeType {
             get {
                 return this.verifyCoCodeTypeField;
             }
             set {
                 this.verifyCoCodeTypeField = value;
                 this.RaisePropertyChanged("verifyCoCodeType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool verifyCoCodeTypeSpecified {
-            get {
-                return this.verifyCoCodeTypeFieldSpecified;
-            }
-            set {
-                this.verifyCoCodeTypeFieldSpecified = value;
-                this.RaisePropertyChanged("verifyCoCodeTypeSpecified");
             }
         }
         
@@ -1364,7 +1364,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1396,7 +1396,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]

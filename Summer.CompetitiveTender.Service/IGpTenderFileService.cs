@@ -26,6 +26,16 @@ namespace Summer.CompetitiveTender.Service
         bool UploadFile(long partLength, byte[] packageFileContent, int totalSegment, int segment, bool isNew, string buId, string gtpId, string gsId, string packageFileName, string packageFileSuffix, long packageFileSize);
 
         /// <summary>
+        /// UploadFile
+        /// </summary>
+        /// <param name="fileName">fileName</param>
+        /// <param name="buId">buId</param>
+        /// <param name="gtpId">gtpId</param>
+        /// <param name="gsId">gsId</param>
+        /// <returns>bool</returns>
+        bool UploadFile(string fileName, string buId, string gtpId, string gsId);
+
+        /// <summary>
         /// DownloadFile
         /// </summary>
         /// <param name="gtpId">gtpId</param>
@@ -34,6 +44,16 @@ namespace Summer.CompetitiveTender.Service
         /// <param name="buId">gsId</param>
         /// <returns>bool</returns>
         bool DownloadFile(string gtpId, string gsId, int part, string buId);
+
+        /// <summary>
+        /// DownloadFile
+        /// </summary>
+        /// <param name="filePath">filePath</param>
+        /// <param name="gtpId">gtpId</param>
+        /// <param name="gsId">gsId</param>
+        /// <param name="buId">buId</param>
+        /// <returns>bool</returns>
+        bool DownloadFile(string filePath, string gtpId, string gsId, string buId);
 
         /// <summary>
         /// RemoveFile

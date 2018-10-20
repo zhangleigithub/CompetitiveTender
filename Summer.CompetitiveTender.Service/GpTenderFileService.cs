@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Summer.CompetitiveTender.Service.ServiceReferenceGpTenderFile;
 using System.Linq;
 using System.Text;
+using System.IO;
 
 namespace Summer.CompetitiveTender.Service
 {
@@ -48,6 +49,45 @@ namespace Summer.CompetitiveTender.Service
         }
 
         /// <summary>
+        /// UploadFile
+        /// </summary>
+        /// <param name="fileName">fileName</param>
+        /// <param name="buId">buId</param>
+        /// <param name="gtpId">gtpId</param>
+        /// <param name="gsId">gsId</param>
+        /// <returns>bool</returns>
+        public bool UploadFile(string fileName, string buId, string gtpId, string gsId)
+        {
+            int size = 1 * 1024 * 1024;
+            int total = 0;
+            string packageFileName = Path.GetFileNameWithoutExtension(fileName);
+            string packageFileSuffix = Path.GetExtension(fileName).Remove(0, 1);
+            long packageFileSize = 0;
+
+            using (FileStream fs = File.OpenRead(fileName))
+            {
+                packageFileSize = fs.Length;
+                total = (int)(fs.Length / size) + (fs.Length % size == 0 ? 0 : 1);
+                using (BinaryReader br = new BinaryReader(fs))
+                {
+                    for (int i = 1; i <= total; i++)
+                    {
+                        byte[] bytes = br.ReadBytes(size);
+
+                        resultDO result = this.wsAgent.uploadTenderpackage(bytes.Length, bytes, total, i, true, buId, gtpId, gsId, packageFileName, packageFileSuffix, packageFileSize);
+
+                        if (result.code != i)
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
         /// DownloadFile
         /// </summary>
         /// <param name="gtpId">gtpId</param>
@@ -58,6 +98,56 @@ namespace Summer.CompetitiveTender.Service
         public bool DownloadFile(string gtpId, string gsId, int part, string buId)
         {
             return this.wsAgent.downloadTenderpackage(gtpId, gsId, part, buId).success;
+        }
+
+        /// <summary>
+        /// DownloadFile
+        /// </summary>
+        /// <param name="filePath">filePath</param>
+        /// <param name="gtpId">gtpId</param>
+        /// <param name="gsId">gsId</param>
+        /// <param name="buId">buId</param>
+        /// <returns>bool</returns>
+        public bool DownloadFile(string filePath, string gtpId, string gsId, string buId)
+        {
+            resultDO obj = this.wsAgent.downloadTenderpackage(gtpId, gsId, 1, buId);
+
+            if (!obj.success)
+            {
+                return false;
+            }
+
+            reslultInfoDO fileInfo = obj.obj as reslultInfoDO;
+            string fileName = Path.Combine(filePath, fileInfo.fileName + "." + fileInfo.suffix);
+            long fileSize = fileInfo.fileSize;
+            long size = obj.fileContent.Length;
+            int total = fileInfo.totalSegment;
+
+            using (FileStream fs = File.Open(fileName, FileMode.Create, FileAccess.Write))
+            {
+                using (BinaryWriter bw = new BinaryWriter(fs))
+                {
+                    bw.Write(obj.fileContent);
+                    bw.Flush();
+
+                    for (int i = 2; i <= total; i++)
+                    {
+                        resultDO temp = this.wsAgent.downloadTenderpackage(gtpId, gsId, i, buId);
+
+                        if (temp.success)
+                        {
+                            bw.Write(temp.fileContent);
+                            bw.Flush();
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+
+            return true;
         }
 
         /// <summary>

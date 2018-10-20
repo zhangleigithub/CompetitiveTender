@@ -1,7 +1,9 @@
 ﻿using log4net;
 using MetroFramework;
 using MetroFramework.Forms;
+using Summer.CompetitiveTender.Model;
 using Summer.CompetitiveTender.Service;
+using Summer.CompetitiveTender.Service.ServiceReferenceLogin;
 using Summer.CompetitiveTender.View.BidEvaluaMethod;
 using System;
 using System.Collections.Generic;
@@ -22,6 +24,11 @@ namespace Summer.CompetitiveTender.View.InviteTender
         /// log
         /// </summary>
         private static ILog log = LogManager.GetLogger(typeof(EditITenderForm));
+
+        /// <summary>
+        /// gpTenderFileService
+        /// </summary>
+        private IGpTenderFileService gpTenderFileService = new GpTenderFileService();
 
         /// <summary>
         /// gpEvalwayItemGtfService
@@ -69,6 +76,31 @@ namespace Summer.CompetitiveTender.View.InviteTender
             switch (e.Node.Text)
             {
                 case "招标正文":
+                    try
+                    {
+                        FolderBrowserDialog fbdl = new FolderBrowserDialog();
+                        if (fbdl.ShowDialog() == DialogResult.OK)
+                        {
+                            baseUserWebDO loginResponse = Cache.GetInstance().GetValue<baseUserWebDO>("login");
+                            //bool result = gpTenderFileService.DownloadFile(fbdl.SelectedPath, this.projectId, this.sectionId, loginResponse.auID);
+                            bool result = gpTenderFileService.DownloadFile(fbdl.SelectedPath, "1d485a24-0f17-41f9-8d48-e2601f667835", "2f345345-a8b0-4257-a4ca-302476b66193", loginResponse.auID);
+
+                            if (result)
+                            {
+                                MetroMessageBox.Show(this, "下载成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MetroMessageBox.Show(this, "下载失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        log.Error(ex);
+                        MetroMessageBox.Show(this, "下载失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                  
                     bidEvalBodyPage.Dock = DockStyle.Fill;
                     this.pnelFrame.Controls.Add(bidEvalBodyPage);
                     break;
@@ -83,12 +115,36 @@ namespace Summer.CompetitiveTender.View.InviteTender
                     this.pnelFrame.Controls.Add(bidEvalScoringPointPage);
                     break;
                 case "评分因素":
-                    BidEvalFactorPage bidEvalFactorPage = new BidEvalFactorPage(this.gpBidFileOrgService,this.projectId,this.sectionId);
+                    BidEvalFactorPage bidEvalFactorPage = new BidEvalFactorPage(this.gpBidFileOrgService, this.projectId, this.sectionId);
                     bidEvalFactorPage.Dock = DockStyle.Fill;
                     this.pnelFrame.Controls.Add(bidEvalFactorPage);
                     break;
                 case "生成招标文件":
-                    MetroMessageBox.Show(this, "疯狂开发中...", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    try
+                    {
+                        OpenFileDialog ofdl = new OpenFileDialog();
+                        ofdl.Filter = "word(*.doc)|*.doc|pdf(*.pdf)|*.pdf|zip(*.zip)|*.zip";
+
+                        if (ofdl.ShowDialog() == DialogResult.OK)
+                        {
+                            baseUserWebDO loginResponse = Cache.GetInstance().GetValue<baseUserWebDO>("login");
+                            bool result = gpTenderFileService.UploadFile(ofdl.FileName, loginResponse.auID, this.projectId, this.sectionId);
+
+                            if (result)
+                            {
+                                MetroMessageBox.Show(this, "生成成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MetroMessageBox.Show(this, "生成失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        log.Error(ex);
+                        MetroMessageBox.Show(this, "生成失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                     break;
                 case "打印招标文件":
                     MetroMessageBox.Show(this, "疯狂开发中...", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -102,7 +158,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
         #region 方法
 
-        public EditITenderForm(string projectId,string sectionId)
+        public EditITenderForm(string projectId, string sectionId)
         {
             InitializeComponent();
             this.projectId = projectId;

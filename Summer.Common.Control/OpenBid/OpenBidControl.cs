@@ -25,7 +25,7 @@ namespace Summer.Common.Controls.OpenBid
         public CompetitiveTender.Service.openBidWebService.resultDO HostSignIn(string gtpId, string loginId)
         {
             //签到
-            CompetitiveTender.Service.openBidWebService.CompetitiveTender.Service.openBidWebService.resultDO ret = openBid.HostSignIn(gtpId, loginId);
+            CompetitiveTender.Service.openBidWebService.resultDO ret = openBid.HostSignIn(gtpId, loginId);
             return ret;
         }
 

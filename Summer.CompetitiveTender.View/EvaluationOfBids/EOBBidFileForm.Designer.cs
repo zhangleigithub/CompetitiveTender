@@ -1,6 +1,6 @@
 ﻿namespace Summer.CompetitiveTender.View.EvaluationOfBids
 {
-    partial class EOBForm
+    partial class EOBBidFileForm
     {
         /// <summary>
         /// Required designer variable.

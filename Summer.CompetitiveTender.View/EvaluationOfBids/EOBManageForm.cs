@@ -2,6 +2,7 @@
 using MetroFramework;
 using Summer.CompetitiveTender.Model;
 using Summer.CompetitiveTender.Service;
+using Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation;
 using Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject;
 using Summer.CompetitiveTender.Service.ServiceReferenceLogin;
 using Summer.CompetitiveTender.View.Common;
@@ -10,6 +11,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -29,6 +31,11 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
         /// gpTenderProjectService
         /// </summary>
         private IGpTenderProjectService gpTenderProjectService = new GpTenderProjectService();
+
+        /// <summary>
+        /// bidEvaluationService
+        /// </summary>
+        private IBidEvaluationService bidEvaluationService = new BidEvaluationService();
 
         #endregion
 
@@ -69,7 +76,7 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
             {
                 gpTenderProjectWebDO gptp = this.grdProject.CurrentRow.Tag as gpTenderProjectWebDO;
 
-                EOBForm eOBForm = new EOBForm(gptp.gtpId, gptp.gsId);
+                EOBBidFileForm eOBForm = new EOBBidFileForm(gptp.gtpId, gptp.gsId);
                 eOBForm.ShowDialog(this);
                 eOBForm.Dispose();
             }
@@ -90,11 +97,33 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
 
                 if (ofdl.ShowDialog() == DialogResult.OK)
                 {
+                    gpSectionWebDO obj = new gpSectionWebDO();
+                    obj.gtpId = gptp.gtpId;
+                    obj.gsId = gptp.gsId;
+                    obj.evalReportUploadTime = DateTime.Now;
+                    obj.evalReportFileName = Path.GetFileName(ofdl.FileName);
+
+                    using (Stream stream = ofdl.OpenFile())
+                    {
+                        byte[] bytes = new byte[stream.Length];
+                        stream.Read(bytes, 0, bytes.Length);
+
+                        bool result = bidEvaluationService.BidFileResave(obj, bytes);
+
+                        if (result)
+                        {
+                            MetroMessageBox.Show(this, "操作成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MetroMessageBox.Show(this, "操作失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                 }
             }
             else
             {
-                MetroFramework.MetroMessageBox.Show(this, "请选择招标项目！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MetroMessageBox.Show(this, "请选择招标项目！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -120,15 +149,23 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
             {
                 gpTenderProjectWebDO gptp = this.grdProject.CurrentRow.Tag as gpTenderProjectWebDO;
 
+                //Service.ServiceReferenceBidEvaluation.resultDO result = bidEvaluationService.GetBidEvaluationReportFile(gptp.gsId);
+                Service.ServiceReferenceBidEvaluation.resultDO result = bidEvaluationService.GetBidEvaluationReportFile("d49f77a5-ad3a-4540-828f-7b9c759fdca2");
+
+                //Service.ServiceReferenceBidEvaluation.gpEvalResultWebDO obj = result.obj as Service.ServiceReferenceBidEvaluation.re;
+
                 SaveFileDialog sfdl = new SaveFileDialog();
-                sfdl.Filter = "word(*.doc)|*.doc|所有文件|*.*";
-                sfdl.FileName = "xxxx";
-                sfdl.DefaultExt = "doc";
-                sfdl.AddExtension = true;
+                //sfdl.Filter = string.Format("{0}(*.{0})|*.{0}", obj.gtFileSuffix);
+                //sfdl.FileName = obj.gtFileName;
+                //sfdl.DefaultExt = obj.gtFileSuffix;
+                //sfdl.AddExtension = true;
 
                 if (sfdl.ShowDialog() == DialogResult.OK)
                 {
-
+                    using (FileStream fs = File.Create(sfdl.FileName))
+                    {
+                        fs.Write(result.fileContent, 0, result.fileContent.Length);
+                    }
                 }
             }
             else
@@ -164,7 +201,7 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
             this.grdProject.Rows.Clear();
             //baseUserWebDO loginResponse = Cache.GetInstance().GetValue<baseUserWebDO>("login");
             //var result = gpTenderProjectService.FindListByAuId(loginResponse.auID);
-            var result = gpTenderProjectService.FindListByCondition(string.Empty, string.Empty, this.txtProjectName.Text.Trim(), this.txtProjectCode.Text.Trim());
+            var result = gpTenderProjectService.FindBidProjecList(string.Empty, string.Empty, this.txtProjectName.Text.Trim(), this.txtProjectCode.Text.Trim());
             this.SetGridData(result);
         }
 

@@ -9,27 +9,27 @@ namespace Summer.CompetitiveTender.Service
     public interface IGpTenderProjectService
     {
         /// <summary>
-        /// FindById
+        /// GetById
         /// </summary>
         /// <param name="gtpId">gtpId</param>
         /// <returns>gpTenderProjectWebDO</returns>
-        gpTenderProjectWebDO FindById(string gtpId);
+        gpTenderProjectWebDO GetById(string gtpId);
 
         /// <summary>
-        /// FindListByAuId
+        /// FindList
         /// </summary>
         /// <param name="auId">auId</param>
         /// <returns>gpTenderProjectWebDO[</returns>
-        gpTenderProjectWebDO[] FindListByAuId(string auId);
+        gpTenderProjectWebDO[] FindList(string auId);
 
         /// <summary>
-        /// FindListByCondition
+        /// FindBidProjecList
         /// </summary>
         /// <param name="gtpId">gtpId</param>
         /// <param name="gsId">gsId</param>
         /// <param name="gtpName">gtpName</param>
         /// <param name="gtpCode">gtpCode</param>
         /// <returns>gpTenderProjectWebDO[]</returns>
-        gpTenderProjectWebDO[] FindListByCondition(string gtpId, string gsId, string gtpName, string gtpCode);
+        gpTenderProjectWebDO[] FindBidProjecList(string gtpId, string gsId, string gtpName, string gtpCode);
     }
 }

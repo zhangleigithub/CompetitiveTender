@@ -114,11 +114,11 @@
     <Compile Include="EvaluationOfBids\EOBResultForm.Designer.cs">
       <DependentUpon>EOBResultForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EvaluationOfBids\EOBForm.cs">
+    <Compile Include="EvaluationOfBids\EOBBidFileForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EvaluationOfBids\EOBForm.Designer.cs">
-      <DependentUpon>EOBForm.cs</DependentUpon>
+    <Compile Include="EvaluationOfBids\EOBBidFileForm.Designer.cs">
+      <DependentUpon>EOBBidFileForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EvaluationOfBids\EOBManageForm.cs">
       <SubType>Form</SubType>
@@ -421,8 +421,8 @@
     <EmbeddedResource Include="EvaluationOfBids\EOBResultForm.resx">
       <DependentUpon>EOBResultForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EvaluationOfBids\EOBForm.resx">
-      <DependentUpon>EOBForm.cs</DependentUpon>
+    <EmbeddedResource Include="EvaluationOfBids\EOBBidFileForm.resx">
+      <DependentUpon>EOBBidFileForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EvaluationOfBids\EOBManageForm.resx">
       <DependentUpon>EOBManageForm.cs</DependentUpon>

@@ -26,7 +26,7 @@ namespace Summer.Common.Controls.BidControl
         /// <returns></returns>
         public gpTenderProjectWebDO[] GetBidData()
         {
-            return gpTenderProjectService.FindListByCondition(string.Empty, string.Empty, string.Empty, string.Empty);
+            return gpTenderProjectService.FindBidProjecList(string.Empty, string.Empty, string.Empty, string.Empty);
         }
     }
 }

@@ -13,19 +13,24 @@ using System.Windows.Forms;
 
 namespace Summer.CompetitiveTender.View.EvaluationOfBids
 {
-    public partial class EOBForm : FormBase
+    public partial class EOBBidFileForm : FormBase
     {
         #region 字段
 
         /// <summary>
         /// log
         /// </summary>
-        private static ILog log = LogManager.GetLogger(typeof(EOBForm));
+        private static ILog log = LogManager.GetLogger(typeof(EOBBidFileForm));
 
         /// <summary>
         /// gpApplyDetailService
         /// </summary>
         private IGpApplyDetailService gpApplyDetailService = new GpApplyDetailService();
+
+        /// <summary>
+        /// bidEvaluationService
+        /// </summary>
+        private IBidEvaluationService bidEvaluationService = new BidEvaluationService();
 
         /// <summary>
         /// projectId
@@ -48,13 +53,29 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
 
         private void grdBids_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == this.colReview.Index)
+            try
             {
-                gpApplyDetailWebDO obj = this.grdBids.CurrentRow.Tag as gpApplyDetailWebDO;
+                if (e.ColumnIndex == this.colReview.Index)
+                {
+                    gpApplyDetailWebDO obj = this.grdBids.CurrentRow.Tag as gpApplyDetailWebDO;
 
-                EOBReviewForm eOBReviewForm = new EOBReviewForm(obj);
-                eOBReviewForm.ShowDialog(this);
-                eOBReviewForm.Dispose();
+                    //object obj1 = bidEvaluationService.AuxiliaryAnalysis(this.sectionId);
+                    //object obj2 = bidEvaluationService.PriceAnalysis(this.sectionId);
+                    //object obj3 = bidEvaluationService.ConformanceContrastResult(this.sectionId);
+                    //object obj4 = bidEvaluationService.EvaluationFactorsAnalysis(this.sectionId);
+                    //object obj5 = bidEvaluationService.FileDifferenceResult(this.sectionId);
+                    //object obj6 = bidEvaluationService.FileExceptionResult(this.sectionId);
+                    //object obj7 = bidEvaluationService.AutomaticScoreResult(this.sectionId);
+
+                    EOBReviewForm eOBReviewForm = new EOBReviewForm(obj);
+                    eOBReviewForm.ShowDialog(this);
+                    eOBReviewForm.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+                MetroMessageBox.Show(this, "操作失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -62,7 +83,7 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
 
         #region 方法
 
-        public EOBForm(string projectId, string sectionId)
+        public EOBBidFileForm(string projectId, string sectionId)
         {
             InitializeComponent();
 

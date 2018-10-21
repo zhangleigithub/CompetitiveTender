@@ -57,7 +57,7 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
                 gpEvalResult.gsewiName = this.txtGsewiName.Text.Trim();
                 gpEvalResult.gerResult = int.Parse(this.txtGerResult.Text.Trim());
                 gpEvalResult.gerResultSpecified = true;
-                gpEvalResult.gerScores = int.Parse(this.txtGerScores.Text.Trim());
+                gpEvalResult.gerScores = double.Parse(this.txtGerScores.Text.Trim());
                 gpEvalResult.gerScoresSpecified = true;
                 gpEvalResult.remark = this.txtRemark.Text.Trim();
                 gpEvalResult.gerPersonId = user.auID;

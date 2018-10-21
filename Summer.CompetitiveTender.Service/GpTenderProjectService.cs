@@ -28,11 +28,11 @@ namespace Summer.CompetitiveTender.Service
         }
 
         /// <summary>
-        /// FindById
+        /// GetById
         /// </summary>
         /// <param name="gtpId">gtpId</param>
         /// <returns>gpTenderProjectWebDO</returns>
-        public gpTenderProjectWebDO FindById(string gtpId)
+        public gpTenderProjectWebDO GetById(string gtpId)
         {
             if (string.IsNullOrWhiteSpace(gtpId))
             {
@@ -43,11 +43,11 @@ namespace Summer.CompetitiveTender.Service
         }
 
         /// <summary>
-        /// FindListByAuId
+        /// FindList
         /// </summary>
         /// <param name="auId">auId</param>
         /// <returns>gpTenderProjectWebDO[</returns>
-        public gpTenderProjectWebDO[] FindListByAuId(string auId)
+        public gpTenderProjectWebDO[] FindList(string auId)
         {
             if (string.IsNullOrWhiteSpace(auId))
             {
@@ -60,14 +60,14 @@ namespace Summer.CompetitiveTender.Service
         }
 
         /// <summary>
-        /// FindListByCondition
+        /// FindBidProjecList
         /// </summary>
         /// <param name="gtpId">gtpId</param>
         /// <param name="gsId">gsId</param>
         /// <param name="gtpName">gtpName</param>
         /// <param name="gtpCode">gtpCode</param>
         /// <returns>gpTenderProjectWebDO[]</returns>
-        public gpTenderProjectWebDO[] FindListByCondition(string gtpId, string gsId, string gtpName, string gtpCode)
+        public gpTenderProjectWebDO[] FindBidProjecList(string gtpId, string gsId, string gtpName, string gtpCode)
         {
             resultDO result = this.wsAgent.findBidProjecList(gtpId, gsId, gtpName, gtpCode);
 

@@ -52,7 +52,7 @@ namespace Summer.CompetitiveTender.View.OpenOfBids
         {
             try
             {
-                var result = gpTenderProjectService.FindById(this.txtProjectId.Text.Trim());
+                var result = gpTenderProjectService.GetById(this.txtProjectId.Text.Trim());
                 this.SetGridData(new gpTenderProjectWebDO[] { result });
             }
             catch (Exception ex)
@@ -98,7 +98,7 @@ namespace Summer.CompetitiveTender.View.OpenOfBids
         {
             this.grdITender.Rows.Clear();
             baseUserWebDO loginResponse = Cache.GetInstance().GetValue<baseUserWebDO>("login");
-            var result = gpTenderProjectService.FindListByAuId(loginResponse.auID);
+            var result = gpTenderProjectService.FindList(loginResponse.auID);
             this.SetGridData(result);
         }
 

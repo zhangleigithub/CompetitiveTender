@@ -76,31 +76,6 @@ namespace Summer.CompetitiveTender.View.InviteTender
             switch (e.Node.Text)
             {
                 case "招标正文":
-                    try
-                    {
-                        FolderBrowserDialog fbdl = new FolderBrowserDialog();
-                        if (fbdl.ShowDialog() == DialogResult.OK)
-                        {
-                            baseUserWebDO loginResponse = Cache.GetInstance().GetValue<baseUserWebDO>("login");
-                            //bool result = gpTenderFileService.DownloadFile(fbdl.SelectedPath, this.projectId, this.sectionId, loginResponse.auID);
-                            bool result = gpTenderFileService.DownloadFile(fbdl.SelectedPath, "1d485a24-0f17-41f9-8d48-e2601f667835", "2f345345-a8b0-4257-a4ca-302476b66193", loginResponse.auID);
-
-                            if (result)
-                            {
-                                MetroMessageBox.Show(this, "下载成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                            else
-                            {
-                                MetroMessageBox.Show(this, "下载失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        log.Error(ex);
-                        MetroMessageBox.Show(this, "下载失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                  
                     bidEvalBodyPage.Dock = DockStyle.Fill;
                     this.pnelFrame.Controls.Add(bidEvalBodyPage);
                     break;
@@ -148,6 +123,32 @@ namespace Summer.CompetitiveTender.View.InviteTender
                     break;
                 case "打印招标文件":
                     MetroMessageBox.Show(this, "疯狂开发中...", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case "下载":
+                    try
+                    {
+                        FolderBrowserDialog fbdl = new FolderBrowserDialog();
+                        if (fbdl.ShowDialog() == DialogResult.OK)
+                        {
+                            baseUserWebDO loginResponse = Cache.GetInstance().GetValue<baseUserWebDO>("login");
+                            //bool result = gpTenderFileService.DownloadFile(fbdl.SelectedPath, this.projectId, this.sectionId, loginResponse.auID);
+                            bool result = gpTenderFileService.DownloadFile(fbdl.SelectedPath, "1d485a24-0f17-41f9-8d48-e2601f667835", "2f345345-a8b0-4257-a4ca-302476b66193", loginResponse.auID);
+
+                            if (result)
+                            {
+                                MetroMessageBox.Show(this, "下载成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MetroMessageBox.Show(this, "下载失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        log.Error(ex);
+                        MetroMessageBox.Show(this, "下载失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                     break;
                 default:
                     break;

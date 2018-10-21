@@ -37,6 +37,11 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
         /// </summary>
         private IBidEvaluationService bidEvaluationService = new BidEvaluationService();
 
+        /// <summary>
+        /// gpBidQuestionsService
+        /// </summary>
+        private IGpBidQuestionsService gpBidQuestionsService = new GpBidQuestionsService();
+
         #endregion
 
         #region 事件
@@ -56,17 +61,58 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
 
         private void btnRecJudges_Click(object sender, EventArgs e)
         {
-            if (this.grdProject.CurrentRow != null)
+            try
             {
-                gpTenderProjectWebDO gptp = this.grdProject.CurrentRow.Tag as gpTenderProjectWebDO;
+                if (this.grdProject.CurrentRow != null)
+                {
+                    gpTenderProjectWebDO gptp = this.grdProject.CurrentRow.Tag as gpTenderProjectWebDO;
 
-                SetRecJudgesForm setRecJudgesForm = new SetRecJudgesForm();
-                setRecJudgesForm.ShowDialog(this);
-                setRecJudgesForm.Dispose();
+                    baseUserWebDO loginResponse = Cache.GetInstance().GetValue<baseUserWebDO>("login");
+                    //////
+                    Service.ServiceReferenceGpBidQuestions.gpBidQuestionsWebDO obj = new Service.ServiceReferenceGpBidQuestions.gpBidQuestionsWebDO();
+                    obj.gtpId = gptp.gtpId;
+                    obj.gsId = gptp.gsId;
+                    obj.gbqEndTime = DateTime.Now;
+                    obj.gbqEndTimeSpecified = true;
+                    obj.gbqConTent = "测试";
+                    obj.gbqAgainstCoName = "123";
+                    obj.gbqProposerId = loginResponse.auID;
+                    obj.gbqProposerName = loginResponse.auName;
+                    obj.gbqProposedTime = DateTime.Now;
+                    obj.gbqProposedTimeSpecified = true;
+                    obj.isEnd = 0;
+                    obj.isEndSpecified = true;
+                    obj.evalState = gptp.evalState;
+                    obj.evalStateSpecified = true;
+
+                    bool b = gpBidQuestionsService.Add(obj);
+
+                    Service.ServiceReferenceGpBidQuestions.gpBidQuestionsWebDO[] result = gpBidQuestionsService.FindList(gptp.gtpId, gptp.gsId, string.Empty);
+
+                    Service.ServiceReferenceGpBidQuestions.gpBidQuestionsWebDO r = result[0];
+                    r.gbqConTent = "测试1";
+
+                    bool b1 = gpBidQuestionsService.Update(r);
+
+                    result = gpBidQuestionsService.FindList(gptp.gtpId, gptp.gsId, string.Empty);
+
+                    bool b2 = gpBidQuestionsService.Remove(result[0].gbqId);
+
+                    result = gpBidQuestionsService.FindList(gptp.gtpId, gptp.gsId, string.Empty);
+
+                    SetRecJudgesForm setRecJudgesForm = new SetRecJudgesForm();
+                    setRecJudgesForm.ShowDialog(this);
+                    setRecJudgesForm.Dispose();
+                }
+                else
+                {
+                    MetroFramework.MetroMessageBox.Show(this, "请选择招标项目！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MetroFramework.MetroMessageBox.Show(this, "请选择招标项目！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                log.Error(ex);
+                MetroMessageBox.Show(this, "操作失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -88,42 +134,50 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
 
         private void btnBidEvalReport_Click(object sender, EventArgs e)
         {
-            if (this.grdProject.CurrentRow != null)
+            try
             {
-                gpTenderProjectWebDO gptp = this.grdProject.CurrentRow.Tag as gpTenderProjectWebDO;
-
-                OpenFileDialog ofdl = new OpenFileDialog();
-                ofdl.Filter = "word(*.doc)|*.doc";
-
-                if (ofdl.ShowDialog() == DialogResult.OK)
+                if (this.grdProject.CurrentRow != null)
                 {
-                    gpSectionWebDO obj = new gpSectionWebDO();
-                    obj.gtpId = gptp.gtpId;
-                    obj.gsId = gptp.gsId;
-                    obj.evalReportUploadTime = DateTime.Now;
-                    obj.evalReportFileName = Path.GetFileName(ofdl.FileName);
+                    gpTenderProjectWebDO gptp = this.grdProject.CurrentRow.Tag as gpTenderProjectWebDO;
 
-                    using (Stream stream = ofdl.OpenFile())
+                    OpenFileDialog ofdl = new OpenFileDialog();
+                    ofdl.Filter = "pdf(*.pdf)|*.pdf";
+
+                    if (ofdl.ShowDialog() == DialogResult.OK)
                     {
-                        byte[] bytes = new byte[stream.Length];
-                        stream.Read(bytes, 0, bytes.Length);
+                        gpSectionWebDO obj = new gpSectionWebDO();
+                        obj.gtpId = gptp.gtpId;
+                        obj.gsId = gptp.gsId;
+                        obj.evalReportUploadTime = DateTime.Now;
+                        obj.evalReportFileName = Path.GetFileName(ofdl.FileName);
 
-                        bool result = bidEvaluationService.BidFileResave(obj, bytes);
+                        using (Stream stream = ofdl.OpenFile())
+                        {
+                            byte[] bytes = new byte[stream.Length];
+                            stream.Read(bytes, 0, bytes.Length);
 
-                        if (result)
-                        {
-                            MetroMessageBox.Show(this, "操作成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MetroMessageBox.Show(this, "操作失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            bool result = bidEvaluationService.BidFileResave(obj, bytes);
+
+                            if (result)
+                            {
+                                MetroMessageBox.Show(this, "上传成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MetroMessageBox.Show(this, "上传失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                     }
                 }
+                else
+                {
+                    MetroMessageBox.Show(this, "请选择招标项目！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MetroMessageBox.Show(this, "请选择招标项目！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                log.Error(ex);
+                MetroMessageBox.Show(this, "上传失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -145,32 +199,39 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
 
         private void btnDownloadITenderFile_Click(object sender, EventArgs e)
         {
-            if (this.grdProject.CurrentRow != null)
+            try
             {
-                gpTenderProjectWebDO gptp = this.grdProject.CurrentRow.Tag as gpTenderProjectWebDO;
-
-                //Service.ServiceReferenceBidEvaluation.resultDO result = bidEvaluationService.GetBidEvaluationReportFile(gptp.gsId);
-                Service.ServiceReferenceBidEvaluation.resultDO result = bidEvaluationService.GetBidEvaluationReportFile("d49f77a5-ad3a-4540-828f-7b9c759fdca2");
-
-                //Service.ServiceReferenceBidEvaluation.gpEvalResultWebDO obj = result.obj as Service.ServiceReferenceBidEvaluation.re;
-
-                SaveFileDialog sfdl = new SaveFileDialog();
-                //sfdl.Filter = string.Format("{0}(*.{0})|*.{0}", obj.gtFileSuffix);
-                //sfdl.FileName = obj.gtFileName;
-                //sfdl.DefaultExt = obj.gtFileSuffix;
-                //sfdl.AddExtension = true;
-
-                if (sfdl.ShowDialog() == DialogResult.OK)
+                if (this.grdProject.CurrentRow != null)
                 {
-                    using (FileStream fs = File.Create(sfdl.FileName))
+                    gpTenderProjectWebDO gptp = this.grdProject.CurrentRow.Tag as gpTenderProjectWebDO;
+
+                    Service.ServiceReferenceBidEvaluation.resultDO result = bidEvaluationService.GetBidEvaluationReportFile(gptp.gsId);
+
+                    Service.ServiceReferenceBidEvaluation.reslultInfoDO obj = result.obj as Service.ServiceReferenceBidEvaluation.reslultInfoDO;
+
+                    SaveFileDialog sfdl = new SaveFileDialog();
+                    sfdl.Filter = string.Format("{0}(*.{0})|*.{0}", obj.suffix);
+                    sfdl.FileName = obj.fileName;
+                    sfdl.DefaultExt = obj.suffix;
+                    sfdl.AddExtension = true;
+
+                    if (sfdl.ShowDialog() == DialogResult.OK)
                     {
-                        fs.Write(result.fileContent, 0, result.fileContent.Length);
+                        using (FileStream fs = File.Create(sfdl.FileName))
+                        {
+                            fs.Write(result.fileContent, 0, result.fileContent.Length);
+                        }
                     }
                 }
+                else
+                {
+                    MetroMessageBox.Show(this, "请选择招标项目！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MetroFramework.MetroMessageBox.Show(this, "请选择招标项目！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                log.Error(ex);
+                MetroMessageBox.Show(this, "下载失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

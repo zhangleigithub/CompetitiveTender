@@ -67,9 +67,9 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpEvalResult {
         
         private string gsIdField;
         
-        private string gsewiIdField;
+        private string gteeIdField;
         
-        private string gsewiNameField;
+        private string gteeNameField;
         
         private string gtpIdField;
         
@@ -293,25 +293,25 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpEvalResult {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
-        public string gsewiId {
+        public string gteeId {
             get {
-                return this.gsewiIdField;
+                return this.gteeIdField;
             }
             set {
-                this.gsewiIdField = value;
-                this.RaisePropertyChanged("gsewiId");
+                this.gteeIdField = value;
+                this.RaisePropertyChanged("gteeId");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=14)]
-        public string gsewiName {
+        public string gteeName {
             get {
-                return this.gsewiNameField;
+                return this.gteeNameField;
             }
             set {
-                this.gsewiNameField = value;
-                this.RaisePropertyChanged("gsewiName");
+                this.gteeNameField = value;
+                this.RaisePropertyChanged("gteeName");
             }
         }
         

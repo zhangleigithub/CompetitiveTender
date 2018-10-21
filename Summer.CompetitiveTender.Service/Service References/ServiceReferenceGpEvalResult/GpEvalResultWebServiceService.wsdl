@@ -26,8 +26,8 @@
               <xs:element minOccurs="0" name="gerTime" type="xs:dateTime" />
               <xs:element minOccurs="0" name="gewtId" type="xs:long" />
               <xs:element minOccurs="0" name="gsId" type="xs:string" />
-              <xs:element minOccurs="0" name="gsewiId" type="xs:string" />
-              <xs:element minOccurs="0" name="gsewiName" type="xs:string" />
+              <xs:element minOccurs="0" name="gteeId" type="xs:string" />
+              <xs:element minOccurs="0" name="gteeName" type="xs:string" />
               <xs:element minOccurs="0" name="gtpId" type="xs:string" />
               <xs:element minOccurs="0" name="optCoId" type="xs:string" />
               <xs:element minOccurs="0" name="optId" type="xs:string" />

@@ -12,8 +12,6 @@
       <xs:element name="conformanceContrastResultResponse" type="tns:conformanceContrastResultResponse" />
       <xs:element name="evaluationFactorsAnalysis" type="tns:evaluationFactorsAnalysis" />
       <xs:element name="evaluationFactorsAnalysisResponse" type="tns:evaluationFactorsAnalysisResponse" />
-      <xs:element name="evaluationFactorsContrastResult" type="tns:evaluationFactorsContrastResult" />
-      <xs:element name="evaluationFactorsContrastResultResponse" type="tns:evaluationFactorsContrastResultResponse" />
       <xs:element name="fileDifferenceResult" type="tns:fileDifferenceResult" />
       <xs:element name="fileDifferenceResultResponse" type="tns:fileDifferenceResultResponse" />
       <xs:element name="fileExceptionResult" type="tns:fileExceptionResult" />
@@ -26,12 +24,12 @@
       <xs:element name="priceAnalysisResponse" type="tns:priceAnalysisResponse" />
       <xs:element name="updateBidEvaluationSingState" type="tns:updateBidEvaluationSingState" />
       <xs:element name="updateBidEvaluationSingStateResponse" type="tns:updateBidEvaluationSingStateResponse" />
-      <xs:complexType name="priceAnalysis">
+      <xs:complexType name="auxiliaryAnalysis">
         <xs:sequence>
           <xs:element minOccurs="0" name="gsId" type="xs:string" />
         </xs:sequence>
       </xs:complexType>
-      <xs:complexType name="priceAnalysisResponse">
+      <xs:complexType name="auxiliaryAnalysisResponse">
         <xs:sequence>
           <xs:element minOccurs="0" name="return" type="tns:resultDO" />
         </xs:sequence>
@@ -44,6 +42,16 @@
           <xs:element minOccurs="0" name="obj" type="xs:anyType" />
           <xs:element minOccurs="0" maxOccurs="unbounded" name="objList" nillable="true" type="xs:anyType" />
           <xs:element name="success" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="priceAnalysis">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gsId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="priceAnalysisResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
         </xs:sequence>
       </xs:complexType>
       <xs:complexType name="evaluationFactorsAnalysis">
@@ -62,6 +70,37 @@
         </xs:sequence>
       </xs:complexType>
       <xs:complexType name="automaticScoreResultResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getBidEvaluationReportFile">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gsId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getBidEvaluationReportFileResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="reslultInfoDO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="fileContent" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="fileName" type="xs:string" />
+          <xs:element minOccurs="0" name="fileSize" type="xs:long" />
+          <xs:element name="partLength" type="xs:long" />
+          <xs:element minOccurs="0" name="segment" type="xs:int" />
+          <xs:element minOccurs="0" name="suffix" type="xs:string" />
+          <xs:element minOccurs="0" name="totalSegment" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="fileDifferenceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gsId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="fileDifferenceResultResponse">
         <xs:sequence>
           <xs:element minOccurs="0" name="return" type="tns:resultDO" />
         </xs:sequence>
@@ -180,57 +219,6 @@
           <xs:element minOccurs="0" name="return" type="tns:resultDO" />
         </xs:sequence>
       </xs:complexType>
-      <xs:complexType name="fileExceptionResult">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="gsId" type="xs:string" />
-        </xs:sequence>
-      </xs:complexType>
-      <xs:complexType name="fileExceptionResultResponse">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
-        </xs:sequence>
-      </xs:complexType>
-      <xs:complexType name="auxiliaryAnalysis">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="gsId" type="xs:string" />
-        </xs:sequence>
-      </xs:complexType>
-      <xs:complexType name="auxiliaryAnalysisResponse">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
-        </xs:sequence>
-      </xs:complexType>
-      <xs:complexType name="getBidEvaluationReportFile">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="gsId" type="xs:string" />
-        </xs:sequence>
-      </xs:complexType>
-      <xs:complexType name="getBidEvaluationReportFileResponse">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
-        </xs:sequence>
-      </xs:complexType>
-      <xs:complexType name="fileDifferenceResult">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="gsId" type="xs:string" />
-        </xs:sequence>
-      </xs:complexType>
-      <xs:complexType name="fileDifferenceResultResponse">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
-        </xs:sequence>
-      </xs:complexType>
-      <xs:complexType name="evaluationFactorsContrastResult">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="gtpId" type="xs:string" />
-          <xs:element minOccurs="0" name="gsId" type="xs:string" />
-        </xs:sequence>
-      </xs:complexType>
-      <xs:complexType name="evaluationFactorsContrastResultResponse">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
-        </xs:sequence>
-      </xs:complexType>
       <xs:complexType name="getBidEvaluationResult">
         <xs:sequence>
           <xs:element minOccurs="0" name="gtpId" type="xs:string" />
@@ -259,8 +247,8 @@
               <xs:element minOccurs="0" name="gerTime" type="xs:dateTime" />
               <xs:element minOccurs="0" name="gewtId" type="xs:long" />
               <xs:element minOccurs="0" name="gsId" type="xs:string" />
-              <xs:element minOccurs="0" name="gsewiId" type="xs:string" />
-              <xs:element minOccurs="0" name="gsewiName" type="xs:string" />
+              <xs:element minOccurs="0" name="gteeId" type="xs:string" />
+              <xs:element minOccurs="0" name="gteeName" type="xs:string" />
               <xs:element minOccurs="0" name="gtpId" type="xs:string" />
               <xs:element minOccurs="0" name="optCoId" type="xs:string" />
               <xs:element minOccurs="0" name="optId" type="xs:string" />
@@ -278,6 +266,16 @@
         </xs:sequence>
       </xs:complexType>
       <xs:complexType name="updateBidEvaluationSingStateResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultDO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="fileExceptionResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="gsId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="fileExceptionResultResponse">
         <xs:sequence>
           <xs:element minOccurs="0" name="return" type="tns:resultDO" />
         </xs:sequence>
@@ -345,9 +343,6 @@
   <wsdl:message name="fileDifferenceResult">
     <wsdl:part name="parameters" element="tns:fileDifferenceResult" />
   </wsdl:message>
-  <wsdl:message name="evaluationFactorsContrastResult">
-    <wsdl:part name="parameters" element="tns:evaluationFactorsContrastResult" />
-  </wsdl:message>
   <wsdl:message name="getBidEvaluationResult">
     <wsdl:part name="parameters" element="tns:getBidEvaluationResult" />
   </wsdl:message>
@@ -357,9 +352,6 @@
   <wsdl:message name="updateBidEvaluationSingState">
     <wsdl:part name="parameters" element="tns:updateBidEvaluationSingState" />
   </wsdl:message>
-  <wsdl:message name="evaluationFactorsContrastResultResponse">
-    <wsdl:part name="parameters" element="tns:evaluationFactorsContrastResultResponse" />
-  </wsdl:message>
   <wsdl:message name="conformanceContrastResult">
     <wsdl:part name="parameters" element="tns:conformanceContrastResult" />
   </wsdl:message>
@@ -367,6 +359,10 @@
     <wsdl:part name="parameters" element="tns:priceAnalysisResponse" />
   </wsdl:message>
   <wsdl:portType name="BidEvaluationWebService">
+    <wsdl:operation name="auxiliaryAnalysis">
+      <wsdl:input name="auxiliaryAnalysis" message="tns:auxiliaryAnalysis" />
+      <wsdl:output name="auxiliaryAnalysisResponse" message="tns:auxiliaryAnalysisResponse" />
+    </wsdl:operation>
     <wsdl:operation name="priceAnalysis">
       <wsdl:input name="priceAnalysis" message="tns:priceAnalysis" />
       <wsdl:output name="priceAnalysisResponse" message="tns:priceAnalysisResponse" />
@@ -379,18 +375,6 @@
       <wsdl:input name="automaticScoreResult" message="tns:automaticScoreResult" />
       <wsdl:output name="automaticScoreResultResponse" message="tns:automaticScoreResultResponse" />
     </wsdl:operation>
-    <wsdl:operation name="bidFileResave">
-      <wsdl:input name="bidFileResave" message="tns:bidFileResave" />
-      <wsdl:output name="bidFileResaveResponse" message="tns:bidFileResaveResponse" />
-    </wsdl:operation>
-    <wsdl:operation name="fileExceptionResult">
-      <wsdl:input name="fileExceptionResult" message="tns:fileExceptionResult" />
-      <wsdl:output name="fileExceptionResultResponse" message="tns:fileExceptionResultResponse" />
-    </wsdl:operation>
-    <wsdl:operation name="auxiliaryAnalysis">
-      <wsdl:input name="auxiliaryAnalysis" message="tns:auxiliaryAnalysis" />
-      <wsdl:output name="auxiliaryAnalysisResponse" message="tns:auxiliaryAnalysisResponse" />
-    </wsdl:operation>
     <wsdl:operation name="getBidEvaluationReportFile">
       <wsdl:input name="getBidEvaluationReportFile" message="tns:getBidEvaluationReportFile" />
       <wsdl:output name="getBidEvaluationReportFileResponse" message="tns:getBidEvaluationReportFileResponse" />
@@ -399,9 +383,9 @@
       <wsdl:input name="fileDifferenceResult" message="tns:fileDifferenceResult" />
       <wsdl:output name="fileDifferenceResultResponse" message="tns:fileDifferenceResultResponse" />
     </wsdl:operation>
-    <wsdl:operation name="evaluationFactorsContrastResult">
-      <wsdl:input name="evaluationFactorsContrastResult" message="tns:evaluationFactorsContrastResult" />
-      <wsdl:output name="evaluationFactorsContrastResultResponse" message="tns:evaluationFactorsContrastResultResponse" />
+    <wsdl:operation name="bidFileResave">
+      <wsdl:input name="bidFileResave" message="tns:bidFileResave" />
+      <wsdl:output name="bidFileResaveResponse" message="tns:bidFileResaveResponse" />
     </wsdl:operation>
     <wsdl:operation name="getBidEvaluationResult">
       <wsdl:input name="getBidEvaluationResult" message="tns:getBidEvaluationResult" />
@@ -411,6 +395,10 @@
       <wsdl:input name="updateBidEvaluationSingState" message="tns:updateBidEvaluationSingState" />
       <wsdl:output name="updateBidEvaluationSingStateResponse" message="tns:updateBidEvaluationSingStateResponse" />
     </wsdl:operation>
+    <wsdl:operation name="fileExceptionResult">
+      <wsdl:input name="fileExceptionResult" message="tns:fileExceptionResult" />
+      <wsdl:output name="fileExceptionResultResponse" message="tns:fileExceptionResultResponse" />
+    </wsdl:operation>
     <wsdl:operation name="conformanceContrastResult">
       <wsdl:input name="conformanceContrastResult" message="tns:conformanceContrastResult" />
       <wsdl:output name="conformanceContrastResultResponse" message="tns:conformanceContrastResultResponse" />
@@ -418,6 +406,15 @@
   </wsdl:portType>
   <wsdl:binding name="BidEvaluationWebServiceServiceSoapBinding" type="tns:BidEvaluationWebService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="auxiliaryAnalysis">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="auxiliaryAnalysis">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="auxiliaryAnalysisResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="priceAnalysis">
       <soap:operation soapAction="" style="document" />
       <wsdl:input name="priceAnalysis">
@@ -445,33 +442,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="bidFileResave">
-      <soap:operation soapAction="" style="document" />
-      <wsdl:input name="bidFileResave">
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output name="bidFileResaveResponse">
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="fileExceptionResult">
-      <soap:operation soapAction="" style="document" />
-      <wsdl:input name="fileExceptionResult">
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output name="fileExceptionResultResponse">
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="auxiliaryAnalysis">
-      <soap:operation soapAction="" style="document" />
-      <wsdl:input name="auxiliaryAnalysis">
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output name="auxiliaryAnalysisResponse">
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="getBidEvaluationReportFile">
       <soap:operation soapAction="" style="document" />
       <wsdl:input name="getBidEvaluationReportFile">
@@ -490,12 +460,12 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="evaluationFactorsContrastResult">
+    <wsdl:operation name="bidFileResave">
       <soap:operation soapAction="" style="document" />
-      <wsdl:input name="evaluationFactorsContrastResult">
+      <wsdl:input name="bidFileResave">
         <soap:body use="literal" />
       </wsdl:input>
-      <wsdl:output name="evaluationFactorsContrastResultResponse">
+      <wsdl:output name="bidFileResaveResponse">
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
@@ -514,6 +484,15 @@
         <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output name="updateBidEvaluationSingStateResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fileExceptionResult">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="fileExceptionResult">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fileExceptionResultResponse">
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

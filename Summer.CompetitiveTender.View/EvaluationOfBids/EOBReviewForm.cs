@@ -12,6 +12,7 @@ using System.Text;
 using System.Windows.Forms;
 using Summer.CompetitiveTender.Model;
 using Summer.CompetitiveTender.Service.ServiceReferenceGpEvalResult;
+using Summer.CompetitiveTender.Service.ServiceReferenceGpTenderEvalEle;
 
 namespace Summer.CompetitiveTender.View.EvaluationOfBids
 {
@@ -23,6 +24,11 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
         /// log
         /// </summary>
         private static ILog log = LogManager.GetLogger(typeof(EOBReviewForm));
+
+        /// <summary>
+        /// gpTenderEvalEleService
+        /// </summary>
+        private IGpTenderEvalEleService gpTenderEvalEleService = new GpTenderEvalEleService();
 
         /// <summary>
         /// gpEvalResultService
@@ -54,7 +60,11 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
                 gpEvalResult.gsId = gpApplyDetail.gsId;
                 gpEvalResult.gadBidPersonId = gpApplyDetail.gadBidPersonId;
                 gpEvalResult.gadBidCompanyId = gpApplyDetail.gadBidCompanyId;
-                gpEvalResult.gsewiName = this.txtGsewiName.Text.Trim();
+
+                gpTenderEvalEleWebDO[] gpTenderEvalEles = gpTenderEvalEleService.FindListByGsIdAndGteeName(gpApplyDetail.gsId, "");
+            
+                gpEvalResult.gteeId = gpTenderEvalEles[0].gteeId;
+                gpEvalResult.gteeName = this.txtGsewiName.Text.Trim();
                 gpEvalResult.gerResult = int.Parse(this.txtGerResult.Text.Trim());
                 gpEvalResult.gerResultSpecified = true;
                 gpEvalResult.gerScores = double.Parse(this.txtGerScores.Text.Trim());
@@ -68,6 +78,9 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
                 gpEvalResult.optCoId = user.acId;
                 gpEvalResult.optTime = DateTime.Now;
                 gpEvalResult.optTimeSpecified = true;
+                gpEvalResult.gadId = "bc288829-9bcd-45fd-b487-be1a10c2267f";
+                gpEvalResult.gewtId = 0;
+                gpEvalResult.gewtIdSpecified=true;
 
                 if (this.gpEvalResultService.Add(gpEvalResult))
                 {

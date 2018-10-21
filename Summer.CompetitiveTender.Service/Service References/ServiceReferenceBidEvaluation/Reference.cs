@@ -20,184 +20,28 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResultResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingStateResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingState))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResultResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsContrastResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsContrastResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFileResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFile))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysisResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysis))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResaveResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseEntity))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reslultInfoDO))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFileResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFile))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResultResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysisResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysis))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysisResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysis))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.priceAnalysisResponse1 priceAnalysis(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.priceAnalysis1 request);
-        
-        // CODEGEN: 参数“return”需要其他方案信息，使用参数模式无法捕获这些信息。特定特性为“System.Xml.Serialization.XmlElementAttribute”。
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingStateResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingState))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsContrastResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsContrastResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFileResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFile))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysisResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysis))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseEntity))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysisResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysis))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysisResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysis))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.evaluationFactorsAnalysisResponse1 evaluationFactorsAnalysis(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.evaluationFactorsAnalysis1 request);
-        
-        // CODEGEN: 参数“return”需要其他方案信息，使用参数模式无法捕获这些信息。特定特性为“System.Xml.Serialization.XmlElementAttribute”。
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingStateResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingState))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsContrastResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsContrastResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFileResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFile))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysisResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysis))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseEntity))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysisResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysis))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysisResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysis))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.automaticScoreResultResponse1 automaticScoreResult(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.automaticScoreResult1 request);
-        
-        // CODEGEN: 参数“return”需要其他方案信息，使用参数模式无法捕获这些信息。特定特性为“System.Xml.Serialization.XmlElementAttribute”。
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingStateResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingState))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsContrastResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsContrastResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFileResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFile))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysisResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysis))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseEntity))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysisResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysis))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysisResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysis))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.bidFileResaveResponse1 bidFileResave(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.bidFileResave1 request);
-        
-        // CODEGEN: 参数“return”需要其他方案信息，使用参数模式无法捕获这些信息。特定特性为“System.Xml.Serialization.XmlElementAttribute”。
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingStateResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingState))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsContrastResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsContrastResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFileResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFile))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysisResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysis))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseEntity))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysisResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysis))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysisResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysis))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.fileExceptionResultResponse1 fileExceptionResult(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.fileExceptionResult1 request);
-        
-        // CODEGEN: 参数“return”需要其他方案信息，使用参数模式无法捕获这些信息。特定特性为“System.Xml.Serialization.XmlElementAttribute”。
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingStateResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingState))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsContrastResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsContrastResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFileResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFile))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysisResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysis))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResaveResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseEntity))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResave))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysisResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysis))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysisResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysis))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.auxiliaryAnalysisResponse1 auxiliaryAnalysis(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.auxiliaryAnalysis1 request);
         
@@ -206,29 +50,118 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResultResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingStateResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingState))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResultResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsContrastResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsContrastResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFileResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFile))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysisResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysis))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResaveResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseEntity))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reslultInfoDO))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFileResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFile))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResultResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysisResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysis))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysisResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysis))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysisResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysis))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.priceAnalysisResponse1 priceAnalysis(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.priceAnalysis1 request);
+        
+        // CODEGEN: 参数“return”需要其他方案信息，使用参数模式无法捕获这些信息。特定特性为“System.Xml.Serialization.XmlElementAttribute”。
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingStateResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingState))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseEntity))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reslultInfoDO))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFileResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFile))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysisResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysis))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysisResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysis))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysisResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysis))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.evaluationFactorsAnalysisResponse1 evaluationFactorsAnalysis(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.evaluationFactorsAnalysis1 request);
+        
+        // CODEGEN: 参数“return”需要其他方案信息，使用参数模式无法捕获这些信息。特定特性为“System.Xml.Serialization.XmlElementAttribute”。
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingStateResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingState))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseEntity))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reslultInfoDO))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFileResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFile))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysisResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysis))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysisResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysis))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysisResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysis))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.automaticScoreResultResponse1 automaticScoreResult(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.automaticScoreResult1 request);
+        
+        // CODEGEN: 参数“return”需要其他方案信息，使用参数模式无法捕获这些信息。特定特性为“System.Xml.Serialization.XmlElementAttribute”。
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingStateResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingState))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseEntity))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reslultInfoDO))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFileResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFile))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysisResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysis))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysisResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysis))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysisResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysis))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.getBidEvaluationReportFileResponse1 getBidEvaluationReportFile(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.getBidEvaluationReportFile1 request);
         
@@ -237,29 +170,28 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResultResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingStateResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingState))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResultResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsContrastResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsContrastResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFileResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFile))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysisResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysis))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResaveResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseEntity))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reslultInfoDO))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFileResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFile))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResultResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysisResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysis))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysisResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysis))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysisResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysis))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.fileDifferenceResultResponse1 fileDifferenceResult(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.fileDifferenceResult1 request);
         
@@ -268,60 +200,58 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResultResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingStateResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingState))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResultResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsContrastResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsContrastResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFileResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFile))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysisResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysis))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResaveResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseEntity))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reslultInfoDO))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFileResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFile))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResultResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysisResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysis))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysisResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysis))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysisResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysis))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.evaluationFactorsContrastResultResponse1 evaluationFactorsContrastResult(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.evaluationFactorsContrastResult1 request);
+        Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.bidFileResaveResponse1 bidFileResave(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.bidFileResave1 request);
         
         // CODEGEN: 参数“return”需要其他方案信息，使用参数模式无法捕获这些信息。特定特性为“System.Xml.Serialization.XmlElementAttribute”。
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResultResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingStateResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingState))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResultResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsContrastResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsContrastResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFileResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFile))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysisResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysis))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResaveResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseEntity))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reslultInfoDO))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFileResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFile))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResultResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysisResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysis))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysisResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysis))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysisResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysis))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.getBidEvaluationResultResponse1 getBidEvaluationResult(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.getBidEvaluationResult1 request);
         
@@ -330,29 +260,28 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResultResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingStateResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingState))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResultResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsContrastResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsContrastResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFileResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFile))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysisResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysis))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResaveResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseEntity))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reslultInfoDO))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFileResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFile))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResultResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysisResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysis))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysisResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysis))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysisResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysis))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.updateBidEvaluationSingStateResponse1 updateBidEvaluationSingState(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.updateBidEvaluationSingState1 request);
         
@@ -361,29 +290,58 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResultResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingStateResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingState))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResultResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsContrastResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsContrastResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFileResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFile))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysisResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysis))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResultResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResaveResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseEntity))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reslultInfoDO))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFileResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFile))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResultResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysisResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysis))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysisResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysis))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysisResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysis))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.fileExceptionResultResponse1 fileExceptionResult(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.fileExceptionResult1 request);
+        
+        // CODEGEN: 参数“return”需要其他方案信息，使用参数模式无法捕获这些信息。特定特性为“System.Xml.Serialization.XmlElementAttribute”。
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(conformanceContrastResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileExceptionResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingStateResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(updateBidEvaluationSingState))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResaveResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseEntity))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(bidFileResave))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(fileDifferenceResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(reslultInfoDO))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFileResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getBidEvaluationReportFile))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResultResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(automaticScoreResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysisResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(evaluationFactorsAnalysis))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysisResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(priceAnalysis))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysisResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(auxiliaryAnalysis))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.conformanceContrastResultResponse1 conformanceContrastResult(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.conformanceContrastResult1 request);
     }
@@ -529,6 +487,70 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation {
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
     public partial class conformanceContrastResult : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string gsIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string gsId {
+            get {
+                return this.gsIdField;
+            }
+            set {
+                this.gsIdField = value;
+                this.RaisePropertyChanged("gsId");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
+    public partial class fileExceptionResultResponse : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private resultDO returnField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public resultDO @return {
+            get {
+                return this.returnField;
+            }
+            set {
+                this.returnField = value;
+                this.RaisePropertyChanged("return");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
+    public partial class fileExceptionResult : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string gsIdField;
         
@@ -2621,9 +2643,9 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation {
         
         private string gsIdField;
         
-        private string gsewiIdField;
+        private string gteeIdField;
         
-        private string gsewiNameField;
+        private string gteeNameField;
         
         private string gtpIdField;
         
@@ -2847,25 +2869,25 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
-        public string gsewiId {
+        public string gteeId {
             get {
-                return this.gsewiIdField;
+                return this.gteeIdField;
             }
             set {
-                this.gsewiIdField = value;
-                this.RaisePropertyChanged("gsewiId");
+                this.gteeIdField = value;
+                this.RaisePropertyChanged("gteeId");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=14)]
-        public string gsewiName {
+        public string gteeName {
             get {
-                return this.gsewiNameField;
+                return this.gteeNameField;
             }
             set {
-                this.gsewiNameField = value;
-                this.RaisePropertyChanged("gsewiName");
+                this.gteeNameField = value;
+                this.RaisePropertyChanged("gteeName");
             }
         }
         
@@ -3050,7 +3072,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
-    public partial class evaluationFactorsContrastResultResponse : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class bidFileResaveResponse : object, System.ComponentModel.INotifyPropertyChanged {
         
         private resultDO returnField;
         
@@ -3082,33 +3104,33 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
-    public partial class evaluationFactorsContrastResult : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class bidFileResave : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private string gtpIdField;
+        private gpSectionWebDO gpSectionWebDOField;
         
-        private string gsIdField;
+        private byte[] evalReportFileField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public string gtpId {
+        public gpSectionWebDO GpSectionWebDO {
             get {
-                return this.gtpIdField;
+                return this.gpSectionWebDOField;
             }
             set {
-                this.gtpIdField = value;
-                this.RaisePropertyChanged("gtpId");
+                this.gpSectionWebDOField = value;
+                this.RaisePropertyChanged("GpSectionWebDO");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public string gsId {
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary", Order=1)]
+        public byte[] evalReportFile {
             get {
-                return this.gsIdField;
+                return this.evalReportFileField;
             }
             set {
-                this.gsIdField = value;
-                this.RaisePropertyChanged("gsId");
+                this.evalReportFileField = value;
+                this.RaisePropertyChanged("evalReportFile");
             }
         }
         
@@ -3192,6 +3214,164 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
+    public partial class reslultInfoDO : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private byte[] fileContentField;
+        
+        private string fileNameField;
+        
+        private long fileSizeField;
+        
+        private bool fileSizeFieldSpecified;
+        
+        private long partLengthField;
+        
+        private int segmentField;
+        
+        private bool segmentFieldSpecified;
+        
+        private string suffixField;
+        
+        private int totalSegmentField;
+        
+        private bool totalSegmentFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary", Order=0)]
+        public byte[] fileContent {
+            get {
+                return this.fileContentField;
+            }
+            set {
+                this.fileContentField = value;
+                this.RaisePropertyChanged("fileContent");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string fileName {
+            get {
+                return this.fileNameField;
+            }
+            set {
+                this.fileNameField = value;
+                this.RaisePropertyChanged("fileName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public long fileSize {
+            get {
+                return this.fileSizeField;
+            }
+            set {
+                this.fileSizeField = value;
+                this.RaisePropertyChanged("fileSize");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool fileSizeSpecified {
+            get {
+                return this.fileSizeFieldSpecified;
+            }
+            set {
+                this.fileSizeFieldSpecified = value;
+                this.RaisePropertyChanged("fileSizeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public long partLength {
+            get {
+                return this.partLengthField;
+            }
+            set {
+                this.partLengthField = value;
+                this.RaisePropertyChanged("partLength");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public int segment {
+            get {
+                return this.segmentField;
+            }
+            set {
+                this.segmentField = value;
+                this.RaisePropertyChanged("segment");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool segmentSpecified {
+            get {
+                return this.segmentFieldSpecified;
+            }
+            set {
+                this.segmentFieldSpecified = value;
+                this.RaisePropertyChanged("segmentSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public string suffix {
+            get {
+                return this.suffixField;
+            }
+            set {
+                this.suffixField = value;
+                this.RaisePropertyChanged("suffix");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public int totalSegment {
+            get {
+                return this.totalSegmentField;
+            }
+            set {
+                this.totalSegmentField = value;
+                this.RaisePropertyChanged("totalSegment");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool totalSegmentSpecified {
+            get {
+                return this.totalSegmentFieldSpecified;
+            }
+            set {
+                this.totalSegmentFieldSpecified = value;
+                this.RaisePropertyChanged("totalSegmentSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
     public partial class getBidEvaluationReportFileResponse : object, System.ComponentModel.INotifyPropertyChanged {
         
         private resultDO returnField;
@@ -3237,212 +3417,6 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation {
             set {
                 this.gsIdField = value;
                 this.RaisePropertyChanged("gsId");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
-    public partial class auxiliaryAnalysisResponse : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private resultDO returnField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public resultDO @return {
-            get {
-                return this.returnField;
-            }
-            set {
-                this.returnField = value;
-                this.RaisePropertyChanged("return");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
-    public partial class auxiliaryAnalysis : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string gsIdField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public string gsId {
-            get {
-                return this.gsIdField;
-            }
-            set {
-                this.gsIdField = value;
-                this.RaisePropertyChanged("gsId");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
-    public partial class fileExceptionResultResponse : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private resultDO returnField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public resultDO @return {
-            get {
-                return this.returnField;
-            }
-            set {
-                this.returnField = value;
-                this.RaisePropertyChanged("return");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
-    public partial class fileExceptionResult : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string gsIdField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public string gsId {
-            get {
-                return this.gsIdField;
-            }
-            set {
-                this.gsIdField = value;
-                this.RaisePropertyChanged("gsId");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
-    public partial class bidFileResaveResponse : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private resultDO returnField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public resultDO @return {
-            get {
-                return this.returnField;
-            }
-            set {
-                this.returnField = value;
-                this.RaisePropertyChanged("return");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
-    public partial class bidFileResave : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private gpSectionWebDO gpSectionWebDOField;
-        
-        private byte[] evalReportFileField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public gpSectionWebDO GpSectionWebDO {
-            get {
-                return this.gpSectionWebDOField;
-            }
-            set {
-                this.gpSectionWebDOField = value;
-                this.RaisePropertyChanged("GpSectionWebDO");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary", Order=1)]
-        public byte[] evalReportFile {
-            get {
-                return this.evalReportFileField;
-            }
-            set {
-                this.evalReportFileField = value;
-                this.RaisePropertyChanged("evalReportFile");
             }
         }
         
@@ -3648,6 +3622,106 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation {
         }
     }
     
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
+    public partial class auxiliaryAnalysisResponse : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private resultDO returnField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public resultDO @return {
+            get {
+                return this.returnField;
+            }
+            set {
+                this.returnField = value;
+                this.RaisePropertyChanged("return");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
+    public partial class auxiliaryAnalysis : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string gsIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string gsId {
+            get {
+                return this.gsIdField;
+            }
+            set {
+                this.gsIdField = value;
+                this.RaisePropertyChanged("gsId");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="auxiliaryAnalysis", WrapperNamespace="http://webservice.govpurchase.opensource.com/", IsWrapped=true)]
+    public partial class auxiliaryAnalysis1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string gsId;
+        
+        public auxiliaryAnalysis1() {
+        }
+        
+        public auxiliaryAnalysis1(string gsId) {
+            this.gsId = gsId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="auxiliaryAnalysisResponse", WrapperNamespace="http://webservice.govpurchase.opensource.com/", IsWrapped=true)]
+    public partial class auxiliaryAnalysisResponse1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.resultDO @return;
+        
+        public auxiliaryAnalysisResponse1() {
+        }
+        
+        public auxiliaryAnalysisResponse1(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.resultDO @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -3759,119 +3833,6 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="bidFileResave", WrapperNamespace="http://webservice.govpurchase.opensource.com/", IsWrapped=true)]
-    public partial class bidFileResave1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.gpSectionWebDO GpSectionWebDO;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary")]
-        public byte[] evalReportFile;
-        
-        public bidFileResave1() {
-        }
-        
-        public bidFileResave1(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.gpSectionWebDO GpSectionWebDO, byte[] evalReportFile) {
-            this.GpSectionWebDO = GpSectionWebDO;
-            this.evalReportFile = evalReportFile;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="bidFileResaveResponse", WrapperNamespace="http://webservice.govpurchase.opensource.com/", IsWrapped=true)]
-    public partial class bidFileResaveResponse1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.resultDO @return;
-        
-        public bidFileResaveResponse1() {
-        }
-        
-        public bidFileResaveResponse1(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.resultDO @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="fileExceptionResult", WrapperNamespace="http://webservice.govpurchase.opensource.com/", IsWrapped=true)]
-    public partial class fileExceptionResult1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string gsId;
-        
-        public fileExceptionResult1() {
-        }
-        
-        public fileExceptionResult1(string gsId) {
-            this.gsId = gsId;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="fileExceptionResultResponse", WrapperNamespace="http://webservice.govpurchase.opensource.com/", IsWrapped=true)]
-    public partial class fileExceptionResultResponse1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.resultDO @return;
-        
-        public fileExceptionResultResponse1() {
-        }
-        
-        public fileExceptionResultResponse1(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.resultDO @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="auxiliaryAnalysis", WrapperNamespace="http://webservice.govpurchase.opensource.com/", IsWrapped=true)]
-    public partial class auxiliaryAnalysis1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string gsId;
-        
-        public auxiliaryAnalysis1() {
-        }
-        
-        public auxiliaryAnalysis1(string gsId) {
-            this.gsId = gsId;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="auxiliaryAnalysisResponse", WrapperNamespace="http://webservice.govpurchase.opensource.com/", IsWrapped=true)]
-    public partial class auxiliaryAnalysisResponse1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.resultDO @return;
-        
-        public auxiliaryAnalysisResponse1() {
-        }
-        
-        public auxiliaryAnalysisResponse1(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.resultDO @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="getBidEvaluationReportFile", WrapperNamespace="http://webservice.govpurchase.opensource.com/", IsWrapped=true)]
     public partial class getBidEvaluationReportFile1 {
         
@@ -3944,40 +3905,40 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="evaluationFactorsContrastResult", WrapperNamespace="http://webservice.govpurchase.opensource.com/", IsWrapped=true)]
-    public partial class evaluationFactorsContrastResult1 {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="bidFileResave", WrapperNamespace="http://webservice.govpurchase.opensource.com/", IsWrapped=true)]
+    public partial class bidFileResave1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string gtpId;
+        public Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.gpSectionWebDO GpSectionWebDO;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string gsId;
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary")]
+        public byte[] evalReportFile;
         
-        public evaluationFactorsContrastResult1() {
+        public bidFileResave1() {
         }
         
-        public evaluationFactorsContrastResult1(string gtpId, string gsId) {
-            this.gtpId = gtpId;
-            this.gsId = gsId;
+        public bidFileResave1(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.gpSectionWebDO GpSectionWebDO, byte[] evalReportFile) {
+            this.GpSectionWebDO = GpSectionWebDO;
+            this.evalReportFile = evalReportFile;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="evaluationFactorsContrastResultResponse", WrapperNamespace="http://webservice.govpurchase.opensource.com/", IsWrapped=true)]
-    public partial class evaluationFactorsContrastResultResponse1 {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="bidFileResaveResponse", WrapperNamespace="http://webservice.govpurchase.opensource.com/", IsWrapped=true)]
+    public partial class bidFileResaveResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.resultDO @return;
         
-        public evaluationFactorsContrastResultResponse1() {
+        public bidFileResaveResponse1() {
         }
         
-        public evaluationFactorsContrastResultResponse1(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.resultDO @return) {
+        public bidFileResaveResponse1(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.resultDO @return) {
             this.@return = @return;
         }
     }
@@ -4067,6 +4028,42 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="fileExceptionResult", WrapperNamespace="http://webservice.govpurchase.opensource.com/", IsWrapped=true)]
+    public partial class fileExceptionResult1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string gsId;
+        
+        public fileExceptionResult1() {
+        }
+        
+        public fileExceptionResult1(string gsId) {
+            this.gsId = gsId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="fileExceptionResultResponse", WrapperNamespace="http://webservice.govpurchase.opensource.com/", IsWrapped=true)]
+    public partial class fileExceptionResultResponse1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.resultDO @return;
+        
+        public fileExceptionResultResponse1() {
+        }
+        
+        public fileExceptionResultResponse1(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.resultDO @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="conformanceContrastResult", WrapperNamespace="http://webservice.govpurchase.opensource.com/", IsWrapped=true)]
     public partial class conformanceContrastResult1 {
         
@@ -4128,6 +4125,18 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.auxiliaryAnalysisResponse1 Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.BidEvaluationWebService.auxiliaryAnalysis(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.auxiliaryAnalysis1 request) {
+            return base.Channel.auxiliaryAnalysis(request);
+        }
+        
+        public Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.resultDO auxiliaryAnalysis(string gsId) {
+            Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.auxiliaryAnalysis1 inValue = new Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.auxiliaryAnalysis1();
+            inValue.gsId = gsId;
+            Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.auxiliaryAnalysisResponse1 retVal = ((Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.BidEvaluationWebService)(this)).auxiliaryAnalysis(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.priceAnalysisResponse1 Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.BidEvaluationWebService.priceAnalysis(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.priceAnalysis1 request) {
             return base.Channel.priceAnalysis(request);
         }
@@ -4164,43 +4173,6 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.bidFileResaveResponse1 Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.BidEvaluationWebService.bidFileResave(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.bidFileResave1 request) {
-            return base.Channel.bidFileResave(request);
-        }
-        
-        public Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.resultDO bidFileResave(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.gpSectionWebDO GpSectionWebDO, byte[] evalReportFile) {
-            Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.bidFileResave1 inValue = new Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.bidFileResave1();
-            inValue.GpSectionWebDO = GpSectionWebDO;
-            inValue.evalReportFile = evalReportFile;
-            Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.bidFileResaveResponse1 retVal = ((Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.BidEvaluationWebService)(this)).bidFileResave(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.fileExceptionResultResponse1 Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.BidEvaluationWebService.fileExceptionResult(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.fileExceptionResult1 request) {
-            return base.Channel.fileExceptionResult(request);
-        }
-        
-        public Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.resultDO fileExceptionResult(string gsId) {
-            Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.fileExceptionResult1 inValue = new Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.fileExceptionResult1();
-            inValue.gsId = gsId;
-            Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.fileExceptionResultResponse1 retVal = ((Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.BidEvaluationWebService)(this)).fileExceptionResult(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.auxiliaryAnalysisResponse1 Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.BidEvaluationWebService.auxiliaryAnalysis(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.auxiliaryAnalysis1 request) {
-            return base.Channel.auxiliaryAnalysis(request);
-        }
-        
-        public Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.resultDO auxiliaryAnalysis(string gsId) {
-            Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.auxiliaryAnalysis1 inValue = new Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.auxiliaryAnalysis1();
-            inValue.gsId = gsId;
-            Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.auxiliaryAnalysisResponse1 retVal = ((Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.BidEvaluationWebService)(this)).auxiliaryAnalysis(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.getBidEvaluationReportFileResponse1 Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.BidEvaluationWebService.getBidEvaluationReportFile(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.getBidEvaluationReportFile1 request) {
             return base.Channel.getBidEvaluationReportFile(request);
         }
@@ -4225,15 +4197,15 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.evaluationFactorsContrastResultResponse1 Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.BidEvaluationWebService.evaluationFactorsContrastResult(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.evaluationFactorsContrastResult1 request) {
-            return base.Channel.evaluationFactorsContrastResult(request);
+        Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.bidFileResaveResponse1 Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.BidEvaluationWebService.bidFileResave(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.bidFileResave1 request) {
+            return base.Channel.bidFileResave(request);
         }
         
-        public Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.resultDO evaluationFactorsContrastResult(string gtpId, string gsId) {
-            Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.evaluationFactorsContrastResult1 inValue = new Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.evaluationFactorsContrastResult1();
-            inValue.gtpId = gtpId;
-            inValue.gsId = gsId;
-            Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.evaluationFactorsContrastResultResponse1 retVal = ((Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.BidEvaluationWebService)(this)).evaluationFactorsContrastResult(inValue);
+        public Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.resultDO bidFileResave(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.gpSectionWebDO GpSectionWebDO, byte[] evalReportFile) {
+            Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.bidFileResave1 inValue = new Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.bidFileResave1();
+            inValue.GpSectionWebDO = GpSectionWebDO;
+            inValue.evalReportFile = evalReportFile;
+            Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.bidFileResaveResponse1 retVal = ((Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.BidEvaluationWebService)(this)).bidFileResave(inValue);
             return retVal.@return;
         }
         
@@ -4260,6 +4232,18 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation {
             inValue.GpSectionWebDO = GpSectionWebDO;
             inValue.evalReportFile = evalReportFile;
             Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.updateBidEvaluationSingStateResponse1 retVal = ((Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.BidEvaluationWebService)(this)).updateBidEvaluationSingState(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.fileExceptionResultResponse1 Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.BidEvaluationWebService.fileExceptionResult(Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.fileExceptionResult1 request) {
+            return base.Channel.fileExceptionResult(request);
+        }
+        
+        public Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.resultDO fileExceptionResult(string gsId) {
+            Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.fileExceptionResult1 inValue = new Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.fileExceptionResult1();
+            inValue.gsId = gsId;
+            Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.fileExceptionResultResponse1 retVal = ((Summer.CompetitiveTender.Service.ServiceReferenceBidEvaluation.BidEvaluationWebService)(this)).fileExceptionResult(inValue);
             return retVal.@return;
         }
         

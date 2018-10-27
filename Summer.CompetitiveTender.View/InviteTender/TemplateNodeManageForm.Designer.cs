@@ -36,7 +36,6 @@
             this.tsmiSubNew = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSummit = new MetroFramework.Controls.MetroButton();
             this.btnSave = new MetroFramework.Controls.MetroButton();
             this.txtSort = new MetroFramework.Controls.MetroTextBox();
             this.cboCanModifyITender = new MetroFramework.Controls.MetroComboBox();
@@ -81,7 +80,6 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.btnSummit);
             this.splitContainer1.Panel2.Controls.Add(this.btnSave);
             this.splitContainer1.Panel2.Controls.Add(this.txtSort);
             this.splitContainer1.Panel2.Controls.Add(this.cboCanModifyITender);
@@ -131,51 +129,41 @@
             this.toolStripSeparator1,
             this.tsmiDelete});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 98);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(137, 76);
             // 
             // tsmiNew
             // 
             this.tsmiNew.Name = "tsmiNew";
-            this.tsmiNew.Size = new System.Drawing.Size(152, 22);
+            this.tsmiNew.Size = new System.Drawing.Size(136, 22);
             this.tsmiNew.Text = "新增节点";
             this.tsmiNew.Click += new System.EventHandler(this.tsmiNew_Click);
             // 
             // tsmiSubNew
             // 
             this.tsmiSubNew.Name = "tsmiSubNew";
-            this.tsmiSubNew.Size = new System.Drawing.Size(152, 22);
+            this.tsmiSubNew.Size = new System.Drawing.Size(136, 22);
             this.tsmiSubNew.Text = "新增子节点";
             this.tsmiSubNew.Click += new System.EventHandler(this.tsmiSubNew_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(133, 6);
             // 
             // tsmiDelete
             // 
             this.tsmiDelete.Name = "tsmiDelete";
-            this.tsmiDelete.Size = new System.Drawing.Size(152, 22);
+            this.tsmiDelete.Size = new System.Drawing.Size(136, 22);
             this.tsmiDelete.Text = "删除节点";
             this.tsmiDelete.Click += new System.EventHandler(this.tsmiDelete_Click);
             // 
-            // btnSummit
-            // 
-            this.btnSummit.Location = new System.Drawing.Point(139, 8);
-            this.btnSummit.Name = "btnSummit";
-            this.btnSummit.Size = new System.Drawing.Size(120, 23);
-            this.btnSummit.TabIndex = 24;
-            this.btnSummit.Text = "提交模板";
-            this.btnSummit.UseSelectable = true;
-            this.btnSummit.Click += new System.EventHandler(this.btnSummit_Click);
-            // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(12, 8);
+            this.btnSave.Location = new System.Drawing.Point(194, 463);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(120, 23);
+            this.btnSave.Size = new System.Drawing.Size(90, 23);
             this.btnSave.TabIndex = 24;
-            this.btnSave.Text = "保存";
+            this.btnSave.Text = "提交";
             this.btnSave.UseSelectable = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -196,7 +184,7 @@
             this.txtSort.CustomButton.UseSelectable = true;
             this.txtSort.CustomButton.Visible = false;
             this.txtSort.Lines = new string[0];
-            this.txtSort.Location = new System.Drawing.Point(238, 471);
+            this.txtSort.Location = new System.Drawing.Point(194, 417);
             this.txtSort.MaxLength = 32767;
             this.txtSort.Name = "txtSort";
             this.txtSort.PasswordChar = '\0';
@@ -206,7 +194,7 @@
             this.txtSort.SelectionLength = 0;
             this.txtSort.SelectionStart = 0;
             this.txtSort.ShortcutsEnabled = true;
-            this.txtSort.Size = new System.Drawing.Size(182, 23);
+            this.txtSort.Size = new System.Drawing.Size(270, 23);
             this.txtSort.TabIndex = 23;
             this.txtSort.UseSelectable = true;
             this.txtSort.WaterMark = "排序";
@@ -219,9 +207,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboCanModifyITender.FormattingEnabled = true;
             this.cboCanModifyITender.ItemHeight = 23;
-            this.cboCanModifyITender.Location = new System.Drawing.Point(238, 434);
+            this.cboCanModifyITender.Location = new System.Drawing.Point(194, 380);
             this.cboCanModifyITender.Name = "cboCanModifyITender";
-            this.cboCanModifyITender.Size = new System.Drawing.Size(182, 29);
+            this.cboCanModifyITender.Size = new System.Drawing.Size(270, 29);
             this.cboCanModifyITender.TabIndex = 22;
             this.cboCanModifyITender.UseSelectable = true;
             // 
@@ -231,9 +219,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboClient.FormattingEnabled = true;
             this.cboClient.ItemHeight = 23;
-            this.cboClient.Location = new System.Drawing.Point(238, 397);
+            this.cboClient.Location = new System.Drawing.Point(194, 343);
             this.cboClient.Name = "cboClient";
-            this.cboClient.Size = new System.Drawing.Size(182, 29);
+            this.cboClient.Size = new System.Drawing.Size(270, 29);
             this.cboClient.TabIndex = 21;
             this.cboClient.UseSelectable = true;
             // 
@@ -243,9 +231,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboDRBid.FormattingEnabled = true;
             this.cboDRBid.ItemHeight = 23;
-            this.cboDRBid.Location = new System.Drawing.Point(238, 360);
+            this.cboDRBid.Location = new System.Drawing.Point(194, 306);
             this.cboDRBid.Name = "cboDRBid";
-            this.cboDRBid.Size = new System.Drawing.Size(182, 29);
+            this.cboDRBid.Size = new System.Drawing.Size(270, 29);
             this.cboDRBid.TabIndex = 20;
             this.cboDRBid.UseSelectable = true;
             // 
@@ -255,9 +243,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboCanModifyManage.FormattingEnabled = true;
             this.cboCanModifyManage.ItemHeight = 23;
-            this.cboCanModifyManage.Location = new System.Drawing.Point(238, 323);
+            this.cboCanModifyManage.Location = new System.Drawing.Point(194, 269);
             this.cboCanModifyManage.Name = "cboCanModifyManage";
-            this.cboCanModifyManage.Size = new System.Drawing.Size(182, 29);
+            this.cboCanModifyManage.Size = new System.Drawing.Size(270, 29);
             this.cboCanModifyManage.TabIndex = 19;
             this.cboCanModifyManage.UseSelectable = true;
             // 
@@ -267,9 +255,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboDocumentType.FormattingEnabled = true;
             this.cboDocumentType.ItemHeight = 23;
-            this.cboDocumentType.Location = new System.Drawing.Point(238, 286);
+            this.cboDocumentType.Location = new System.Drawing.Point(194, 232);
             this.cboDocumentType.Name = "cboDocumentType";
-            this.cboDocumentType.Size = new System.Drawing.Size(182, 29);
+            this.cboDocumentType.Size = new System.Drawing.Size(270, 29);
             this.cboDocumentType.TabIndex = 18;
             this.cboDocumentType.UseSelectable = true;
             // 
@@ -279,9 +267,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboProperty.FormattingEnabled = true;
             this.cboProperty.ItemHeight = 23;
-            this.cboProperty.Location = new System.Drawing.Point(238, 249);
+            this.cboProperty.Location = new System.Drawing.Point(194, 195);
             this.cboProperty.Name = "cboProperty";
-            this.cboProperty.Size = new System.Drawing.Size(182, 29);
+            this.cboProperty.Size = new System.Drawing.Size(270, 29);
             this.cboProperty.TabIndex = 17;
             this.cboProperty.UseSelectable = true;
             // 
@@ -291,9 +279,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboCanDelete.FormattingEnabled = true;
             this.cboCanDelete.ItemHeight = 23;
-            this.cboCanDelete.Location = new System.Drawing.Point(238, 212);
+            this.cboCanDelete.Location = new System.Drawing.Point(194, 158);
             this.cboCanDelete.Name = "cboCanDelete";
-            this.cboCanDelete.Size = new System.Drawing.Size(182, 29);
+            this.cboCanDelete.Size = new System.Drawing.Size(270, 29);
             this.cboCanDelete.TabIndex = 16;
             this.cboCanDelete.UseSelectable = true;
             // 
@@ -303,9 +291,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboCanModify.FormattingEnabled = true;
             this.cboCanModify.ItemHeight = 23;
-            this.cboCanModify.Location = new System.Drawing.Point(238, 175);
+            this.cboCanModify.Location = new System.Drawing.Point(194, 121);
             this.cboCanModify.Name = "cboCanModify";
-            this.cboCanModify.Size = new System.Drawing.Size(182, 29);
+            this.cboCanModify.Size = new System.Drawing.Size(270, 29);
             this.cboCanModify.TabIndex = 15;
             this.cboCanModify.UseSelectable = true;
             // 
@@ -315,9 +303,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboProjectType.FormattingEnabled = true;
             this.cboProjectType.ItemHeight = 23;
-            this.cboProjectType.Location = new System.Drawing.Point(238, 138);
+            this.cboProjectType.Location = new System.Drawing.Point(194, 84);
             this.cboProjectType.Name = "cboProjectType";
-            this.cboProjectType.Size = new System.Drawing.Size(182, 29);
+            this.cboProjectType.Size = new System.Drawing.Size(270, 29);
             this.cboProjectType.TabIndex = 14;
             this.cboProjectType.UseSelectable = true;
             // 
@@ -338,7 +326,7 @@
             this.txtFileName.CustomButton.UseSelectable = true;
             this.txtFileName.CustomButton.Visible = false;
             this.txtFileName.Lines = new string[0];
-            this.txtFileName.Location = new System.Drawing.Point(238, 107);
+            this.txtFileName.Location = new System.Drawing.Point(194, 53);
             this.txtFileName.MaxLength = 32767;
             this.txtFileName.Name = "txtFileName";
             this.txtFileName.PasswordChar = '\0';
@@ -348,7 +336,7 @@
             this.txtFileName.SelectionLength = 0;
             this.txtFileName.SelectionStart = 0;
             this.txtFileName.ShortcutsEnabled = true;
-            this.txtFileName.Size = new System.Drawing.Size(182, 23);
+            this.txtFileName.Size = new System.Drawing.Size(270, 23);
             this.txtFileName.TabIndex = 13;
             this.txtFileName.UseSelectable = true;
             this.txtFileName.WaterMark = "文件名称";
@@ -372,7 +360,7 @@
             this.txtName.CustomButton.UseSelectable = true;
             this.txtName.CustomButton.Visible = false;
             this.txtName.Lines = new string[0];
-            this.txtName.Location = new System.Drawing.Point(238, 76);
+            this.txtName.Location = new System.Drawing.Point(194, 22);
             this.txtName.MaxLength = 32767;
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
@@ -382,7 +370,7 @@
             this.txtName.SelectionLength = 0;
             this.txtName.SelectionStart = 0;
             this.txtName.ShortcutsEnabled = true;
-            this.txtName.Size = new System.Drawing.Size(182, 23);
+            this.txtName.Size = new System.Drawing.Size(270, 23);
             this.txtName.TabIndex = 12;
             this.txtName.UseSelectable = true;
             this.txtName.WaterMark = "名称";
@@ -392,7 +380,7 @@
             // metroLabel12
             // 
             this.metroLabel12.AutoSize = true;
-            this.metroLabel12.Location = new System.Drawing.Point(195, 473);
+            this.metroLabel12.Location = new System.Drawing.Point(151, 419);
             this.metroLabel12.Name = "metroLabel12";
             this.metroLabel12.Size = new System.Drawing.Size(37, 19);
             this.metroLabel12.TabIndex = 11;
@@ -401,7 +389,7 @@
             // metroLabel11
             // 
             this.metroLabel11.AutoSize = true;
-            this.metroLabel11.Location = new System.Drawing.Point(139, 439);
+            this.metroLabel11.Location = new System.Drawing.Point(95, 385);
             this.metroLabel11.Name = "metroLabel11";
             this.metroLabel11.Size = new System.Drawing.Size(93, 19);
             this.metroLabel11.TabIndex = 10;
@@ -410,7 +398,7 @@
             // metroLabel10
             // 
             this.metroLabel10.AutoSize = true;
-            this.metroLabel10.Location = new System.Drawing.Point(181, 402);
+            this.metroLabel10.Location = new System.Drawing.Point(137, 348);
             this.metroLabel10.Name = "metroLabel10";
             this.metroLabel10.Size = new System.Drawing.Size(51, 19);
             this.metroLabel10.TabIndex = 9;
@@ -419,7 +407,7 @@
             // metroLabel9
             // 
             this.metroLabel9.AutoSize = true;
-            this.metroLabel9.Location = new System.Drawing.Point(167, 365);
+            this.metroLabel9.Location = new System.Drawing.Point(123, 311);
             this.metroLabel9.Name = "metroLabel9";
             this.metroLabel9.Size = new System.Drawing.Size(65, 19);
             this.metroLabel9.TabIndex = 8;
@@ -428,7 +416,7 @@
             // metroLabel8
             // 
             this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(125, 328);
+            this.metroLabel8.Location = new System.Drawing.Point(81, 274);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(107, 19);
             this.metroLabel8.TabIndex = 7;
@@ -437,7 +425,7 @@
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(167, 291);
+            this.metroLabel7.Location = new System.Drawing.Point(123, 237);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(65, 19);
             this.metroLabel7.TabIndex = 6;
@@ -446,7 +434,7 @@
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(195, 254);
+            this.metroLabel6.Location = new System.Drawing.Point(151, 200);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(37, 19);
             this.metroLabel6.TabIndex = 5;
@@ -455,7 +443,7 @@
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(181, 217);
+            this.metroLabel5.Location = new System.Drawing.Point(137, 163);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(51, 19);
             this.metroLabel5.TabIndex = 4;
@@ -464,7 +452,7 @@
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(181, 180);
+            this.metroLabel4.Location = new System.Drawing.Point(137, 126);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(51, 19);
             this.metroLabel4.TabIndex = 3;
@@ -473,7 +461,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(139, 143);
+            this.metroLabel3.Location = new System.Drawing.Point(95, 89);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(93, 19);
             this.metroLabel3.TabIndex = 2;
@@ -482,7 +470,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(195, 78);
+            this.metroLabel2.Location = new System.Drawing.Point(151, 24);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(37, 19);
             this.metroLabel2.TabIndex = 1;
@@ -491,7 +479,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(167, 109);
+            this.metroLabel1.Location = new System.Drawing.Point(123, 55);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(65, 19);
             this.metroLabel1.TabIndex = 0;
@@ -556,6 +544,5 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiSubNew;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem tsmiDelete;
-        private MetroFramework.Controls.MetroButton btnSummit;
     }
 }

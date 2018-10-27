@@ -28,11 +28,6 @@ namespace Summer.CompetitiveTender.View.InviteTender
         private static ILog log = LogManager.GetLogger(typeof(TemplateNodeManageForm));
 
         /// <summary>
-        /// gpTemplateService
-        /// </summary>
-        private IGpTemplateService gpTemplateService = null;
-
-        /// <summary>
         /// gpTemplateNodeService
         /// </summary>
         private IGpTemplateNodeService gpTemplateNodeService = new GpTemplateNodeService();
@@ -53,10 +48,9 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
         #endregion
 
-        public TemplateNodeManageForm(IGpTemplateService gpTemplateService, string gptId)
+        public TemplateNodeManageForm(string gptId)
         {
             InitializeComponent();
-            this.gpTemplateService = gpTemplateService;
             this.gptId = gptId;
         }
 
@@ -92,6 +86,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
             List<ComboBoxDataSource> lstDocumentType = new List<ComboBoxDataSource>();
             lstDocumentType.Add(new ComboBoxDataSource() { Text = "doc", Value = 0 });
+            lstDocumentType.Add(new ComboBoxDataSource() { Text = "pdf", Value = 1 });
             this.cboDocumentType.DataSource = lstDocumentType;
             this.cboDocumentType.DisplayMember = "Text";
             this.cboDocumentType.ValueMember = "Value";
@@ -291,36 +286,6 @@ namespace Summer.CompetitiveTender.View.InviteTender
             }
         }
 
-        private void btnSummit_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                OpenFileDialog ofdl = new OpenFileDialog();
-                ofdl.Filter = "word(*.doc)|*.doc";
-
-                if (ofdl.ShowDialog() == DialogResult.OK)
-                {
-                    using (Stream stream = ofdl.OpenFile())
-                    {
-                        string fileName = Path.GetFileNameWithoutExtension(ofdl.FileName);
-                        string extension = Path.GetExtension(ofdl.FileName);
-
-                        byte[] bytes = new byte[stream.Length];
-                        stream.Read(bytes, 0, bytes.Length);
-
-                        baseUserWebDO user = Cache.GetInstance().GetValue<baseUserWebDO>("login");
-
-                        this.gpTemplateService.FileUpload(this.gptId, user.auID, fileName, extension, bytes.Length, bytes);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                log.Error(ex);
-                MetroMessageBox.Show(this, "提交失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         public void LoadTree()
         {
             this.trvTemplateNode.Nodes.Clear();
@@ -346,6 +311,8 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 node.Tag = item;
 
                 parentNode.Nodes.Add(node);
+
+                this.SetTreeData(gptns, node, item.gtnId);
             }
         }
     }

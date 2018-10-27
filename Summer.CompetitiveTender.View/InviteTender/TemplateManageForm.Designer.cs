@@ -28,15 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grdTemplate = new MetroFramework.Controls.MetroGrid();
-            this.btnNewTemplate = new MetroFramework.Controls.MetroButton();
-            this.btnEditTemplate = new MetroFramework.Controls.MetroButton();
-            this.btnTemplateNode = new MetroFramework.Controls.MetroButton();
-            this.btnDeleteTemplate = new MetroFramework.Controls.MetroButton();
-            this.btnDownloadTemplate = new MetroFramework.Controls.MetroButton();
             this.colTemplateId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTemplateCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTempleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +40,12 @@
             this.colTemplateDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTemplateCreateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTemplateState = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.btnNewTemplate = new MetroFramework.Controls.MetroButton();
+            this.btnEditTemplate = new MetroFramework.Controls.MetroButton();
+            this.btnTemplateNode = new MetroFramework.Controls.MetroButton();
+            this.btnDeleteTemplate = new MetroFramework.Controls.MetroButton();
+            this.btnDownloadTemplate = new MetroFramework.Controls.MetroButton();
+            this.btnSummit = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.grdTemplate)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,14 +61,14 @@
             this.grdTemplate.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grdTemplate.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.grdTemplate.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdTemplate.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdTemplate.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.grdTemplate.ColumnHeadersHeight = 45;
             this.grdTemplate.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colTemplateId,
@@ -78,14 +79,14 @@
             this.colTemplateDescription,
             this.colTemplateCreateDate,
             this.colTemplateState});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdTemplate.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdTemplate.DefaultCellStyle = dataGridViewCellStyle5;
             this.grdTemplate.EnableHeadersVisualStyles = false;
             this.grdTemplate.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.grdTemplate.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -94,74 +95,19 @@
             this.grdTemplate.Name = "grdTemplate";
             this.grdTemplate.ReadOnly = true;
             this.grdTemplate.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdTemplate.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdTemplate.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.grdTemplate.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.grdTemplate.RowTemplate.Height = 23;
             this.grdTemplate.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdTemplate.Size = new System.Drawing.Size(984, 477);
             this.grdTemplate.TabIndex = 4;
-            // 
-            // btnNewTemplate
-            // 
-            this.btnNewTemplate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnNewTemplate.Location = new System.Drawing.Point(23, 554);
-            this.btnNewTemplate.Name = "btnNewTemplate";
-            this.btnNewTemplate.Size = new System.Drawing.Size(75, 23);
-            this.btnNewTemplate.TabIndex = 5;
-            this.btnNewTemplate.Text = "新建模板";
-            this.btnNewTemplate.UseSelectable = true;
-            this.btnNewTemplate.Click += new System.EventHandler(this.btnNewTemplate_Click);
-            // 
-            // btnEditTemplate
-            // 
-            this.btnEditTemplate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEditTemplate.Location = new System.Drawing.Point(130, 554);
-            this.btnEditTemplate.Name = "btnEditTemplate";
-            this.btnEditTemplate.Size = new System.Drawing.Size(75, 23);
-            this.btnEditTemplate.TabIndex = 6;
-            this.btnEditTemplate.Text = "编辑模板";
-            this.btnEditTemplate.UseSelectable = true;
-            this.btnEditTemplate.Click += new System.EventHandler(this.btnEditTemplate_Click);
-            // 
-            // btnTemplateNode
-            // 
-            this.btnTemplateNode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnTemplateNode.Location = new System.Drawing.Point(237, 554);
-            this.btnTemplateNode.Name = "btnTemplateNode";
-            this.btnTemplateNode.Size = new System.Drawing.Size(75, 23);
-            this.btnTemplateNode.TabIndex = 7;
-            this.btnTemplateNode.Text = "模板设定";
-            this.btnTemplateNode.UseSelectable = true;
-            this.btnTemplateNode.Click += new System.EventHandler(this.btnTemplateNode_Click);
-            // 
-            // btnDeleteTemplate
-            // 
-            this.btnDeleteTemplate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDeleteTemplate.Location = new System.Drawing.Point(344, 554);
-            this.btnDeleteTemplate.Name = "btnDeleteTemplate";
-            this.btnDeleteTemplate.Size = new System.Drawing.Size(75, 23);
-            this.btnDeleteTemplate.TabIndex = 8;
-            this.btnDeleteTemplate.Text = "删除模板";
-            this.btnDeleteTemplate.UseSelectable = true;
-            this.btnDeleteTemplate.Click += new System.EventHandler(this.btnDeleteTemplate_Click);
-            // 
-            // btnDownloadTemplate
-            // 
-            this.btnDownloadTemplate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDownloadTemplate.Location = new System.Drawing.Point(451, 554);
-            this.btnDownloadTemplate.Name = "btnDownloadTemplate";
-            this.btnDownloadTemplate.Size = new System.Drawing.Size(75, 23);
-            this.btnDownloadTemplate.TabIndex = 9;
-            this.btnDownloadTemplate.Text = "下载模板";
-            this.btnDownloadTemplate.UseSelectable = true;
-            this.btnDownloadTemplate.Click += new System.EventHandler(this.btnDownloadTemplate_Click);
             // 
             // colTemplateId
             // 
@@ -226,11 +172,78 @@
             this.colTemplateState.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colTemplateState.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // btnNewTemplate
+            // 
+            this.btnNewTemplate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnNewTemplate.Location = new System.Drawing.Point(23, 554);
+            this.btnNewTemplate.Name = "btnNewTemplate";
+            this.btnNewTemplate.Size = new System.Drawing.Size(75, 23);
+            this.btnNewTemplate.TabIndex = 5;
+            this.btnNewTemplate.Text = "新建模板";
+            this.btnNewTemplate.UseSelectable = true;
+            this.btnNewTemplate.Click += new System.EventHandler(this.btnNewTemplate_Click);
+            // 
+            // btnEditTemplate
+            // 
+            this.btnEditTemplate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEditTemplate.Location = new System.Drawing.Point(130, 554);
+            this.btnEditTemplate.Name = "btnEditTemplate";
+            this.btnEditTemplate.Size = new System.Drawing.Size(75, 23);
+            this.btnEditTemplate.TabIndex = 6;
+            this.btnEditTemplate.Text = "编辑模板";
+            this.btnEditTemplate.UseSelectable = true;
+            this.btnEditTemplate.Click += new System.EventHandler(this.btnEditTemplate_Click);
+            // 
+            // btnTemplateNode
+            // 
+            this.btnTemplateNode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnTemplateNode.Location = new System.Drawing.Point(237, 554);
+            this.btnTemplateNode.Name = "btnTemplateNode";
+            this.btnTemplateNode.Size = new System.Drawing.Size(75, 23);
+            this.btnTemplateNode.TabIndex = 7;
+            this.btnTemplateNode.Text = "模板设定";
+            this.btnTemplateNode.UseSelectable = true;
+            this.btnTemplateNode.Click += new System.EventHandler(this.btnTemplateNode_Click);
+            // 
+            // btnDeleteTemplate
+            // 
+            this.btnDeleteTemplate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDeleteTemplate.Location = new System.Drawing.Point(344, 554);
+            this.btnDeleteTemplate.Name = "btnDeleteTemplate";
+            this.btnDeleteTemplate.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteTemplate.TabIndex = 8;
+            this.btnDeleteTemplate.Text = "删除模板";
+            this.btnDeleteTemplate.UseSelectable = true;
+            this.btnDeleteTemplate.Click += new System.EventHandler(this.btnDeleteTemplate_Click);
+            // 
+            // btnDownloadTemplate
+            // 
+            this.btnDownloadTemplate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDownloadTemplate.Location = new System.Drawing.Point(558, 554);
+            this.btnDownloadTemplate.Name = "btnDownloadTemplate";
+            this.btnDownloadTemplate.Size = new System.Drawing.Size(75, 23);
+            this.btnDownloadTemplate.TabIndex = 9;
+            this.btnDownloadTemplate.Text = "下载模板";
+            this.btnDownloadTemplate.UseSelectable = true;
+            this.btnDownloadTemplate.Click += new System.EventHandler(this.btnDownloadTemplate_Click);
+            // 
+            // btnSummit
+            // 
+            this.btnSummit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSummit.Location = new System.Drawing.Point(451, 554);
+            this.btnSummit.Name = "btnSummit";
+            this.btnSummit.Size = new System.Drawing.Size(75, 23);
+            this.btnSummit.TabIndex = 9;
+            this.btnSummit.Text = "提交模板";
+            this.btnSummit.UseSelectable = true;
+            this.btnSummit.Click += new System.EventHandler(this.btnSummit_Click);
+            // 
             // TemplateManageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 600);
+            this.Controls.Add(this.btnSummit);
             this.Controls.Add(this.btnDownloadTemplate);
             this.Controls.Add(this.btnDeleteTemplate);
             this.Controls.Add(this.btnTemplateNode);
@@ -261,5 +274,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTemplateDescription;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTemplateCreateDate;
         private System.Windows.Forms.DataGridViewComboBoxColumn colTemplateState;
+        private MetroFramework.Controls.MetroButton btnSummit;
     }
 }

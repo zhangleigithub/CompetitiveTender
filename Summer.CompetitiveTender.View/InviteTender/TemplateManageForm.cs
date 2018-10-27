@@ -15,6 +15,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode;
+using Xceed.Words.NET;
+using Summer.Common.Utility;
 
 namespace Summer.CompetitiveTender.View.InviteTender
 {
@@ -31,6 +34,11 @@ namespace Summer.CompetitiveTender.View.InviteTender
         /// gpTemplateService
         /// </summary>
         private IGpTemplateService gpTemplateService = new GpTemplateService();
+
+        /// <summary>
+        /// gpTemplateNodeService
+        /// </summary>
+        private IGpTemplateNodeService gpTemplateNodeService = new GpTemplateNodeService();
 
         #endregion
 
@@ -109,7 +117,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
             {
                 gpTemplateWebDO gpt = this.grdTemplate.CurrentRow.Tag as gpTemplateWebDO;
 
-                TemplateNodeManageForm templateNodeManageForm = new TemplateNodeManageForm(this.gpTemplateService, gpt.gtId);
+                TemplateNodeManageForm templateNodeManageForm = new TemplateNodeManageForm(gpt.gtId);
 
                 if (templateNodeManageForm.ShowDialog(this) == DialogResult.OK)
                 {
@@ -147,6 +155,50 @@ namespace Summer.CompetitiveTender.View.InviteTender
             else
             {
                 MetroMessageBox.Show(this, "请选择要删除的模板！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnSummit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.grdTemplate.CurrentRow != null)
+                {
+                    gpTemplateWebDO gpt = this.grdTemplate.CurrentRow.Tag as gpTemplateWebDO;
+
+                    string path = this.GenerateDocument(gpt);
+
+                    using (FileStream fs = File.OpenRead(path))
+                    {
+                        string fileName = Path.GetFileNameWithoutExtension(path);
+                        string extension = Path.GetExtension(path);
+
+                        byte[] bytes = new byte[fs.Length];
+                        fs.Read(bytes, 0, bytes.Length);
+
+                        baseUserWebDO user = Cache.GetInstance().GetValue<baseUserWebDO>("login");
+
+                        bool result = this.gpTemplateService.FileUpload(gpt.gtId, user.auID, fileName, extension, bytes.Length, bytes);
+
+                        if (result)
+                        {
+                            MetroMessageBox.Show(this, "提交成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MetroMessageBox.Show(this, "提交失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                else
+                {
+                    MetroMessageBox.Show(this, "请选择要提交的模板！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+                MetroMessageBox.Show(this, "提交失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -216,6 +268,58 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 row.Tag = item;
 
                 this.grdTemplate.Rows.Add(row);
+            }
+        }
+
+        public string GenerateDocument(gpTemplateWebDO gpt)
+        {
+            string path = string.Format("{0}\\{1}.docx", AppDirectory.Temp(), gpt.gtName);
+
+            gpTemplateNodeWebDO[] gptns = this.gpTemplateNodeService.FindListByGtId(gpt.gtId);
+
+            using (DocX document = DocX.Create(path))
+            {
+                //标题
+                document.InsertParagraph("招标模板").FontSize(18d).Bold().SpacingAfter(50d).Alignment = Alignment.center;
+
+                //段落
+                this.GenerateDocumentContent(gptns, document, 0, 1);
+
+                document.Save();
+            }
+
+            return path;
+        }
+
+        public void GenerateDocumentContent(gpTemplateNodeWebDO[] gptns, DocX document, long parentId, int level)
+        {
+            foreach (var item in gptns.Where(x => x.gtnPid == parentId).OrderBy(x => x.sort))
+            {
+                //段落
+                var p = document.InsertParagraph();
+
+                p.Append(item.gtnName)
+                .Font(new Xceed.Words.NET.Font("Arial"))
+                .FontSize(25 / (level + (level - 1) * 0.1))
+                .Color(Color.Black)
+                .Bold()
+                .KeepWithNextParagraph();
+
+                if (level == 1)
+                {
+                    p.Heading(HeadingType.Heading1);
+                    document.InsertSection();
+                }
+                else if (level == 2)
+                {
+                    p.Heading(HeadingType.Heading2);
+                }
+                else if (level == 3)
+                {
+                    p.Heading(HeadingType.Heading3);
+                }
+
+                this.GenerateDocumentContent(gptns, document, item.gtnId, level + 1);
             }
         }
 

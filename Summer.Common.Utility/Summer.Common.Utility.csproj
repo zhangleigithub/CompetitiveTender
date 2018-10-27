@@ -73,6 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppDirectory.cs" />
     <Compile Include="Commnd\Utility.cs" />
     <Compile Include="LocalInfo.cs" />
     <Compile Include="MonitorXTX.cs" />

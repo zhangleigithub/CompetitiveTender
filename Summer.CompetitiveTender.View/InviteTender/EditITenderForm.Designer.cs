@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("招标正文");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("招标模板");
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("评标条款");
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("评 分 点");
             System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("评分因素");
             System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("生成招标文件");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("打印招标文件");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("上传招标文件");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("打印招标文件");
             this.pnelFrame = new MetroFramework.Controls.MetroPanel();
             this.trvMenu = new System.Windows.Forms.TreeView();
             this.SuspendLayout();
@@ -70,7 +71,7 @@
             this.trvMenu.Location = new System.Drawing.Point(23, 63);
             this.trvMenu.Name = "trvMenu";
             treeNode1.Name = "";
-            treeNode1.Text = "招标正文";
+            treeNode1.Text = "招标模板";
             treeNode2.Name = "";
             treeNode2.Text = "评标条款";
             treeNode3.Name = "";
@@ -80,14 +81,17 @@
             treeNode5.Name = "";
             treeNode5.Text = "生成招标文件";
             treeNode6.Name = "";
-            treeNode6.Text = "打印招标文件";
+            treeNode6.Text = "上传招标文件";
+            treeNode7.Name = "";
+            treeNode7.Text = "打印招标文件";
             this.trvMenu.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode1,
             treeNode2,
             treeNode3,
             treeNode4,
             treeNode5,
-            treeNode6});
+            treeNode6,
+            treeNode7});
             this.trvMenu.ShowLines = false;
             this.trvMenu.Size = new System.Drawing.Size(180, 514);
             this.trvMenu.TabIndex = 2;

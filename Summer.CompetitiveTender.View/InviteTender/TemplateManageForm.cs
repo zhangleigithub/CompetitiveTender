@@ -165,8 +165,8 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 if (this.grdTemplate.CurrentRow != null)
                 {
                     gpTemplateWebDO gpt = this.grdTemplate.CurrentRow.Tag as gpTemplateWebDO;
-
-                    string path = this.GenerateDocument(gpt);
+                    GenerateDocument gd = new GenerateDocument();
+                    string path = gd.GenerateBidTemplateDocument(gpt);
 
                     using (FileStream fs = File.OpenRead(path))
                     {
@@ -268,58 +268,6 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 row.Tag = item;
 
                 this.grdTemplate.Rows.Add(row);
-            }
-        }
-
-        public string GenerateDocument(gpTemplateWebDO gpt)
-        {
-            string path = string.Format("{0}\\{1}.docx", AppDirectory.Temp(), gpt.gtName);
-
-            gpTemplateNodeWebDO[] gptns = this.gpTemplateNodeService.FindListByGtId(gpt.gtId);
-
-            using (DocX document = DocX.Create(path))
-            {
-                //标题
-                document.InsertParagraph("招标模板").FontSize(18d).Bold().SpacingAfter(50d).Alignment = Alignment.center;
-
-                //段落
-                this.GenerateDocumentContent(gptns, document, 0, 1);
-
-                document.Save();
-            }
-
-            return path;
-        }
-
-        public void GenerateDocumentContent(gpTemplateNodeWebDO[] gptns, DocX document, long parentId, int level)
-        {
-            foreach (var item in gptns.Where(x => x.gtnPid == parentId).OrderBy(x => x.sort))
-            {
-                //段落
-                var p = document.InsertParagraph();
-
-                p.Append(item.gtnName)
-                .Font(new Xceed.Words.NET.Font("Arial"))
-                .FontSize(25 / (level + (level - 1) * 0.1))
-                .Color(Color.Black)
-                .Bold()
-                .KeepWithNextParagraph();
-
-                if (level == 1)
-                {
-                    p.Heading(HeadingType.Heading1);
-                    document.InsertSection();
-                }
-                else if (level == 2)
-                {
-                    p.Heading(HeadingType.Heading2);
-                }
-                else if (level == 3)
-                {
-                    p.Heading(HeadingType.Heading3);
-                }
-
-                this.GenerateDocumentContent(gptns, document, item.gtnId, level + 1);
             }
         }
 

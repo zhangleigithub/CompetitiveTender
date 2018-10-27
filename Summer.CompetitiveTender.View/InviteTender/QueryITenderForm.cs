@@ -69,7 +69,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
             }
             else if (e.ColumnIndex == this.colEditITenderFile.Index)
             {
-                EditITenderForm editProjectForm = new EditITenderForm(gptp.gtpId, gptp.gpId);
+                EditITenderForm editProjectForm = new EditITenderForm(gptp);
                 editProjectForm.ShowDialog(this);
                 editProjectForm.Dispose();
             }

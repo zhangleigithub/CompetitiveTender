@@ -19,5 +19,17 @@ namespace Summer.Common.Utility
 
             return dir;
         }
+
+        public static string Temp_Dir(string directoryName)
+        {
+            string dir = Path.Combine(AppDirectory.Temp(), directoryName+"\\");
+
+            if (!Directory.Exists(Path.GetDirectoryName(dir)))
+            {
+                Directory.CreateDirectory(Path.GetDirectoryName(dir));
+            }
+
+            return dir;
+        }
     }
 }

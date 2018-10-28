@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -102,100 +103,16 @@ namespace Summer.CompetitiveTender.View.InviteTender
                     this.pnelFrame.Controls.Add(bidEvalFactorPage);
                     break;
                 case "生成招标文件":
-                    try
-                    {
-                        List<string> paths = new List<string>();
-
-                        GenerateDocument gd = new GenerateDocument();
-
-                        //模板文件
-                        string pathBid = gd.GenerateBidDocument(this.gptp, this.bidEvalTemplatePage.GetTemplate());
-                        paths.Add(pathBid);
-
-                        //评标条款
-                        string pathBidEvalClause = gd.GenerateBidEvalClauseDocument(this.gptp);
-                        paths.Add(pathBidEvalClause);
-
-                        //评分点
-                        string pathBidEvalScoringPoint = gd.GenerateBidEvalScoringPointDocument(this.gptp);
-                        paths.Add(pathBidEvalScoringPoint);
-
-                        //评分因素
-                        string pathBidEvalFactor = gd.GenerateBidEvalFactorDocument(this.gptp);
-                        paths.Add(pathBidEvalFactor);
-
-                        //问题澄清
-                        //string pathBidQuestion = gd.GenerateBidQuestionDocument(this.gptp);
-
-                        //if (!string.IsNullOrWhiteSpace(pathBidQuestion))
-                        //{
-                        //    paths.Add(pathBidQuestion);
-                        //}
-
-                        GenerateBidFile generateBidFile = new GenerateBidFile(paths.ToArray());
-                        generateBidFile.Dock = DockStyle.Fill;
-                        this.pnelFrame.Controls.Add(generateBidFile);
-                    }
-                    catch (Exception ex)
-                    {
-                        log.Error(ex);
-                        MetroMessageBox.Show(this, "生成失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    this.GenerateBidDocument();
                     break;
                 case "上传招标文件":
-                    try
-                    {
-                        string sourcePath = AppDirectory.Temp_Dir(this.gptp.gpId);
-                        string destPath = Path.Combine(AppDirectory.Temp(), this.gptp.gpId + ".zip");
-
-                        Compress.CreateZipFile(sourcePath, destPath);
-
-                        baseUserWebDO loginResponse = Cache.GetInstance().GetValue<baseUserWebDO>("login");
-                        bool result = gpTenderFileService.UploadFile(destPath, loginResponse.auID, this.gptp.gtpId, this.gptp.gpId);
-
-                        if (result)
-                        {
-                            MetroMessageBox.Show(this, "上传成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MetroMessageBox.Show(this, "上传失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        log.Error(ex);
-                        MetroMessageBox.Show(this, "上传失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    this.UploadBidFile();
                     break;
                 case "打印招标文件":
-                    MetroMessageBox.Show(this, "疯狂开发中...", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.PrintBidFile();
                     break;
-                case "下载":
-                    try
-                    {
-                        FolderBrowserDialog fbdl = new FolderBrowserDialog();
-                        if (fbdl.ShowDialog() == DialogResult.OK)
-                        {
-                            baseUserWebDO loginResponse = Cache.GetInstance().GetValue<baseUserWebDO>("login");
-                            //bool result = gpTenderFileService.DownloadFile(fbdl.SelectedPath, this.gptp.gtpId, this.gptp.gpId, loginResponse.auID);
-                            bool result = gpTenderFileService.DownloadFile(fbdl.SelectedPath, "1d485a24-0f17-41f9-8d48-e2601f667835", "2f345345-a8b0-4257-a4ca-302476b66193", loginResponse.auID);
-
-                            if (result)
-                            {
-                                MetroMessageBox.Show(this, "下载成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                            else
-                            {
-                                MetroMessageBox.Show(this, "下载失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        log.Error(ex);
-                        MetroMessageBox.Show(this, "下载失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                case "下载招标文件":
+                    this.DownloadBidFile();
                     break;
                 default:
                     break;
@@ -212,6 +129,119 @@ namespace Summer.CompetitiveTender.View.InviteTender
             this.gptp = gptp;
         }
 
+        private void GenerateBidDocument()
+        {
+            try
+            {
+                List<string> paths = new List<string>();
+
+                GenerateDocument gd = new GenerateDocument();
+
+                //模板文件
+                string pathBid = gd.GenerateBidDocument(this.gptp, this.bidEvalTemplatePage.GetTemplate());
+                paths.Add(pathBid);
+
+                //评标条款
+                string pathBidEvalClause = gd.GenerateBidEvalClauseDocument(this.gptp);
+                paths.Add(pathBidEvalClause);
+
+                //评分点
+                string pathBidEvalScoringPoint = gd.GenerateBidEvalScoringPointDocument(this.gptp);
+                paths.Add(pathBidEvalScoringPoint);
+
+                //评分因素
+                string pathBidEvalFactor = gd.GenerateBidEvalFactorDocument(this.gptp);
+                paths.Add(pathBidEvalFactor);
+
+                //问题澄清
+                //string pathBidQuestion = gd.GenerateBidQuestionDocument(this.gptp);
+
+                //if (!string.IsNullOrWhiteSpace(pathBidQuestion))
+                //{
+                //    paths.Add(pathBidQuestion);
+                //}
+
+                GenerateBidFile generateBidFile = new GenerateBidFile(paths.ToArray());
+                generateBidFile.Dock = DockStyle.Fill;
+                this.pnelFrame.Controls.Add(generateBidFile);
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+                MetroMessageBox.Show(this, "生成失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void UploadBidFile()
+        {
+            try
+            {
+                string sourcePath = AppDirectory.Temp_Dir(this.gptp.gpId);
+                string destPath = Path.Combine(AppDirectory.Temp(), this.gptp.gpId + ".zip");
+
+                Compress.CreateZipFile(sourcePath, destPath);
+
+                baseUserWebDO loginResponse = Cache.GetInstance().GetValue<baseUserWebDO>("login");
+                bool result = gpTenderFileService.UploadFile(destPath, loginResponse.auID, this.gptp.gtpId, this.gptp.gpId);
+
+                if (result)
+                {
+                    MetroMessageBox.Show(this, "上传成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MetroMessageBox.Show(this, "上传失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+                MetroMessageBox.Show(this, "上传失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void DownloadBidFile()
+        {
+            try
+            {
+                FolderBrowserDialog fbdl = new FolderBrowserDialog();
+                if (fbdl.ShowDialog() == DialogResult.OK)
+                {
+                    baseUserWebDO loginResponse = Cache.GetInstance().GetValue<baseUserWebDO>("login");
+                    bool result = gpTenderFileService.DownloadFile(fbdl.SelectedPath, this.gptp.gtpId, this.gptp.gpId, loginResponse.auID);
+
+                    if (result)
+                    {
+                        MetroMessageBox.Show(this, "下载成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MetroMessageBox.Show(this, "下载失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+                MetroMessageBox.Show(this, "下载失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void PrintBidFile()
+        {
+            try
+            {
+                string path = Path.Combine(AppDirectory.Temp_Dir(gptp.gpId), "招标文件.docx");
+
+                MetroMessageBox.Show(this, "疯狂开发中......", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+                MetroMessageBox.Show(this, "打印失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        
         #endregion
     }
 }

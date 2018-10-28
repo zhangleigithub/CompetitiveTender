@@ -96,12 +96,6 @@
     <Compile Include="AboutBoxForm.Designer.cs">
       <DependentUpon>AboutBoxForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="BidEvaluaMethod\ModifyScoringFactor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BidEvaluaMethod\ModifyScoringFactor.Designer.cs">
-      <DependentUpon>ModifyScoringFactor.cs</DependentUpon>
-    </Compile>
     <Compile Include="EvaluationOfBids\EOBResultForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,48 +168,6 @@
     <Compile Include="InviteTender\BidEvalClausePage.Designer.cs">
       <DependentUpon>BidEvalClausePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="BidEvaluaMethod\AddBidEvalMethod.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BidEvaluaMethod\AddBidEvalMethod.Designer.cs">
-      <DependentUpon>AddBidEvalMethod.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BidEvaluaMethod\AddScoringFactor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BidEvaluaMethod\AddScoringFactor.Designer.cs">
-      <DependentUpon>AddScoringFactor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BidEvaluaMethod\AddScoringPoint.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BidEvaluaMethod\AddScoringPoint.Designer.cs">
-      <DependentUpon>AddScoringPoint.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BidEvaluaMethod\BidEvalClauseInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BidEvaluaMethod\BidEvalClauseInfo.Designer.cs">
-      <DependentUpon>BidEvalClauseInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BidEvaluaMethod\BidEvalMethodManage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BidEvaluaMethod\BidEvalMethodManage.Designer.cs">
-      <DependentUpon>BidEvalMethodManage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BidEvaluaMethod\ScoringFactorInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BidEvaluaMethod\ScoringFactorInfo.Designer.cs">
-      <DependentUpon>ScoringFactorInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BidEvaluaMethod\ScoringPointInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BidEvaluaMethod\ScoringPointInfo.Designer.cs">
-      <DependentUpon>ScoringPointInfo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Bid\BidManageForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -247,48 +199,6 @@
       <DependentUpon>QueryBidTemplateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Common\ComboBoxDataSource.cs" />
-    <Compile Include="EvaluationOfBids\EOBCleanForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EvaluationOfBids\EOBCleanForm.Designer.cs">
-      <DependentUpon>EOBCleanForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EvaluationOfBids\EOBCommerceReviewForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EvaluationOfBids\EOBCommerceReviewForm.Designer.cs">
-      <DependentUpon>EOBCommerceReviewForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EvaluationOfBids\EOBPrepareForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EvaluationOfBids\EOBPrepareForm.Designer.cs">
-      <DependentUpon>EOBPrepareForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EvaluationOfBids\EOBQualificationReviewForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EvaluationOfBids\EOBQualificationReviewForm.Designer.cs">
-      <DependentUpon>EOBQualificationReviewForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EvaluationOfBids\EOBTechnologyReviewForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EvaluationOfBids\EOBTechnologyReviewForm.Designer.cs">
-      <DependentUpon>EOBTechnologyReviewForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EvaluationOfBids\ReviewResultForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EvaluationOfBids\ReviewResultForm.Designer.cs">
-      <DependentUpon>ReviewResultForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InviteTender\CreateITenderForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InviteTender\CreateITenderForm.Designer.cs">
-      <DependentUpon>CreateITenderForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="InviteTender\EditTemplateForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -374,12 +284,6 @@
     <Compile Include="InviteTenderMainForm.Designer.cs">
       <DependentUpon>InviteTenderMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OpenOfBids\OOBCheckInForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OpenOfBids\OOBCheckInForm.Designer.cs">
-      <DependentUpon>OOBCheckInForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="OpenOfBids\OOBDecryptBidFileForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -409,9 +313,6 @@
   <ItemGroup>
     <EmbeddedResource Include="AboutBoxForm.resx">
       <DependentUpon>AboutBoxForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BidEvaluaMethod\ModifyScoringFactor.resx">
-      <DependentUpon>ModifyScoringFactor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EvaluationOfBids\EOBResultForm.resx">
       <DependentUpon>EOBResultForm.cs</DependentUpon>
@@ -449,32 +350,8 @@
     <EmbeddedResource Include="InviteTender\BidEvalClausePage.resx">
       <DependentUpon>BidEvalClausePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BidEvaluaMethod\AddBidEvalMethod.resx">
-      <DependentUpon>AddBidEvalMethod.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BidEvaluaMethod\AddScoringFactor.resx">
-      <DependentUpon>AddScoringFactor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BidEvaluaMethod\AddScoringPoint.resx">
-      <DependentUpon>AddScoringPoint.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BidEvaluaMethod\BidEvalClauseInfo.resx">
-      <DependentUpon>BidEvalClauseInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BidEvaluaMethod\BidEvalMethodManage.resx">
-      <DependentUpon>BidEvalMethodManage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BidEvaluaMethod\ScoringFactorInfo.resx">
-      <DependentUpon>ScoringFactorInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BidEvaluaMethod\ScoringPointInfo.resx">
-      <DependentUpon>ScoringPointInfo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Bid\BidManageForm.resx">
       <DependentUpon>BidManageForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InviteTender\CreateITenderForm.resx">
-      <DependentUpon>CreateITenderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InviteTender\EditTemplateForm.resx">
       <DependentUpon>EditTemplateForm.cs</DependentUpon>

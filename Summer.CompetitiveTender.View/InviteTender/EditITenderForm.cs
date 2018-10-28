@@ -8,7 +8,6 @@ using Summer.CompetitiveTender.Service.ServiceReferenceGpTemplate;
 using Summer.CompetitiveTender.Service.ServiceReferenceGpTemplateNode;
 using Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject;
 using Summer.CompetitiveTender.Service.ServiceReferenceLogin;
-using Summer.CompetitiveTender.View.BidEvaluaMethod;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

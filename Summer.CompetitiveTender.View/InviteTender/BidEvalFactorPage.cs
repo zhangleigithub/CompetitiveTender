@@ -3,7 +3,6 @@ using MetroFramework;
 using MetroFramework.Forms;
 using Summer.CompetitiveTender.Service;
 using Summer.CompetitiveTender.Service.ServiceReferenceGpBidFileOrg;
-using Summer.CompetitiveTender.View.BidEvaluaMethod;
 using Summer.CompetitiveTender.View.Common;
 using System;
 using System.Collections.Generic;

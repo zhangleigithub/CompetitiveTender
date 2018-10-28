@@ -245,7 +245,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
             //修改
             var result2 = gpTfOperationService.FindQuestions(gptp.gtpId, gptp.gpId, string.Empty, 2);
 
-            if (result1.Count()==0 && result2.Count()==0)
+            if (result1.Count() == 0 && result2.Count() == 0)
             {
                 return string.Empty;
             }

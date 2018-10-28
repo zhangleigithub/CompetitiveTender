@@ -54,6 +54,11 @@ namespace Summer.CompetitiveTender.Service
         {
             resultDO result = this.wsAgent.findQuestions(gtpId, gsId, gtoTitle, gtoType);
 
+            if (result.objList == null)
+            {
+                return new gpTfOperationWebDO[0];
+            }
+
             return ((object[])result.objList).Cast<gpTfOperationWebDO>().ToArray();
         }
 

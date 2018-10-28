@@ -73,6 +73,12 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 editProjectForm.ShowDialog(this);
                 editProjectForm.Dispose();
             }
+            else if (e.ColumnIndex == this.colQuestion.Index)
+            {
+                QueryITenderQuestionForm queryITenderQuestionForm = new QueryITenderQuestionForm(gptp);
+                queryITenderQuestionForm.ShowDialog(this);
+                queryITenderQuestionForm.Dispose();
+            }
             else if (e.ColumnIndex == this.colDeleteITenderFile.Index)
             {
                 if (MetroMessageBox.Show(this, "确定要删除吗？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -138,6 +144,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 row.Cells[this.colITenderProjectContent.Index].Value = item.content;
                 row.Cells[this.colITenderDetail.Index].Value = "项目详情";
                 row.Cells[this.colEditITenderFile.Index].Value = "编辑招标文件";
+                row.Cells[this.colQuestion.Index].Value = "问题澄清";
                 row.Cells[this.colDeleteITenderFile.Index].Value = "删除招标文件";
                 row.Tag = item;
 

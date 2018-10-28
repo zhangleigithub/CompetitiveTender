@@ -47,12 +47,14 @@ namespace Summer.CompetitiveTender.View.InviteTender
         private void QueryITenderTemplateForm_Shown(object sender, EventArgs e)
         {
             List<ComboBoxDataSource> lstType = new List<ComboBoxDataSource>();
+            lstType.Add(new ComboBoxDataSource() { Text = "未知", Value = 0 });
             lstType.Add(new ComboBoxDataSource() { Text = "招标", Value = 1 });
             this.colTemplateType.DataSource = lstType;
             this.colTemplateType.DisplayMember = "Text";
             this.colTemplateType.ValueMember = "Value";
 
             List<ComboBoxDataSource> lstProjectType = new List<ComboBoxDataSource>();
+            lstProjectType.Add(new ComboBoxDataSource() { Text = "未知", Value = 0 });
             lstProjectType.Add(new ComboBoxDataSource() { Text = "货物", Value = 1 });
             lstProjectType.Add(new ComboBoxDataSource() { Text = "服务", Value = 2 });
             lstProjectType.Add(new ComboBoxDataSource() { Text = "工程", Value = 3 });
@@ -67,6 +69,14 @@ namespace Summer.CompetitiveTender.View.InviteTender
             this.colTemplateState.DisplayMember = "Text";
             this.colTemplateState.ValueMember = "Value";
 
+            this.cboState.DataSource = new List<ComboBoxDataSource>(lstState);
+            this.cboState.DisplayMember = "Text";
+            this.cboState.ValueMember = "Value";
+            this.cboState.SelectedValue = 1;
+        }
+
+        private void btnQuery_Click(object sender, EventArgs e)
+        {
             try
             {
                 this.LoadData();
@@ -250,7 +260,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
         {
             this.grdTemplate.Rows.Clear();
             baseUserWebDO loginResponse = Cache.GetInstance().GetValue<baseUserWebDO>("login");
-            var result = gpTemplateService.FindListByAuIdAndName(loginResponse.auID, string.Empty);
+            var result = gpTemplateService.FindListByAuIdAndName(loginResponse.auID, this.txtName.Text.Trim(), (int)this.cboState.SelectedValue);
 
             //升序
             foreach (var item in result.OrderBy(x => x.sort))

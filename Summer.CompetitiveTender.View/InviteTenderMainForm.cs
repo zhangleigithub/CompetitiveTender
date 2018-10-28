@@ -27,18 +27,18 @@ namespace Summer.CompetitiveTender.View
 
         #region 文件
 
-        private void OnOpenProjectToolStripMenuItemClick(object sender, EventArgs e)
+        private void OnInviteTenderToolStripMenuItemClick(object sender, EventArgs e)
         {
             QueryITenderForm queryITenderForm = new QueryITenderForm();
             queryITenderForm.ShowDialog(this);
             queryITenderForm.Dispose();
         }
 
-        private void OnProjectDiscussToolStripMenuItemClick(object sender, EventArgs e)
+        private void tsmiBidManage_Click(object sender, EventArgs e)
         {
-            QueryITenderQuestionForm queryITenderQuestionForm = new QueryITenderQuestionForm();
-            queryITenderQuestionForm.ShowDialog(this);
-            queryITenderQuestionForm.Dispose();
+            BidManageForm bidManageForm = new BidManageForm();
+            bidManageForm.ShowDialog(this);
+            bidManageForm.Dispose();
         }
 
         private void OnTemplateManageToolStripMenuItemClick(object sender, EventArgs e)

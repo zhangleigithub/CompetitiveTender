@@ -33,13 +33,13 @@ namespace CompetitiveTender
                         Application.Run(new InviteTenderMainForm());
                         break;
                     case UserType.Agency:
-                        Application.Run(new MainForm(login.UserType));
+                        Application.Run(new InviteTenderMainForm());
                         break;
                     case UserType.Tender:
                         Application.Run(new BidManageForm());
                         break;
                     case UserType.Expert:
-                        Application.Run(new MainForm(login.UserType));
+                        Application.Run(new InviteTenderMainForm());
                         break;
                     default:
                         break;

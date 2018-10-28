@@ -38,8 +38,11 @@
               <xs:element minOccurs="0" name="agentTypeName" type="xs:string" />
               <xs:element minOccurs="0" name="agentVersion" type="xs:string" />
               <xs:element minOccurs="0" name="applyName" type="xs:string" />
+              <xs:element minOccurs="0" name="beeId" type="xs:string" />
+              <xs:element minOccurs="0" name="berId" type="xs:string" />
               <xs:element minOccurs="0" name="content" type="xs:string" />
               <xs:element minOccurs="0" name="creatTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="evadeState" type="xs:int" />
               <xs:element minOccurs="0" name="evalState" type="xs:int" />
               <xs:element minOccurs="0" name="gpCode" type="xs:string" />
               <xs:element minOccurs="0" name="gpId" type="xs:string" />
@@ -104,7 +107,7 @@
       <xs:complexType name="findBidProjecList">
         <xs:sequence>
           <xs:element minOccurs="0" name="gtpId" type="xs:string" />
-          <xs:element minOccurs="0" name="gsId" type="xs:string" />
+          <xs:element minOccurs="0" name="buId" type="xs:string" />
           <xs:element minOccurs="0" name="gtpName" type="xs:string" />
           <xs:element minOccurs="0" name="gtpCode" type="xs:string" />
         </xs:sequence>

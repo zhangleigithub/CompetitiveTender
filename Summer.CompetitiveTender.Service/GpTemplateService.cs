@@ -96,15 +96,16 @@ namespace Summer.CompetitiveTender.Service
         /// </summary>
         /// <param name="auId">auId</param>
         /// <param name="gtName">gtName</param>
+        /// <param name="state">state</param>
         /// <returns>gpTemplateWebDO[]</returns>
-        public gpTemplateWebDO[] FindListByAuIdAndName(string auId, string gtName)
+        public gpTemplateWebDO[] FindListByAuIdAndName(string auId, string gtName,int state)
         {
             if (string.IsNullOrWhiteSpace(auId))
             {
                 throw new ArgumentNullException(nameof(auId));
             }
 
-            resultDO result = this.wsAgent.findList(auId, gtName);
+            resultDO result = this.wsAgent.findList(auId, gtName, state);
 
             return ((object[])result.objList).Cast<gpTemplateWebDO>().ToArray();
         }

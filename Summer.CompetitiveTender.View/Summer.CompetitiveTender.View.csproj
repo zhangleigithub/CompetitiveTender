@@ -374,12 +374,6 @@
     <Compile Include="InviteTenderMainForm.Designer.cs">
       <DependentUpon>InviteTenderMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="OpenOfBids\OOBCheckInForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -523,9 +517,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InviteTenderMainForm.resx">
       <DependentUpon>InviteTenderMainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OpenOfBids\OOBDecryptBidFileForm.resx">
       <DependentUpon>OOBDecryptBidFileForm.cs</DependentUpon>

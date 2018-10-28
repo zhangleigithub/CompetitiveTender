@@ -85,7 +85,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
         {
             this.grdTemplate.Rows.Clear();
             baseUserWebDO loginResponse = Cache.GetInstance().GetValue<baseUserWebDO>("login");
-            var result = gpTemplateService.FindListByAuIdAndName(loginResponse.auID, string.Empty);
+            var result = gpTemplateService.FindListByAuIdAndName(loginResponse.auID, string.Empty, 1);
 
             //已生成，升序
             foreach (var item in result.Where(x => x.fileMakeState == 1).OrderBy(x => x.sort))
@@ -108,7 +108,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
         public gpTemplateWebDO GetTemplate()
         {
-           return this.grdTemplate.CurrentRow.Tag as gpTemplateWebDO;
+            return this.grdTemplate.CurrentRow.Tag as gpTemplateWebDO;
         }
 
         #endregion

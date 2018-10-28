@@ -89,6 +89,7 @@
             this.grdFile.Size = new System.Drawing.Size(548, 441);
             this.grdFile.TabIndex = 6;
             this.grdFile.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OnCellContentClick);
+            this.grdFile.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OnCellDoubleClick);
             // 
             // colFileName
             // 

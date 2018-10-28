@@ -44,6 +44,7 @@
             this.colITenderProjectContent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colITenderDetail = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colEditITenderFile = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.colQuestion = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colDeleteITenderFile = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdITender)).BeginInit();
             this.SuspendLayout();
@@ -127,6 +128,7 @@
             this.colITenderProjectContent,
             this.colITenderDetail,
             this.colEditITenderFile,
+            this.colQuestion,
             this.colDeleteITenderFile});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -171,6 +173,7 @@
             // 
             // colITenderProjectName
             // 
+            this.colITenderProjectName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colITenderProjectName.HeaderText = "项目名称";
             this.colITenderProjectName.Name = "colITenderProjectName";
             // 
@@ -188,18 +191,21 @@
             // 
             this.colITenderProjectAreaName.HeaderText = "所在行政区域名称";
             this.colITenderProjectAreaName.Name = "colITenderProjectAreaName";
+            this.colITenderProjectAreaName.Visible = false;
             this.colITenderProjectAreaName.Width = 150;
             // 
             // colITenderProjectAgencyType
             // 
             this.colITenderProjectAgencyType.HeaderText = "代理机构代码类型";
             this.colITenderProjectAgencyType.Name = "colITenderProjectAgencyType";
+            this.colITenderProjectAgencyType.Visible = false;
             this.colITenderProjectAgencyType.Width = 150;
             // 
             // colITenderProjectContent
             // 
             this.colITenderProjectContent.HeaderText = "内容与范围及招标方案说明";
             this.colITenderProjectContent.Name = "colITenderProjectContent";
+            this.colITenderProjectContent.Visible = false;
             this.colITenderProjectContent.Width = 210;
             // 
             // colITenderDetail
@@ -214,9 +220,13 @@
             this.colEditITenderFile.HeaderText = "编辑招标文件";
             this.colEditITenderFile.Name = "colEditITenderFile";
             // 
+            // colQuestion
+            // 
+            this.colQuestion.HeaderText = "问题澄清";
+            this.colQuestion.Name = "colQuestion";
+            // 
             // colDeleteITenderFile
             // 
-            this.colDeleteITenderFile.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colDeleteITenderFile.HeaderText = "删除招标文件";
             this.colDeleteITenderFile.Name = "colDeleteITenderFile";
             // 
@@ -251,6 +261,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colITenderProjectContent;
         private System.Windows.Forms.DataGridViewLinkColumn colITenderDetail;
         private System.Windows.Forms.DataGridViewLinkColumn colEditITenderFile;
+        private System.Windows.Forms.DataGridViewLinkColumn colQuestion;
         private System.Windows.Forms.DataGridViewLinkColumn colDeleteITenderFile;
     }
 }

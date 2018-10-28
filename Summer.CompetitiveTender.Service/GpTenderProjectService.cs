@@ -71,6 +71,11 @@ namespace Summer.CompetitiveTender.Service
         {
             resultDO result = this.wsAgent.findBidProjecList(gtpId, gsId, gtpName, gtpCode);
 
+            if (result.objList == null)
+            {
+                return new gpTenderProjectWebDO[0];
+            }
+
             return ((object[])result.objList).Cast<gpTenderProjectWebDO>().ToArray();
         }
 

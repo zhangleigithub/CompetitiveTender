@@ -263,7 +263,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         
         private string gtpIdField;
         
-        private string gsIdField;
+        private string buIdField;
         
         private string gtpNameField;
         
@@ -283,13 +283,13 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public string gsId {
+        public string buId {
             get {
-                return this.gsIdField;
+                return this.buIdField;
             }
             set {
-                this.gsIdField = value;
-                this.RaisePropertyChanged("gsId");
+                this.buIdField = value;
+                this.RaisePropertyChanged("buId");
             }
         }
         
@@ -368,11 +368,19 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         
         private string applyNameField;
         
+        private string beeIdField;
+        
+        private string berIdField;
+        
         private string contentField;
         
         private System.DateTime creatTimeField;
         
         private bool creatTimeFieldSpecified;
+        
+        private int evadeStateField;
+        
+        private bool evadeStateFieldSpecified;
         
         private int evalStateField;
         
@@ -584,6 +592,30 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public string beeId {
+            get {
+                return this.beeIdField;
+            }
+            set {
+                this.beeIdField = value;
+                this.RaisePropertyChanged("beeId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        public string berId {
+            get {
+                return this.berIdField;
+            }
+            set {
+                this.berIdField = value;
+                this.RaisePropertyChanged("berId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
         public string content {
             get {
                 return this.contentField;
@@ -595,7 +627,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
         public System.DateTime creatTime {
             get {
                 return this.creatTimeField;
@@ -619,7 +651,31 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
+        public int evadeState {
+            get {
+                return this.evadeStateField;
+            }
+            set {
+                this.evadeStateField = value;
+                this.RaisePropertyChanged("evadeState");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool evadeStateSpecified {
+            get {
+                return this.evadeStateFieldSpecified;
+            }
+            set {
+                this.evadeStateFieldSpecified = value;
+                this.RaisePropertyChanged("evadeStateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
         public int evalState {
             get {
                 return this.evalStateField;
@@ -643,7 +699,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
         public string gpCode {
             get {
                 return this.gpCodeField;
@@ -655,7 +711,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
         public string gpId {
             get {
                 return this.gpIdField;
@@ -667,7 +723,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=14)]
         public string gsClassIfyCode {
             get {
                 return this.gsClassIfyCodeField;
@@ -679,7 +735,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=15)]
         public string gsClassIfyName {
             get {
                 return this.gsClassIfyNameField;
@@ -691,7 +747,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=16)]
         public string gsCode {
             get {
                 return this.gsCodeField;
@@ -703,7 +759,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=14)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=17)]
         public string gsContent {
             get {
                 return this.gsContentField;
@@ -715,7 +771,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=15)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=18)]
         public string gsId {
             get {
                 return this.gsIdField;
@@ -727,7 +783,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=16)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=19)]
         public string gsName {
             get {
                 return this.gsNameField;
@@ -739,7 +795,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=17)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=20)]
         public string gtpAgentId {
             get {
                 return this.gtpAgentIdField;
@@ -751,7 +807,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=18)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=21)]
         public string gtpApplyPerson {
             get {
                 return this.gtpApplyPersonField;
@@ -763,7 +819,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=19)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=22)]
         public string gtpCode {
             get {
                 return this.gtpCodeField;
@@ -775,7 +831,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=20)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=23)]
         public string gtpFileid {
             get {
                 return this.gtpFileidField;
@@ -787,7 +843,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=21)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=24)]
         public int gtpGetangentWays {
             get {
                 return this.gtpGetangentWaysField;
@@ -811,7 +867,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=22)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=25)]
         public string gtpGetangentWaysName {
             get {
                 return this.gtpGetangentWaysNameField;
@@ -823,7 +879,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=23)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=26)]
         public string gtpId {
             get {
                 return this.gtpIdField;
@@ -835,7 +891,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=24)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=27)]
         public string gtpName {
             get {
                 return this.gtpNameField;
@@ -847,7 +903,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=25)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=28)]
         public string gtpOrganizeTypeName {
             get {
                 return this.gtpOrganizeTypeNameField;
@@ -859,7 +915,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=26)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=29)]
         public string gtpPlatformCode {
             get {
                 return this.gtpPlatformCodeField;
@@ -871,7 +927,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=27)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=30)]
         public string gtpVerifyCode {
             get {
                 return this.gtpVerifyCodeField;
@@ -883,7 +939,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=28)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=31)]
         public string gtpVerifyName {
             get {
                 return this.gtpVerifyNameField;
@@ -895,7 +951,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=29)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=32)]
         public string infoReporterCode {
             get {
                 return this.infoReporterCodeField;
@@ -907,7 +963,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=30)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=33)]
         public int infoReporterCodeType {
             get {
                 return this.infoReporterCodeTypeField;
@@ -931,7 +987,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=31)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=34)]
         public string infoReporterName {
             get {
                 return this.infoReporterNameField;
@@ -943,7 +999,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=32)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=35)]
         public string ownerName {
             get {
                 return this.ownerNameField;
@@ -955,7 +1011,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=33)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=36)]
         public string platCode {
             get {
                 return this.platCodeField;
@@ -967,7 +1023,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=34)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=37)]
         public string regionCode {
             get {
                 return this.regionCodeField;
@@ -979,7 +1035,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=35)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=38)]
         public string regionId {
             get {
                 return this.regionIdField;
@@ -991,7 +1047,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=36)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=39)]
         public string regionName {
             get {
                 return this.regionNameField;
@@ -1003,7 +1059,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=37)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=40)]
         public string remark {
             get {
                 return this.remarkField;
@@ -1015,7 +1071,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=38)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=41)]
         public int state {
             get {
                 return this.stateField;
@@ -1039,7 +1095,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=39)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=42)]
         public string superviseCode {
             get {
                 return this.superviseCodeField;
@@ -1051,7 +1107,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=40)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=43)]
         public int superviseCodeType {
             get {
                 return this.superviseCodeTypeField;
@@ -1075,7 +1131,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=41)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=44)]
         public string superviseCodeTypeName {
             get {
                 return this.superviseCodeTypeNameField;
@@ -1087,7 +1143,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=42)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=45)]
         public string superviseId {
             get {
                 return this.superviseIdField;
@@ -1099,7 +1155,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=43)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=46)]
         public string superviseName {
             get {
                 return this.superviseNameField;
@@ -1111,7 +1167,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=44)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=47)]
         public string tdrAgencyCodeType {
             get {
                 return this.tdrAgencyCodeTypeField;
@@ -1123,7 +1179,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=45)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=48)]
         public string tdrPrjClassifyCode {
             get {
                 return this.tdrPrjClassifyCodeField;
@@ -1135,7 +1191,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=46)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=49)]
         public string tdrPrjClassifyId {
             get {
                 return this.tdrPrjClassifyIdField;
@@ -1147,7 +1203,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=47)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=50)]
         public string tdrPrjClassifyName {
             get {
                 return this.tdrPrjClassifyNameField;
@@ -1159,7 +1215,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=48)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=51)]
         public string tdrPrjName {
             get {
                 return this.tdrPrjNameField;
@@ -1171,7 +1227,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=49)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=52)]
         public string tdrPrjType {
             get {
                 return this.tdrPrjTypeField;
@@ -1183,7 +1239,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=50)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=53)]
         public string tdrPrjTypeId {
             get {
                 return this.tdrPrjTypeIdField;
@@ -1195,7 +1251,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=51)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=54)]
         public string tenderCode {
             get {
                 return this.tenderCodeField;
@@ -1207,7 +1263,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=52)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=55)]
         public string tenderName {
             get {
                 return this.tenderNameField;
@@ -1219,7 +1275,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=53)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=56)]
         public int tenderOrgWay {
             get {
                 return this.tenderOrgWayField;
@@ -1243,7 +1299,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=54)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=57)]
         public int tenderType {
             get {
                 return this.tenderTypeField;
@@ -1267,7 +1323,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=55)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=58)]
         public string tenderTypeName {
             get {
                 return this.tenderTypeNameField;
@@ -1279,7 +1335,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=56)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=59)]
         public int tenderWay {
             get {
                 return this.tenderWayField;
@@ -1303,7 +1359,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=57)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=60)]
         public string tenderWayName {
             get {
                 return this.tenderWayNameField;
@@ -1315,7 +1371,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=58)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=61)]
         public string unifiedDealCode {
             get {
                 return this.unifiedDealCodeField;
@@ -1327,7 +1383,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=59)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=62)]
         public string verifyCoCode {
             get {
                 return this.verifyCoCodeField;
@@ -1339,7 +1395,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=60)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=63)]
         public string verifyCoCodeType {
             get {
                 return this.verifyCoCodeTypeField;
@@ -1351,7 +1407,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=61)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=64)]
         public string verifyCoName {
             get {
                 return this.verifyCoNameField;
@@ -1475,7 +1531,7 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=1)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string gsId;
+        public string buId;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=2)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -1488,9 +1544,9 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
         public findBidProjecList1() {
         }
         
-        public findBidProjecList1(string gtpId, string gsId, string gtpName, string gtpCode) {
+        public findBidProjecList1(string gtpId, string buId, string gtpName, string gtpCode) {
             this.gtpId = gtpId;
-            this.gsId = gsId;
+            this.buId = buId;
             this.gtpName = gtpName;
             this.gtpCode = gtpCode;
         }
@@ -1594,10 +1650,10 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject {
             return base.Channel.findBidProjecList(request);
         }
         
-        public Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject.resultDO findBidProjecList(string gtpId, string gsId, string gtpName, string gtpCode) {
+        public Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject.resultDO findBidProjecList(string gtpId, string buId, string gtpName, string gtpCode) {
             Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject.findBidProjecList1 inValue = new Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject.findBidProjecList1();
             inValue.gtpId = gtpId;
-            inValue.gsId = gsId;
+            inValue.buId = buId;
             inValue.gtpName = gtpName;
             inValue.gtpCode = gtpCode;
             Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject.findBidProjecListResponse1 retVal = ((Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject.GpTenderProjectWebService)(this)).findBidProjecList(inValue);

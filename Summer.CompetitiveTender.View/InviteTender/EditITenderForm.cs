@@ -103,7 +103,10 @@ namespace Summer.CompetitiveTender.View.InviteTender
                     this.pnelFrame.Controls.Add(bidEvalFactorPage);
                     break;
                 case "生成招标文件":
-                    this.GenerateBidDocument();
+                    if (MetroMessageBox.Show(this, "确定要生成招标文件吗？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        this.GenerateBidDocument();
+                    }
                     break;
                 case "上传招标文件":
                     this.UploadBidFile();
@@ -139,27 +142,37 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
                 //模板文件
                 string pathBid = gd.GenerateBidDocument(this.gptp, this.bidEvalTemplatePage.GetTemplate());
-                paths.Add(pathBid);
+                string pathBidPdf = Office.WordToPdf(pathBid);
+                File.Delete(pathBid);
+                paths.Add(pathBidPdf);
 
                 //评标条款
                 string pathBidEvalClause = gd.GenerateBidEvalClauseDocument(this.gptp);
-                paths.Add(pathBidEvalClause);
+                string pathBidEvalClausePdf = Office.WordToPdf(pathBidEvalClause);
+                File.Delete(pathBidEvalClause);
+                paths.Add(pathBidEvalClausePdf);
 
                 //评分点
                 string pathBidEvalScoringPoint = gd.GenerateBidEvalScoringPointDocument(this.gptp);
-                paths.Add(pathBidEvalScoringPoint);
+                string pathBidEvalScoringPointPdf = Office.WordToPdf(pathBidEvalScoringPoint);
+                File.Delete(pathBidEvalScoringPoint);
+                paths.Add(pathBidEvalScoringPointPdf);
 
                 //评分因素
                 //string pathBidEvalFactor = gd.GenerateBidEvalFactorDocument(this.gptp);
-                //paths.Add(pathBidEvalFactor);
+                //string pathBidEvalFactorPdf = Office.WordToPdf(pathBidEvalFactor);
+                //File.Delete(pathBidEvalFactor);
+                //paths.Add(pathBidEvalFactorPdf);
 
                 //问题澄清
-                //string pathBidQuestion = gd.GenerateBidQuestionDocument(this.gptp);
+                string pathBidQuestion = gd.GenerateBidQuestionDocument(this.gptp);
 
-                //if (!string.IsNullOrWhiteSpace(pathBidQuestion))
-                //{
-                //    paths.Add(pathBidQuestion);
-                //}
+                if (!string.IsNullOrWhiteSpace(pathBidQuestion))
+                {
+                    string pathBidQuestionPdf = Office.WordToPdf(pathBidQuestion);
+                    File.Delete(pathBidQuestion);
+                    paths.Add(pathBidQuestionPdf);
+                }
 
                 GenerateBidFile generateBidFile = new GenerateBidFile(paths.ToArray());
                 generateBidFile.Dock = DockStyle.Fill;
@@ -241,7 +254,7 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 MetroMessageBox.Show(this, "打印失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
         #endregion
     }
 }

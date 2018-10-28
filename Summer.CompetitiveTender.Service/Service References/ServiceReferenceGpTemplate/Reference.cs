@@ -189,6 +189,10 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTemplate {
         
         private string gtNameField;
         
+        private int stateField;
+        
+        private bool stateFieldSpecified;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
         public string auID {
@@ -210,6 +214,30 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTemplate {
             set {
                 this.gtNameField = value;
                 this.RaisePropertyChanged("gtName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public int state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("state");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool stateSpecified {
+            get {
+                return this.stateFieldSpecified;
+            }
+            set {
+                this.stateFieldSpecified = value;
+                this.RaisePropertyChanged("stateSpecified");
             }
         }
         
@@ -1548,12 +1576,17 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTemplate {
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string gtName;
         
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int state;
+        
         public findList1() {
         }
         
-        public findList1(string auID, string gtName) {
+        public findList1(string auID, string gtName, int state) {
             this.auID = auID;
             this.gtName = gtName;
+            this.state = state;
         }
     }
     
@@ -1684,10 +1717,11 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpTemplate {
             return base.Channel.findList(request);
         }
         
-        public Summer.CompetitiveTender.Service.ServiceReferenceGpTemplate.resultDO findList(string auID, string gtName) {
+        public Summer.CompetitiveTender.Service.ServiceReferenceGpTemplate.resultDO findList(string auID, string gtName, int state) {
             Summer.CompetitiveTender.Service.ServiceReferenceGpTemplate.findList1 inValue = new Summer.CompetitiveTender.Service.ServiceReferenceGpTemplate.findList1();
             inValue.auID = auID;
             inValue.gtName = gtName;
+            inValue.state = state;
             Summer.CompetitiveTender.Service.ServiceReferenceGpTemplate.findListResponse1 retVal = ((Summer.CompetitiveTender.Service.ServiceReferenceGpTemplate.GpTemplateWebService)(this)).findList(inValue);
             return retVal.@return;
         }

@@ -33,10 +33,8 @@
             this.tsmiFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiOpenProject = new System.Windows.Forms.ToolStripMenuItem();
             this.tssFile1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsmiProjectDiscuss = new System.Windows.Forms.ToolStripMenuItem();
-            this.tssFile2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiTemplateManage = new System.Windows.Forms.ToolStripMenuItem();
-            this.tssFile3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tssFile2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiExit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiOpenOfBids = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEvaluationOfBids = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,6 +42,7 @@
             this.tsmiIndex = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiBidManage = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,11 +64,10 @@
             // 
             this.tsmiFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiOpenProject,
+            this.tsmiBidManage,
             this.tssFile1,
-            this.tsmiProjectDiscuss,
-            this.tssFile2,
             this.tsmiTemplateManage,
-            this.tssFile3,
+            this.tssFile2,
             this.tsmiExit});
             this.tsmiFile.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
             this.tsmiFile.Name = "tsmiFile";
@@ -79,43 +77,31 @@
             // tsmiOpenProject
             // 
             this.tsmiOpenProject.Name = "tsmiOpenProject";
-            this.tsmiOpenProject.Size = new System.Drawing.Size(148, 22);
-            this.tsmiOpenProject.Text = "打开项目";
-            this.tsmiOpenProject.Click += new System.EventHandler(this.OnOpenProjectToolStripMenuItemClick);
+            this.tsmiOpenProject.Size = new System.Drawing.Size(152, 22);
+            this.tsmiOpenProject.Text = "制作招标文件";
+            this.tsmiOpenProject.Click += new System.EventHandler(this.OnInviteTenderToolStripMenuItemClick);
             // 
             // tssFile1
             // 
             this.tssFile1.Name = "tssFile1";
-            this.tssFile1.Size = new System.Drawing.Size(145, 6);
-            // 
-            // tsmiProjectDiscuss
-            // 
-            this.tsmiProjectDiscuss.Name = "tsmiProjectDiscuss";
-            this.tsmiProjectDiscuss.Size = new System.Drawing.Size(148, 22);
-            this.tsmiProjectDiscuss.Text = "招标文件澄清";
-            this.tsmiProjectDiscuss.Click += new System.EventHandler(this.OnProjectDiscussToolStripMenuItemClick);
-            // 
-            // tssFile2
-            // 
-            this.tssFile2.Name = "tssFile2";
-            this.tssFile2.Size = new System.Drawing.Size(145, 6);
+            this.tssFile1.Size = new System.Drawing.Size(149, 6);
             // 
             // tsmiTemplateManage
             // 
             this.tsmiTemplateManage.Name = "tsmiTemplateManage";
-            this.tsmiTemplateManage.Size = new System.Drawing.Size(148, 22);
+            this.tsmiTemplateManage.Size = new System.Drawing.Size(152, 22);
             this.tsmiTemplateManage.Text = "模板管理";
             this.tsmiTemplateManage.Click += new System.EventHandler(this.OnTemplateManageToolStripMenuItemClick);
             // 
-            // tssFile3
+            // tssFile2
             // 
-            this.tssFile3.Name = "tssFile3";
-            this.tssFile3.Size = new System.Drawing.Size(145, 6);
+            this.tssFile2.Name = "tssFile2";
+            this.tssFile2.Size = new System.Drawing.Size(149, 6);
             // 
             // tsmiExit
             // 
             this.tsmiExit.Name = "tsmiExit";
-            this.tsmiExit.Size = new System.Drawing.Size(148, 22);
+            this.tsmiExit.Size = new System.Drawing.Size(152, 22);
             this.tsmiExit.Text = "退出(&X)";
             this.tsmiExit.Click += new System.EventHandler(this.OnExitToolsStripMenuItemClick);
             // 
@@ -164,6 +150,13 @@
             this.tsmiAbout.Text = "关于(&A) ... ...";
             this.tsmiAbout.Click += new System.EventHandler(this.OnAboutToolStripMenuItemClick);
             // 
+            // tsmiBidManage
+            // 
+            this.tsmiBidManage.Name = "tsmiBidManage";
+            this.tsmiBidManage.Size = new System.Drawing.Size(152, 22);
+            this.tsmiBidManage.Text = "制作投标文件";
+            this.tsmiBidManage.Click += new System.EventHandler(this.tsmiBidManage_Click);
+            // 
             // InviteTenderMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -203,8 +196,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiAbout;
         private System.Windows.Forms.ToolStripMenuItem tsmiTemplateManage;
         private System.Windows.Forms.ToolStripSeparator tssFile2;
-        private System.Windows.Forms.ToolStripMenuItem tsmiProjectDiscuss;
-        private System.Windows.Forms.ToolStripSeparator tssFile3;
+        private System.Windows.Forms.ToolStripMenuItem tsmiBidManage;
     }
 }
 

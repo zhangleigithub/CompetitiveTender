@@ -52,7 +52,7 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
             {
                 this.LoadData();
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 log.Error(ex);
                 MetroMessageBox.Show(this, "加载失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -109,7 +109,7 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
                     MetroFramework.MetroMessageBox.Show(this, "请选择招标项目！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 log.Error(ex);
                 MetroMessageBox.Show(this, "操作失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -174,7 +174,7 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
                     MetroMessageBox.Show(this, "请选择招标项目！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 log.Error(ex);
                 MetroMessageBox.Show(this, "上传失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -228,7 +228,7 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
                     MetroMessageBox.Show(this, "请选择招标项目！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 log.Error(ex);
                 MetroMessageBox.Show(this, "下载失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);

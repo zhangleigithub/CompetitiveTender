@@ -2,6 +2,7 @@
 using MetroFramework;
 using MetroFramework.Forms;
 using Summer.CompetitiveTender.Service;
+using Summer.CompetitiveTender.Service.ServiceReferenceGpTenderProject;
 using Summer.CompetitiveTender.Service.ServiceReferenceGpTfOperation;
 using Summer.CompetitiveTender.View.Common;
 using System;
@@ -28,6 +29,11 @@ namespace Summer.CompetitiveTender.View.InviteTender
         /// IGpTfOperationService
         /// </summary>
         private IGpTfOperationService gpTfOperationService = new GpTfOperationService();
+
+        /// <summary>
+        /// gptp
+        /// </summary>
+        private gpTenderProjectWebDO gptp;
 
         #endregion
 
@@ -88,15 +94,16 @@ namespace Summer.CompetitiveTender.View.InviteTender
 
         #region 方法
 
-        public QueryITenderQuestionForm()
+        public QueryITenderQuestionForm(gpTenderProjectWebDO gptp)
         {
             InitializeComponent();
+            this.gptp = gptp;
         }
 
         public void LoadData()
         {
             this.grdITQuest.Rows.Clear();
-            var result = gpTfOperationService.FindQuestions(this.txtProjectCode.Text.Trim(), this.txtSectionCode.Text.Trim(), this.txtTitle.Text.Trim(), (int)this.cboType.SelectedValue);
+            var result = gpTfOperationService.FindQuestions(this.gptp.gtpId, this.gptp.gpId, this.txtTitle.Text.Trim(), (int)this.cboType.SelectedValue);
             this.SetGridData(result);
         }
 

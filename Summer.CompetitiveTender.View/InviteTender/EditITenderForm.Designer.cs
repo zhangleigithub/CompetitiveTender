@@ -33,7 +33,6 @@
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("评 分 点");
             System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("生成招标文件");
             System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("上传招标文件");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("打印招标文件");
             this.pnelFrame = new MetroFramework.Controls.MetroPanel();
             this.trvMenu = new System.Windows.Forms.TreeView();
             this.SuspendLayout();
@@ -79,15 +78,12 @@
             treeNode5.Text = "生成招标文件";
             treeNode6.Name = "";
             treeNode6.Text = "上传招标文件";
-            treeNode7.Name = "";
-            treeNode7.Text = "打印招标文件";
             this.trvMenu.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode1,
             treeNode2,
             treeNode3,
             treeNode5,
-            treeNode6,
-            treeNode7});
+            treeNode6});
             this.trvMenu.ShowLines = false;
             this.trvMenu.Size = new System.Drawing.Size(180, 514);
             this.trvMenu.TabIndex = 2;

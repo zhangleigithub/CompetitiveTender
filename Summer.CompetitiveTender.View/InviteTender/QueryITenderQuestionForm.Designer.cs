@@ -34,12 +34,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboType = new MetroFramework.Controls.MetroComboBox();
             this.txtTitle = new Summer.Common.Controls.MetroSearchTextBox();
-            this.txtProjectCode = new Summer.Common.Controls.MetroSearchTextBox();
-            this.txtSectionCode = new Summer.Common.Controls.MetroSearchTextBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.btnQuestQuery = new MetroFramework.Controls.MetroButton();
             this.grdITQuest = new MetroFramework.Controls.MetroGrid();
             this.colOperationId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,7 +75,7 @@
             // 
             // 
             this.txtTitle.CustomButton.Image = null;
-            this.txtTitle.CustomButton.Location = new System.Drawing.Point(188, 1);
+            this.txtTitle.CustomButton.Location = new System.Drawing.Point(298, 1);
             this.txtTitle.CustomButton.Name = "";
             this.txtTitle.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtTitle.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -89,7 +85,7 @@
             this.txtTitle.CustomButton.Visible = false;
             this.txtTitle.Guid = "c3071cfc-24a9-4014-ae6d-4cd7d84444cc";
             this.txtTitle.Lines = new string[0];
-            this.txtTitle.Location = new System.Drawing.Point(665, 66);
+            this.txtTitle.Location = new System.Drawing.Point(512, 66);
             this.txtTitle.MaxLength = 32767;
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.PasswordChar = '\0';
@@ -99,84 +95,12 @@
             this.txtTitle.SelectionLength = 0;
             this.txtTitle.SelectionStart = 0;
             this.txtTitle.ShortcutsEnabled = true;
-            this.txtTitle.Size = new System.Drawing.Size(210, 23);
+            this.txtTitle.Size = new System.Drawing.Size(320, 23);
             this.txtTitle.TabIndex = 24;
             this.txtTitle.UseSelectable = true;
             this.txtTitle.WaterMark = "标题";
             this.txtTitle.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtTitle.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // txtProjectCode
-            // 
-            this.txtProjectCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtProjectCode.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtProjectCode.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            // 
-            // 
-            // 
-            this.txtProjectCode.CustomButton.Image = null;
-            this.txtProjectCode.CustomButton.Location = new System.Drawing.Point(128, 1);
-            this.txtProjectCode.CustomButton.Name = "";
-            this.txtProjectCode.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtProjectCode.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtProjectCode.CustomButton.TabIndex = 1;
-            this.txtProjectCode.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtProjectCode.CustomButton.UseSelectable = true;
-            this.txtProjectCode.CustomButton.Visible = false;
-            this.txtProjectCode.Guid = "6324d129-1d87-4430-9f2c-7a34427718a8";
-            this.txtProjectCode.Lines = new string[0];
-            this.txtProjectCode.Location = new System.Drawing.Point(239, 66);
-            this.txtProjectCode.MaxLength = 32767;
-            this.txtProjectCode.Name = "txtProjectCode";
-            this.txtProjectCode.PasswordChar = '\0';
-            this.txtProjectCode.PromptText = "项目编码";
-            this.txtProjectCode.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtProjectCode.SelectedText = "";
-            this.txtProjectCode.SelectionLength = 0;
-            this.txtProjectCode.SelectionStart = 0;
-            this.txtProjectCode.ShortcutsEnabled = true;
-            this.txtProjectCode.Size = new System.Drawing.Size(150, 23);
-            this.txtProjectCode.TabIndex = 22;
-            this.txtProjectCode.UseSelectable = true;
-            this.txtProjectCode.WaterMark = "项目编码";
-            this.txtProjectCode.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtProjectCode.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // txtSectionCode
-            // 
-            this.txtSectionCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSectionCode.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtSectionCode.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            // 
-            // 
-            // 
-            this.txtSectionCode.CustomButton.Image = null;
-            this.txtSectionCode.CustomButton.Location = new System.Drawing.Point(128, 1);
-            this.txtSectionCode.CustomButton.Name = "";
-            this.txtSectionCode.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtSectionCode.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtSectionCode.CustomButton.TabIndex = 1;
-            this.txtSectionCode.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtSectionCode.CustomButton.UseSelectable = true;
-            this.txtSectionCode.CustomButton.Visible = false;
-            this.txtSectionCode.Guid = "29af409d-e6a2-423d-ad53-e2d2ac8b5d26";
-            this.txtSectionCode.Lines = new string[0];
-            this.txtSectionCode.Location = new System.Drawing.Point(466, 66);
-            this.txtSectionCode.MaxLength = 32767;
-            this.txtSectionCode.Name = "txtSectionCode";
-            this.txtSectionCode.PasswordChar = '\0';
-            this.txtSectionCode.PromptText = "标段编码";
-            this.txtSectionCode.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtSectionCode.SelectedText = "";
-            this.txtSectionCode.SelectionLength = 0;
-            this.txtSectionCode.SelectionStart = 0;
-            this.txtSectionCode.ShortcutsEnabled = true;
-            this.txtSectionCode.Size = new System.Drawing.Size(150, 23);
-            this.txtSectionCode.TabIndex = 21;
-            this.txtSectionCode.UseSelectable = true;
-            this.txtSectionCode.WaterMark = "标段编码";
-            this.txtSectionCode.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtSectionCode.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // metroLabel4
             // 
@@ -188,35 +112,15 @@
             this.metroLabel4.TabIndex = 19;
             this.metroLabel4.Text = "类型";
             // 
-            // metroLabel3
-            // 
-            this.metroLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(395, 68);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(65, 19);
-            this.metroLabel3.TabIndex = 18;
-            this.metroLabel3.Text = "标段编码";
-            // 
             // metroLabel2
             // 
             this.metroLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(622, 68);
+            this.metroLabel2.Location = new System.Drawing.Point(469, 68);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(37, 19);
             this.metroLabel2.TabIndex = 17;
             this.metroLabel2.Text = "标题";
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(168, 68);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(65, 19);
-            this.metroLabel1.TabIndex = 16;
-            this.metroLabel1.Text = "项目编码";
             // 
             // btnQuestQuery
             // 
@@ -373,12 +277,8 @@
             this.ClientSize = new System.Drawing.Size(1106, 497);
             this.Controls.Add(this.cboType);
             this.Controls.Add(this.txtTitle);
-            this.Controls.Add(this.txtProjectCode);
-            this.Controls.Add(this.txtSectionCode);
             this.Controls.Add(this.metroLabel4);
-            this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
-            this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.btnQuestQuery);
             this.Controls.Add(this.grdITQuest);
             this.Name = "QueryITenderQuestionForm";
@@ -394,12 +294,8 @@
 
         private MetroFramework.Controls.MetroComboBox cboType;
         private Summer.Common.Controls.MetroSearchTextBox txtTitle;
-        private Summer.Common.Controls.MetroSearchTextBox txtProjectCode;
-        private Summer.Common.Controls.MetroSearchTextBox txtSectionCode;
         private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroButton btnQuestQuery;
         private MetroFramework.Controls.MetroGrid grdITQuest;
         private System.Windows.Forms.DataGridViewTextBoxColumn colOperationId;

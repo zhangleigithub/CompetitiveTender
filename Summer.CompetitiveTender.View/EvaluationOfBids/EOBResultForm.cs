@@ -66,7 +66,7 @@ namespace Summer.CompetitiveTender.View.EvaluationOfBids
                 var result = this.bidEvaluationService.FindBidEvaluationResultByProjectIdAndSectionId(this.projectId,this.sectionId);
                 this.SetGridData(result);
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 log.Error(ex);
                 MetroMessageBox.Show(this, "加载失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);

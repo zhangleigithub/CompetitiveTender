@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webservice.govpurchase.opensource.com/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="BidEvaluationWebServiceService" targetNamespace="http://webservice.govpurchase.opensource.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
-    <xs:schema elementFormDefault="unqualified" targetNamespace="http://webservice.govpurchase.opensource.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://webservice.govpurchase.opensource.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
       <xs:element name="automaticScoreResult" type="tns:automaticScoreResult" />
       <xs:element name="automaticScoreResultResponse" type="tns:automaticScoreResultResponse" />
       <xs:element name="auxiliaryAnalysis" type="tns:auxiliaryAnalysis" />
@@ -120,6 +120,8 @@
               <xs:element minOccurs="0" name="adtId" type="xs:string" />
               <xs:element minOccurs="0" name="adtName" type="xs:string" />
               <xs:element minOccurs="0" name="adtTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="beeId" type="xs:string" />
+              <xs:element minOccurs="0" name="berId" type="xs:string" />
               <xs:element minOccurs="0" name="bidPublicityDays" type="xs:int" />
               <xs:element minOccurs="0" name="bidVerifyCoId" type="xs:string" />
               <xs:element minOccurs="0" name="bidVerifyId" type="xs:string" />
@@ -136,6 +138,7 @@
               <xs:element minOccurs="0" name="contractNum" type="xs:string" />
               <xs:element minOccurs="0" name="contractState" type="xs:int" />
               <xs:element minOccurs="0" name="contractTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="evadeState" type="xs:int" />
               <xs:element minOccurs="0" name="evalBasePrice" type="xs:double" />
               <xs:element minOccurs="0" name="evalFormFileName" type="xs:string" />
               <xs:element minOccurs="0" name="evalFormUploadState" type="xs:int" />
@@ -166,6 +169,7 @@
               <xs:element minOccurs="0" name="gsEstPrice" type="xs:decimal" />
               <xs:element minOccurs="0" name="gsEvalWays" type="xs:long" />
               <xs:element minOccurs="0" name="gsFileFee" type="xs:decimal" />
+              <xs:element minOccurs="0" name="gsHebCode" type="xs:string" />
               <xs:element minOccurs="0" name="gsId" type="xs:string" />
               <xs:element minOccurs="0" name="gsMoneyCode" type="xs:string" />
               <xs:element minOccurs="0" name="gsMoneyCodeName" type="xs:string" />
@@ -290,6 +294,12 @@
           <xs:element minOccurs="0" name="return" type="tns:resultDO" />
         </xs:sequence>
       </xs:complexType>
+      <xs:element name="Exception" type="tns:Exception" />
+      <xs:complexType name="Exception">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
     </xs:schema>
   </wsdl:types>
   <wsdl:message name="fileDifferenceResultResponse">
@@ -309,6 +319,9 @@
   </wsdl:message>
   <wsdl:message name="automaticScoreResult">
     <wsdl:part name="parameters" element="tns:automaticScoreResult" />
+  </wsdl:message>
+  <wsdl:message name="Exception">
+    <wsdl:part name="Exception" element="tns:Exception" />
   </wsdl:message>
   <wsdl:message name="bidFileResaveResponse">
     <wsdl:part name="parameters" element="tns:bidFileResaveResponse" />
@@ -378,6 +391,7 @@
     <wsdl:operation name="getBidEvaluationReportFile">
       <wsdl:input name="getBidEvaluationReportFile" message="tns:getBidEvaluationReportFile" />
       <wsdl:output name="getBidEvaluationReportFileResponse" message="tns:getBidEvaluationReportFileResponse" />
+      <wsdl:fault name="Exception" message="tns:Exception" />
     </wsdl:operation>
     <wsdl:operation name="fileDifferenceResult">
       <wsdl:input name="fileDifferenceResult" message="tns:fileDifferenceResult" />
@@ -450,6 +464,9 @@
       <wsdl:output name="getBidEvaluationReportFileResponse">
         <soap:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="fileDifferenceResult">
       <soap:operation soapAction="" style="document" />

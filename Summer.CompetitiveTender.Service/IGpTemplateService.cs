@@ -44,8 +44,9 @@ namespace Summer.CompetitiveTender.Service
         /// </summary>
         /// <param name="auId">auId</param>
         /// <param name="gtName">gtName</param>
+        /// <param name="state">state</param>
         /// <returns>gpTemplateWebDO[]</returns>
-        gpTemplateWebDO[] FindListByAuIdAndName(string auId, string gtName);
+        gpTemplateWebDO[] FindListByAuIdAndName(string auId, string gtName,int state);
 
         /// <summary>
         /// FileUpload

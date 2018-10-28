@@ -116,6 +116,7 @@
             // 
             // colTempleName
             // 
+            this.colTempleName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colTempleName.HeaderText = "名称";
             this.colTempleName.Name = "colTempleName";
             this.colTempleName.ReadOnly = true;
@@ -142,6 +143,7 @@
             // 
             // colTemplateDescription
             // 
+            this.colTemplateDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colTemplateDescription.HeaderText = "说明";
             this.colTemplateDescription.Name = "colTemplateDescription";
             this.colTemplateDescription.ReadOnly = true;
@@ -165,12 +167,12 @@
             this.colTemplateState.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colTemplateState.Visible = false;
             // 
-            // BidEvalBodyPage
+            // BidEvalTemplatePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.grdTemplate);
-            this.Name = "BidEvalBodyPage";
+            this.Name = "BidEvalTemplatePage";
             this.Size = new System.Drawing.Size(697, 504);
             this.Load += new System.EventHandler(this.BidEvalBodyPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdTemplate)).EndInit();

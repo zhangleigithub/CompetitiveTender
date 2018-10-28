@@ -150,8 +150,8 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 paths.Add(pathBidEvalScoringPoint);
 
                 //评分因素
-                string pathBidEvalFactor = gd.GenerateBidEvalFactorDocument(this.gptp);
-                paths.Add(pathBidEvalFactor);
+                //string pathBidEvalFactor = gd.GenerateBidEvalFactorDocument(this.gptp);
+                //paths.Add(pathBidEvalFactor);
 
                 //问题澄清
                 //string pathBidQuestion = gd.GenerateBidQuestionDocument(this.gptp);

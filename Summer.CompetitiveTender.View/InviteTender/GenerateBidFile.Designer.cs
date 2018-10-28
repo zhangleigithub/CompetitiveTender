@@ -92,10 +92,10 @@
             // 
             // colFileName
             // 
+            this.colFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colFileName.HeaderText = "文件名";
             this.colFileName.Name = "colFileName";
             this.colFileName.ReadOnly = true;
-            this.colFileName.Width = 320;
             // 
             // colSign
             // 

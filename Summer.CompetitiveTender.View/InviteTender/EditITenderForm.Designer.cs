@@ -31,7 +31,6 @@
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("招标模板");
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("评标条款");
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("评 分 点");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("评分因素");
             System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("生成招标文件");
             System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("上传招标文件");
             System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("打印招标文件");
@@ -76,8 +75,6 @@
             treeNode2.Text = "评标条款";
             treeNode3.Name = "";
             treeNode3.Text = "评 分 点";
-            treeNode4.Name = "";
-            treeNode4.Text = "评分因素";
             treeNode5.Name = "";
             treeNode5.Text = "生成招标文件";
             treeNode6.Name = "";
@@ -88,7 +85,6 @@
             treeNode1,
             treeNode2,
             treeNode3,
-            treeNode4,
             treeNode5,
             treeNode6,
             treeNode7});

@@ -2,8 +2,6 @@
 <wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webservice.govpurchase.opensource.com/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="GpApplyDetailWebServiceService" targetNamespace="http://webservice.govpurchase.opensource.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <xs:schema elementFormDefault="unqualified" targetNamespace="http://webservice.govpurchase.opensource.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-      <xs:element name="applyFileDecrypt" type="tns:applyFileDecrypt" />
-      <xs:element name="applyFileDecryptResponse" type="tns:applyFileDecryptResponse" />
       <xs:element name="applyFileSing" type="tns:applyFileSing" />
       <xs:element name="applyFileSingResponse" type="tns:applyFileSingResponse" />
       <xs:element name="findApplyList" type="tns:findApplyList" />
@@ -117,15 +115,6 @@
           <xs:element minOccurs="0" name="return" type="tns:resultDO" />
         </xs:sequence>
       </xs:complexType>
-      <xs:complexType name="applyFileDecrypt">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="gadId" type="xs:string" />
-          <xs:element minOccurs="0" name="decryptionCipher" type="xs:string" />
-        </xs:sequence>
-      </xs:complexType>
-      <xs:complexType name="applyFileDecryptResponse">
-        <xs:sequence />
-      </xs:complexType>
       <xs:complexType name="getApplyById">
         <xs:sequence>
           <xs:element minOccurs="0" name="gaiApplyId" type="xs:string" />
@@ -160,14 +149,8 @@
   <wsdl:message name="findApplyList">
     <wsdl:part name="parameters" element="tns:findApplyList" />
   </wsdl:message>
-  <wsdl:message name="applyFileDecrypt">
-    <wsdl:part name="parameters" element="tns:applyFileDecrypt" />
-  </wsdl:message>
   <wsdl:message name="findApplyListResponse">
     <wsdl:part name="parameters" element="tns:findApplyListResponse" />
-  </wsdl:message>
-  <wsdl:message name="applyFileDecryptResponse">
-    <wsdl:part name="parameters" element="tns:applyFileDecryptResponse" />
   </wsdl:message>
   <wsdl:message name="findBidderListResponse">
     <wsdl:part name="parameters" element="tns:findBidderListResponse" />
@@ -191,10 +174,6 @@
     <wsdl:operation name="findApplyList">
       <wsdl:input name="findApplyList" message="tns:findApplyList" />
       <wsdl:output name="findApplyListResponse" message="tns:findApplyListResponse" />
-    </wsdl:operation>
-    <wsdl:operation name="applyFileDecrypt">
-      <wsdl:input name="applyFileDecrypt" message="tns:applyFileDecrypt" />
-      <wsdl:output name="applyFileDecryptResponse" message="tns:applyFileDecryptResponse" />
     </wsdl:operation>
     <wsdl:operation name="getApplyById">
       <wsdl:input name="getApplyById" message="tns:getApplyById" />
@@ -236,15 +215,6 @@
         <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output name="findApplyListResponse">
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="applyFileDecrypt">
-      <soap:operation soapAction="" style="document" />
-      <wsdl:input name="applyFileDecrypt">
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output name="applyFileDecryptResponse">
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

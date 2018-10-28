@@ -20,8 +20,6 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpApplyDetail {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getApplyByIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getApplyById))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(applyFileDecryptResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(applyFileDecrypt))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findApplyListResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findApplyList))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getApplyFileListResponse))]
@@ -39,8 +37,6 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpApplyDetail {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getApplyByIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getApplyById))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(applyFileDecryptResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(applyFileDecrypt))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findApplyListResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findApplyList))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getApplyFileListResponse))]
@@ -58,8 +54,6 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpApplyDetail {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getApplyByIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getApplyById))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(applyFileDecryptResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(applyFileDecrypt))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findApplyListResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findApplyList))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getApplyFileListResponse))]
@@ -77,8 +71,6 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpApplyDetail {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getApplyByIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getApplyById))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(applyFileDecryptResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(applyFileDecrypt))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findApplyListResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findApplyList))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getApplyFileListResponse))]
@@ -91,31 +83,11 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpApplyDetail {
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         Summer.CompetitiveTender.Service.ServiceReferenceGpApplyDetail.findApplyListResponse1 findApplyList(Summer.CompetitiveTender.Service.ServiceReferenceGpApplyDetail.findApplyList1 request);
         
-        // CODEGEN: 参数“gadId”需要其他方案信息，使用参数模式无法捕获这些信息。特定特性为“System.Xml.Serialization.XmlElementAttribute”。
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getApplyByIdResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getApplyById))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(applyFileDecryptResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(applyFileDecrypt))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findApplyListResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findApplyList))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getApplyFileListResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getApplyFileList))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findBidderListResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findBidderList))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(applyFileSingResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(applyFileSing))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseEntity))]
-        Summer.CompetitiveTender.Service.ServiceReferenceGpApplyDetail.applyFileDecryptResponse1 applyFileDecrypt(Summer.CompetitiveTender.Service.ServiceReferenceGpApplyDetail.applyFileDecrypt1 request);
-        
         // CODEGEN: 参数“return”需要其他方案信息，使用参数模式无法捕获这些信息。特定特性为“System.Xml.Serialization.XmlElementAttribute”。
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getApplyByIdResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getApplyById))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(applyFileDecryptResponse))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(applyFileDecrypt))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findApplyListResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(findApplyList))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getApplyFileListResponse))]
@@ -1015,70 +987,6 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpApplyDetail {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
-    public partial class applyFileDecryptResponse : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
-    public partial class applyFileDecrypt : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string gadIdField;
-        
-        private string decryptionCipherField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public string gadId {
-            get {
-                return this.gadIdField;
-            }
-            set {
-                this.gadIdField = value;
-                this.RaisePropertyChanged("gadId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public string decryptionCipher {
-            get {
-                return this.decryptionCipherField;
-            }
-            set {
-                this.decryptionCipherField = value;
-                this.RaisePropertyChanged("decryptionCipher");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://webservice.govpurchase.opensource.com/")]
     public partial class findApplyListResponse : object, System.ComponentModel.INotifyPropertyChanged {
         
         private resultDO returnField;
@@ -1552,39 +1460,6 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpApplyDetail {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="applyFileDecrypt", WrapperNamespace="http://webservice.govpurchase.opensource.com/", IsWrapped=true)]
-    public partial class applyFileDecrypt1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string gadId;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.govpurchase.opensource.com/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string decryptionCipher;
-        
-        public applyFileDecrypt1() {
-        }
-        
-        public applyFileDecrypt1(string gadId, string decryptionCipher) {
-            this.gadId = gadId;
-            this.decryptionCipher = decryptionCipher;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="applyFileDecryptResponse", WrapperNamespace="http://webservice.govpurchase.opensource.com/", IsWrapped=true)]
-    public partial class applyFileDecryptResponse1 {
-        
-        public applyFileDecryptResponse1() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="getApplyById", WrapperNamespace="http://webservice.govpurchase.opensource.com/", IsWrapped=true)]
     public partial class getApplyById1 {
         
@@ -1700,18 +1575,6 @@ namespace Summer.CompetitiveTender.Service.ServiceReferenceGpApplyDetail {
             inValue.gtpCode = gtpCode;
             Summer.CompetitiveTender.Service.ServiceReferenceGpApplyDetail.findApplyListResponse1 retVal = ((Summer.CompetitiveTender.Service.ServiceReferenceGpApplyDetail.GpApplyDetailWebService)(this)).findApplyList(inValue);
             return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Summer.CompetitiveTender.Service.ServiceReferenceGpApplyDetail.applyFileDecryptResponse1 Summer.CompetitiveTender.Service.ServiceReferenceGpApplyDetail.GpApplyDetailWebService.applyFileDecrypt(Summer.CompetitiveTender.Service.ServiceReferenceGpApplyDetail.applyFileDecrypt1 request) {
-            return base.Channel.applyFileDecrypt(request);
-        }
-        
-        public void applyFileDecrypt(string gadId, string decryptionCipher) {
-            Summer.CompetitiveTender.Service.ServiceReferenceGpApplyDetail.applyFileDecrypt1 inValue = new Summer.CompetitiveTender.Service.ServiceReferenceGpApplyDetail.applyFileDecrypt1();
-            inValue.gadId = gadId;
-            inValue.decryptionCipher = decryptionCipher;
-            Summer.CompetitiveTender.Service.ServiceReferenceGpApplyDetail.applyFileDecryptResponse1 retVal = ((Summer.CompetitiveTender.Service.ServiceReferenceGpApplyDetail.GpApplyDetailWebService)(this)).applyFileDecrypt(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

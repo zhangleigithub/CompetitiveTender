@@ -20,8 +20,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Xceed.Words.NET;
-using System.Runtime;
-using Ionic.Zip;
 
 namespace Summer.CompetitiveTender.View.InviteTender
 {
@@ -147,14 +145,10 @@ namespace Summer.CompetitiveTender.View.InviteTender
                 case "上传招标文件":
                     try
                     {
-                        string srcPath = AppDirectory.Temp_Dir(this.gptp.gpId);
+                        string sourcePath = AppDirectory.Temp_Dir(this.gptp.gpId);
                         string destPath = Path.Combine(AppDirectory.Temp(), this.gptp.gpId + ".zip");
 
-                        using (ZipFile zip = new ZipFile(Encoding.UTF8))
-                        {
-                            zip.AddDirectory(srcPath); 
-                            zip.Save(destPath);
-                        }
+                        Compress.CreateZipFile(sourcePath, destPath);
 
                         baseUserWebDO loginResponse = Cache.GetInstance().GetValue<baseUserWebDO>("login");
                         bool result = gpTenderFileService.UploadFile(destPath, loginResponse.auID, this.gptp.gtpId, this.gptp.gpId);

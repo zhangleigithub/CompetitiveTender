@@ -16,5 +16,13 @@ namespace Summer.Common.Utility
                 zip.Save(destPath);
             }
         }
+
+        public static void ExtractZipFile(string sourcePath, string destPath)
+        {
+            using (ZipFile zip = ZipFile.Read(sourcePath, new ReadOptions() { Encoding = Encoding.UTF8 }))
+            {
+                zip.ExtractAll(destPath, ExtractExistingFileAction.OverwriteSilently);
+            }
+        }
     }
 }
